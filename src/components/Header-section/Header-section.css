@@ -1,0 +1,5 @@
+.header-section {
+  width: 100%;
+  height: 1024px;
+  background: url(/src/assets/header-bg.png), lightgray 50% / cover no-repeat;
+}
