@@ -1,10 +1,11 @@
 import './App.css'
+import Header from './components/Header-section/Header'
 
-function App() {
+const App = () => {
 
   return (
     <>
-    <h1 className='text-5xl text-red-500'>The Rentalog</h1>
+      <Header />
     </>
   )
 }
