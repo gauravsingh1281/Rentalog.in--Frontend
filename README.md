@@ -46,16 +46,16 @@
 </code>
   </li>
   <li>Create a new branch for your contribution:<br>
-    <code>git checkout -b feature/tech-stack-migration
+    <code>git checkout -b your branch name 
 </code>
   </li>
   <li>Begin migrating components and features to React.js and Next.js, adhering to best practices and code conventions.</li>
   <li>Test your changes locally to ensure they function correctly.</li>
   <li>Commit your changes with descriptive commit messages:<br>
-    <code>git commit -m "Migrate component X to React.js"</code>
+    <code>git commit -m "Commit message"</code>
   </li>
   <li>Push your changes to your forked repository:<br>
-    <code>git push origin feature/tech-stack-migration"</code>
+    <code>git push origin your branch name</code>
   </li>
   <li>Open a pull request to the <strong>main</strong> branch of this repository.</li>
   <li>If you find any bugs or have any suggestions, please open an issue on GitHub and provide detailed information about the bug or suggestion.</li>
