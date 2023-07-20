@@ -1,0 +1,30 @@
+.aboutUs-section {
+  text-align: center;
+  padding-top: 150px;
+}
+
+.aboutUs-section .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 68px;
+  margin-top: 16px;
+}
+
+.aboutUs-section .row .rent-board-img {
+  position: relative;
+  top: 20px;
+}
+
+.aboutUs-section .primary-heading {
+  font-size: 48px;
+  font-weight: 600;
+  color: #312F2F;
+}
+
+.aboutUs-section .row .paragraph {
+  max-width: 550px;
+  text-align: start;
+  font-size: 20px;
+  line-height: 28.38px;
+}
