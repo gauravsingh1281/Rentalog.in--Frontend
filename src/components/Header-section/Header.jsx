@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <>
             <div className="header-section">
-                {/* <Navbar /> */}
+                <Navbar />
                 <div className="header-text">
                     <h1>Welcome to <span>Rentalog</span></h1>
                     <p>Rentalog is the ultimate solution for landlords looking to simplify their rent management process. Keep track of your renters personal details, their payment history, and much more with ease.</p>
