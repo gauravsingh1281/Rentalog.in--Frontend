@@ -1,0 +1,43 @@
+:root {
+  --contact-text-color-light: #312f2f;
+  --contact-text-color-dark: #000000;
+  --color-text-green: #1abc9c;
+  --font-family: "Montserrat";
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8vh 0;
+}
+
+.contactText {
+  color: var(--contact-text-color-light);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.contactPara {
+  padding: 0 5vw;
+  color: var(--contact-text-color-dark);
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01rem;
+  line-height: 2.5rem;
+  margin: 2vh 0;
+}
+
+.paraText {
+  margin-bottom: 3vh;
+}
+
+.greenText {
+  color: var(--color-text-green);
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.Initials {
+}
