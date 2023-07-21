@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 const Header = () => {
     return (
         <>
-            <div className="header-section">
+            <div className="header-section mb-[80px]">
                 <Navbar />
                 <div className="header-text">
                     <h1>Welcome to <span>Rentalog</span></h1>
