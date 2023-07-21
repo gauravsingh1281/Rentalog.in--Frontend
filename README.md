@@ -9,7 +9,7 @@
   <li><strong>User-friendly interface:</strong> Easy to use and navigate.</li>
   <li><strong>Dedicated support team:</strong> Available to help landlords with any questions or problems they may have.</li>
 </ul>
-<h2>Older Version Tech stack</h2>
+<h2>Current Version Tech stack</h2>
 <p>Rentalog is built using the following technologies:</p>
 <ul>
 <li>HTML</li>
