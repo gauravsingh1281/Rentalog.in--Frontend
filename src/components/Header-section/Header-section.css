@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 .header-section {
   width: 100%;
-   height: 100vh;
+  height: 100vh;
   background: url(/src/assets/header-bg.png);
   background-position: center center;
   /* background-attachment: fixed; */
