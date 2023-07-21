@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 .header-section {
   width: 100%;
-  height: 1024px;
-  background: url(/src/assets/header-bg.png), lightgray 50% / cover no-repeat;
+  height: 100vh;
+  background: url(/src/assets/header-bg.png);
+  background-position: center center;
+  /* background-attachment: fixed; */
+  background-color: #262626;
+  background-size: cover;
+  position: relative;
 }
 .header-section li {
   font-family: "Montserrat", sans-serif;
