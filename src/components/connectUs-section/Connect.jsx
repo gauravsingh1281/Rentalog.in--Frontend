@@ -1,7 +1,7 @@
 import github from "../../assets/github.png"
 import instagram from "../../assets/Instagram.png"
 import twitter from "../../assets/twitter.png"
-import Form from "./form"
+import Form from "./Form"
 
 const Connect = () => {
     return (
