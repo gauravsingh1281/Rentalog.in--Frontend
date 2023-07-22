@@ -2,6 +2,7 @@ import './App.css'
 import Footer from './components/Footer'
 import Header from './components/Header-section/Header'
 import Connect from './components/connectUs-section/Connect'
+import AboutUs from './components/AboutUs-section/AboutUs';
 
 const App = () => {
 
@@ -9,6 +10,7 @@ const App = () => {
     <>
       <Header />
       <Connect />
+      <AboutUs />
       <Footer />
     </>
   )
