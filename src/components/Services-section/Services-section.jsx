@@ -1,8 +1,8 @@
 import React from "react";
-import iconPerson from "../assets/icon-person.png";
-import iconCalendar from "../assets/icon-calendar.png";
-import iconHome from "../assets/icon-home.png";
-import iconPencil from "../assets/icon-pencil.png";
+import iconPerson from "../../assets/Icons/icon-person.png";
+import iconCalendar from "../../assets/Icons/icon-calendar.png";
+import iconHome from "../../assets/Icons/icon-home.png";
+import iconPencil from "../../assets/Icons/icon-pencil.png";
 
 const Services = () => {
   return (

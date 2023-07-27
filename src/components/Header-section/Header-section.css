@@ -1,18 +1,20 @@
 .header-section {
   width: 100%;
   height: 100vh;
-  background: url(/src/assets/header-bg.png);
+  background: url(/src/assets/Images/header-bg.png);
   background-position: center center;
   background-color: #262626;
   background-size: cover;
   position: relative;
 }
+
 .header-section li {
   list-style: none;
   font-weight: 600;
   font-size: 18.5px;
   color: #262626;
 }
+
 .user-cta :last-child {
   justify-content: center;
   align-items: center;
@@ -20,13 +22,16 @@
   border-radius: 8px;
   background-color: white;
 }
+
 .header-text h1 {
   font-size: 57px;
   font-weight: 600;
 }
+
 .header-text h1 span {
   color: #cd4347;
 }
+
 .header-text p {
   font-weight: 400;
   font-size: 17px;
@@ -38,6 +43,7 @@
   left: 4%;
   width: 68%;
 }
+
 .btn {
   margin-top: 55px;
   border-radius: 8px;

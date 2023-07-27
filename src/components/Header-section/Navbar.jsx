@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.png"
+import logo from "../../assets/Images/logo.png"
 import { FiUser } from 'react-icons/fi';
 
 const Navbar = () => {

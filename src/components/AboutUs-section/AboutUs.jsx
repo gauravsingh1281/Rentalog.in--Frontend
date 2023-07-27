@@ -1,5 +1,5 @@
 import React from 'react'
-import rentBoardImg from "../../assets/rent-board.png"
+import rentBoardImg from "../../assets/images/rent-board.png"
 import '../AboutUs-section/AboutUs-section.css';
 const AboutUs = () => {
   return (
