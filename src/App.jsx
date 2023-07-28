@@ -5,10 +5,12 @@ import Footer from "./components/Footer-section/Footer";
 import AboutUs from "./components/AboutUs-section/AboutUs";
 import Services from "./components/Services-section/Services-section";
 
+
 const App = () => {
   return (
     <>
       <Header />
+      <Contact />
       <Services />
       <AboutUs />
       <Contact />
