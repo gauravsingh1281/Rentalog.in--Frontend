@@ -8,16 +8,16 @@ const ContactForm = () => {
       <section className="flex flex-col md:flex-row  gap-y-10 my-20">
         {/* left hand side of the form */}
         <article className="flex-1 text-center md:text-left md:ml-24">
-          <h2 className="text-6xl font-bold tracking-wider mb-10 font-monsterrat text-textBlack">
+          <h2 className="text-3xl lg:text-5xl font-bold tracking-wider mb-10 font-monsterrat text-textBlack">
             Connect with <span className="text-customRed">Us</span>
           </h2>
           <div
             className="flex gap-x-12 justify-center md:justify-start"
             style={{ height: "min-content", alignItems: "baseline" }}
           >
-            <img src={Github} alt="" style={{ height: "6vh" }} />
-            <img src={Insta} alt="" style={{ height: "6vh" }} />
-            <img src={Twitter} alt="" style={{ height: "6vh" }} />
+            <img src={Github} alt="Github-logo" className="h-14" />
+            <img src={Insta} alt="Insta-logo" className="h-14" />
+            <img src={Twitter} alt="Twitter-logo" className="h-14" />
           </div>
         </article>
         {/* Right hand side of the form */}
@@ -46,7 +46,7 @@ const ContactForm = () => {
             />
             <div className="flex justify-center md:justify-start ">
               <button
-                className="bg-green rounded-lg w-48  md:w-60 p-3 text-textWhite text-2xl md:text-xl font-bold font-monsterrat"
+                className="bg-green rounded-lg w-40 lg:w-60 p-3 text-textWhite text-2xl md:text-xl font-bold font-monsterrat"
                 type="submit"
               >
                 Submit
