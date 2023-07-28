@@ -10,7 +10,6 @@ const App = () => {
   return (
     <>
       <Header />
-      <Contact />
       <Services />
       <AboutUs />
       <Contact />
