@@ -25,29 +25,31 @@ const ContactForm = () => {
           <form className="gap-x-5 w-full">
             <div className="flex flex-col md:flex-row mb-6 justify-between">
               <input
-                className="bg-green rounded-lg text-textBlack h-10 w-5/12 "
+                className="bg-green rounded-lg text-black h-16 w-5/12  placeholder-textBlack p-2"
                 placeholder="First name"
               />
               <input
-                className="bg-green rounded-lg h-10 w-5/12"
+                className="bg-green rounded-lg h-16 w-5/12  text-black  placeholder-textBlack p-2"
                 placeholder="Last name"
               />
             </div>
             <div className="flex flex-col md:flex-row mb-6 justify-between">
               <input
-                className="bg-green rounded-lg h-10 w-5/12"
-                placeholder="First name"
-              />
-              <input
-                className="bg-green rounded-lg w-5/12"
-                placeholder="Last name"
+                className="bg-green rounded-lg h-16 w-full  text-black placeholder-textBlack p-2"
+                placeholder="Email"
               />
             </div>
 
             <textarea
-              className="bg-green rounded-lg w-full h-40"
+              className="bg-green rounded-lg w-full h-40  text-black  placeholder-textBlack mb-6 p-2"
               placeholder="Your message here"
             />
+            <button
+              className="bg-green rounded-lg   w-60 p-3 text-textWhite text-xl font-bold font-monsterrat"
+              type="submit"
+            >
+              Submit
+            </button>
           </form>
         </article>
       </section>
