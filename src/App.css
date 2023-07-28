@@ -2,4 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.placeholder-text {
+  @apply bg-primary-green rounded-2xl p-3 text-xs placeholder:text-[#4C4949]
 }
