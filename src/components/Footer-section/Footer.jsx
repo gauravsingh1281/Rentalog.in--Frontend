@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p className="bg-black text-text-white text-center py-2">
+        <p className="bg-black text-textWhite text-center py-2">
           © <span>{new Date().getFullYear()}</span> || All Rights Reserved ||
           The Virtual World Maker
         </p>
