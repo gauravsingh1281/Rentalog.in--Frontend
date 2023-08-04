@@ -9,16 +9,21 @@ const placeName = [
     },
     {
         id: 3,
-        name: "Goa"
+        name: "Patna"
     },
     {
         id: 4,
-        name: "Mumbai"
+        name: "Goa"
     },
     {
         id: 5,
+        name: "Mumbai"
+    },
+    {
+        id: 6,
         name: "Bangalore"
     },
+
 ]
 
 export default placeName;
