@@ -16,13 +16,13 @@ const Services = () => {
         }
       </div>
       <div className="bg-[#D1F2EB] my-20 ">
-        <h1 className="text-5xl font-semibold text-[#312F2F] text-center py-10">
+        <h1 className="text-4xl font-semibold text-[#312F2F] text-center py-10">
           Our Services are available in
         </h1>
         <div className="flex justify-center items-center flex-row pb-14 gap-16 px-10">
           {
-            placeName.map(({ id, name }) => {
-              return <ServicesAvailableIn placeName={name} key={id} />
+            placeName.map(({ id, name, image }) => {
+              return <ServicesAvailableIn placeName={name} key={id} placeImage={image} />
             })
           }
 
