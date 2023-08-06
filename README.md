@@ -64,7 +64,13 @@
 <h2>Inspiration Links</h2>
 <ul>
   <li><strong>Figma Design:</strong> Explore the Figma design for the new version of Rentalog <a href="https://www.figma.com/file/9WhtUQT7s5ogTiDTp90PxI/RENTALOG-WEB-DESIGN?type=design&node-id=0-1&mode=design&t=ZNeyPXk16TlWB6I6-0">here</a>.</li>
-  <li><strong>Current Tech Stack:</strong> If you're interested in exploring the current tech stack used in the older version of Rentalog, you can visit the <a href="https://www.rentalog.in/">Rentalog.in</a> and use its functionality as a reference while migrating to React.js and Next.js.</li>
+  <li><strong>Current Tech Stack:</strong> If you're interested in exploring the current tech stack used in the older version of Rentalog, you can visit the <a href="https://rentalog-web-app.azurewebsites.net/">Rentalog.in</a> and use its functionality as a reference while migrating to React.js and Next.js.<br>
+  <p>Rentalog Demo Account Credentials</p>
+  <ul type="square">
+    <li>Username - demo@rentalog.in</li>
+    <li>Password - @1a2b3c4d5E</li>
+  </ul>
+  </li>
 </ul>
 <h2>License</h2>
 <p>Rentalog is released under the <strong>MIT License</strong>. By contributing to this project, you agree to provide your contributions under the same license.</p>
