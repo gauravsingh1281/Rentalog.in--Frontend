@@ -18,7 +18,7 @@ const Footer = () => {
           <hr className="w-[150px] py-2" />
           <h3 className="text-xl font-semibold">Contact Us</h3>
           <div className="flex space-x-3 pt-2">
-            <a href="https://github.com/gauravsingh1281">
+            <a href="https://twitter.com/gauravsingh1281">
               <FaTwitter className="w-8 h-8" />
             </a>
             <a href="https://github.com/gauravsingh1281">

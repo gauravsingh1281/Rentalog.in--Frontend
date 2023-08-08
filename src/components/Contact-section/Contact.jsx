@@ -1,4 +1,5 @@
 import ContactForm from "./ContactForm";
+import GoogleMap from './GoogleMap';
 
 const Contact = () => {
   return (
@@ -55,6 +56,8 @@ const Contact = () => {
       </main>
 
       <ContactForm />
+      <GoogleMap />
+
     </>
   );
 };
