@@ -22,7 +22,7 @@ const Contact = () => {
           <div className="mb-10">
             Email : Send us an email at{" "}
             <span className=" text-primaryGreen font-bold underline">
-              support@rentalog.in
+              <a href="mailto:support@rentalog.in">support@rentalog.in</a>
             </span>
             , and we&apos;ll get back to you as soon as we can. Our support team
             is always happy to help. <br />
@@ -30,7 +30,7 @@ const Contact = () => {
           <div className="mb-10">
             Phone : Prefer to chat over the phone? No problem! Give us a call at{" "}
             <span className=" text-primaryGreen font-bold underline">
-              +916201577047
+              <a href="tel:+916201577047">+916201577047</a>
             </span>
             , and we&apos;ll be more than happy to assist you. <br />
           </div>
