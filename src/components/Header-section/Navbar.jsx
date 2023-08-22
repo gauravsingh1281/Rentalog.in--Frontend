@@ -1,8 +1,9 @@
 import logo from "../../assets/Images/logo.png";
 import { FiUser } from "react-icons/fi";
 import { Link } from "react-scroll";
+import PropTypes from "prop-types";
 
-const Navbar = () => {
+const Navbar = ({ click }) => {
   return (
     <>
       <nav className="navbar flex justify-between items-center py-4 px-12">
@@ -31,11 +32,11 @@ const Navbar = () => {
               RENTALS
             </Link>
           </li>
-          <li className="nav-links  p-3">
-            <Link to="dashboard" smooth={true} duration={500}>
-              {" "}
-              DASHBOARD
-            </Link>
+          <li
+            className="nav-links ml-3  p-3 outline outline-1 rounded  "
+            onClick={click}
+          >
+            DASHBOARD
           </li>
         </ul>
         <ul className="user-cta flex">
@@ -50,3 +51,7 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+
+Navbar.propTypes = {
+  click: PropTypes.func,
+};
