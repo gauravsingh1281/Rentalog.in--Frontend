@@ -1,19 +1,19 @@
 import logo from "../../assets/Images/logo.png";
 import { FiUser } from "react-icons/fi";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Navbar = ({ click }) => {
   return (
     <>
       <nav className="navbar flex justify-between items-center py-4 px-12">
-        <Link to="home" smooth={true} duration={500}>
+        <Link to="/" smooth={true} duration={500}>
           <img src={logo} alt="Rentalog-logo" />
         </Link>
 
         <ul className="flex">
           <li className="nav-links mr-5 p-3 ">
-            <Link to="home" smooth={true} duration={500}>
+            <Link to="/" smooth={true} duration={500}>
               HOME
             </Link>
           </li>

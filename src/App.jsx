@@ -1,17 +1,15 @@
 import { useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer-section/Footer";
-import Header from "./components/Header-section/Header";
-import Connect from "./components/connectUs-section/Connect";
-import AboutUs from "./components/AboutUs-section/AboutUs";
-import Services from "./components/Services-section/Services-section";
-import Dashboard from "./components/Admin-Dashboard/Dashboard";
 import Navbar from "./components/Header-section/Navbar";
-
+import { Routes, Route } from "react-router-dom";
+import AddRenter from "./components/Admin-Dashboard/AddRenter";
+import Home from "./Home";
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
+    console.log("clicked");
     setIsOpen(true);
   };
   const handleClose = () => {
@@ -20,12 +18,13 @@ const App = () => {
   return (
     <>
       <Navbar click={handleOpen} />
-      <Header />
-      <AboutUs />
-      <Services />
-      <Connect />
-
-      <Dashboard onClose={handleClose} open={isOpen} />
+      <Routes>
+        <Route
+          path="/"
+          element={<Home isOpen={isOpen} onClose={handleClose} />}
+        />
+        <Route path="/add-renter" element={<AddRenter />} />
+      </Routes>
 
       <Footer />
     </>
