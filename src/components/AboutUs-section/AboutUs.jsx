@@ -5,7 +5,7 @@ const AboutUs = () => {
   return (
     <div className="aboutUs-section">
       <span className="primary-heading">About Us</span>
-      <div className="row">
+      <div className=" row flex flex-col justify-center items-center md:flex-row">
         <img
           className="rent-board-img"
           src={rentBoardImg}

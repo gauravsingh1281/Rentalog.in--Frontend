@@ -19,7 +19,7 @@ const Services = () => {
         <h1 className="text-4xl font-semibold text-[#312F2F] text-center py-10">
           Our Services are available in
         </h1>
-        <div className="flex justify-center items-center flex-row pb-14 gap-16 px-10">
+        <div className="flex justify-center items-center flex-col pb-14 gap-16 px-10 md:flex-row">
           {
             placeName.map(({ id, name, image }) => {
               return <ServicesAvailableIn placeName={name} key={id} placeImage={image} />

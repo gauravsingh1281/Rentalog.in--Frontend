@@ -6,7 +6,7 @@ const Navbar = () => {
         <>
             <nav className="navbar flex justify-between items-center py-4 px-12">
                 <img src={logo} alt="Rentalog-logo" />
-                <ul className='flex'>
+                <ul className='hidden md:flex'>
                     <li className='nav-links mr-5 p-3 '>HOME</li>
                     <li className='nav-links mr-5 p-3'>ABOUT</li>
                     <li className='nav-links mr-5 p-3'>CONTACT</li>

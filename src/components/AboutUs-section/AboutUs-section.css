@@ -5,9 +5,7 @@
 }
 
 .aboutUs-section .row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   gap: 68px;
   margin-top: 16px;
 }
