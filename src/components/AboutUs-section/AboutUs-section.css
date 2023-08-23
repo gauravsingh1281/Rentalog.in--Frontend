@@ -23,6 +23,15 @@
 
 .aboutUs-section .row .paragraph {
   max-width: 550px;
-  text-align: start;
+  text-align: justify;
   line-height: 28.38px;
+}
+
+@media (max-width:768px) {
+  .aboutUs-section .row .paragraph {
+    max-width: 550px;
+    text-align: justify;
+    padding: 12px;
+    line-height: 28.38px;
+  }
 }

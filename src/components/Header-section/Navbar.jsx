@@ -4,7 +4,7 @@ import { FiUser } from 'react-icons/fi';
 const Navbar = () => {
     return (
         <>
-            <nav className="navbar flex justify-between items-center py-4 px-12">
+            <nav className="navbar flex justify-between items-center py-4 px-4 md:py-4 md:px-12">
                 <img src={logo} alt="Rentalog-logo" />
                 <ul className='hidden md:flex'>
                     <li className='nav-links mr-5 p-3 '>HOME</li>
@@ -13,8 +13,8 @@ const Navbar = () => {
                     <li className='nav-links  p-3'>RENTALS</li>
                 </ul>
                 <ul className='user-cta flex'>
-                    <li className='mr-5 p-3'>Login</li>
-                    <li className=' p-3'><FiUser className="mr-1" />Register</li>
+                    <li className='mr-5 p-2 md:p-3'>Login</li>
+                    <li className=' p-2 md:p-3'><FiUser className="mr-1" />Register</li>
                 </ul>
             </nav>
         </>
