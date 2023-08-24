@@ -4,8 +4,8 @@ import "./AboutUs-section.css";
 const AboutUs = () => {
   return (
     <div className="aboutUs-section">
-      <span className="primary-heading">About Us</span>
-      <div className="row">
+      <span className="text-3xl md:text-4xl font-semibold text-[#312F2F] text-center pt-10">About Us</span>
+      <div className=" row flex flex-col justify-center items-center md:flex-row">
         <img
           className="rent-board-img"
           src={rentBoardImg}
