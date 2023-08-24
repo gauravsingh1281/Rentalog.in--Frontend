@@ -24,6 +24,7 @@
 .aboutUs-section .row .paragraph {
   max-width: 550px;
   text-align: justify;
+  padding: 8px;
   line-height: 28.38px;
 }
 
