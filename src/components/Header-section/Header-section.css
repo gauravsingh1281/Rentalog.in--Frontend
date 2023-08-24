@@ -113,3 +113,16 @@
     background: #1abc9c;
   }
 }
+
+@media (max-width:468px) {
+  .btn {
+    margin-top: 55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 42%;
+    height: 44px;
+    background: #1abc9c;
+  }
+}

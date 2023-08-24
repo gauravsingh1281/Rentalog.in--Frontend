@@ -4,10 +4,10 @@ import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer>
-      <div className="flex justify-center justufy-between bg-primaryGreen text-textWhite px-[75px] py-[60px] ">
+      <div className="flex justify-center justufy-between bg-primaryGreen text-textWhite md:px-[75px] px-[25px] py-[60px] md:flex-row flex-col">
         <div className="w-[300px] flex-1">
           <img
-            className="bg-[white] px-1 rounded-xl mb-2"
+            className="bg-[white] px-1 rounded-xl mb-2 w-64"
             src={logo}
             alt="logo"
           />
@@ -19,7 +19,7 @@ const Footer = () => {
           <h3 className="text-xl font-semibold">Contact Us</h3>
           <div className="flex space-x-3 pt-2">
             <a href="https://twitter.com/gauravsingh1281">
-              <FaTwitter className="w-8 h-8" />
+              <FaTwitter className="w-8 h-8 " />
             </a>
             <a href="https://github.com/gauravsingh1281">
               <FaGithub className="w-8 h-8" />
