@@ -1,22 +1,13 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Contact from "./components/Contact-section/Contact";
-import Header from "./components/Header-section/Header";
-import Footer from "./components/Footer-section/Footer";
-import AboutUs from "./components/AboutUs-section/AboutUs";
-import Services from "./components/Services-section/Services-section";
-import Testimonial from "./components/testimonial-section/Testimonial";
-
+import { Home, Login } from "./pages";
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Services />
-      <AboutUs />
-      <Testimonial />
-      <Contact />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 };
 
