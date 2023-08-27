@@ -90,7 +90,9 @@ export default function Login() {
               Best way to manage you rent{" "}
             </h2>
 
-            <p className="mt-2">Enter your credentials to access your account</p>
+            <p className="mt-2">
+              Enter your credentials to access your account
+            </p>
           </div>
           <img src="undraw_for_sale_re_egkk.svg" alt="" className="m-10" />
         </div>
@@ -102,7 +104,9 @@ export default function Login() {
 const Navbar = () => {
   return (
     <div className="border-b border-[#dedede] p-2 px-5">
-      <img src={logo} alt="Rentalog-logo" className="h-12 w-auto" />
+      <Link to="/">
+        <img src={logo} alt="Rentalog-logo" className="h-12 w-auto" />
+      </Link>
     </div>
   );
 };
