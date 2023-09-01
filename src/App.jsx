@@ -11,6 +11,7 @@ import PropertyListing from "./components/Admin-Dashboard/PropertyListing";
 import RenterPaymentRecords from "./components/Admin-Dashboard/RenterPaymentRecords";
 import SearchRenter from "./components/Admin-Dashboard/SearchRenter";
 import TotalRentCollected from "./components/Admin-Dashboard/TotolRentCollected";
+import Login from "./pages/Login"
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,6 +28,7 @@ const App = () => {
       <Dashboard onClose={handleClose} open={isOpen} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/add-renter" element={<AddRenter />} />
         <Route path="/renter-details" element={<RenterDetails />} />
         <Route path="/property-listing" element={<PropertyListing />} />
@@ -41,6 +43,7 @@ const App = () => {
       <Footer />
     </>
   );
-};
+}
+
 
 export default App;

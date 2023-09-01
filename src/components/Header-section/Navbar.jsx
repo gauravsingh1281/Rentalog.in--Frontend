@@ -2,6 +2,7 @@ import logo from "../../assets/Images/logo.png";
 import { FiUser } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import MenuIcon from "../../assets/Icons/menu-icon.png";
 
 const Navbar = ({ click }) => {
   return (
@@ -46,6 +47,7 @@ const Navbar = ({ click }) => {
             Register
           </li>
         </ul>
+        <img className="menu-icon md:hidden" src={MenuIcon} alt="Menu-icon" />
       </nav>
     </>
   );

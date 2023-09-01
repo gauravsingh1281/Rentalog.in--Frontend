@@ -5,9 +5,7 @@
 }
 
 .aboutUs-section .row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   gap: 68px;
   margin-top: 16px;
 }
@@ -25,6 +23,16 @@
 
 .aboutUs-section .row .paragraph {
   max-width: 550px;
-  text-align: start;
+  text-align: justify;
+  padding: 8px;
   line-height: 28.38px;
+}
+
+@media (max-width:768px) {
+  .aboutUs-section .row .paragraph {
+    max-width: 550px;
+    text-align: justify;
+    padding: 12px;
+    line-height: 28.38px;
+  }
 }
