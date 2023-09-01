@@ -55,7 +55,10 @@ const Dashboard = ({ open, onClose }) => {
                   className="flex justify-center items-center border border-gray-light h-[15rem] shadow-xl rounded text-center text-[1.5em]  md:flex   md:w-[25%] mb-5 md:mb-0"
                 >
                   <h3
-                    onClick={() => navigate(item.link)}
+                    onClick={() => {
+                      navigate(item.link);
+                      onClose();
+                    }}
                     className="text-blue cursor-pointer"
                   >
                     {item.title}

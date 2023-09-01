@@ -1,9 +1,9 @@
 import React from "react";
 
-const AddRenter = () => {
+const PropertyListing = () => {
   return (
     <>
-      <h1 className="text-3xl text-center mb-5">Add Renter</h1>
+      <h1 className="text-3xl text-center mb-5">Property Listing</h1>
       <p className="p-5">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
         perferendis, autem eveniet ea odit repellat sint sequi, molestias
@@ -16,4 +16,4 @@ const AddRenter = () => {
   );
 };
 
-export default AddRenter;
+export default PropertyListing;
