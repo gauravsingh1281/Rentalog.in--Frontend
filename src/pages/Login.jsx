@@ -34,12 +34,16 @@ export default function Login() {
             </Link>
 
             <div className="">
+
+              <Link to='/Dashboard'>
               <button
                 type="submit"
                 className="bg-primaryGreen w-full py-1.5 rounded-md text-textWhite mt-2"
               >
                 Log in
               </button>
+              </Link>
+              
             </div>
             <div className="flex flex-col md:flex-row items-center space-x-2">
               <button

@@ -33,20 +33,14 @@ const OVERLAY_STYLES = {
   overflow: "hidden",
 };
 
-const Dashboard = ({ open, onClose }) => {
+const Dashboard = () => {
   const navigate = useNavigate();
 
-  if (!open) return null;
-  return ReactDom.createPortal(
+  return (
     <>
-      <article style={OVERLAY_STYLES}>
-        <section style={DASBOARD_STYLES}>
-          <div
-            className="flex justify-end text-2xl cursor-pointer"
-            onClick={onClose}
-          >
-            X
-          </div>
+      <article>
+        <section>
+          <div className="flex justify-end text-2xl cursor-pointer"></div>
           <div className="flex-col my-10 md:flex md:flex-row md:flex-wrap md:justify-between gap-5 mx-5 md:mx-10 gap-y-5">
             {dashboardItems.map((item) => {
               return (
@@ -57,7 +51,6 @@ const Dashboard = ({ open, onClose }) => {
                   <h3
                     onClick={() => {
                       navigate(item.link);
-                      onClose();
                     }}
                     className="text-blue cursor-pointer"
                   >
@@ -69,8 +62,7 @@ const Dashboard = ({ open, onClose }) => {
           </div>
         </section>
       </article>
-    </>,
-    document.getElementById("portal")
+    </>
   );
 };
 

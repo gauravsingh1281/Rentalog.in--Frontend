@@ -33,12 +33,7 @@ const Navbar = ({ click }) => {
               RENTALS
             </Link>
           </li>
-          <li
-            className="nav-links ml-3  p-3 outline outline-1 rounded  "
-            onClick={click}
-          >
-            DASHBOARD
-          </li>
+    
         </ul>
         <ul className="user-cta hidden md:flex">
           <Link to="/login">
