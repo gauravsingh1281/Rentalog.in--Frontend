@@ -36,6 +36,8 @@ const App = () => {
         <Route path="/search-renter" element={<SearchRenter />} />
         <Route path="/total-rent-collected" element={<TotalRentCollected />} />
       </Routes>
+
+      <Footer />
     </>
   );
 }
