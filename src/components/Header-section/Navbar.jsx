@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import MenuIcon from "../../assets/Icons/menu-icon.png";
 
-const Navbar = ({ click }) => {
+const Navbar = () => {
   return (
     <>
       <nav className="navbar flex justify-between items-center y-4 px-4 md:py-4 md:px-12">
@@ -12,12 +12,8 @@ const Navbar = ({ click }) => {
           <img src={logo} alt="Rentalog-logo" />
         </Link>
 
-        <ul className="hidden md:flex">
-          <li className="nav-links mr-5 p-3 ">
-            <Link to="/" smooth={true} duration={500}>
-              HOME
-            </Link>
-          </li>
+        <ul className="hidden md:flex font-semibold">
+         
           <li className="nav-links mr-5 p-3">
             <Link to="about" smooth={true} duration={500}>
               ABOUT
@@ -28,9 +24,9 @@ const Navbar = ({ click }) => {
               CONTACT
             </Link>
           </li>
-          <li className="nav-links  p-3">
-            <Link to="rentals" smooth={true} duration={500}>
-              RENTALS
+          <li className="nav-links mr-5 p-3 ">
+            <Link to="/" smooth={true} duration={500}>
+              HOME
             </Link>
           </li>
     

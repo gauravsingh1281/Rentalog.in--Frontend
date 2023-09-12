@@ -15,6 +15,10 @@
   color: #262626;
 }
 
+.navbarHome {
+  background-color: #262626;
+}
+
 .user-cta :last-child {
   justify-content: center;
   align-items: center;
