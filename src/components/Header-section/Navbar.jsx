@@ -4,20 +4,18 @@ import MenuIcon from "../../assets/Icons/menu-icon.png";
 import logo from "../../assets/Images/logo.png";
 const Navbar = () => {
   let isOpen= false;
-  let show ='';
   const Toggle = () =>{
     isOpen = !isOpen
-    isOpen ? show = "block" : show = "hidden" 
+    isOpen ? document.getElementById('nav').classList.remove('hidden') : document.getElementById('nav').classList.add('hidden')
   }
-  // document.getElementById(nav).classList.add(show);
   return (
     <>
       <nav className="navbar  flex-column md:flex-row justify-between items-center py-4 md:py-4 md:px-12">
-        <div className="md:inline md:w-auto w-screen flex-row ">
-        <img onClick={Toggle}  className="menu-icon md:hidden" src={MenuIcon} alt="Menu-icon" />
+        <div className="md:inline md:w-auto w-screen flex-row justify-between items-center">
+        <img onClick={Toggle}  className="menu-icon  md:hidden" src={MenuIcon} alt="Menu-icon" />
         <img className="logo" src={logo} alt="Rentalog-logo" />
         </div>
-        <ul id="nav" className="h-screen fixed z-10 top-0 w-screen p-20 bg-green md:p-1 md:z-auto md:h-auto md:static  md:flex">
+        <ul id="nav" className="h-screen hidden fixed z-10 top-0 w-screen p-20 bg-green md:p-1 md:z-auto md:h-auto md:static  md:flex">
         <img onClick={Toggle}  className="menu-icon md:hidden" src={MenuIcon} alt="Menu-icon" />
         <img className="logo md:hidden" src={logo} alt="Rentalog-logo" />
           <li className="nav-links mr-5 p-3 ">HOME</li>
