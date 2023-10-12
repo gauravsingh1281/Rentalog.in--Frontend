@@ -1,28 +1,125 @@
 import { FiUser } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import MenuIcon from "../../assets/Icons/menu-icon.png";
+import PersonIcon from "../../assets/Icons/icon-outline-person.png";
 import logo from "../../assets/Images/logo.png";
+import { useState } from "react";
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState("");
+
   return (
     <>
-      <nav className="navbar flex justify-between items-center py-4 px-4 md:py-4 md:px-12">
-        <img className="logo" src={logo} alt="Rentalog-logo" />
-        <ul className="hidden md:flex">
-          <li className="nav-links mr-5 p-3 ">HOME</li>
-          <li className="nav-links mr-5 p-3">ABOUT</li>
-          <li className="nav-links mr-5 p-3">CONTACT</li>
-          <li className="nav-links  p-3">RENTALS</li>
-        </ul>
-        <ul className="user-cta hidden md:flex">
-          <Link to="/login">
-            <li className="mr-5 p-2 md:p-3">Login</li>
-          </Link>
-          <li className=" p-2 md:p-3">
-            <FiUser className="mr-1" />
-            Register
-          </li>
-        </ul>
-        <img className="menu-icon md:hidden" src={MenuIcon} alt="Menu-icon" />
+      {showMenu && (
+        <div className="md:hidden overflow-hidden bg-[#1ABC9C] w-full h-[70%] absolute z-40 top-0 fixed flex justify-center items-center">
+          <button
+            onClick={() => {
+              setShowMenu("");
+            }}
+            className="absolute top-0 left-0"
+          >
+            <FiX className="m-2 text-white" />
+          </button>
+          <div>
+            <div className="px-4 bg-textWhite w-fit rounded-xl">
+              <img
+                className="self-start w-40 "
+                src={logo}
+                alt="Rentalog-logo"
+              />
+            </div>
+            <div className="mt-4 h-[1px] w-600 bg-[#F8F8F8] rounded-full"></div>
+
+            <ul className="flex flex-col gap-8 justify-center items-center mt-10">
+              <li className="text-white">HOME</li>
+              <li className="text-white">CONTACT</li>
+              <li className="text-white">ABOUT</li>
+            </ul>
+          </div>
+        </div>
+      )}
+
+      <nav className="bg-white fixed w-full z-20 top-0 left-0">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <div className="flex flex-row justify-center items-center">
+            <button
+              onClick={() => {
+                setShowMenu("show");
+              }}
+              type="button"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+              aria-controls="navbar-sticky"
+              aria-expanded="false"
+            >
+              <span className="sr-only">Open main menu</span>
+              <svg
+                className="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+
+            <img className="self-start w-40 " src={logo} alt="Rentalog-logo" />
+          </div>
+          <div className="flex md:order-2">
+            <Link to="/login">
+              <button
+                type="button"
+                className="hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0"
+              >
+                Login
+              </button>
+            </Link>
+            <button
+              type="button"
+              className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-1 text-center mr-3 md:mr-0 bg-textWhite"
+            >
+              <img className="h-6" src={PersonIcon} alt="not available" />
+              Sign In
+            </button>
+            <Link to="/login">
+              <button
+                type="button"
+                className="md:hidden flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-sm px-4 py-2 text-center bg-textWhite"
+              >
+                <img className="h-6" src={PersonIcon} alt="not available" />
+                Log In
+              </button>
+            </Link>
+          </div>
+          <div
+            className="hidden md:flex md:w-auto md:order-1"
+            id="navbar-sticky"
+          >
+            <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
+              <li>
+                <a href="#" aria-current="page">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-current="page">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-current="page">
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </>
   );
