@@ -10,7 +10,7 @@ const Contact = () => {
         </h1>
       </header>
       <main>
-        <p className={"px-5 lg:px-20 text-base lg:text-xl font-medium tracking-wider leading-10"}>
+        <div className={"px-5 lg:px-20 text-base lg:text-xl font-medium tracking-wider leading-10"}>
           <div className="mb-10">
             Hey there ! We love to hear from our Rentalog users ! Whether
             you&apos;re looking for answers to your burning questions, or simply
@@ -52,7 +52,7 @@ const Contact = () => {
             <br />
             The Rentalog Team
           </div>
-        </p>
+        </div>
       </main>
 
       <ContactForm />
