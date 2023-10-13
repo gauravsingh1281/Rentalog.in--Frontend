@@ -15,9 +15,9 @@ const ContactForm = () => {
             className="flex gap-x-12 justify-center md:justify-start"
             style={{ height: "min-content", alignItems: "baseline" }}
           >
-            <img src={Github} alt="Github-logo" className="h-14" />
-            <img src={Insta} alt="Insta-logo" className="h-14" />
-            <img src={Twitter} alt="Twitter-logo" className="h-14" />
+            <a href="https://twitter.com/gauravsingh1281"><img src={Twitter} alt="Twitter-logo" className="h-14" /></a>
+            <a href="https://github.com/gauravsingh1281"><img src={Github} alt="Github-logo" className="h-14" /></a>
+            <a href="https://www.instagram.com/gauravsingh1281"><img src={Insta} alt="Insta-logo" className="h-14" /></a>
           </div>
         </article>
         {/* Right hand side of the form */}
