@@ -2,15 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
 
-export default function Login() {
+export default function Registration() {
   const [form, setForm] = useState({
+    name: "",
     email: "",
     password: "",
+    confirm_password: "",
   });
-
-  const handleChange = (e) => {
+  const handlechange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -23,65 +25,82 @@ export default function Login() {
           <TitleCard />
 
           <form onSubmit={handleSubmit} className="mx-8 mt-5 space-y-6">
-            <Input title="Email" value={form.email} onInput={handleChange} />
+            <Input
+              title="Name"
+              name="name"
+              value={form.name}
+              onChange={handlechange}
+            />
+            <Input
+              title="Email address"
+              name="email"
+              value={form.email}
+              onChange={handlechange}
+            />
             <Input
               title="Password"
+              name="password"
               value={form.password}
-              onInput={handleChange}
+              onChange={handlechange}
             />
-            <Link to="#" className="float-right text-green hover:underline">
-              Forget Password?
-            </Link>
+            <Input
+              title="Confirm password"
+              name="confirm_password"
+              value={form.confirm_password}
+              onChange={handlechange}
+            />
 
             <div className="">
               <button
                 type="submit"
                 className="bg-primaryGreen w-full py-1.5 rounded-md text-textWhite mt-2"
               >
-                Log in
+                Register
               </button>
             </div>
+
             <div className="flex flex-col md:flex-row items-center space-x-2">
-              <button
-                type="button"
-                className="border border-[#dedede] w-full py-1.5 rounded-md text-black mt-2 flex items-center justify-center px-2 h-10"
+              <Link
+                to="/login"
+                className="float-right text-green hover:underline"
               >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                  alt="Google logo"
-                  className="h-5"
-                />
-                <span className="ml-2 text-sm font-medium whitespace-nowrap">
-                  Continue with Google
-                </span>
-              </button>
+                Already have an account? Login
+              </Link>
+            </div>
+          </form>
+          <div className="flex flex-col md:flex-row items-center space-x-2">
+            <button
+              type="button"
+              className="border border-[#dedede] w-full py-1.5 rounded-md text-black mt-2 flex items-center justify-center px-2 h-10"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                alt="Google logo"
+                className="h-5"
+              />
+              <span className="ml-2 text-sm font-medium whitespace-nowrap">
+                Continue with Google
+              </span>
+            </button>
 
-              <div className="flex md:hidden gap-2 pt-[6px] px-4">
-                <p className="text-[#8a8a8a]">OR</p>
-              </div>
-
-              <button
-                type="button"
-                className="border border-[#dedede] w-full py-1.5 rounded-md text-black mt-2 flex items-center justify-center  px-2 h-10"
-              >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
-                  alt="Facebook logo"
-                  className="h-5"
-                />
-                <span className="ml-2 text-sm font-medium whitespace-nowrap">
-                  Continue with Facebook
-                </span>
-              </button>
+            <div className="flex md:hidden gap-2 pt-[6px] px-4">
+              <p className="text-[#8a8a8a]">OR</p>
             </div>
 
-            <p className="text-center text-sm">
-              Don&rsquo;t have any account?{" "}
-              <Link to="#" className="font-medium text-primaryGreen">
-                Sign up
-              </Link>
-            </p>
-          </form>
+            <button
+              type="button"
+              className="border border-[#dedede] w-full py-1.5 rounded-md text-black mt-2 flex items-center justify-center  px-2 h-10"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+                alt="Facebook logo"
+                className="h-5"
+              />
+              <span className="ml-2 text-sm font-medium whitespace-nowrap">
+                Continue with Facebook
+              </span>
+            </button>
+          </div>
         </div>
 
         <div className="hidden lg:flex flex-col justify-center bg-primaryGreen/20 w-[50%] xl:justify-start xl:h-full py-[80px]">
@@ -91,7 +110,7 @@ export default function Login() {
             </h2>
 
             <p className="mt-2">
-              Enter your credentials to access your account
+              Create a new account to access all the features of our website
             </p>
           </div>
           <img src="undraw_for_sale_re_egkk.svg" alt="" className="m-10" />
@@ -115,11 +134,11 @@ const TitleCard = () => {
   return (
     <div className="">
       <h2 className="mt-16 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900">
-        Welcome back
+        Welcome to Rentalog
       </h2>
 
       <p className="text-center text-sm mt-1">
-        Welcome back!Please enter your details
+        Create a new account to access all the features of our website
       </p>
     </div>
   );

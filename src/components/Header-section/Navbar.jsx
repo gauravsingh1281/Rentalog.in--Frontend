@@ -1,8 +1,6 @@
 import { FiUser } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import MenuIcon from "../../assets/Icons/menu-icon.png";
-import PersonIcon from "../../assets/Icons/icon-outline-person.png";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
 
@@ -44,7 +42,7 @@ const Navbar = () => {
               />
             </div>
 
-            <div className="mt-4 h-[1px] w-600 bg-[#F8F8F8] rounded-full"></div>
+            <div className="mt-4 h-[2px] w-600 bg-textWhite rounded-full"></div>
 
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
               <div className="text-textWhite">HOME</div>
@@ -57,10 +55,24 @@ const Navbar = () => {
                     type="button"
                     className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite"
                   >
-                    <img className="h-6" src={PersonIcon} alt="not available" />
+                    <FiUser className="text-2xl"/>
                     Log In
                   </button>
                 </Link>
+              </div>
+
+              <div className="mt-4 h-[2px] w-600 self-stretch bg-textWhite rounded-full"></div>
+
+              <div className="text-gray-dark">
+              <Link to="/register">
+            <button
+              type="button"
+              className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite -mt-4"
+            >
+              <FiUser className="text-2xl"/>
+              Register
+            </button>
+            </Link>
               </div>
             </div>
           </div>
@@ -89,13 +101,15 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
+            <Link to="/register">
             <button
               type="button"
-              className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-1 text-center mr-3 md:mr-0 bg-textWhite"
+              className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0 bg-textWhite"
             >
-              <img className="h-6" src={PersonIcon} alt="not available" />
-              Sign In
+              <FiUser className="text-2xl"/>
+              Register
             </button>
+            </Link>
           </div>
           <div
             className="hidden md:flex md:w-auto md:order-1"
