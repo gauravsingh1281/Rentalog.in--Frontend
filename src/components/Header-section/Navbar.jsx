@@ -6,33 +6,22 @@ import PersonIcon from "../../assets/Icons/icon-outline-person.png";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
 
-
-
-
-
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
 
-
-
   useEffect(() => {
     const scrollHandler = () => {
-        setDoBlure(window.pageYOffset <= 30)
+      setDoBlure(window.pageYOffset <= 30);
     };
-    window.addEventListener('scroll', scrollHandler);
-    
-    scrollHandler(); 
-    
+    window.addEventListener("scroll", scrollHandler);
+
+    scrollHandler();
+
     return () => {
-        window.removeEventListener('scroll', scrollHandler);
-    }
-}, []);
-
-
-  
-
-
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
 
   return (
     <>
@@ -54,49 +43,41 @@ const Navbar = () => {
                 alt="Rentalog-logo"
               />
             </div>
+
             <div className="mt-4 h-[1px] w-600 bg-[#F8F8F8] rounded-full"></div>
 
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
               <div className="text-textWhite">HOME</div>
               <div className="text-textWhite">CONTACT</div>
               <div className="text-textWhite">ABOUT</div>
+              <div className="text-textWhite">RENTALS</div>
+              <div className="text-gray-dark">
+                <Link to="/login">
+                  <button
+                    type="button"
+                    className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite"
+                  >
+                    <img className="h-6" src={PersonIcon} alt="not available" />
+                    Log In
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       )}
 
-      <nav className='bg-white fixed w-full z-20 top-0 left-0'>
-        <div className={doBlure?`absolute w-full h-full -z-20 bg-gray-light opacity-0`:`absolute w-full h-full -z-20 bg-gray-light opacity-80`}></div>
+      <nav className="bg-white fixed w-full z-20 top-0 left-0">
+        <div
+          className={
+            doBlure
+              ? `absolute w-full h-full -z-20 bg-gray-light opacity-0`
+              : `absolute w-full h-full -z-20 bg-gray-light opacity-80`
+          }
+        ></div>
 
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex flex-row justify-center items-center">
-            <button
-              onClick={() => {
-                setShowMenu("show");
-              }}
-              type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
-              aria-controls="navbar-sticky"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
-            </button>
-
             <img className="self-start w-40 " src={logo} alt="Rentalog-logo" />
           </div>
           <div className="flex md:order-2">
@@ -115,15 +96,6 @@ const Navbar = () => {
               <img className="h-6" src={PersonIcon} alt="not available" />
               Sign In
             </button>
-            <Link to="/login">
-              <button
-                type="button"
-                className="md:hidden flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-sm px-4 py-2 text-center bg-textWhite"
-              >
-                <img className="h-6" src={PersonIcon} alt="not available" />
-                Log In
-              </button>
-            </Link>
           </div>
           <div
             className="hidden md:flex md:w-auto md:order-1"
@@ -132,21 +104,53 @@ const Navbar = () => {
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li>
                 <a href="#" aria-current="page">
-                  Home
+                  HOME
                 </a>
               </li>
               <li>
                 <a href="#" aria-current="page">
-                  Contact
+                  ABOUT
                 </a>
               </li>
               <li>
                 <a href="#" aria-current="page">
-                  About
+                  CONTACT
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-current="page">
+                  RENTALS
                 </a>
               </li>
             </ul>
           </div>
+
+          <button
+            onClick={() => {
+              setShowMenu("show");
+            }}
+            type="button"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
         </div>
       </nav>
     </>
