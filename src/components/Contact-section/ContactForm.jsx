@@ -15,9 +15,9 @@ const ContactForm = () => {
             className="flex gap-x-12 justify-center md:justify-start"
             style={{ height: "min-content", alignItems: "baseline" }}
           >
-            <img src={Github} alt="Github-logo" className="h-14" />
-            <img src={Insta} alt="Insta-logo" className="h-14" />
-            <img src={Twitter} alt="Twitter-logo" className="h-14" />
+            <a href="https://twitter.com/gauravsingh1281"><img src={Twitter} alt="Twitter-logo" className="h-14" /></a>
+            <a href="https://github.com/gauravsingh1281"><img src={Github} alt="Github-logo" className="h-14" /></a>
+            <a href="https://www.instagram.com/gauravsingh1281"><img src={Insta} alt="Insta-logo" className="h-14" /></a>
           </div>
         </article>
         {/* Right hand side of the form */}
@@ -25,11 +25,12 @@ const ContactForm = () => {
           <form className="gap-x-5 w-full">
             <div className="flex flex-col md:flex-row mb-6 justify-between">
               <input
-                className="bg-green rounded-lg text-black h-16 md:w-5/12 mb-6 md:mb-0 placeholder-textBlack p-2"
+                className="bg-green rounded-lg text-black h-16 md:w-6/12 mb-6 md:mb-0 placeholder-textBlack p-2"
                 placeholder="First name"
+                style={{marginRight: "5px"}}
               />
               <input
-                className="bg-green rounded-lg h-16 md:w-5/12  text-black  placeholder-textBlack p-2"
+                className="bg-green rounded-lg h-16 md:w-6/12  text-black  placeholder-textBlack p-2"
                 placeholder="Last name"
               />
             </div>

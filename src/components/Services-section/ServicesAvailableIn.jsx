@@ -11,6 +11,6 @@ const ServicesAvailableIn = (props) => {
 
 ServicesAvailableIn.propTypes = {
     placeName: PropTypes.string.isRequired,
-    placeImage: PropTypes.object.isRequired
+    placeImage: PropTypes.string.isRequired
 };
 export default ServicesAvailableIn;

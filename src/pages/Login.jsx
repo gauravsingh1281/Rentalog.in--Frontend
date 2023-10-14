@@ -23,11 +23,11 @@ export default function Login() {
           <TitleCard />
 
           <form onSubmit={handleSubmit} className="mx-8 mt-5 space-y-6">
-            <Input title="Email" value={form.email} onChnage={handleChange} />
+            <Input title="Email" value={form.email} onInput={handleChange} />
             <Input
               title="Password"
               value={form.password}
-              onChnage={handleChange}
+              onInput={handleChange}
             />
             <Link to="#" className="float-right text-green hover:underline">
               Forget Password?
