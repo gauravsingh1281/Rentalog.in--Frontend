@@ -1,76 +1,83 @@
 # Rentalog - Rent Management Web App For Landlords
-<p>Rentalog is a web application that makes it easy for landlords to manage their rental properties. With Rentalog, landlords can keep track of important information about their renters, including their names, addresses, and rental payment history. This information is stored in a secure and organized manner, so landlords can access it whenever they need to. In addition to keeping track of renters' information, Rentalog also makes it easy for landlords to collect and track monthly rent payments. This way, landlords always know exactly how much money they're earning from their properties and can make informed decisions about their business. Using Rentalog is simple and straightforward. All of the information is organized in a user-friendly interface, so landlords can access what they need quickly and easily. And, if they ever have questions or need help, they can reach out to Rentalog's dedicated support team for assistance. Overall, Rentalog is a convenient and efficient tool for landlords who want to keep their rental business organized and running smoothly.</p>
-<h2>Features</h2>
-<ul>
-  <li><strong>Tenant management:</strong> Keep track of important information about your renters, such as their names, addresses, and rental payment history.</li>
-  <li><strong>Rent collection:</strong> Collect and track monthly rent payments easily.</li>
-  <li><strong>Rent calculations:</strong> Automatically calculate the total rent received each month and see a breakdown of payments.</li>
-  <li><strong>Property listing:</strong> Showcase your rental properties and attract potential tenants by listing them on Rentalog.</li>
-  <li><strong>User-friendly interface:</strong> Easy to use and navigate.</li>
-  <li><strong>Dedicated support team:</strong> Available to help landlords with any questions or problems they may have.</li>
-</ul>
-<h2>Current Version Tech stack</h2>
-<p>Rentalog is built using the following technologies:</p>
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>Bootstrap</li>
-<li>Node.js</li>
-<li>Express.js</li>
-<li>Embedded JavaScript (EJS)</li>
-<li>MongoDB</li> 
-<li>Mongoose</li>
-<li>Passport.js</li>
-</ul>
-<h2>Now we want contributions on the migration of the Rentalog's tech stack to React js and Next js</h2>
-<p>The migration to React.js and Next.js offers several advantages for Rentalog:</p>
-<ul>
-  <li><strong>Performance Boost:</strong> React.js enables efficient rendering and updates, resulting in a snappier and more responsive user interface.</li>
-  <li><strong>Enhanced User Experience:</strong> With React.js, we can build interactive components that provide a seamless and engaging experience for our users.</li>
-  <li><strong>Code Maintainability:</strong> React.js promotes a component-based architecture, making the codebase modular, reusable, and easier to maintain.</li>
-  <li><strong>Server-side Rendering:</strong> Next.js introduces server-side rendering, leading to faster initial page loads and improved search engine optimization (SEO).</li>
-  <li><strong>Scalable State Management:</strong> React.js, combined with libraries like Redux or React Context, provides efficient state management for handling complex application states</li>
-  <li><strong>Rich Ecosystem:</strong> Migrating to React.js and Next.js opens up a vast ecosystem of tools, libraries, and community support for future development and enhancements.
-  </li>
-</ul>
-<h2>How to Contribute</h2>
-<p>We welcome contributions from the open-source community to help with the migration of Rentalog's tech stack to React.js and Next.js. Here's how you can contribute:</p>
-<ol>
-  <li>Fork the repository by clicking the "Fork" button in the upper right corner of this page.</li>
-  <li>Clone your forked repository to your local machine:<br>
-    <code>git clone https://github.com/gauravsingh1281/Rentalog-Rent-Management-Web-App-For-Landlords.git</code>
-  </li>
-  <li>Install project dependencies:<br>
-    <code>npm install
-</code>
-  </li>
-  <li>Create a new branch for your contribution:<br>
-    <code>git checkout -b your branch name 
-</code>
-  </li>
-  <li>Begin migrating components and features to React.js and Next.js, adhering to best practices and code conventions.</li>
-  <li>Test your changes locally to ensure they function correctly.</li>
-  <li>Commit your changes with descriptive commit messages:<br>
-    <code>git commit -m "Commit message"</code>
-  </li>
-  <li>Push your changes to your forked repository:<br>
-    <code>git push origin your branch name</code>
-  </li>
-  <li>Open a pull request to the <strong>main</strong> branch of this repository.</li>
-  <li>If you find any bugs or have any suggestions, please open an issue on GitHub and provide detailed information about the bug or suggestion.</li>
-</ol>
-<p>Once your pull request is submitted, it will be reviewed by the project maintainers. Feedback and suggestions for further improvements may be provided. Thank you for contributing to the migration of Rentalog's tech stack to React.js and Next.js!</p>
-<h2>Inspiration Links</h2>
-<ul>
-  <li><strong>Figma Design:</strong> Explore the Figma design for the new version of Rentalog <a href="https://www.figma.com/file/9WhtUQT7s5ogTiDTp90PxI/RENTALOG-WEB-DESIGN?type=design&node-id=0-1&mode=design&t=ZNeyPXk16TlWB6I6-0">here</a>.</li>
-  <li><strong>Current Tech Stack:</strong> If you're interested in exploring the current tech stack used in the older version of Rentalog, you can visit the <a href="https://rentalog-web-app.azurewebsites.net/">Rentalog.in</a> and use its functionality as a reference while migrating to React.js and Next.js.<br>
-  <p>Rentalog Demo Account Credentials</p>
-  <ul type="square">
-    <li>Username - demo@rentalog.in</li>
-    <li>Password - @1a2b3c4d5E</li>
-  </ul>
-  </li>
-</ul>
-<h2>License</h2>
-<p>Rentalog is released under the <strong>MIT License</strong>. By contributing to this project, you agree to provide your contributions under the same license.</p>
+
+Rentalog is a powerful web application designed to simplify rental property management for landlords. Keep track of crucial tenant information, streamline rent collection, and gain valuable insights into your rental business. With an intuitive user interface and a dedicated support team, Rentalog is your all-in-one solution for efficient property management.
+
+---
+
+## Features
+- **Tenant Management:** Track essential tenant information, including names, addresses, and rental payment history.
+- **Rent Collection:** Easily collect and monitor monthly rent payments.
+- **Rent Calculations:** Automatically calculate total monthly rent and view payment breakdowns.
+- **Property Listing:** Showcase your rental properties to attract potential tenants.
+- **User-friendly Interface:** Navigate and use Rentalog effortlessly.
+- **Dedicated Support Team:** Get assistance from our support team whenever needed.
+
+---
+
+## Current Version Tech Stack
+Rentalog is built using the following technologies:
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- Node.js
+- Express.js
+- Embedded JavaScript (EJS)
+- MongoDB
+- Mongoose
+- Passport.js
+
+---
+
+## 🚀 Now we want contributions on the migration of the Rentalog's tech stack to React.js and Next.js
+
+The migration to React.js and Next.js offers several advantages for Rentalog:
+
+- **Performance Boost:** React.js enables efficient rendering and updates, resulting in a snappier and more responsive user interface.
+- **Enhanced User Experience:** Build interactive components for a seamless and engaging user experience.
+- **Code Maintainability:** React.js promotes a component-based architecture, making the codebase modular, reusable, and easier to maintain.
+- **Server-side Rendering:** Next.js introduces server-side rendering for faster initial page loads and improved SEO.
+- **Scalable State Management:** Efficient state management for handling complex application states.
+- **Rich Ecosystem:** Access a vast ecosystem of tools, libraries, and community support for future development.
+
+---
+
+## How to Contribute 🤝
+We welcome contributions to help migrate Rentalog's tech stack to React.js and Next.js. Here's how you can contribute:
+
+1. **Fork the repository:** Click the "Fork" button in the upper right corner.
+2. **Clone your forked repository:** `git clone https://github.com/gauravsingh1281/Rentalog-Rent-Management-Web-App-For-Landlords.git`
+3. **Install project dependencies:** `npm install`
+4. **Create a new branch:** `git checkout -b your-branch-name`
+5. **Migrate components to React.js and Next.js:** Adhere to best practices and code conventions.
+6. **Test locally:** Ensure changes function correctly.
+7. **Commit changes:** `git commit -m "Descriptive commit message"`
+8. **Push changes to your fork:** `git push origin your-branch-name`
+9. **Open a pull request:** Submit to the `main` branch of this repository.
+10. **Bug reporting/suggestions:** Open issues on GitHub with detailed information.
+
+Once submitted, your pull request will be reviewed by project maintainers. Feedback may be provided for further improvements. Thank you for contributing to Rentalog's tech stack migration!
+
+---
+
+### Thanks to these wonderful Contributors 🌻
+![Contributors](https://contrib.rocks/image?repo=gauravsingh1281/Rentalog-Rent-Management-Web-App-For-Landlords&lastUpdate=37676)
+
+---
+
+## Inspiration Links 🌟
+- **Figma Design:** Explore the [Figma design](https://www.figma.com/file/9WhtUQT7s5ogTiDTp90PxI/RENTALOG-WEB-DESIGN?type=design&node-id=0-1&mode=design&t=ZNeyPXk16TlWB6I6-0) for the new version of Rentalog.
+- **Current Tech Stack:** Explore the current tech stack used in the older version of Rentalog at [Rentalog.in](https://rentalog-web-app.azurewebsites.net/). Use its functionality as a reference while migrating to React.js and Next.js.
+
+**Rentalog Demo Account Credentials:**
+- Username: demo@rentalog.in
+- Password: @1a2b3c4d5E
+
+---
+
+## License 📄
+Rentalog is released under the **MIT License**. By contributing to this project, you agree to provide your contributions under the same license.
+
+---
+
+Feel free to customize the formatting and content based on your preferences. This readme provides a more organized and visually appealing structure with a dedicated section for contributors.
