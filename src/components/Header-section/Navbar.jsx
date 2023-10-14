@@ -17,10 +17,13 @@ const Navbar = () => {
           <Link to="/login">
             <li className="mr-5 p-2 md:p-3">Login</li>
           </Link>
-          <li className=" p-2 md:p-3">
-            <FiUser className="mr-1" />
-            Register
-          </li>
+          <Link to={"/register"}>
+            {" "}
+            <li className=" p-2 md:p-3">
+              <FiUser className="mr-1" />
+              Register
+            </li>
+          </Link>
         </ul>
         <img className="menu-icon md:hidden" src={MenuIcon} alt="Menu-icon" />
       </nav>
