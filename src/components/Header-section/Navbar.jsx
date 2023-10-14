@@ -4,9 +4,35 @@ import { Link } from "react-router-dom";
 import MenuIcon from "../../assets/Icons/menu-icon.png";
 import PersonIcon from "../../assets/Icons/icon-outline-person.png";
 import logo from "../../assets/Images/logo.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+
+
+
+
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
+  const [doBlure, setDoBlure] = useState(false);
+
+
+
+  useEffect(() => {
+    const scrollHandler = () => {
+        setDoBlure(window.pageYOffset <= 30)
+    };
+    window.addEventListener('scroll', scrollHandler);
+    
+    scrollHandler(); 
+    
+    return () => {
+        window.removeEventListener('scroll', scrollHandler);
+    }
+}, []);
+
+
+  
+
+
 
   return (
     <>
@@ -16,11 +42,11 @@ const Navbar = () => {
             onClick={() => {
               setShowMenu("");
             }}
-            className="absolute top-0 left-0"
+            className="absolute top-0 left-0 m-[1.5rem]"
           >
-            <FiX className="m-2 text-white" />
+            <FiX className="m-2 text-textWhite" />
           </button>
-          <div>
+          <div className="text-textWhite">
             <div className="px-4 bg-textWhite w-fit rounded-xl">
               <img
                 className="self-start w-40 "
@@ -30,16 +56,18 @@ const Navbar = () => {
             </div>
             <div className="mt-4 h-[1px] w-600 bg-[#F8F8F8] rounded-full"></div>
 
-            <ul className="flex flex-col gap-8 justify-center items-center mt-10">
-              <li className="text-white">HOME</li>
-              <li className="text-white">CONTACT</li>
-              <li className="text-white">ABOUT</li>
-            </ul>
+            <div className="flex flex-col gap-8 justify-center items-center mt-10">
+              <div className="text-textWhite">HOME</div>
+              <div className="text-textWhite">CONTACT</div>
+              <div className="text-textWhite">ABOUT</div>
+            </div>
           </div>
         </div>
       )}
 
-      <nav className="bg-white fixed w-full z-20 top-0 left-0">
+      <nav className='bg-white fixed w-full z-20 top-0 left-0'>
+        <div className={doBlure?`absolute w-full h-full -z-20 bg-gray-light opacity-0`:`absolute w-full h-full -z-20 bg-gray-light opacity-80`}></div>
+
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex flex-row justify-center items-center">
             <button
