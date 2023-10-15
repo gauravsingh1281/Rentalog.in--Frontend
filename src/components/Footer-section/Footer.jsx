@@ -1,6 +1,7 @@
 import logo from "../../assets/Images/logo.png";
 import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
-
+let date=new Date();
+let year=date.getFullYear();
 const Footer = () => {
   return (
     <footer>
@@ -49,7 +50,7 @@ const Footer = () => {
       </div>
       <div>
         <p className="bg-black text-textWhite text-center py-2">
-          © <span>{new Date().getFullYear()}</span> || All Rights Reserved ||
+          © <span>{year}</span> || All Rights Reserved ||
           The Virtual World Maker
         </p>
       </div>
