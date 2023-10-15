@@ -41,7 +41,7 @@
   position: relative;
   top: 23%;
   left: 4%;
-  width: 68%;
+  width: 56%;
 }
 
 .btn {
@@ -65,6 +65,8 @@
     background-size: cover;
     position: relative;
   }
+
+  
 
   .header-text {
     position: relative;
@@ -130,3 +132,4 @@
     background: #1abc9c;
   }
 }
+
