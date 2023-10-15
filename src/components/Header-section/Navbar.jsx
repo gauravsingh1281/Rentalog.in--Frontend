@@ -23,28 +23,6 @@ const Navbar = () => {
 
   return (
     <>
-<<<<<<< HEAD
-      <nav className="navbar flex justify-between items-center py-4 px-4 md:py-4 md:px-12">
-        <img className="logo" src={logo} alt="Rentalog-logo" />
-        <ul className="hidden md:flex">
-          <a href="/"><li className="nav-links mr-5 p-3 ">HOME</li></a>
-          <a href="#AboutUs"><li className="nav-links mr-5 p-3">ABOUT</li></a>
-          <a href="#ContactUs"><li className="nav-links mr-5 p-3">CONTACT</li></a>
-          <a href="#Service"><li className="nav-links  p-3">RENTALS</li></a>
-        </ul>
-        <ul className="user-cta hidden md:flex">
-          <Link to="/login">
-            <li className="mr-5 p-2 md:p-3">Login</li>
-          </Link>
-          <Link to="#">
-          <li className=" p-2 md:p-3">
-            <FiUser className="mr-1" />
-            Register
-          </li>
-          </Link>
-        </ul>
-        <img className="menu-icon md:hidden" src={MenuIcon} alt="Menu-icon" />
-=======
       {showMenu && (
         <div className="md:hidden overflow-hidden bg-[#1ABC9C] w-full h-[70%] absolute z-40 top-0 fixed flex justify-center items-center">
           <button
@@ -67,10 +45,10 @@ const Navbar = () => {
             <div className="mt-4 h-[2px] w-600 bg-textWhite rounded-full"></div>
 
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
-              <div className="text-textWhite">HOME</div>
-              <div className="text-textWhite">CONTACT</div>
-              <div className="text-textWhite">ABOUT</div>
-              <div className="text-textWhite">RENTALS</div>
+              <a href="/" aria-current="page"><div className="text-textWhite">HOME</div></a>
+              <a href="#AboutUs" aria-current="page"><div className="text-textWhite">ABOUT</div></a>
+              <a href="#ContactUs" aria-current="page"><div className="text-textWhite">CONTACT</div></a>
+              <a href="#Service" aria-current="page"><div className="text-textWhite">RENTALS</div></a>
               <div className="text-gray-dark">
                 <Link to="/login">
                   <button
@@ -139,22 +117,22 @@ const Navbar = () => {
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li>
-                <a href="#" aria-current="page">
+                <a href="/" aria-current="page">
                   HOME
                 </a>
               </li>
               <li>
-                <a href="#" aria-current="page">
+                <a href="#AboutUs" aria-current="page">
                   ABOUT
                 </a>
               </li>
               <li>
-                <a href="#" aria-current="page">
+                <a href="#ContactUs" aria-current="page">
                   CONTACT
                 </a>
               </li>
               <li>
-                <a href="#" aria-current="page">
+                <a href="#Service" aria-current="page">
                   RENTALS
                 </a>
               </li>
@@ -188,7 +166,6 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
->>>>>>> 9b2727ca952f72f759383abf021c0cb4371d184e
       </nav>
     </>
   );
