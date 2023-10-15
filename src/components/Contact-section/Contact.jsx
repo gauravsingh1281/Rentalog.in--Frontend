@@ -4,7 +4,7 @@ import GoogleMap from './GoogleMap';
 const Contact = () => {
   return (
     <>
-      <header className="flex justify-center align-middle my-20">
+      <header id="ContactUs" className="flex justify-center align-middle my-20">
         <h1 className="text-5xl font-bold tracking-wider text-text-black font-monsterrat">
           Contact Us
         </h1>

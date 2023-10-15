@@ -5,7 +5,7 @@ import placeName from "./placeName";
 const Services = () => {
   return (
     <>
-      <h1 className=" text-4xl md:text-5xl font-semibold text-[#312F2F] text-center pt-10">
+      <h1 id="Service" className=" text-4xl md:text-5xl font-semibold text-[#312F2F] text-center pt-10">
         Our Services Includes
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 md:mx-36 sm:mx-24 mx-16">

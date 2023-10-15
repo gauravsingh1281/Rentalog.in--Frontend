@@ -45,10 +45,10 @@ const Navbar = () => {
             <div className="mt-4 h-[2px] w-600 bg-textWhite rounded-full"></div>
 
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
-              <div className="text-textWhite">HOME</div>
-              <div className="text-textWhite">CONTACT</div>
-              <div className="text-textWhite">ABOUT</div>
-              <div className="text-textWhite">RENTALS</div>
+              <a href="/" aria-current="page"><div className="text-textWhite">HOME</div></a>
+              <a href="#AboutUs" aria-current="page"><div className="text-textWhite">ABOUT</div></a>
+              <a href="#ContactUs" aria-current="page"><div className="text-textWhite">CONTACT</div></a>
+              <a href="#Service" aria-current="page"><div className="text-textWhite">RENTALS</div></a>
               <div className="text-gray-dark">
                 <Link to="/login">
                   <button
@@ -117,22 +117,22 @@ const Navbar = () => {
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li>
-                <a href="#" aria-current="page">
+                <a href="/" aria-current="page">
                   HOME
                 </a>
               </li>
               <li>
-                <a href="#" aria-current="page">
+                <a href="#AboutUs" aria-current="page">
                   ABOUT
                 </a>
               </li>
               <li>
-                <a href="#" aria-current="page">
+                <a href="#ContactUs" aria-current="page">
                   CONTACT
                 </a>
               </li>
               <li>
-                <a href="#" aria-current="page">
+                <a href="#Service" aria-current="page">
                   RENTALS
                 </a>
               </li>
