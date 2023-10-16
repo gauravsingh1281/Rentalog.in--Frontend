@@ -8,7 +8,7 @@ const Services = () => {
       <h1 className=" text-4xl md:text-5xl font-semibold text-[#312F2F] text-center pt-10">
         Our Services Includes
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 md:mx-36 sm:mx-24 mx-16 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 md:mx-36 sm:mx-24 mx-16">
         {
           ourServices.map(({ id, bgColor, title, description, icon, alt }) => {
             return <ServicesCard title={title} key={id} bgColor={bgColor} icon={icon} alt={alt} description={description} />
