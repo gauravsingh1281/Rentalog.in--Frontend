@@ -15,7 +15,7 @@
 <li>HTML</li>
 <li>CSS</li>
 <li>JavaScript</li>
-<li>Bootstrap</li>
+<li>Tailwind CSS</li>
 <li>Node.js</li>
 <li>Express.js</li>
 <li>Embedded JavaScript (EJS)</li>
