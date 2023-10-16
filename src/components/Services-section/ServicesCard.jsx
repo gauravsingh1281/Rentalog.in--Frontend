@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 const ServicesCard = (props) => {
     return (
-        <div className={props.bgColor + " rounded-xl"} >
-            <div className="flex gap-4 p-8">
+        <div className={props.bgColor + " rounded-xl cursor-pointer hover:scale-105 hover:shadow-lg transition duration-300"} >
+            <div className="flex gap-4 p-8 ">
                 <img
                     className="w-10 h-10 mt-1.5"
                     src={props.icon}
