@@ -25,24 +25,24 @@ const ContactForm = () => {
           <form className="gap-x-5 w-full">
             <div className="flex flex-col md:flex-row mb-6 justify-between">
               <input
-                className="bg-green rounded-lg text-black h-16 md:w-6/12 mb-6 md:mb-0 placeholder-textBlack p-2"
+                className="border-2 border-green rounded-lg text-green-dark h-16 md:w-6/12 mb-6 md:mb-0 placeholder-textBlack p-2"
                 placeholder="First name"
                 style={{marginRight: "5px"}}
               />
               <input
-                className="bg-green rounded-lg h-16 md:w-6/12  text-black  placeholder-textBlack p-2"
+                className="border-2 border-green rounded-lg h-16 md:w-6/12 text-green-dark  placeholder-textBlack p-2"
                 placeholder="Last name"
               />
             </div>
             <div className="flex flex-col md:flex-row mb-6 justify-between">
               <input
-                className="bg-green rounded-lg h-16 w-full  text-black placeholder-textBlack p-2"
+                className="border-2 border-green rounded-lg h-16 w-full text-green-dark placeholder-textBlack p-2"
                 placeholder="Email"
               />
             </div>
 
             <textarea
-              className="bg-green rounded-lg w-full h-40  text-black  placeholder-textBlack mb-6 p-2"
+              className="border-2 border-green rounded-lg w-full h-40 text-green-dark placeholder-textBlack mb-6 p-2"
               placeholder="Your message here"
             />
             <div className="flex justify-center md:justify-start ">
