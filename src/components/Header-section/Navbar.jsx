@@ -21,17 +21,28 @@ const Navbar = () => {
     };
   }, []);
 
-  return (
-    <>
-      {showMenu && (
-        <div className="md:hidden overflow-hidden bg-[#1ABC9C] w-full h-[70%] absolute z-40 top-0 fixed flex justify-center items-center">
+
+
+  if(showMenu){
+
+    const scrollTop = 
+            window.pageYOffset || document.documentElement.scrollTop; 
+    const scrollLeft = 
+            window.pageXOffset || document.documentElement.scrollLeft 
+    window.onscroll = () => {
+    window.scrollTo(scrollLeft, scrollTop)
+  }
+
+    return(
+      <>
+      <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
           <button
             onClick={() => {
               setShowMenu("");
             }}
             className="absolute top-0 left-0 m-[1.5rem]"
           >
-            <FiX className="m-2 text-textWhite" />
+            <FiX className="m-2 text-textWhite"/>
           </button>
           <div className="text-textWhite">
             <div className="px-4 bg-textWhite w-fit rounded-xl">
@@ -77,8 +88,15 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      )}
+      </>
+    )
+  }
+  else{
+    window.onscroll = () => {}
+  }
 
+  return (
+    <>
       <nav className="bg-white fixed w-full z-20 top-0 left-0">
         <div
           className={
