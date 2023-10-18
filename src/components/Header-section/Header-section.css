@@ -13,6 +13,11 @@
   font-weight: 600;
   font-size: 18.5px;
   color: #262626;
+  transition: ease 200ms;
+}
+
+.header-section li:hover {
+  color: #1abc9c;
 }
 
 .user-cta :last-child {
@@ -53,9 +58,17 @@
   width: 22%;
   height: 52px;
   background: #1abc9c;
+  transition: ease-in-out 0.3s;
 }
 
-@media (max-width:768px) {
+.btn:hover {
+  background: transparent;
+  border-color: #1abc9c;
+  border-width: 2px;
+  color: #1abc9c;
+}
+
+@media (max-width: 768px) {
   .header-section {
     width: 100%;
     height: 1024px;
@@ -90,7 +103,7 @@
   }
 }
 
-@media (max-width:580px) {
+@media (max-width: 580px) {
   .navbar .logo {
     width: 170px;
   }
@@ -118,7 +131,7 @@
   }
 }
 
-@media (max-width:468px) {
+@media (max-width: 468px) {
   .btn {
     margin-top: 55px;
     border-radius: 8px;
