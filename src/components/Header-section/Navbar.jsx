@@ -117,22 +117,22 @@ const Navbar = () => {
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li>
-                <a href="/" aria-current="page">
+                <a href="/" aria-current="page" className="hover:text-xl hover:shadow-lg transition duration-300">
                   HOME
                 </a>
               </li>
               <li>
-                <a href="#AboutUs" aria-current="page">
+                <a href="#AboutUs" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
                   ABOUT
                 </a>
               </li>
               <li>
-                <a href="#ContactUs" aria-current="page">
+                <a href="#ContactUs" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
                   CONTACT
                 </a>
               </li>
               <li>
-                <a href="#Service" aria-current="page">
+                <a href="#Service" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
                   RENTALS
                 </a>
               </li>
