@@ -15,9 +15,15 @@ const ContactForm = () => {
             className="flex gap-x-12 justify-center md:justify-start"
             style={{ height: "min-content", alignItems: "baseline" }}
           >
-            <a href="https://twitter.com/gauravsingh1281"><img src={Twitter} alt="Twitter-logo" className="h-14" /></a>
-            <a href="https://github.com/gauravsingh1281"><img src={Github} alt="Github-logo" className="h-14" /></a>
-            <a href="https://www.instagram.com/gauravsingh1281"><img src={Insta} alt="Insta-logo" className="h-14" /></a>
+            <a href="https://twitter.com/gauravsingh1281">
+              <img src={Twitter} alt="Twitter-logo" className="h-14" />
+            </a>
+            <a href="https://github.com/gauravsingh1281">
+              <img src={Github} alt="Github-logo" className="h-14" />
+            </a>
+            <a href="https://www.instagram.com/gauravsingh1281">
+              <img src={Insta} alt="Insta-logo" className="h-14" />
+            </a>
           </div>
         </article>
         {/* Right hand side of the form */}
@@ -27,7 +33,7 @@ const ContactForm = () => {
               <input
                 className="border-2 border-green rounded-lg text-green-dark h-16 md:w-6/12 mb-6 md:mb-0 placeholder-textBlack p-2"
                 placeholder="First name"
-                style={{marginRight: "5px"}}
+                style={{ marginRight: "5px" }}
               />
               <input
                 className="border-2 border-green rounded-lg h-16 md:w-6/12 text-green-dark  placeholder-textBlack p-2"
@@ -46,12 +52,12 @@ const ContactForm = () => {
               placeholder="Your message here"
             />
             <div className="flex justify-center md:justify-start ">
-              <button
-                className="bg-green rounded-lg w-40 lg:w-60 p-3 text-textWhite text-2xl md:text-xl font-bold font-monsterrat"
+              <div
+                className="relative flex cursor-pointer items-center justify-center bg-green rounded-lg w-40 lg:w-60 p-3 text-textWhite text-2xl md:text-xl font-bold font-monsterrat ease-in-out duration-300 hover:bg-[transparent] hover:text-green hover:border-green hover:border-[2px]"
                 type="submit"
               >
                 Submit
-              </button>
+              </div>
             </div>
           </form>
         </article>
