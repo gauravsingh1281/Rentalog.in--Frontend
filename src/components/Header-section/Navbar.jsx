@@ -56,10 +56,10 @@ const Navbar = () => {
             <div className="mt-4 h-[2px] w-600 bg-textWhite rounded-full"></div>
 
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
-              <a href="/" aria-current="page"><div className="text-textWhite">HOME</div></a>
-              <a href="#AboutUs" aria-current="page"><div className="text-textWhite">ABOUT</div></a>
-              <a href="#ContactUs" aria-current="page"><div className="text-textWhite">CONTACT</div></a>
-              <a href="#Service" aria-current="page"><div className="text-textWhite">RENTALS</div></a>
+              <a href="/" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>HOME</div></a>
+              <a href="#AboutUs" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>ABOUT</div></a>
+              <a href="#ContactUs" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>CONTACT</div></a>
+              <a href="#Service" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>RENTALS</div></a>
               <div className="text-gray-dark">
                 <Link to="/login">
                   <button
