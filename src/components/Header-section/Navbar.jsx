@@ -21,17 +21,28 @@ const Navbar = () => {
     };
   }, []);
 
-  return (
-    <>
-      {showMenu && (
-        <div className="md:hidden overflow-hidden bg-[#1ABC9C] w-full h-[70%] absolute z-40 top-0 fixed flex justify-center items-center">
+
+
+  if(showMenu){
+
+    const scrollTop = 
+            window.pageYOffset || document.documentElement.scrollTop; 
+    const scrollLeft = 
+            window.pageXOffset || document.documentElement.scrollLeft 
+    window.onscroll = () => {
+    window.scrollTo(scrollLeft, scrollTop)
+  }
+
+    return(
+      <>
+      <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
           <button
             onClick={() => {
               setShowMenu("");
             }}
             className="absolute top-0 left-0 m-[1.5rem]"
           >
-            <FiX className="m-2 text-textWhite" />
+            <FiX className="m-2 text-textWhite"/>
           </button>
           <div className="text-textWhite">
             <div className="px-4 bg-textWhite w-fit rounded-xl">
@@ -45,10 +56,10 @@ const Navbar = () => {
             <div className="mt-4 h-[2px] w-600 bg-textWhite rounded-full"></div>
 
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
-              <a href="/" aria-current="page"><div className="text-textWhite">HOME</div></a>
-              <a href="#AboutUs" aria-current="page"><div className="text-textWhite">ABOUT</div></a>
-              <a href="#ContactUs" aria-current="page"><div className="text-textWhite">CONTACT</div></a>
-              <a href="#Service" aria-current="page"><div className="text-textWhite">RENTALS</div></a>
+              <a href="/" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>HOME</div></a>
+              <a href="#AboutUs" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>ABOUT</div></a>
+              <a href="#ContactUs" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>CONTACT</div></a>
+              <a href="#Service" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>RENTALS</div></a>
               <div className="text-gray-dark">
                 <Link to="/login">
                   <button
@@ -77,8 +88,15 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      )}
+      </>
+    )
+  }
+  else{
+    window.onscroll = () => {}
+  }
 
+  return (
+    <>
       <nav className="bg-white fixed w-full z-20 top-0 left-0">
         <div
           className={
