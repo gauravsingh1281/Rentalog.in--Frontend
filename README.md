@@ -1,16 +1,16 @@
 # Rentalog - Rent Management Web App For Landlords🌐
 
-<p>Welcome to Rentalog, the avant-garde web application designed to elevate the way landlords manage their rental properties. Rentalog empowers landlords by seamlessly organizing crucial information about renters, ensuring a secure and organized repository for quick and easy access. Beyond tenant data, Rentalog simplifies rent collection and tracking, providing landlords with real-time insights into their property earnings. It's the ultimate solution for landlords who value efficiency, organization, and informed decision-making.</p>
+Rentalog is a web application that makes it easy for landlords to manage their rental properties. With Rentalog, landlords can keep track of important information about their renters, including their names, addresses, and rental payment history. This information is stored in a secure and organized manner, so landlords can access it whenever they need to. In addition to keeping track of renters' information, Rentalog also makes it easy for landlords to collect and track monthly rent payments. This way, landlords always know exactly how much money they're earning from their properties and can make informed decisions about their business. Using Rentalog is simple and straightforward. All of the information is organized in a user-friendly interface, so landlords can access what they need quickly and easily. And, if they ever have questions or need help, they can reach out to Rentalog's dedicated support team for assistance. Overall, Rentalog is a convenient and efficient tool for landlords who want to keep their rental business organized and running smoothly.
 
 ---
 
 ## Features 🚀
-- **Tenant Management:**  Effortlessly track vital information about your renters - names, addresses, and rental payment history.
-- **Rent Collection:** Collect and track monthly rent payments with ease.
-- **Rent Calculations:** Instantly calculate total monthly rent with a detailed payment breakdown.
-- **Property Listing:** Showcase your rentals attractively to potential tenants.
-- **User-friendly Interface:** Intuitive design for quick and easy navigation.
-- **Dedicated Support Team:** Our team is here to help you every step of the way.
+- **Tenant Management:**  Keep track of important information about your renters, such as their names, addresses, and rental payment history.
+- **Rent Collection:** Collect and track monthly rent payments easily.
+- **Rent Calculations:** Automatically calculate the total rent received each month and see a breakdown of payments.
+- **Property Listing:** Showcase your rental properties and attract potential tenants by listing them on Rentalog.
+- **User-friendly Interface:** Easy to use and navigate.
+- **Dedicated Support Team:** Available to help landlords with any questions or problems they may have.
 
 ---
 
