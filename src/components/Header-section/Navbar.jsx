@@ -56,10 +56,10 @@ const Navbar = () => {
             <div className="mt-4 h-[2px] w-600 bg-textWhite rounded-full"></div>
 
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
-              <a href="/" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>HOME</div></a>
+              <a href="#home" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>HOME</div></a>
+              <a href="#Service" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>RENTALS</div></a>
               <a href="#AboutUs" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>ABOUT</div></a>
               <a href="#ContactUs" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>CONTACT</div></a>
-              <a href="#Service" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>RENTALS</div></a>
               <div className="text-gray-dark">
                 <Link to="/login">
                   <button
@@ -135,8 +135,13 @@ const Navbar = () => {
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li>
-                <a href="/" aria-current="page" className="hover:text-xl hover:shadow-lg transition duration-300">
+                <a href="#home" aria-current="page" className="hover:text-xl hover:shadow-lg transition duration-300">
                   HOME
+                </a>
+              </li>
+              <li>
+                <a href="#Service" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
+                  RENTALS
                 </a>
               </li>
               <li>
@@ -147,11 +152,6 @@ const Navbar = () => {
               <li>
                 <a href="#ContactUs" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
                   CONTACT
-                </a>
-              </li>
-              <li>
-                <a href="#Service" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
-                  RENTALS
                 </a>
               </li>
             </ul>

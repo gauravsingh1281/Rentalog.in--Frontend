@@ -1,10 +1,12 @@
 import ContactForm from "./ContactForm";
 import GoogleMap from './GoogleMap';
+import "./Contact-section.css";
 
 const Contact = () => {
   return (
     <>
-      <header id="ContactUs" className="flex justify-center align-middle my-20">
+    <div id="ContactUs"></div>
+      <header className="flex justify-center align-middle my-20 mt-0">
         <h1 className="text-5xl font-bold tracking-wider text-text-black font-monsterrat">
           Contact Us
         </h1>
