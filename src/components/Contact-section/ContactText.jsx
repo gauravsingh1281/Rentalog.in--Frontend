@@ -5,7 +5,7 @@ import Twitter from "../../assets/Social-Icons/Twitter.png";
 
 export const ContactText = () => {
     return (
-        <section className='flex flex-col gap-[20px] items-center lg:w-[45%] w-full'>
+        <section className='flex flex-col gap-[20px] justify-center lg:w-[45%] w-full'>
             <div className="">
                 Hey Rentalog Users, <br />
                 We are always looking forward to hearing from you.
@@ -24,7 +24,7 @@ export const ContactText = () => {
                 The Rentalog Team
             </div>
             <div
-                className="flex gap-x-12 justify-center md:justify-start"
+                className="flex gap-x-12 lg:justify-center justify-start"
             >
                 <a href="https://twitter.com/gauravsingh1281">
                     <img src={Twitter} alt="Twitter-logo" className="h-8" />

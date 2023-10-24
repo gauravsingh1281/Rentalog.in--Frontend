@@ -10,7 +10,7 @@ const Contact = () => {
           Contact Us
         </h1>
       </header>
-      <main className=" flex flex-wrap gap-[5%] justify-center items-center">
+      <main className=" flex flex-wrap lg:gap-[5%] gap-[20px] justify-center items-center">
         <ContactText />
         <ContactForm />
       </main>

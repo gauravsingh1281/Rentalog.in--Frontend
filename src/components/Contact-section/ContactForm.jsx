@@ -5,8 +5,8 @@ import Twitter from "../../assets/Social-Icons/Twitter.png";
 const ContactForm = () => {
   return (
     <>
-      <section className="lg:w-[45%] w-full">
-        <article className="flex flex-1 justify-center p-5 md:p-0 md:mr-24">
+      <section className="lg:w-[45%] w-full flex justify-center items-center">
+        <div className="flex flex-1 justify-center p-5 md:p-0 md:mr-24">
           <form className="gap-x-5 w-full">
             <div className="flex flex-col md:flex-row mb-6 justify-between">
               <input
@@ -39,7 +39,7 @@ const ContactForm = () => {
               </div>
             </div>
           </form>
-        </article>
+        </div>
       </section>
     </>
   );
