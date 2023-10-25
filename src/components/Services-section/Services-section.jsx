@@ -2,10 +2,13 @@ import ServicesCard from "./ServicesCard";
 import ourServices from "./services";
 import ServicesAvailableIn from "./ServicesAvailableIn";
 import placeName from "./placeName";
+import './Services-section.css'
+
 const Services = () => {
   return (
     <>
-      <h1 id="Service" className=" text-4xl md:text-5xl font-semibold text-[#312F2F] text-center pt-10">
+    <div id="Service"></div>
+      <h1 className=" text-4xl md:text-5xl font-semibold text-[#312F2F] text-center pt-10">
         Our Services Includes
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 md:mx-36 sm:mx-24 mx-16">
@@ -15,7 +18,7 @@ const Services = () => {
           })
         }
       </div>
-      <div className="bg-[#D1F2EB] my-20 ">
+      <div className="bg-[#D1F2EB] my-20 mb-0">
         <h1 className="text-3xl md:text-4xl font-semibold text-[#312F2F] text-center py-10">
           Our Services are available in
         </h1>
