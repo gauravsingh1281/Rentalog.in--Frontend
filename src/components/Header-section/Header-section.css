@@ -6,6 +6,7 @@
   background-color: #262626;
   background-size: cover;
   position: relative;
+  margin-bottom: 0;
 }
 
 .header-section li {

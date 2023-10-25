@@ -1,6 +1,7 @@
 import ContactForm from "./ContactForm";
 import GoogleMap from './GoogleMap';
 import { ContactText } from "./ContactText";
+import "./Contact-section.css";
 
 const Contact = () => {
   return (
