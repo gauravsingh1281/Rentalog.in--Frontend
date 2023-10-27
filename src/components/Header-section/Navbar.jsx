@@ -8,10 +8,11 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
   const [navLinkbgColor , setNavlinkbgColor] = useState(true)
-
+//find url value
   let url =useLocation()
+//removing # from nav   
   url=url.hash.slice(1)
-  console.log(url)
+ 
 
 
   useEffect(() => {
