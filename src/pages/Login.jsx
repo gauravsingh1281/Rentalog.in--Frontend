@@ -47,34 +47,36 @@ export default function Login() {
               onSubmit={handleSubmit}
               className="mt-5 space-y-5 w-[70%] md:w-[50%] lg:w-[60%]"
             >
-              <Input
+              <input
                 title="Email"
                 name="email"
                 value={form.email}
                 type="email"
                 placeholder="E-mail Address"
                 onChange={handleChange}
+                className="input-bar"
               />
-              <Input
+              <input
                 title="Password"
                 name="password"
                 value={form.password}
                 type="password"
                 placeholder="Password"
                 onChange={handleChange}
+                className="input-bar"
               />
 
               <Link
                 to="#"
                 className="float-right relative bottom-3 text-green hover:underline"
               >
-                Forget Password?
+                Forgot Password?
               </Link>
 
               <div className="">
                 <button
                   type="submit"
-                  className="bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold "
+                  className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
                 >
                   Log In
                 </button>
