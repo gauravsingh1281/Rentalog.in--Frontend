@@ -39,6 +39,8 @@ We are now seeking contributions for the migration of Rentalog's tech stack to R
 
 ## 🤝 How to Contribute
 
+We welcome contributions from the open-source community to assist with the migration. Here's how you can get involved:
+
 #### ***Found an issue on our app?***
 
 **Raise an issue:** You can raise an issue for that. And our smart contributers will fix that issue for you.
@@ -48,8 +50,6 @@ We are now seeking contributions for the migration of Rentalog's tech stack to R
 You can propose a feature by raising an issue. But before that make sure the feature isn't proposed already in **OPEN** or **CLOSED** issues.
 
 ### ***Want to contribute by coding?***
-
-We welcome contributions from the open-source community to assist with the migration. Here's how you can get involved:
 
 1. **Fork:** Star the repository and then fork the repository by clicking the "Fork" button in the upper right corner of this page.
 2. **Clone:** your forked repository to your local machine:
