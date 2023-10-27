@@ -1,12 +1,18 @@
 import { FiUser } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link ,useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
+  const [navLinkbgColor , setNavlinkbgColor] = useState(true)
+
+  let url =useLocation()
+  url=url.hash.slice(1)
+  console.log(url)
+
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -136,22 +142,22 @@ const Navbar = () => {
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li>
                 <a href="#home" aria-current="page" className="hover:text-xl hover:shadow-lg transition duration-300">
-                  HOME
+                {url=="home"?<h1 className="text-green">HOME</h1>:<h1>HOME</h1>}
                 </a>
               </li>
               <li>
                 <a href="#Service" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
-                  RENTALS
+                {url=="Service"?<h1 className="text-green">RENTALS</h1>:<h1>RENTALS</h1>}
                 </a>
               </li>
               <li>
                 <a href="#AboutUs" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
-                  ABOUT
+                {url=="AboutUs"?<h1 className="text-green">ABOUT</h1>:<h1>ABOUT</h1>}
                 </a>
               </li>
               <li>
                 <a href="#ContactUs" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
-                  CONTACT
+                {url=="ContactUs"?<h1 className="text-green">CONTACT</h1>:<h1>CONTACT</h1>}
                 </a>
               </li>
             </ul>

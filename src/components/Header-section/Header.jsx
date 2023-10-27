@@ -2,6 +2,9 @@ import '../Header-section/Header-section.css'
 import { Link } from "react-router-dom";
 import Navbar from './Navbar';
 const Header = () => {
+
+
+    
     return (
         <>
             <div className="header-section mb-[80px]">
