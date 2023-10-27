@@ -12,6 +12,9 @@ html {
 .placeholder-text {
   @apply bg-primaryGreen rounded-2xl p-3 text-xs placeholder:text-[#4C4949];
 }
+.input-bar{
+  @apply border-2 border-green rounded-lg h-9 w-full text-green-dark placeholder-textBlack p-2;
+}
 
 .mb-0{
   margin-bottom: 0;
