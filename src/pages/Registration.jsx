@@ -21,7 +21,7 @@ export default function Registration() {
   return (
     <article className="flex flex-col justify-center h-screen bg-primaryGreen/10 overflow-hidden">
       <Navbar />
-      <section className="flex flex-row justify-center items-center">
+      <section className="flex flex-row justify-center items-center mt">
         <div className="hidden w-full lg:flex lg:mt-12 flex-col justify-center xl:justify-center  xl:h-full ">
           <div className="mb-10 mx-10 mr-auto">
             <h2 className=" text-3xl font-bold text-gray-dark/90 ">
@@ -41,17 +41,19 @@ export default function Registration() {
             <TitleCard />
             <form
               onSubmit={handleSubmit}
-              className="mt-5 space-y-4 w-[70%] md:w-[50%] lg:w-[60%]"
+               className="mt-5 space-y-4 w-[70%] md:w-[50%] lg:w-[60%]"
             >
-              <Input
+              <input
                 title="Name"
                 name="name"
                 value={form.name}
                 type="text"
                 placeholder="Name"
                 onChange={handlechange}
+                className="input-bar"
               />
-              <Input
+              <input
+                className="input-bar"
                 title="Email address"
                 name="email"
                 value={form.email}
@@ -59,7 +61,8 @@ export default function Registration() {
                 placeholder="E-mail Address"
                 onChange={handlechange}
               />
-              <Input
+              <input
+                className="input-bar"
                 title="Password"
                 name="password"
                 value={form.password}
@@ -67,19 +70,20 @@ export default function Registration() {
                 placeholder="Password"
                 onChange={handlechange}
               />
-              <Input
+              <input
+                className="input-bar"
                 title="Confirm password"
                 name="confirm_password"
                 type="password"
                 placeholder="Confirm Password"
                 value={form.confirm_password}
                 onChange={handlechange}
-              />
+              /> 
 
               <div className="">
                 <button
                   type="submit"
-                  className="bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
+                  className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
                 >
                   Register
                 </button>
@@ -97,7 +101,7 @@ export default function Registration() {
                 <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
                   >
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
@@ -108,7 +112,7 @@ export default function Registration() {
 
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
                   >
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
