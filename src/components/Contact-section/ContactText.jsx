@@ -1,7 +1,7 @@
 import React from 'react'
 import Github from "../../assets/Social-Icons/Github.png";
 import Insta from "../../assets/Social-Icons/instagram.png";
-import twitter from "../../assets/Social-Icons/twitter.png";
+import Twitter from "../../assets/Social-Icons/Twitter.png";
 
 export const ContactText = () => {
     return (
@@ -27,7 +27,7 @@ export const ContactText = () => {
                 className="flex gap-x-12 lg:justify-center justify-start"
             >
                 <a href="https://twitter.com/gauravsingh1281">
-                    <img src={twitter} alt="Twitter-logo" className="h-8" />
+                    <img src={Twitter} alt="Twitter-logo" className="h-8" />
                 </a>
                 <a href="https://github.com/gauravsingh1281">
                     <img src={Github} alt="Github-logo" className="h-8" />

@@ -21,7 +21,7 @@ export default function Registration() {
   return (
     <article className="flex flex-col justify-center h-screen bg-primaryGreen/10 overflow-hidden">
       <Navbar />
-      <section className="flex flex-row justify-center items-center mt">
+      <section className="flex flex-row justify-center items-center">
         <div className="hidden w-full lg:flex lg:mt-12 flex-col justify-center xl:justify-center  xl:h-full ">
           <div className="mb-10 mx-10 mr-auto">
             <h2 className=" text-3xl font-bold text-gray-dark/90 ">
@@ -41,7 +41,7 @@ export default function Registration() {
             <TitleCard />
             <form
               onSubmit={handleSubmit}
-               className="mt-5 space-y-4 w-[70%] md:w-[50%] lg:w-[60%]"
+              className="mt-5 space-y-4 w-[70%] md:w-[50%] lg:w-[60%]"
             >
               <input
                 title="Name"
@@ -53,32 +53,32 @@ export default function Registration() {
                 className="input-bar"
               />
               <input
-                className="input-bar"
                 title="Email address"
                 name="email"
                 value={form.email}
                 type="email"
                 placeholder="E-mail Address"
                 onChange={handlechange}
+                className="input-bar"
               />
               <input
-                className="input-bar"
                 title="Password"
                 name="password"
                 value={form.password}
                 type="password"
                 placeholder="Password"
                 onChange={handlechange}
+                className="input-bar"
               />
               <input
-                className="input-bar"
                 title="Confirm password"
                 name="confirm_password"
                 type="password"
                 placeholder="Confirm Password"
                 value={form.confirm_password}
                 onChange={handlechange}
-              /> 
+                className="input-bar"
+              />
 
               <div className="">
                 <button

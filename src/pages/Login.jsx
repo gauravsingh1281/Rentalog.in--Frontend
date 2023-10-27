@@ -76,7 +76,7 @@ export default function Login() {
               <div className="">
                 <button
                   type="submit"
-                  className=" border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold "
+                  className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
                 >
                   Log In
                 </button>
