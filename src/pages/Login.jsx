@@ -8,12 +8,32 @@ export default function Login() {
     password: "",
   });
 
+  const [errors, setErrors] = useState({});
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const validationErrors = {};
+
+    if (!form.email.trim()) {
+      validationErrors.email = "email is required";
+    }
+
+    if (!form.password.trim()) {
+      validationErrors.password = "password is required";
+    }
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      alert("Login Succesful");
+      setForm({
+        email: "",
+        password: "",
+      });
+    }
   };
 
   return (
@@ -47,7 +67,7 @@ export default function Login() {
               onSubmit={handleSubmit}
               className="mt-5 space-y-5 w-[70%] md:w-[50%] lg:w-[60%]"
             >
-              <input
+              <Input
                 title="Email"
                 name="email"
                 value={form.email}
@@ -56,7 +76,10 @@ export default function Login() {
                 onChange={handleChange}
                 className="input-bar"
               />
-              <input
+              <span className="pl-4 text-[#ff0000] text-sm">
+                {errors.email}
+              </span>
+              <Input
                 title="Password"
                 name="password"
                 value={form.password}
@@ -65,7 +88,9 @@ export default function Login() {
                 onChange={handleChange}
                 className="input-bar"
               />
-
+              <span className="pl-4 text-[#ff0000] text-sm">
+                {errors.password}
+              </span>
               <Link
                 to="#"
                 className="float-right relative bottom-3 text-green hover:underline"
