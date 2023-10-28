@@ -8,12 +8,32 @@ export default function Login() {
     password: "",
   });
 
+  const [errors, setErrors] = useState({});
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const validationErrors = {};
+
+    if (!form.email.trim()) {
+      validationErrors.email = "email is required";
+    }
+
+    if (!form.password.trim()) {
+      validationErrors.password = "password is required";
+    }
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      alert("Login Succesful");
+      setForm({
+        email: "",
+        password: "",
+      });
+    }
   };
 
   return (
@@ -55,6 +75,9 @@ export default function Login() {
                 placeholder="E-mail Address"
                 onChange={handleChange}
               />
+              <span className="pl-4 text-[#ff0000] text-sm">
+                {errors.email}
+              </span>
               <Input
                 title="Password"
                 name="password"
@@ -63,7 +86,9 @@ export default function Login() {
                 placeholder="Password"
                 onChange={handleChange}
               />
-
+              <span className="pl-4 text-[#ff0000] text-sm">
+                {errors.password}
+              </span>
               <Link
                 to="#"
                 className="float-right relative bottom-3 text-green hover:underline"

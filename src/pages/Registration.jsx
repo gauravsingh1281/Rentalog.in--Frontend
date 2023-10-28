@@ -7,8 +7,10 @@ export default function Registration() {
     name: "",
     email: "",
     password: "",
-    confirm_password: "",
+    confirmPassword: "",
   });
+
+  const [errors, setErrors] = useState({});
 
   const handlechange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,6 +18,40 @@ export default function Registration() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const validationErrors = {};
+    if (!form.name.trim()) {
+      validationErrors.username = "username is required";
+    }
+
+    if (!form.email.trim()) {
+      validationErrors.email = "email is required";
+    }
+    if (!/\S+@\S+\.\S+/.test(form.email)) {
+      validationErrors.email = "email is not valid";
+    }
+    if (!form.password.trim()) {
+      validationErrors.password = "password is required";
+    } else if (form.password.length < 6) {
+      validationErrors.password = "password should be at least 6 characters";
+    }
+
+    if (!form.confirmPassword.trim()) {
+      validationErrors.confirmPassword = "password confirmation is required";
+    } else if (form.confirmPassword !== form.password) {
+      validationErrors.confirmPassword = "password not matched";
+    }
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      alert("Form Submitted successfully");
+      setForm({
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+    }
   };
 
   return (
@@ -51,6 +87,12 @@ export default function Registration() {
                 placeholder="Name"
                 onChange={handlechange}
               />
+              {errors.username && (
+                <span className="pl-4 text-[#ff0000] text-sm">
+                  {errors.username}
+                </span>
+              )}
+
               <Input
                 title="Email address"
                 name="email"
@@ -59,6 +101,11 @@ export default function Registration() {
                 placeholder="E-mail Address"
                 onChange={handlechange}
               />
+              {errors.email && (
+                <span className="pl-4 text-[#ff0000] text-sm">
+                  {errors.email}
+                </span>
+              )}
               <Input
                 title="Password"
                 name="password"
@@ -67,15 +114,24 @@ export default function Registration() {
                 placeholder="Password"
                 onChange={handlechange}
               />
+              {errors.password && (
+                <span className="pl-4 text-[#ff0000] text-sm">
+                  {errors.password}
+                </span>
+              )}
               <Input
                 title="Confirm password"
-                name="confirm_password"
+                name="confirmPassword"
                 type="password"
                 placeholder="Confirm Password"
-                value={form.confirm_password}
+                value={form.confirmPassword}
                 onChange={handlechange}
               />
-
+              {errors.confirmPassword && (
+                <span className="pl-4 text-[#ff0000] text-sm">
+                  {errors.confirmPassword}
+                </span>
+              )}
               <div className="">
                 <button
                   type="submit"
