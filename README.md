@@ -85,15 +85,14 @@ You can propose a feature by raising an issue. But before that make sure the fea
 
 Once your pull request is submitted, it will be reviewed by the project maintainers. Feedback and suggestions for further improvements may be provided. Thank you for contributing to the migration of Rentalog's tech stack to React.js and Next.js!
 
-**Rentalog Demo Account Credentials**:
-
-- Username: <demo@rentalog.in>
-- Password: @1a2b3c4d5E
-
 ## 🔗 Inspiration Links
 
 - **Figma Design**: Explore the Figma design for the new version of Rentalog [here](https://www.figma.com/file/9WhtUQT7s5ogTiDTp90PxI/RENTALOG-WEB-DESIGN?type=design&node-id=0-1&mode=design&t=ZNeyPXk16TlWB6I6-0).
 - **Current Tech Stack**: To explore the current tech stack used in the older version of Rentalog, visit [Rentalog.in](https://rentalog-web-app.azurewebsites.net/). Use its functionality as a reference while migrating to React.js and Next.js.
+  
+- **Rentalog Demo Account Credentials**:
+- Username: <demo@rentalog.in>
+- Password: @1a2b3c4d5E
 
 ## 📄 License
 
