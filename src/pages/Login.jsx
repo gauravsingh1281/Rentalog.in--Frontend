@@ -74,6 +74,7 @@ export default function Login() {
                 type="email"
                 placeholder="E-mail Address"
                 onChange={handleChange}
+                className="input-bar"
               />
               <span className="pl-4 text-[#ff0000] text-sm">
                 {errors.email}
@@ -85,6 +86,7 @@ export default function Login() {
                 type="password"
                 placeholder="Password"
                 onChange={handleChange}
+                className="input-bar"
               />
               <span className="pl-4 text-[#ff0000] text-sm">
                 {errors.password}
@@ -93,13 +95,13 @@ export default function Login() {
                 to="#"
                 className="float-right relative bottom-3 text-green hover:underline"
               >
-                Forget Password?
+                Forgot Password?
               </Link>
 
               <div className="">
                 <button
                   type="submit"
-                  className="bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold "
+                  className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
                 >
                   Log In
                 </button>

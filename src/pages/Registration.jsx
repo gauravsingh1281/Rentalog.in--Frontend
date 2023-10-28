@@ -86,6 +86,7 @@ export default function Registration() {
                 type="text"
                 placeholder="Name"
                 onChange={handlechange}
+                className="input-bar"
               />
               {errors.username && (
                 <span className="pl-4 text-[#ff0000] text-sm">
@@ -100,6 +101,7 @@ export default function Registration() {
                 type="email"
                 placeholder="E-mail Address"
                 onChange={handlechange}
+                className="input-bar"
               />
               {errors.email && (
                 <span className="pl-4 text-[#ff0000] text-sm">
@@ -113,6 +115,7 @@ export default function Registration() {
                 type="password"
                 placeholder="Password"
                 onChange={handlechange}
+                className="input-bar"
               />
               {errors.password && (
                 <span className="pl-4 text-[#ff0000] text-sm">
@@ -126,6 +129,7 @@ export default function Registration() {
                 placeholder="Confirm Password"
                 value={form.confirmPassword}
                 onChange={handlechange}
+                className="input-bar"
               />
               {errors.confirmPassword && (
                 <span className="pl-4 text-[#ff0000] text-sm">
@@ -135,7 +139,7 @@ export default function Registration() {
               <div className="">
                 <button
                   type="submit"
-                  className="bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
+                  className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
                 >
                   Register
                 </button>
@@ -153,7 +157,7 @@ export default function Registration() {
                 <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
                   >
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
@@ -164,7 +168,7 @@ export default function Registration() {
 
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
                   >
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
