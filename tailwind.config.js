@@ -20,11 +20,16 @@ export default {
       "gray-dark": "#273444",
       "gray": "#8492a6",
       "gray-light": "#d3dce6",
+      "light-blue":"#e8f8f4"
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
       monsterrat: ["Montserrat", "sans-serif"],
+    },
+    boxShadow: {
+      'widget': '3px 3px #b9c3c1;',
+      'widget-hover': '5px 5px #b9c3c1;',
     },
   },
   plugins: [],
