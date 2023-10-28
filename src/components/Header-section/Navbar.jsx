@@ -28,28 +28,24 @@ const Navbar = () => {
     };
   }, []);
 
-
-
-  if(showMenu){
-
-    const scrollTop = 
-            window.pageYOffset || document.documentElement.scrollTop; 
-    const scrollLeft = 
-            window.pageXOffset || document.documentElement.scrollLeft 
+  if (showMenu) {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft =
+      window.pageXOffset || document.documentElement.scrollLeft;
     window.onscroll = () => {
-    window.scrollTo(scrollLeft, scrollTop)
-  }
+      window.scrollTo(scrollLeft, scrollTop);
+    };
 
-    return(
+    return (
       <>
-      <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
+        <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
           <button
             onClick={() => {
               setShowMenu("");
             }}
             className="absolute top-0 left-0 m-[1.5rem]"
           >
-            <FiX className="m-2 text-textWhite"/>
+            <FiX className="m-2 text-textWhite" />
           </button>
           <div className="text-textWhite">
             <div className="px-4 bg-textWhite w-fit rounded-xl">
@@ -63,17 +59,53 @@ const Navbar = () => {
             <div className="mt-4 h-[2px] w-600 bg-textWhite rounded-full"></div>
 
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
-              <a href="#home" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>HOME</div></a>
-              <a href="#Service" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>RENTALS</div></a>
-              <a href="#AboutUs" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>ABOUT</div></a>
-              <a href="#ContactUs" aria-current="page"><div className="text-textWhite" onClick={() => { setShowMenu('')}}>CONTACT</div></a>
+              <a href="#home" aria-current="page">
+                <div
+                  className="text-textWhite"
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
+                >
+                  HOME
+                </div>
+              </a>
+              <a href="#Service" aria-current="page">
+                <div
+                  className="text-textWhite"
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
+                >
+                  RENTALS
+                </div>
+              </a>
+              <a href="#AboutUs" aria-current="page">
+                <div
+                  className="text-textWhite"
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
+                >
+                  ABOUT
+                </div>
+              </a>
+              <a href="#ContactUs" aria-current="page">
+                <div
+                  className="text-textWhite"
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
+                >
+                  CONTACT
+                </div>
+              </a>
               <div className="text-gray-dark">
                 <Link to="/login">
                   <button
                     type="button"
                     className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite"
                   >
-                    <FiUser className="text-2xl"/>
+                    <FiUser className="text-2xl" />
                     Log In
                   </button>
                 </Link>
@@ -82,24 +114,23 @@ const Navbar = () => {
               <div className="mt-4 h-[2px] w-600 self-stretch bg-textWhite rounded-full"></div>
 
               <div className="text-gray-dark">
-              <Link to="/register">
-            <button
-              type="button"
-              className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite -mt-4"
-            >
-              <FiUser className="text-2xl"/>
-              Register
-            </button>
-            </Link>
+                <Link to="/register">
+                  <button
+                    type="button"
+                    className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite -mt-4"
+                  >
+                    <FiUser className="text-2xl" />
+                    Register
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </>
-    )
-  }
-  else{
-    window.onscroll = () => {}
+    );
+  } else {
+    window.onscroll = () => {};
   }
 
   return (
@@ -127,13 +158,13 @@ const Navbar = () => {
               </button>
             </Link>
             <Link to="/register">
-            <button
-              type="button"
-              className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0 bg-textWhite"
-            >
-              <FiUser className="text-2xl"/>
-              Register
-            </button>
+              <button
+                type="button"
+                className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0 bg-textWhite"
+              >
+                <FiUser className="text-2xl" />
+                Register
+              </button>
             </Link>
           </div>
           <div
@@ -141,23 +172,26 @@ const Navbar = () => {
             id="navbar-sticky"
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
-              <li>
-                <a href="#home" aria-current="page" className="hover:text-xl hover:shadow-lg transition duration-300">
+              <li  className="hover:scale-[1.081] hover:shadow-lg transition duration-300">
+                <a href="#home" aria-current="page">
                 {url=="home"?<h1 className="text-green">HOME</h1>:<h1>HOME</h1>}
                 </a>
               </li>
-              <li>
-                <a href="#Service" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
+
+              <li className="hover:scale-[1.081] hover:shadow-lg transition duration-300"> 
+                <a href="#Service" aria-current="page">
                 {url=="Service"?<h1 className="text-green">RENTALS</h1>:<h1>RENTALS</h1>}
                 </a>
               </li>
-              <li>
-                <a href="#AboutUs" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
+
+              <li className="hover:scale-[1.081] hover:shadow-lg transition duration-300">
+                <a href="#AboutUs" aria-current="page" >
                 {url=="AboutUs"?<h1 className="text-green">ABOUT</h1>:<h1>ABOUT</h1>}
                 </a>
               </li>
-              <li>
-                <a href="#ContactUs" aria-current="page" className="hover:text-xl hover:shadow-md transition duration-300">
+
+              <li className="hover:scale-[1.081] hover:shadow-lg transition duration-300">
+                <a href="#ContactUs" aria-current="page" >
                 {url=="ContactUs"?<h1 className="text-green">CONTACT</h1>:<h1>CONTACT</h1>}
                 </a>
               </li>
