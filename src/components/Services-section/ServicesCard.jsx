@@ -8,7 +8,7 @@ const ServicesCard = (props) => {
                     src={props.icon}
                     alt={props.alt}
                 ></img>
-                <h1 className="text-[#312F2F] font-bold md:text-2xl text-xl">
+                <h1 className="text-[#312F2F] font-bold md:text-2xl text-xl dark:text-darkMode-textColor">
                     {props.title}
                 </h1>
             </div>

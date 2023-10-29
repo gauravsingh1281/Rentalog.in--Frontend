@@ -5,7 +5,7 @@ import iconPencil from "../../assets/Icons/icon-pencil.png";
 const ourServices = [
     {
         id: 1,
-        bgColor: "bg-[#EBB4B6]",
+        bgColor: "bg-[#EBB4B6] dark:bg-[#612F2D]",
         title: "Tenant Management",
         description: "Store and access your renters' personal information like name, address, and phone number with ease.",
         icon: iconPerson,
@@ -13,7 +13,7 @@ const ourServices = [
     },
     {
         id: 2,
-        bgColor: "bg-[#D1F2EB]",
+        bgColor: "bg-[#D1F2EB] dark:bg-[#30534A]",
         title: "Track Payment Records",
         description: "Keep a record of all your renters' monthly rent payments and have a complete overview of your rental income.",
         icon: iconCalendar,
@@ -21,7 +21,7 @@ const ourServices = [
     },
     {
         id: 3,
-        bgColor: "bg-[#D1F2EB]",
+        bgColor: "bg-[#D1F2EB] dark:bg-[#30534A]",
         title: " Rent Calculation",
         description: "Automatically calculate the total rent received each month and see a breakdown of payments.",
         icon: iconPencil,
@@ -29,7 +29,7 @@ const ourServices = [
     },
     {
         id: 4,
-        bgColor: "bg-[#EBB4B6]",
+        bgColor: "bg-[#EBB4B6] dark:bg-[#612F2D]",
         title: "Property Listing",
         description: " Showcase your rental properties and attract potential tenants by listing them on Rentalog.",
         icon: iconHome,

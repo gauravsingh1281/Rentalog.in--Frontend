@@ -3,6 +3,7 @@ import { FiX } from "react-icons/fi";
 import { Link ,useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
+import DarkModeButton from "../../assets/Menu/DarkModeButton";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
@@ -38,7 +39,7 @@ const Navbar = () => {
 
     return (
       <>
-        <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
+        <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center dark:bg-darkMode-green">
           <button
             onClick={() => {
               setShowMenu("");
@@ -61,7 +62,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
               <a href="#home" aria-current="page">
                 <div
-                  className="text-textWhite"
+                  className="text-textWhite dark:text-darkMode-textColor"
                   onClick={() => {
                     setShowMenu("");
                   }}
@@ -71,7 +72,7 @@ const Navbar = () => {
               </a>
               <a href="#Service" aria-current="page">
                 <div
-                  className="text-textWhite"
+                  className="text-textWhite dark:text-darkMode-textColor"
                   onClick={() => {
                     setShowMenu("");
                   }}
@@ -81,7 +82,7 @@ const Navbar = () => {
               </a>
               <a href="#AboutUs" aria-current="page">
                 <div
-                  className="text-textWhite"
+                  className="text-textWhite dark:text-darkMode-textColor"
                   onClick={() => {
                     setShowMenu("");
                   }}
@@ -91,7 +92,7 @@ const Navbar = () => {
               </a>
               <a href="#ContactUs" aria-current="page">
                 <div
-                  className="text-textWhite"
+                  className="text-textWhite dark:text-darkMode-textColor"
                   onClick={() => {
                     setShowMenu("");
                   }}
@@ -135,7 +136,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white fixed w-full z-20 top-0 left-0">
+      <nav className="bg-white fixed w-full z-20 top-0 left-0 dark:bg-dark-slate opacity-80">
         <div
           className={
             doBlure
@@ -144,7 +145,7 @@ const Navbar = () => {
           }
         ></div>
 
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 dark:bg-dark-slate opacity-80">
           <div className="flex flex-row justify-center items-center">
             <img className="self-start w-40 " src={logo} alt="Rentalog-logo" />
           </div>
@@ -166,6 +167,10 @@ const Navbar = () => {
                 Register
               </button>
             </Link>
+            {/* darkMode Button */}
+            <div className="mx-4">
+              <DarkModeButton />
+            </div>
           </div>
           <div
             className="hidden md:flex md:w-auto md:order-1"
@@ -174,25 +179,25 @@ const Navbar = () => {
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li  className="hover:scale-[1.081] hover:shadow-lg transition duration-300">
                 <a href="#home" aria-current="page">
-                {url=="home"?<h1 className="text-green">HOME</h1>:<h1>HOME</h1>}
+                {url=="home"?<h1 className="text-green">HOME</h1>:<h1 className=" dark:text-darkMode-textColor">HOME</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover:shadow-lg transition duration-300"> 
                 <a href="#Service" aria-current="page">
-                {url=="Service"?<h1 className="text-green">RENTALS</h1>:<h1>RENTALS</h1>}
+                {url=="Service"?<h1 className="text-green">RENTALS</h1>:<h1 className=" dark:text-darkMode-textColor">RENTALS</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover:shadow-lg transition duration-300">
                 <a href="#AboutUs" aria-current="page" >
-                {url=="AboutUs"?<h1 className="text-green">ABOUT</h1>:<h1>ABOUT</h1>}
+                {url=="AboutUs"?<h1 className="text-green">ABOUT</h1>:<h1 className=" dark:text-darkMode-textColor">ABOUT</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover:shadow-lg transition duration-300">
                 <a href="#ContactUs" aria-current="page" >
-                {url=="ContactUs"?<h1 className="text-green">CONTACT</h1>:<h1>CONTACT</h1>}
+                {url=="ContactUs"?<h1 className="text-green">CONTACT</h1>:<h1 className=" dark:text-darkMode-textColor">CONTACT</h1>}
                 </a>
               </li>
             </ul>
@@ -203,7 +208,7 @@ const Navbar = () => {
               setShowMenu("show");
             }}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden dark:text-textWhite"
             aria-controls="navbar-sticky"
             aria-expanded="false"
           >

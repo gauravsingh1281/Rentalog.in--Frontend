@@ -52,7 +52,7 @@ const ContactForm = () => {
       <section className="flex flex-col md:flex-row  gap-y-10 my-20">
         {/* left hand side of the form */}
         <article className="flex-1 text-center md:text-left md:ml-24">
-          <h2 className="text-3xl lg:text-5xl font-bold tracking-wider mb-10 font-monsterrat text-textBlack">
+          <h2 className="text-3xl lg:text-5xl font-bold tracking-wider mb-10 font-monsterrat text-textBlack dark:text-darkMode-textColor">
             Connect with <span className="text-customRed">Us</span>
           </h2>
           <div
