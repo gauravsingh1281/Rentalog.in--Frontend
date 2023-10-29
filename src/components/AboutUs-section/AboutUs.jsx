@@ -7,8 +7,8 @@ const AboutUs = () => {
   return (
     <div className="aboutUs-section">
       <div id="AboutUs"></div>
-      <span className="text-3xl md:text-4xl font-semibold text-[#312F2F] text-center pt-10">About Us</span>
-      <div className=" row flex flex-col justify-center items-center lg:flex-row m-[5%] bg-gradient-to-b lg:bg-gradient-to-r from-primaryGreen to-customRed rounded-3xl">
+      <span className="text-3xl md:text-4xl font-semibold text-[#312F2F] text-center pt-10 dark:text-darkMode-textColor">About Us</span>
+      <div className=" row flex flex-col justify-center items-center lg:flex-row m-[5%] bg-gradient-to-b lg:bg-gradient-to-r from-primaryGreen to-customRed dark:from-darkMode-green dark:to-darkMode-red rounded-3xl">
         <Lottie className="rent-board-img text-primaryGreen w-[80%] lg:w-[50%]" animationData={rent} loop={true} />
         <div className=" w-full lg:w-[50%] p-[5%] ">
           <p className="paragraph text-justify text-textWhite leading-6 md:leading-8">

@@ -8,7 +8,7 @@ import Testimonials from "../components/testimonial-section/Testimonial";
 
 function Home() {
   return (
-    <>
+    <div className="dark:bg-dark-slate dark:text-darkMode-textColor">
       <Header />
       <Services />
       <AboutUs />
@@ -20,7 +20,7 @@ function Home() {
         color="darkgreen"
         className="flex justify-center hover:scale-125 duration-200 transition items-center p-1"
       />
-    </>
+    </div>
   );
 }
 

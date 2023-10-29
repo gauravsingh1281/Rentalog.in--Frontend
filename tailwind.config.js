@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {},
     screens: {
@@ -20,7 +21,11 @@ export default {
       "gray-dark": "#273444",
       "gray": "#8492a6",
       "gray-light": "#d3dce6",
-      "light-blue":"#e8f8f4"
+      "light-blue":"#e8f8f4",
+      "dark-slate":"#2D2E2C",
+      "darkMode-green":"#30534A",
+      "darkMode-red":"#612F2D",
+      "darkMode-textColor":"#E2D8C8",
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
