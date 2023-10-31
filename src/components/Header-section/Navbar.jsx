@@ -172,25 +172,25 @@ const Navbar = () => {
             id="navbar-sticky"
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
-              <li  className="hover:scale-[1.081] hover:shadow-lg transition duration-300">
+              <li  className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#home" aria-current="page">
                 {url=="home"?<h1 className="text-green">HOME</h1>:<h1>HOME</h1>}
                 </a>
               </li>
 
-              <li className="hover:scale-[1.081] hover:shadow-lg transition duration-300"> 
+              <li className="hover:scale-[1.081] hover transition duration-300"> 
                 <a href="#Service" aria-current="page">
                 {url=="Service"?<h1 className="text-green">RENTALS</h1>:<h1>RENTALS</h1>}
                 </a>
               </li>
 
-              <li className="hover:scale-[1.081] hover:shadow-lg transition duration-300">
+              <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#AboutUs" aria-current="page" >
                 {url=="AboutUs"?<h1 className="text-green">ABOUT</h1>:<h1>ABOUT</h1>}
                 </a>
               </li>
 
-              <li className="hover:scale-[1.081] hover:shadow-lg transition duration-300">
+              <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#ContactUs" aria-current="page" >
                 {url=="ContactUs"?<h1 className="text-green">CONTACT</h1>:<h1>CONTACT</h1>}
                 </a>
