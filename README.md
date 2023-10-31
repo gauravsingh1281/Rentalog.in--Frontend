@@ -64,7 +64,16 @@ You can propose a feature by raising an issue. But before that make sure the fea
 9. ```
     npm install
    ```
-11. **Create a new branch for your contribution:**
+10. **Add the changes you made**
+    You could either use this to add all the changes you made
+    ```
+    git add .
+    ```
+    or, you could specify the files you want to include in the commit
+    ```
+    git add file1 file2
+    ```
+12. **Create a new branch for your contribution:**
     ```
     git checkout -b your-branch-name
     ```
