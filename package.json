@@ -16,7 +16,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.15.0",
-    "react-scroll-to-top": "^3.0.0"
+    "react-scroll-to-top": "^3.0.0",
+    "swiper": "^11.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

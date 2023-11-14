@@ -1,4 +1,47 @@
-.testimonial{
-    background: linear-gradient(180deg, rgba(129, 70, 62, 0.00) 0%, rgba(61, 36, 33, 0.80) 100%);
-    box-shadow: 0px 10px 39px 0px rgba(0, 0, 0, 0.25);
-}
+/* Testimonial.css */
+
+.swiper {
+    width: 90%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    /* Center the image */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Adjust font size and padding for different screen sizes */
+  @media (max-width: 768px) {
+    .swiper-slide h4 {
+      font-size: 1.5rem;
+    }
+  
+    .swiper-slide p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .swiper-slide h4 {
+      font-size: 1.2rem;
+    }
+  
+    .swiper-slide p {
+      font-size: 0.8rem;
+    }
+  }
+  
