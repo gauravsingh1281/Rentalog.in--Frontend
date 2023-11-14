@@ -34,6 +34,10 @@ const slides = [
 const Testimonial = () => {
 
   return (
+    <>
+    <h1 className="text-5xl font-bold tracking-wider text-text-black font-monsterrat text-center">
+      Testimonials
+        </h1>
     <Swiper
       className='swiper'
       modules={[Autoplay, Pagination, Navigation]}
@@ -64,6 +68,7 @@ const Testimonial = () => {
         </SwiperSlide>
       ))}
     </Swiper>
+    </>
   );
 }
 
