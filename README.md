@@ -1,4 +1,4 @@
-# Rentalog - Rent Management Web App For Landlords 🏠
+# [Rentalog.in](https://www.rentalog.in/) - Rent Management Web App For Landlords 🏠
 
 This GitHub repository focuses on the development of the frontend part of [Rentalog.in](https://www.rentalog.in/). It includes designing and coding the visual elements and interactive features for [Rentalog.in](https://www.rentalog.in/).
 
