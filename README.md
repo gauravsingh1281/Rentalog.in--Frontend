@@ -18,21 +18,21 @@ This GitHub repository focuses on the development of the frontend part of [Renta
 
 Rentalog.in frontend is built using the following technologies:
 
-- HTML5 🖋️: For structuring the content of the web pages.
-- CSS3 🎨: For styling and creating responsive layouts.
-- Tailwind CSS 🌟: A utility-first CSS framework used to build custom designs rapidly and maintain consistency.
-- JavaScript 🔧: For adding interactivity and dynamic features.
-- React ⚛️: For building reusable UI components and managing application state. 
+- **HTML5 🖋️:** For structuring the content of the web pages.
+- **CSS3 🎨:** For styling and creating responsive layouts.
+- **Tailwind CSS 🌟:** A utility-first CSS framework used to build custom designs rapidly and maintain consistency.
+- **JavaScript 🔧:** For adding interactivity and dynamic features.
+- **React ⚛️:** For building reusable UI components and managing application state. 
 
 ## 🤝 How to Contribute
 
 We welcome contributions from the open-source community to enhance the frontend of [Rentalog.in](https://www.rentalog.in/). Here's how you can get involved:
 
 ### 🐛 Found an Issue?
-- Raise an Issue: If you encounter a bug or issue, please raise it in the repository. Our contributors will review and address it.
+- **Raise an Issue:** If you encounter a bug or issue, please raise it in the repository. Our contributors will review and address it.
 
 ### 💡 Have a Feature Idea?
-- Propose a Feature: You can propose a feature by raising an issue. But before that make sure the feature isn't proposed already in **OPEN** or **CLOSED** issues.
+- **Propose a Feature:** You can propose a feature by raising an issue. But before that make sure the feature isn't proposed already in **OPEN** or **CLOSED** issues.
 
 ### 👩‍💻 Want to Contribute by Coding?
 
@@ -78,8 +78,8 @@ Thank you for contributing to the enhancement of the frontend part of [Rentalog.
 - **Legacy Design 🖼️:** To Explore the existing design of Rentalog.in, visit [Rentalog.in](https://www.rentalog.in/). Use it as a valuable reference to enhance and elevate the front-end UI, making it more engaging and visually captivating for our users.
   
 - **Rentalog Demo Account Credentials**:
-- Username: <demo@rentalog.in>
-- Password: @1a2b3c4d5E
+- **Username:** <demo@rentalog.in>
+- **Password:** @1a2b3c4d5E
 
 ## 📄 License
 
