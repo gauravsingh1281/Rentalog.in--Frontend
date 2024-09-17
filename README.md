@@ -1,103 +1,81 @@
 # Rentalog - Rent Management Web App For Landlords 🏠
 
-Rentalog is a user-friendly web application designed to simplify the management of rental properties for landlords. With Rentalog, landlords can effortlessly keep track of crucial tenant information, such as names, addresses, and rental payment history. This data is securely and neatly organized, ensuring landlords have easy access whenever they need it.
+This GitHub repository focuses on the development of the frontend part of [Rentalog.in](https://www.rentalog.in/). It includes designing and coding the visual elements and interactive features for [Rentalog.in](https://www.rentalog.in/).
 
-In addition to tenant management, Rentalog streamlines rent collection, making it a breeze for landlords to keep tabs on monthly payments. This enables landlords to maintain a clear understanding of their rental income, facilitating informed business decisions.
+**Rentalog** is a web application that makes it easy for landlords to manage their rental properties. With Rentalog, landlords can keep track of important information about their renters, including their names, addresses, rental payment history, and much more.
+
 
 ## 🚀 Features
 
 - **Tenant Management** 💼: Seamlessly organize tenant details, including names, addresses, and rental payment history.
 - **Rent Collection** 💸: Collect and monitor monthly rent payments with ease.
-- **Rent Calculations** 📊: Automatically calculate total monthly rent received and view payment breakdowns.
+- **Rent Calculations** 📊: Automatically calculate the total monthly rent received and view payment breakdowns.
 - **Property Listing** 🏘️: Showcase your rental properties and attract potential tenants through Rentalog listings.
 - **User-friendly Interface** 🧑🏻‍🦳: Intuitive and easy-to-navigate interface for quick access to information.
 - **Dedicated Support Team** 📲: Reach out to Rentalog's support team for assistance and guidance.
 
-## 📦 Current Version Tech Stack
+## 📦 Technologies Used
 
-Rentalog is built using the following technologies:
+Rentalog.in frontend is built using the following technologies:
 
-- React ⚛️
-- Tailwind 🎨
-- Node.js ⚙️
-- Express.js 🚀
-- Embedded JavaScript (EJS) 🌐
-- MongoDB 📦
-- Mongoose 📦
-- Passport.js 🔐
-
-## 🛠️ Migration to React.js and Next.js
-
-We are now seeking contributions for the migration of Rentalog's tech stack to React.js and Next.js. This migration offers several advantages:
-
-- **Performance Boost 🚀**: React.js enables efficient rendering and updates, resulting in a snappier and more responsive user interface.
-- **Enhanced User Experience 🌟**: Interactive components can be built, providing a seamless and engaging user experience.
-- **Code Maintainability 🔧**: React.js promotes a component-based architecture, making the codebase modular, reusable, and easier to maintain.
-- **Server-side Rendering 🌐**: Next.js introduces server-side rendering, leading to faster initial page loads and improved SEO.
-- **Scalable State Management 📈**: React.js, combined with libraries like Redux or React Context, offers efficient state management.
-- **Rich Ecosystem ⚙️**: Migration opens up a vast ecosystem of tools, libraries, and community support for future development and enhancements.
+- HTML5 🖋️: For structuring the content of the web pages.
+- CSS3 🎨: For styling and creating responsive layouts.
+- Tailwind CSS 🌟: A utility-first CSS framework used to build custom designs rapidly and maintain consistency.
+- JavaScript 🔧: For adding interactivity and dynamic features.
+- React ⚛️: For building reusable UI components and managing application state. 
 
 ## 🤝 How to Contribute
 
-We welcome contributions from the open-source community to assist with the migration. Here's how you can get involved:
+We welcome contributions from the open-source community to enhance the frontend of [Rentalog.in](https://www.rentalog.in/). Here's how you can get involved:
 
-#### ***Found an issue on our app?***
+### 🐛 Found an Issue?
+- Raise an Issue: If you encounter a bug or issue, please raise it in the repository. Our contributors will review and address it.
 
-**Raise an issue:** You can raise an issue for that. And our smart contributers will fix that issue for you.
+### 💡 Have a Feature Idea?
+- Propose a Feature: You can propose a feature by raising an issue. But before that make sure the feature isn't proposed already in **OPEN** or **CLOSED** issues.
 
-#### ***Have a feature idea in your mind?***
+### 👩‍💻 Want to Contribute by Coding?
 
-You can propose a feature by raising an issue. But before that make sure the feature isn't proposed already in **OPEN** or **CLOSED** issues.
-
-### ***Want to contribute by coding?***
-
-1. **Fork:** Star the repository and then fork the repository by clicking the "Fork" button in the upper right corner of this page.
-2. **Clone:** your forked repository to your local machine:
+1. **Fork the Repository 🍴:** Star the repository and then fork the repository by clicking the "Fork" button in the upper right corner of this page.
+2. **Clone Your Forked Repository 📥:** 
    ```
-   git clone https://github.com/your-username/Rentalog-Rent-Management-Web-App-For-Landlords.git
+   git clone https://github.com/your-username/Rentalog.in--Frontend.git
    ```
-4. **Enter the source directory:**
-5. ```
-   cd Rentalog-Rent-Management-Web-App-For-Landlords
+3. **Navigate to the Source Directory 🗂️:**
    ```
-8. **Install project dependencies:**
-9. ```
+   cd Rentalog.in--Frontend
+   ```
+4. **Install Project Dependencies 📦:**
+   ```
     npm install
    ```
-10. **Add the changes you made**
-    You could either use this to add all the changes you made
-    ```
-    git add .
-    ```
-    or, you could specify the files you want to include in the commit
-    ```
-    git add file1 file2
-    ```
-12. **Create a new branch for your contribution:**
-    ```
-    git checkout -b your-branch-name
-    ```
-14. Begin migrating components and features to React.js and Next.js, adhering to best practices and code conventions.
-15. **Start Development Server:** To test your changes locally to ensure they function correctly.
+5. **Create a New Branch 🌿:**
+   ```
+   git checkout -b your-branch-name
+   ```
+6. **Make Your Changes 🛠️:** Implement features or fixes. Ensure that your code adheres to project standards and best practices.
+7. **Run the Development Server 🏃‍♂️:**
     ```
     npm run dev
     ```
-17. **Commit:** your changes with descriptive commit messages:
-    ```
-    git commit -m "Commit message"
-    ```
-18. **Push:** your changes to your forked repository:
+8. **Commit Your Changes 💬:**
+   ```
+   git add .
+   git commit -m "Describe your changes"
+   ```
+9. **Push Your Changes ⬆️:** 
     ```
     git push origin your-branch-name
     ```
-20. **Open a PR:** to the **main** branch of this repository.
+10. **Open a Pull Request 📩:** Submit a pull request to the main branch of this repository. Provide a detailed description of your changes and any relevant information.
+11. **Review Process 🔍:** Once your pull request is submitted, it will be reviewed by the project maintainers. Feedback and suggestions for further improvements may be provided. Your contribution will be reviewed and merged if it meets the project’s requirements.
 
-Once your pull request is submitted, it will be reviewed by the project maintainers. Feedback and suggestions for further improvements may be provided. Thank you for contributing to the migration of Rentalog's tech stack to React.js and Next.js!
+Thank you for contributing to the enhancement of the frontend part of [Rentalog.in](https://www.rentalog.in/)! 🙌
 
 ## 🔗 Inspiration Links
 
-- **Figma Design**: Explore the Figma design for the new version of Rentalog [here](https://www.figma.com/file/9WhtUQT7s5ogTiDTp90PxI/RENTALOG-WEB-DESIGN?type=design&node-id=0-1&mode=design&t=ZNeyPXk16TlWB6I6-0).
-- **Current Tech Stack**: To explore the current tech stack used in the older version of Rentalog, visit [Rentalog.in](https://rentalog-web-app.azurewebsites.net/). Use its functionality as a reference while migrating to React.js and Next.js.
+- **Figma Design 🎨:** Check out the Figma design for the upcoming version of Rentalog.in [here](https://www.figma.com/file/9WhtUQT7s5ogTiDTp90PxI/RENTALOG-WEB-DESIGN?type=design&node-id=0-1&mode=design&t=ZNeyPXk16TlWB6I6-0). Feel free to use it as inspiration and add your own creative touch!
+- **Legacy Design 🖼️:** To Explore the existing design of Rentalog.in, visit [Rentalog.in](https://www.rentalog.in/). Use it as a valuable reference to enhance and elevate the front-end UI, making it more engaging and visually captivating for our users.
   
 - **Rentalog Demo Account Credentials**:
 - Username: <demo@rentalog.in>
