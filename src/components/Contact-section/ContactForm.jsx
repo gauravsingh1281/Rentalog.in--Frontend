@@ -51,31 +51,12 @@ const ContactForm = () => {
     <>
       <section className="flex flex-col md:flex-row  gap-y-10 my-20">
         {/* left hand side of the form */}
-        <article className="flex-1 text-center md:text-left md:ml-24">
-          <h2 className="text-3xl lg:text-5xl font-bold tracking-wider mb-10 font-monsterrat text-textBlack">
-            Connect with <span className="text-customRed">Us</span>
-          </h2>
-          <div
-            className="flex gap-x-12 justify-center md:justify-start"
-            style={{ height: "min-content", alignItems: "baseline" }}
-          >
-            <a href="https://twitter.com/gauravsingh1281">
-              <img src={Twitter} alt="Twitter-logo" className="h-14" />
-            </a>
-            <a href="https://github.com/gauravsingh1281">
-              <img src={Github} alt="Github-logo" className="h-14" />
-            </a>
-            <a href="https://www.instagram.com/gauravsingh1281">
-              <img src={Insta} alt="Insta-logo" className="h-14" />
-            </a>
-          </div>
-        </article>
         {/* Right hand side of the form */}
         <article className="flex flex-1 justify-center p-5 md:p-0 md:mr-24">
           <form onSubmit={handleSubmit} className="gap-x-5 w-full">
             <div className="flex flex-col md:flex-row mb-6 justify-between">
               <div className="flex flex-col md:w-6/12">
-                <input
+                 <input
                   name="firstName"
                   value={contactForm.firstName}
                   className="border-2 border-green rounded-lg text-green-dark h-16  mb-6 md:mb-0 placeholder-textBlack p-2"
