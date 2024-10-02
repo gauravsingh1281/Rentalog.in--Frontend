@@ -1,7 +1,7 @@
 import React from 'react'
 import Github from "../../assets/Social-Icons/Github.png";
 import Insta from "../../assets/Social-Icons/instagram.png";
-import Twitter from "../../assets/Social-Icons/Twitter.png";
+import X from "../../assets/Social-Icons/X.png";
 
 export const ContactText = () => {
     return (
@@ -27,13 +27,13 @@ export const ContactText = () => {
                 className="flex gap-x-12 lg:justify-center justify-start"
             >
                 <a href="https://twitter.com/gauravsingh1281">
-                    <img src={Twitter} alt="Twitter-logo" className="h-8" />
+                    <img src={X} alt="X-logo" className="h-8 w-8" />
                 </a>
                 <a href="https://github.com/gauravsingh1281">
-                    <img src={Github} alt="Github-logo" className="h-8" />
+                    <img src={Github} alt="Github-logo" className="h-8 w-8" />
                 </a>
                 <a href="https://www.instagram.com/gauravsingh1281">
-                    <img src={Insta} alt="Insta-logo" className="h-8" />
+                    <img src={Insta} alt="Insta-logo" className="h-8 w-8" />
                 </a>
             </div>
         </section>
