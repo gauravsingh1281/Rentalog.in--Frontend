@@ -1,19 +1,17 @@
 import { FiUser } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
-import { Link ,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
-  const [navLinkbgColor , setNavlinkbgColor] = useState(true)
-//find url value
-  let url =useLocation()
-//removing # from nav   
-  url=url.hash.slice(1)
- 
-
+  const [navLinkbgColor, setNavlinkbgColor] = useState(true);
+  //find url value
+  let url = useLocation();
+  //removing # from nav
+  url = url.hash.slice(1);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -99,6 +97,16 @@ const Navbar = () => {
                   CONTACT
                 </div>
               </a>
+              <a href="/blog" aria-current="page">
+                <div
+                  className="text-textWhite"
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
+                >
+                  BLOGS
+                </div>
+              </a>
               <div className="text-gray-dark">
                 <Link to="/login">
                   <button
@@ -172,27 +180,53 @@ const Navbar = () => {
             id="navbar-sticky"
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
-              <li  className="hover:scale-[1.081] hover transition duration-300">
+              <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#home" aria-current="page">
-                {url=="home"?<h1 className="text-green">HOME</h1>:<h1>HOME</h1>}
+                  {url == "home" ? (
+                    <h1 className="text-green">HOME</h1>
+                  ) : (
+                    <h1>HOME</h1>
+                  )}
                 </a>
               </li>
 
-              <li className="hover:scale-[1.081] hover transition duration-300"> 
+              <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#Service" aria-current="page">
-                {url=="Service"?<h1 className="text-green">RENTALS</h1>:<h1>RENTALS</h1>}
+                  {url == "Service" ? (
+                    <h1 className="text-green">RENTALS</h1>
+                  ) : (
+                    <h1>RENTALS</h1>
+                  )}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
-                <a href="#AboutUs" aria-current="page" >
-                {url=="AboutUs"?<h1 className="text-green">ABOUT</h1>:<h1>ABOUT</h1>}
+                <a href="#AboutUs" aria-current="page">
+                  {url == "AboutUs" ? (
+                    <h1 className="text-green">ABOUT</h1>
+                  ) : (
+                    <h1>ABOUT</h1>
+                  )}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
-                <a href="#ContactUs" aria-current="page" >
-                {url=="ContactUs"?<h1 className="text-green">CONTACT</h1>:<h1>CONTACT</h1>}
+                <a href="#ContactUs" aria-current="page">
+                  {url == "ContactUs" ? (
+                    <h1 className="text-green">CONTACT</h1>
+                  ) : (
+                    <h1>CONTACT</h1>
+                  )}
+                </a>
+              </li>
+
+              <li className="hover:scale-[1.081] hover transition duration-300">
+                <a href="/blog" aria-current="page">
+                  {url === "Blogs" ? (
+                    <h1 className="text-green">BLOGS</h1>
+                  ) : (
+                    <h1>BLOGS</h1>
+                  )}
                 </a>
               </li>
             </ul>
