@@ -75,7 +75,7 @@ const ContactForm = () => {
           <form onSubmit={handleSubmit} className="gap-x-5 w-full">
             <div className="flex flex-col md:flex-row mb-6 justify-between">
               <div className="flex flex-col md:w-6/12">
-                <input
+                 <input
                   name="firstName"
                   value={contactForm.firstName}
                   className="border-2 border-green rounded-lg text-green-dark h-16  mb-6 md:mb-0 placeholder-textBlack p-2"

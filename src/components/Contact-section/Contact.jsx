@@ -1,7 +1,10 @@
 import ContactForm from "./ContactForm";
-import GoogleMap from './GoogleMap';
+import GoogleMap from "./GoogleMap";
 import { ContactText } from "./ContactText";
 import "./Contact-section.css";
+import Github from "../../assets/Social-Icons/Github.png";
+import Insta from "../../assets/Social-Icons/instagram.png";
+import Twitter from "../../assets/Social-Icons/Twitter.png";
 
 const Contact = () => {
   return (
@@ -15,10 +18,25 @@ const Contact = () => {
         <ContactText />
         <ContactForm />
       </main>
-
-
+      <div className="flex items-center justify-center p-0">
+        <article className="flex flex-col items-center md:items-start text-center md:text-left">
+          <h2 className="text-3xl lg:text-5xl font-bold tracking-wider mb-10 font-monsterrat text-textBlack">
+            Connect with <span className="text-customRed">Us</span>
+          </h2>
+          <div className="flex gap-[27px] flex-wrap justify-center md:justify-start md:ml-20">
+            <a href="https://twitter.com/gauravsingh1281">
+              <img src={Twitter} alt="Twitter-logo" className="h-14" />
+            </a>
+            <a href="https://github.com/gauravsingh1281">
+              <img src={Github} alt="Github-logo" className="h-14" />
+            </a>
+            <a href="https://www.instagram.com/gauravsingh1281">
+              <img src={Insta} alt="Insta-logo" className="h-14" />
+            </a>
+          </div>
+        </article>
+      </div>
       <GoogleMap />
-
     </section>
   );
 };
