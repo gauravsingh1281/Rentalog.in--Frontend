@@ -119,24 +119,28 @@ export default function Login() {
                 <div className=" flex flex-row md:flex-row items-center space-x-2 justify-center mt-5 lg:mt-2 ">
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-l border-[#c7c5c5] w-[25%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
                   >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                      alt="Google logo"
-                      className="h-5"
-                    />
+                    <a href="https://myaccount.google.com/">
+                      <img
+                        src="https://imagepng.org/wp-content/uploads/2019/08/google-icon.png"
+                        alt="Google logo"
+                        className="h-5"
+                      />
+                    </a>
                   </button>
 
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center  px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[25%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center  px-2 h-10"
                   >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
-                      alt="Facebook logo"
-                      className="h-5"
-                    />
+                    <a href="https://www.facebook.com/login.php/">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+                        alt="Facebook logo"
+                        className="h-5"
+                      />
+                    </a>
                   </button>
                 </div>
               </div>
