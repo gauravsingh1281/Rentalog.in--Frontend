@@ -12,19 +12,19 @@ const slides = [
     url: person01,
     name: "Deman",
     paragraph:
-      "some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.",
+      "Rentalog.in is very amazing which helped me as well as many landlords to rent their homes easily and helped for people who want a home on rent.",
   },
   {
     url: person02,
     name: "Darla",
     paragraph:
-      "some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.",
+      "I personally use this website to give my home on rent as it helped me to get many clients and also at their offered price.",
   },
   {
     url: person03,
     name: "Hedrik",
     paragraph:
-      "some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.",
+      "I would really recommend this website to all the users who wants to sell their home on rent and to those who want to buy house on rent.",
   },
 ];
 
@@ -71,7 +71,7 @@ const Testimonial = () => {
         </div>
       </div>
       <div className="flex flex-col mx-auto w-[70%] justify-center text-center text-textWhite font-medium">
-        <small>{slides[slide].name}</small>
+        <small className="font-bold text-4xl">{slides[slide].name}</small>
         <p className="py-4">{slides[slide].paragraph}</p>
       </div>
 
@@ -94,13 +94,13 @@ const Testimonial = () => {
             onClick={() => goToSlide(slideIndex)}
             className="text-2xl cursor-pointer flex justify-center items-center w-[1.5em]"
           >
-            <RxDotFilled
+            {/* <RxDotFilled
               className={`${
                 slideIndex === slide
                   ? "text-textWhite border-dashed border-[2px] rounded-full text-4xl animate-[spin_3s_linear_infinite] delay-100"
                   : "text-black"
               }`}
-            />
+            /> */}
           </div>
         ))}
       </div>

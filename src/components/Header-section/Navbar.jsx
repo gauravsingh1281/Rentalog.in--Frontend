@@ -117,9 +117,9 @@ const Navbar = () => {
                 <Link to="/register">
                   <button
                     type="button"
-                    className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite -mt-4"
+                    className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-[#1ABC9C] mt-4"
                   >
-                    <FiUser className="text-2xl" />
+                    <FiUser className="text-2xl bg-[#1ABC9C]" />
                     Register
                   </button>
                 </Link>
@@ -139,7 +139,7 @@ const Navbar = () => {
         <div
           className={
             doBlure
-              ? `absolute w-full h-full -z-20 bg-gray-light opacity-0`
+              ? `absolute w-full h-full -z-20 bg-gray-light opacity-60`
               : `absolute w-full h-full -z-20 bg-gray-light opacity-80`
           }
         ></div>
