@@ -20,7 +20,10 @@
 .header-section li:hover {
   color: #1abc9c;
 }
-
+#rent{
+  margin-top: 50px;
+  width:500px;
+}
 .user-cta :last-child {
   justify-content: center;
   align-items: center;

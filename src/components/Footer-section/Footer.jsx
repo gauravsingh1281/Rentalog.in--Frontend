@@ -5,7 +5,7 @@ let year = date.getFullYear();
 const Footer = () => {
   return (
     <>
-      <div className="flex grow flex-col bg-primaryGreen text-textWhite px-10 py-[35px]">
+      <div className="flex grow flex-col text-textWhite px-10 py-[35px]" style={{backgroundColor:"black"}}>
         <div className="flex justify-center flex-wrap grow">
           <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[300px] mx-10 my-5">
             <img

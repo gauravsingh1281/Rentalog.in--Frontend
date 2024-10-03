@@ -25,7 +25,7 @@ const Services = () => {
           );
         })}
       </div>
-      <div className="bg-[#D1F2EB] my-20 mb-0">
+      <div className="bg-[#b9baba] my-20 mb-0">
         <h1 className="text-3xl md:text-4xl font-semibold text-[#312F2F] text-center py-10">
           Our Services are available in
         </h1>
