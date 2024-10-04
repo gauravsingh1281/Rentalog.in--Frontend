@@ -1,5 +1,6 @@
 import logo from "../../assets/Images/logo.png";
-import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 let date = new Date();
 let year = date.getFullYear();
 const Footer = () => {
@@ -47,7 +48,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold">Contact Us</h3>
             <div className="flex space-x-3 pt-2">
               <a href="https://twitter.com/gauravsingh1281">
-                <FaTwitter className="w-8 h-8 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out" />
+                <FaXTwitter className="w-8 h-8 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out" />
               </a>
               <a href="https://github.com/gauravsingh1281">
                 <FaGithub className="w-8 h-8 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out" />

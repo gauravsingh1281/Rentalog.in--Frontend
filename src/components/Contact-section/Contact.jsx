@@ -4,7 +4,7 @@ import { ContactText } from "./ContactText";
 import "./Contact-section.css";
 import Github from "../../assets/Social-Icons/Github.png";
 import Insta from "../../assets/Social-Icons/instagram.png";
-import Twitter from "../../assets/Social-Icons/Twitter.png";
+import X from "../../assets/Social-Icons/X.png";
 
 const Contact = () => {
   return (
@@ -25,7 +25,7 @@ const Contact = () => {
           </h2>
           <div className="flex gap-[27px] flex-wrap justify-center md:justify-start md:ml-20">
             <a href="https://twitter.com/gauravsingh1281">
-              <img src={Twitter} alt="Twitter-logo" className="h-14" />
+              <img src={X} alt="X-logo" className="h-14 w-14" />
             </a>
             <a href="https://github.com/gauravsingh1281">
               <img src={Github} alt="Github-logo" className="h-14" />
