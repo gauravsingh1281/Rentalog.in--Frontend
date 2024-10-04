@@ -21,39 +21,47 @@ const Footer = () => {
           <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[180px] mx-10 my-5">
             <ul>
               <li className="font-semibold pb-4">Services</li>
-              <li>Property Listing</li>
-              <li>Track Payment record</li>
-              <li>Rent Calculation</li>
-              <li>Time Management</li>
+              <li className="hover:scale-110 transition duration-300 ease-in-out">
+                <span className="block py-2 transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-3">Property Listing</span>
+              </li>
+              <li className="hover:scale-110 transition duration-300 ease-in-out">
+                <span className="block py-2 transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-3">Track Payment record</span>
+              </li>
+              <li className="hover:scale-110 transition duration-300 ease-in-out">
+                <span className="block py-2 transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-3">Rent Calculation</span>
+              </li>
+              <li className="hover:scale-110 transition duration-300 ease-in-out">
+                <span className="block py-2 transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-3">Time Management</span>
+              </li>
             </ul>
           </div>
           <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[150px] mx-10 my-5">
             <ul>
               <li className="font-semibold hover:scale-110 transition duration-300 ease-in-out">
-                <a href="/">Home</a>
+                <a href="/" className="transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-3">Home</a>
               </li>
               <li className="font-semibold hover:scale-110 transition duration-300 ease-in-out">
-                <a href="#AboutUs">About Us</a>
+                <a href="#AboutUs" className="transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-3">About Us</a>
               </li>
               <li className="font-semibold hover:scale-110 transition duration-300 ease-in-out">
-                <a href="#ContactUs">Contact Us</a>
+                <a href="#ContactUs" className="transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-3">Contact Us</a>
               </li>
               <li className="font-semibold hover:scale-110 transition duration-300 ease-in-out">
-                <a href="#Service">Rentals</a>
+                <a href="#Service" className="transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-3">Rentals</a>
               </li>
             </ul>
           </div>
           <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[150px] mx-10 my-5">
             <h3 className="text-xl font-semibold">Contact Us</h3>
             <div className="flex space-x-3 pt-2">
-              <a href="https://twitter.com/gauravsingh1281">
-                <FaTwitter className="w-8 h-8 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out" />
+              <a href="https://twitter.com/gauravsingh1281" className="icon-animation transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-12 hover:text-blue-500">
+                <FaTwitter className="w-8 h-8" />
               </a>
-              <a href="https://github.com/gauravsingh1281">
-                <FaGithub className="w-8 h-8 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out" />
+              <a href="https://github.com/gauravsingh1281" className="icon-animation transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-12 hover:text-gray-800">
+                <FaGithub className="w-8 h-8" />
               </a>
-              <a href="https://www.instagram.com/gauravsingh1281">
-                <FaInstagram className="w-8 h-8 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out" />
+              <a href="https://www.instagram.com/gauravsingh1281" className="icon-animation transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-12 hover:text-pink-500">
+                <FaInstagram className="w-8 h-8" />
               </a>
             </div>
           </div>
