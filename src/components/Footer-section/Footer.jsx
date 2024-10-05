@@ -1,5 +1,6 @@
 import logo from "../../assets/Images/logo.png";
-import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 let date = new Date();
 let year = date.getFullYear();
 
@@ -43,19 +44,19 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[150px] mx-5 my-2">
-          <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-          <div className="flex space-x-4 pt-2">
-            <a href="https://twitter.com/gauravsingh1281">
-              <FaTwitter className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#1DA1F2]" />
-            </a>
-            <a href="https://github.com/gauravsingh1281">
-              <FaGithub className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#333]" />
-            </a>
-            <a href="https://www.instagram.com/gauravsingh1281">
-              <FaInstagram className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
-            </a>
-          </div>
+         <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[150px] mx-10 my-5">
+            <h3 className="text-xl font-semibold">Contact Us</h3>
+            <div className="flex space-x-3 pt-2">
+              <a href="https://twitter.com/gauravsingh1281">
+                <FaXTwitter className="w-8 h-8 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out" />
+              </a>
+              <a href="https://github.com/gauravsingh1281">
+                <FaGithub className="w-8 h-8 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out" />
+              </a>
+              <a href="https://www.instagram.com/gauravsingh1281">
+                <FaInstagram className="w-8 h-8 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out" />
+              </a>
+            </div>
         </div>
       </div>
       <div className="h-10"></div>

@@ -1,6 +1,6 @@
 import github from "../../assets/Icons/github.png"
 import instagram from "../../assets/Icons/Instagram.png"
-import twitter from "../../assets/Icons/twitter.png"
+import X from "../../assets/Icons/X.png"
 import Form from "./Form"
 
 const Connect = () => {
@@ -16,7 +16,7 @@ const Connect = () => {
                         <img src={instagram} alt="" className="w-10 h-10 mr-2" />
                     </a>
                     <a href="https://twitter.com/gauravsingh1281">
-                        <img src={twitter} alt="" className="w-8 h-8" />
+                        <img src={X} alt="" className="w-8 h-8" />
                     </a>
                 </div>
             </div>
