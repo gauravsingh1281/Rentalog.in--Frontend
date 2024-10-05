@@ -6,7 +6,6 @@ let year = date.getFullYear();
 
 const Footer = () => {
   return (
-    <>
     <div className="flex flex-col bg-primaryGreen text-textWhite px-5 py-2">
       <div className="flex justify-center flex-wrap gap-10">
         <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[200px] mx-5 my-2">
