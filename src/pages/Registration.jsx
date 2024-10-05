@@ -157,11 +157,11 @@ export default function Registration() {
                 <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-l border-[#c7c5c5] w-[25%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
                   >
                     <a href="https://myaccount.google.com/">
                       <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png"
+                        src="https://imagepng.org/wp-content/uploads/2019/08/google-icon.png"
                         alt="Google logo"
                         className="h-5"
                       />
@@ -170,15 +170,13 @@ export default function Registration() {
 
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[40%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[25%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center  px-2 h-10"
                   >
                     <a href="https://www.facebook.com/login.php/">
                       <img
-                        src="https://tse4.mm.bing.net/th?id=OIP.KCzWnbfabdUUli4v25y-_AHaEK&pid=Api&P=0&h=180"
+                        src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
                         alt="Facebook logo"
                         className="h-5"
-                        width="100px"
-                        height="150px"
                       />
                     </a>
                   </button>
