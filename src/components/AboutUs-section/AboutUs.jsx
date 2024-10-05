@@ -1,18 +1,59 @@
+import { useState } from "react";
 import rentBoardImg from "../.././assets/Images/rent-board.png";
 import "./AboutUs-section.css";
 import Lottie from "lottie-react";
 import rent from "./rent.json";
 
 const AboutUs = () => {
+  const [gradientStyle, setGradientStyle] = useState({});
+
+  // Function to handle mouse movement and update gradient
+  const handleMouseMove = (e) => {
+    const { offsetX, offsetY, target } = e.nativeEvent;
+    const { clientWidth, clientHeight } = target;
+
+    // Calculate percentage position of the mouse within the card
+    const xPercent = (offsetX / clientWidth) * 100;
+    const yPercent = (offsetY / clientHeight) * 100;
+
+    // Set radial gradient color based on mouse position
+    setGradientStyle({
+      background: `radial-gradient(circle at ${xPercent}% ${yPercent}%, #FFB74D, #FFAB91, #FFF9C4)`,
+    });
+  };
+
+  // Reset gradient when mouse leaves the section
+  const handleMouseLeave = () => {
+    setGradientStyle({
+      background: "#EBB4B6", // Default background color (soft mint)
+    });
+  };
+
   return (
     <div className="aboutUs-section">
       <div id="AboutUs"></div>
-      <span className="text-3xl md:text-4xl font-semibold text-[#312F2F] text-center pt-10">About Us</span>
-      <div className=" row flex flex-col justify-center items-center lg:flex-row m-[5%] bg-gradient-to-b lg:bg-gradient-to-r from-primaryGreen to-customRed rounded-3xl">
-        <Lottie className="rent-board-img text-primaryGreen w-[80%] lg:w-[50%]" animationData={rent} loop={true} />
-        <div className=" w-full lg:w-[50%] p-[5%] ">
-          <p className="paragraph text-justify text-textWhite leading-6 md:leading-8">
-            Rentalog is a web application that makes it easy for landlords to
+      <span className="text-3xl md:text-4xl font-semibold text-[#312F2F] text-center pt-10">
+        About Us
+      </span>
+      <div
+        className="row flex flex-col justify-center items-center lg:flex-row m-[5%] rounded-3xl transition-all duration-500 ease-in-out transform hover:scale-105"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          ...gradientStyle,
+          background: gradientStyle.background
+            ? gradientStyle.background
+            : "#D1F2EB", // Default background color
+        }}
+      >
+        <Lottie
+          className="rent-board-img text-primaryGreen w-[80%] lg:w-[50%]"
+          animationData={rent}
+          loop={true}
+        />
+        <div className="w-full lg:w-[50%] p-[5%]">
+          <p className="paragraph text-justify text-[#312F2F] leading-6 md:leading-8 ">
+          Rentalog is a web application that makes it easy for landlords to
             manage their rental properties. With Rentalog, landlords can keep
             track of important information about their renters, including their
             names, addresses, and rental payment history. This information is
@@ -31,7 +72,6 @@ const AboutUs = () => {
             smoothly.
           </p>
         </div>
-
       </div>
     </div>
   );

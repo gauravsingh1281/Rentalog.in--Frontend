@@ -1,18 +1,18 @@
 import { FiUser } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
-import { Link ,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
-  const [navLinkbgColor , setNavlinkbgColor] = useState(true)
-//find url value
-  let url =useLocation()
-//removing # from nav   
-  url=url.hash.slice(1)
- 
+  const [navLinkbgColor, setNavlinkbgColor] = useState(true)
+  //find url value
+  let url = useLocation()
+  //removing # from nav   
+  url = url.hash.slice(1)
+
 
 
   useEffect(() => {
@@ -103,7 +103,7 @@ const Navbar = () => {
                 <Link to="/login">
                   <button
                     type="button"
-                    className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite"
+                    className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite  transition-transform duration-300 hover:scale-110 hover:text-sky-500"
                   >
                     <FiUser className="text-2xl" />
                     Log In
@@ -130,7 +130,7 @@ const Navbar = () => {
       </>
     );
   } else {
-    window.onscroll = () => {};
+    window.onscroll = () => { };
   }
 
   return (
@@ -152,7 +152,7 @@ const Navbar = () => {
             <Link to="/login">
               <button
                 type="button"
-                className="hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0"
+                className="hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
               >
                 Login
               </button>
@@ -160,39 +160,36 @@ const Navbar = () => {
             <Link to="/register">
               <button
                 type="button"
-                className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0 bg-textWhite"
+                className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-green"
               >
                 <FiUser className="text-2xl" />
                 Register
               </button>
             </Link>
           </div>
-          <div
-            className="hidden md:flex md:w-auto md:order-1"
-            id="navbar-sticky"
-          >
+          <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
-              <li  className="hover:scale-[1.081] hover transition duration-300">
+              <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#home" aria-current="page">
-                {url=="home"?<h1 className="text-green">HOME</h1>:<h1>HOME</h1>}
+                  {url == "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
                 </a>
               </li>
 
-              <li className="hover:scale-[1.081] hover transition duration-300"> 
+              <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#Service" aria-current="page">
-                {url=="Service"?<h1 className="text-green">RENTALS</h1>:<h1>RENTALS</h1>}
+                  {url == "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
-                <a href="#AboutUs" aria-current="page" >
-                {url=="AboutUs"?<h1 className="text-green">ABOUT</h1>:<h1>ABOUT</h1>}
+                <a href="#AboutUs" aria-current="page">
+                  {url == "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
-                <a href="#ContactUs" aria-current="page" >
-                {url=="ContactUs"?<h1 className="text-green">CONTACT</h1>:<h1>CONTACT</h1>}
+                <a href="#ContactUs" aria-current="page">
+                  {url == "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
                 </a>
               </li>
             </ul>
@@ -225,6 +222,7 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
+
       </nav>
     </>
   );
