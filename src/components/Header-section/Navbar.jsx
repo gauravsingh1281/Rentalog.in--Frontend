@@ -7,13 +7,11 @@ import { useState, useEffect } from "react";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
-  const [navLinkbgColor, setNavlinkbgColor] = useState(true)
+  const [navLinkbgColor, setNavlinkbgColor] = useState(true);
   //find url value
-  let url = useLocation()
+  let url = useLocation();
   //removing # from nav   
-  url = url.hash.slice(1)
-
-
+  url = url.hash.slice(1);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -50,7 +48,7 @@ const Navbar = () => {
           <div className="text-textWhite">
             <div className="px-4 bg-textWhite w-fit rounded-xl">
               <img
-                className="self-start w-40 "
+                className="self-start w-40"
                 src={logo}
                 alt="Rentalog-logo"
               />
@@ -146,7 +144,13 @@ const Navbar = () => {
 
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex flex-row justify-center items-center">
-            <img className="self-start w-40 " src={logo} alt="Rentalog-logo" />
+            <a href="#home" aria-current="page">
+                <img
+                  className="self-start w-40"
+                  src={logo}
+                  alt="Rentalog-logo"
+                />
+            </a>
           </div>
           <div className="flex md:order-2">
             <Link to="/login">
@@ -171,25 +175,25 @@ const Navbar = () => {
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#home" aria-current="page">
-                  {url == "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
+                  {url === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#Service" aria-current="page">
-                  {url == "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
+                  {url === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#AboutUs" aria-current="page">
-                  {url == "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
+                  {url === "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#ContactUs" aria-current="page">
-                  {url == "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
+                  {url === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
                 </a>
               </li>
             </ul>
@@ -222,9 +226,9 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-
       </nav>
     </>
   );
 };
+
 export default Navbar;
