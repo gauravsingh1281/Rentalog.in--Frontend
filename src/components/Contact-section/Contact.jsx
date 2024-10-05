@@ -14,12 +14,19 @@ const Contact = () => {
           Contact Us
         </h1>
       </header>
+ main
       <main className="flex flex-wrap lg:gap-[5%] gap-[20px] justify-center items-center">
         <div className="contact-box flex flex-col md:flex-row lg:gap-[5%] gap-[20px] justify-center items-center">
           <ContactText />
           <ContactForm />
         </div>
+
+      <main className=" mt-0 flex flex-wrap lg:gap-[5%] gap-[20px] justify-center items-center">
+        <ContactText />
+        <ContactForm />
+main
       </main>
+
       <div className="flex items-center justify-center p-0">
         <article className="flex flex-col items-center md:items-start text-center md:text-left">
           <h2 className="text-3xl lg:text-5xl font-bold tracking-wider mb-10 font-monsterrat text-textBlack">
