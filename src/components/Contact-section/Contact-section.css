@@ -1,3 +1,10 @@
+
 #ContactUs {
     margin-bottom: 5rem;
+}
+
+#text{
+    display: flex;
+    text-align: center;
+    margin-left: 98px;
 }
