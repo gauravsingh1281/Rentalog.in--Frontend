@@ -8,10 +8,58 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
   const [navLinkbgColor, setNavlinkbgColor] = useState(true);
-  //find url value
-  let url = useLocation();
-  //removing # from nav   
-  url = url.hash.slice(1);
+  const [activeSection, setActiveSection] = useState("home"); // Track active section
+  const sectionIds = ["home", "Service", "AboutUs", "ContactUs"]; // Section IDs
+  
+
+  // Intersection Observer to Highlight Links on Scroll and Update URL
+  useEffect(() => {
+    const sections = sectionIds.map((id) => document.getElementById(id));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const newActiveSection = entry.target.id;
+            setActiveSection(newActiveSection);
+
+            // Update the URL without reloading the page
+            if (window.location.hash !== `#${newActiveSection}`) {
+              window.history.replaceState(null, null, `#${newActiveSection}`);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.9, // Reduce the threshold to detect sections earlier
+        rootMargin: "0px 0px -50% 0px", // Adjust root margin to highlight as sections enter
+      }
+    );
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  // Fallback for "home" section when near top of the page
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 50) {
+        setActiveSection("home");
+        window.history.replaceState(null, null, "#home");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -175,25 +223,25 @@ const Navbar = () => {
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#home" aria-current="page">
-                  {url === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
+                  {activeSection === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#Service" aria-current="page">
-                  {url === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
+                  {activeSection === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#AboutUs" aria-current="page">
-                  {url === "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
+                  {activeSection === "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
                 </a>
               </li>
 
               <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#ContactUs" aria-current="page">
-                  {url === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
+                  {activeSection === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
                 </a>
               </li>
             </ul>
