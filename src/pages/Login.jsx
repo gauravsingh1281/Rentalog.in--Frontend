@@ -122,7 +122,9 @@ export default function Login() {
                     className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
                   >
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                      // src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                      src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+
                       alt="Google logo"
                       className="h-5"
                     />
