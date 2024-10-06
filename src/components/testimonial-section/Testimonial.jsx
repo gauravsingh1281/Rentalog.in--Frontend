@@ -7,24 +7,28 @@ import person01 from "../../assets/Images/person01.png";
 import person02 from "../../assets/Images/person02.png";
 import person03 from "../../assets/Images/person03.png";
 import testimonialbg from "../../assets/Images/testimonialbg.png";
+import facebook from "../../assets/Icons/facebook.png";
+import twitter from "../../assets/Icons/twitter.png";
+import instagram from "../../assets/Icons/instagram.png";
+
 const slides = [
   {
     url: person01,
     name: "Deman",
     paragraph:
-      "some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.",
+      "I've been using Rentalog for a few months now, and it has completely transformed how I manage my properties. The app makes it so easy to track rent payments and stay organized. I can't imagine going back to my old system.",
   },
   {
     url: person02,
     name: "Darla",
     paragraph:
-      "some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.",
+      "Managing multiple tenants used to be a headache. Rentalog has simplified everything, from tracking payments to keeping renter details in one place. It’s intuitive and saves me so much time!",
   },
   {
     url: person03,
     name: "Hedrik",
     paragraph:
-      "some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.some dummy testimonials can be writteen here.",
+      "I own just a few rental units, and Rentalog has been a lifesaver. It's perfect for keeping everything organized without the hassle of complex software. Highly recommended!",
   },
 ];
 
@@ -47,14 +51,15 @@ const Testimonial = () => {
   }
   return (
     <div
-      className=" testimonial max-w-[1440px] h-[780px] m-auto py-16 px-4 relative group"
+      className=" testimonial max-w-[1440px] h-[820px] m-auto py-12
+       px-4 relative group"
       style={{ backgroundImage: `url(${testimonialbg})` }}
     >
       <h2 className="text-4xl font-bold tracking-wider text-textWhite mb-[2rem] text-center font-monsterrat">
         Testimonials
       </h2>
       <div className="flex justify-center items-center gap-4 sm:gap-20">
-        <div className="flex justify-center items-center w-40 h-40 sm:w-40 sm:h-40 rounded-full overflow-hidden py-3 bg-center bg-cover duration-500">
+        <div className="flex justify-center items-center w-40 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden py-3 bg-center bg-cover duration-500">
           <img
             src={slides[slide - 1 < 0 ? slides.length - 1 : slide - 1].url}
             alt="image"
@@ -70,9 +75,14 @@ const Testimonial = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col mx-auto w-[70%] justify-center text-center text-textWhite font-medium">
-        <small>{slides[slide].name}</small>
-        <p className="py-4">{slides[slide].paragraph}</p>
+      <div className="flex flex-col mx-auto w-[70%] justify-center text-center font-medium">
+        <p className="text-xl bg-textWhite py-2">{slides[slide].name} </p>
+        <div className="flex flex-row justify-center pt-3">
+          <img src={facebook} alt="facebook" className="h-6 w-6 ml-4 align-center"/>
+          <img src={instagram} alt="facebook" className="h-6 w-6 ml-4 align-center"/>
+          <img src={twitter} alt="facebook" className="h-6 w-6 ml-4 align-center"/>
+        </div>
+        <p className="py-4 text-sm text-textWhite">{slides[slide].paragraph}</p>
       </div>
 
       <div
