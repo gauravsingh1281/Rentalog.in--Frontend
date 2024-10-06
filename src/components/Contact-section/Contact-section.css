@@ -1,11 +1,10 @@
-#ContactUs main{
-    margin-bottom: 0.1 rem; 
+
+#ContactUs {
+    margin-bottom: 5rem;
 }
 
-main {
-    margin-top: 0; 
-    padding-top: 0; 
-  margin-bottom: 5rem;
+#text{
+    display: flex;
+    text-align: center;
+    margin-left: 98px;
 }
-
-
