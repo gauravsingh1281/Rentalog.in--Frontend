@@ -10,10 +10,10 @@
 }
 
 #ContactUs {
-    margin-bottom: 0 rem; /* Further reduced margin-bottom to minimize the space */
+    margin-bottom: 0.1 rem; /* Further reduced margin-bottom to minimize the space */
 }
 
 main {
-    margin-top: 0; /* Remove any top margin between the Contact Us header and Contact Text */
+    margin-top: 0; /* Remove any top margin between the Contact Us header and Contact Text Information */
     padding-top: 0; /* Remove extra padding if present */
 }
