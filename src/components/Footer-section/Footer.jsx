@@ -1,9 +1,22 @@
+import { useState } from "react";
 import logo from "../../assets/Images/logo.png";
 import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
+import { LuSendHorizonal } from "react-icons/lu";
 let date = new Date();
 let year = date.getFullYear();
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const handleSubmit = (event) => {
+    try {
+      event.preventDefault();
+      console.log(email);
+      setEmail("");
+    } catch (error) {
+      console.log(`Error with newsletter input: ${error}`)
+    }
+  }
+  
   return (
     <div className="flex flex-col bg-primaryGreen text-textWhite px-5 py-2">
       <div className="flex justify-center flex-wrap gap-10">
@@ -56,6 +69,19 @@ const Footer = () => {
               <FaInstagram className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
             </a>
           </div>
+          <div className="flex flex-row items-center space-x-4 mt-4 relative">
+            <input 
+              type="email"
+              id="newsletter" 
+              maxLength={35} 
+              value={email} 
+              placeholder="Enter Email..." 
+              onChange={(e) => setEmail(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
+              className="text-[#555] text-sm font-[500] p-2 rounded-md focus:outline-none focus:ring"/>
+            <button onClick={handleSubmit} className="absolute right-1 p-2 bg-[#1ABC9C] text-white rounded-md hover:bg-[#fff] hover:text-[#1abc9c] hover:border hover:border-[#1abc9c] transition duration-3 ease-in-out"><LuSendHorizonal /></button>
+          </div>
+            <p className="mt-4 text-sm font-[300]">Subscribe to our <span className="text-[#cd4347] font-[500] text-justify">Newsletter</span> for latest updates and offers!</p>
         </div>
       </div>
       <div className="h-10"></div>
