@@ -17,7 +17,7 @@ const Header = () => {
             details, their payment history, and much more with ease.
           </p>
           <Link to="/register">
-            <button className="btn">Get Started</button>
+            <button className="btn">Get Started <i className="fa-solid fa-right-long pl-2"></i></button>
           </Link>
         </div>
       </div>
