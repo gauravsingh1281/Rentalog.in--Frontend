@@ -22,9 +22,28 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <title>Rentalog || Free Rent Management Web App For Landlords</title>
+    <link rel="stylesheet" href="loader/style.css">
   </head>
 
   <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <img src="public/android-chrome-256x256_enhanced.png" alt="Preloader" class="preloader-icon">
+      <p class="loading-text">Loading...</p>
+  </div>
+
+  <!-- Main content -->
+  <div id="main-content" style="display:none;">
+      <!-- Your existing content goes here -->
+  </div>
+
+  <script>
+      window.addEventListener('load', function() {
+          setTimeout(function() {
+              document.body.classList.add('loaded');
+          }, 3000); // 3 seconds delay
+      });
+  </script>
     <div id="root"></div>
     <script type="module" src="./index.jsx"></script>
   </body>
