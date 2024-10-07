@@ -162,19 +162,12 @@ const Navbar = () => {
               </button>
             </Link>
             <Link to="/register">
-              {/* <button
-                type="button"
-                className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-green"
-              >
-                <FiUser className="text-2xl" />
-                Register
-              </button> */}
               <button
                 type="button"
                 className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#000] bg-[#fff] px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
               >
                 <FiUser className="text-2xl" />
-                Register
+                Sign in
               </button>
 
             </Link>
