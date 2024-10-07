@@ -9,6 +9,7 @@ import TotalRentCollected from "./components/dashboard-components/TotalRentColle
 import PropertyListing from "./components/dashboard-components/PropertyListing/PropertyListing";
 import ListedProperty from "./components/dashboard-components/ListedProperty/ListedProperty";
 import CreateNewRental from "./components/dashboard-components/CreateNewRental/CreateNewRental";
+import TimeManagement from "./components/dashboard-components/TimeManagement/TimeManagement";
 
 const App = () => {
   
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected/>}/>
         <Route path="/dashboard/propertylisting" element={<PropertyListing/>}/>
         <Route path="/dashboard/listedproperty" element={<ListedProperty/>}/>
+        <Route path="/dashboard/timemanagement" element ={<TimeManagement/>}/>
     </Routes>
   );
 };
