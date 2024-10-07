@@ -56,7 +56,7 @@ const Navbar = () => {
 
             <div className="mt-4 h-[2px] w-600 bg-textWhite rounded-full"></div>
 
-            <div className="flex flex-col gap-8 justify-center items-center mt-10">
+            <div className="flex flex-col gap-8 justify-center items-center mt-1" style={{ backgroundColor: '#1E90FF', padding: '1rem' }}>
               <a href="#home" aria-current="page">
                 <div
                   className="text-textWhite"

@@ -1,144 +1,106 @@
 .header-section {
   width: 100%;
   height: 100vh;
-  background: url(/src/assets/Images/red-house.png);
-  background-position: center center;
+  background: url(/src/assets/Images/red-house.png) no-repeat center center;
   background-color: #262626;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   margin-bottom: 0;
 }
-
-.header-section li {
-  list-style: none;
-  font-weight: 600;
-  font-size: 18.5px;
-  color: #262626;
-  transition: ease 200ms;
+.header-text {
+  position: relative;
+  top: -100px; /* Move text upwards */
+  text-align: center; /* Center the text */
 }
 
-.header-section li:hover {
-  color: #1abc9c;
-}
-
-.user-cta :last-child {
-  justify-content: center;
-  align-items: center;
-  display: flex;
+.header-text-container {
+  max-width: 70%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Adding background to text for contrast */
   border-radius: 8px;
-  background-color: white;
 }
 
 .header-text h1 {
-  font-size: 57px;
-  font-weight: 600;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #222;
 }
 
-.header-text h1 span {
+.header-text h1 .highlighted {
   color: #cd4347;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .header-text p {
   font-weight: 400;
-  font-size: 17px;
-}
-
-.header-text {
-  position: relative;
-  left: 4%;
-  width: 68%;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 40px;
 }
 
 .btn {
-  margin-top: 55px;
+
+  display: block; /* Makes the button a block element */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
   border-radius: 8px;
   color: white;
-  font-size: 21px;
+  font-size: 1.2rem;
   font-weight: 700;
-  width: 22%;
-  height: 52px;
+  padding: 12px 24px;
   background: #1abc9c;
-  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .btn:hover {
-  background: transparent;
-  border-color: #1abc9c;
-  border-width: 2px;
-  color: #1abc9c;
+  background: #16a085;
+  transform: scale(1.05);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(5px);
 }
 
 @media (max-width: 768px) {
-  .header-section {
-    width: 100%;
-    height: 100vh;
-    background: url(/src/assets/Images/red-house.png);
-    background-position: center center;
-    background-color: #262626;
-    background-size: cover;
-    position: relative;
-  }
-
-  .header-text {
-    position: relative;
-    left: 4%;
-    width: 74%;
-  }
-
   .header-text h1 {
-    font-size: 46px;
-    font-weight: 600;
+    font-size: 3rem;
   }
 
   .btn {
-    margin-top: 55px;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 700;
-    width: 31%;
-    height: 47px;
-    background: #1abc9c;
+    font-size: 1.1rem;
+    padding: 10px 20px;
   }
 }
 
 @media (max-width: 580px) {
-  .navbar .logo {
-    width: 170px;
-  }
-
-  .navbar .menu-icon {
-    width: 40px;
-  }
-
-  .header-section li {
-    list-style: none;
-    font-weight: 600;
-    font-size: 15.5px;
-    color: #262626;
+  .header-text h1 {
+    font-size: 2.5rem;
   }
 
   .btn {
-    margin-top: 55px;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 700;
     width: 36%;
-    height: 47px;
-    background: #1abc9c;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 468px) {
+  .header-text h1 {
+    font-size: 2rem;
+  }
+
   .btn {
-    margin-top: 55px;
-    border-radius: 8px;
-    color: white;
-    font-size: 1rem;
-    font-weight: 700;
     width: 42%;
-    height: 44px;
-    background: #1abc9c;
+    font-size: 0.9rem;
   }
 }
