@@ -1,13 +1,32 @@
 import PropTypes from "prop-types";
 const ServicesAvailableIn = (props) => {
     return (
-        <div className="flex items-center gap-8 flex-col">
-            <img src={props.placeImage} alt="image" className="w-28 h-28 rounded-full hover:scale-110 hover:shadow-2xl  transition duration-300 cursor-pointer" />
+        <div
+            className="flex items-center gap-8 flex-col relative group"
+            style={{ marginTop: props.mt }}
+            onMouseEnter={() => { 
+                props.setBgImage('')
+                props.setImageUrl(props.placeImage) 
+                props.setCurrPlace(props.placeName)
+            }}
+            
+            onMouseLeave={() => {
+                props.setBgImage('')
+                // props.setImageUrl('')
+            }}
+        >
+            <img src={props.placeImage} alt="image" className="w-52 h-64 rounded-xl group-hover:scale-110 hover:shadow-2xl  transition duration-300 cursor-pointer object-cover" />
             {/* <h1 className="bg-[#EBB4B6] w-28 h-28   rounded-full"></h1> */}
-            <h1 className="text-xl font-medium">{props.placeName}</h1>
+            <div className="absolute bottom-0 w-full h-1/5 flex items-end justify-center rounded-b-xl group-hover:scale-110 group-hover:translate-y-[20%] transition duration-300" style={{
+                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.70) 63%)'
+            }} >
+                <h1 className="text-xl text-textWhite font-semibold" style={{ textShadow: '0 0 5px #ffffff' }}>{props.placeName}</h1>
+            </div>
+
         </div>
     )
 }
+
 
 ServicesAvailableIn.propTypes = {
     placeName: PropTypes.string.isRequired,
