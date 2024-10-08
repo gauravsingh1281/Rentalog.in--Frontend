@@ -1,30 +1,16 @@
-<head><body>
-    <div class="navbar">
-     <div class="logo">
-      <img alt="Rentalogin Logo" height="59" src="logo.png" width="200"/>
-     </div>
-     <ul class="nav-links">
-      <li>
-       <a href="index.html">Home</a></li>
-      <li>
-       <a href="about_us.html">About Us</a></li>
-      <li>
-       <a href="plan.html">Plan</a></li>
-      <li>
-       <a href="#Properties">Properties</a></li>
-     </ul>
-     <a class="cta" href="#">Rentals</a>
-    </div></head>
-    <title>OUR PLANS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #87CEEB; /* Light sky blue */
-            color: #000;
+<html></html>
+ <head>
+  <title>
+   Rentalog
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f0f8ff;
         }
         .navbar {
             display: flex;
@@ -67,87 +53,562 @@
         .navbar .cta:hover {
             background-color: #333;
         }
-        .container {
+        .hero {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            background-color: #FFFFFF; /* White */
+            padding: 50px;
         }
-        .plan {
-            background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
-            padding: 20px;
-            margin: 10px;
-            width: 300px;
-            text-align: center;
-            border-radius: 10px;
-            transition: background-color 0.3s;
+        .hero .hero-text {
+            max-width: 50%;
         }
-        .plan:hover {
-            background-color: #87CEEB; /* Light sky blue */
+        .hero .hero-text h1 {
+            font-size: 48px;
+            margin: 0;
         }
-        .plan h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .plan ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        .plan ul li {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-        .plan ul li i {
-            color: #87CEEB; /* Light sky blue */
-            margin-right: 10px;
-        }
-        .price {
-            font-size: 36px;
+        .hero .hero-text p {
+            font-size: 18px;
+            color: #666;
             margin: 20px 0;
         }
-        .price span {
-            font-size: 18px;
-        }
-        .btn {
-            background-color: #87CEEB; /* Light sky blue */
+        .hero .hero-text .btn {
+            padding: 15px 30px;
+            background-color: #000;
             color: #fff;
-            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
         }
-        .btn:hover {
-            background-color: #4682B4; /* Solid sky blue */
+        .hero .hero-text .btn:hover {
+            background-color: #333;
         }
-    </style>
+        .hero .hero-image img {
+            width: 500px;
+            border-radius: 10px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+            background-color: #fff;
+        }
+        .stats .stat {
+            text-align: center;
+        }
+        .stats .stat h3 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .stats .stat p {
+            font-size: 16px;
+            color: #666;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="navbar">
+   <div class="logo">
+    <img alt="Rentalogin Logo" height="59" src="logo.png" width="200"/>
+   </div>
+   <ul class="nav-links">
+    <li>
+     <a href="index.html">Home</a></li>
+    <li>
+     <a href="about_us.html">About Us</a></li>
+    <li>
+     <a href="plan.html">Plan</a></li>
+    <li>
+     <a href="properties.html">Properties</a></li>
+   </ul>
+   <a class="cta" href="properties.html">Rentals</a>
+  </div>
+  <div class="hero">
+   <div class="hero-text">
+    <h1>
+        Your Ultimate Landlord Management Tool
+    </h1>
+    <p>
+     Streamline Your Rental Business
+    </p>
+    <a class="btn" href="">
+     Get Started
+    </a>
+   </div>
+   <div class="hero-image">
+    <img alt="Modern house with large windows" height="500" src="img1.jpg" width="500"/>
+   </div>
+  </div>
+  <html></html>
+<head>
+    <title>Property Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body>
-    <div class="container">
-        <img alt="luxury-house" src="istockphoto-1254871777-612x612.jpg">
-        <div class="plan">
-            <h2>MONTHLY</h2>
-            <ul>
-                <li><i class="fas fa-check"></i>Tenant Communication</li>
-                <li><i class="fas fa-check"></i>Financial Management</li>
-                <li><i class="fas fa-check"></i>Maintenance and Repairs</li>
-                <li><i class="fas fa-check"></i>Legal Compliance</li>
-            </ul>
-            <div class="price">$30<span>/month</span></div>
-            <a href="#" class="btn">BUY NOW</a>
+  <div class="stats">
+   <div class="stat">
+    <h3>
+     1200+
+    </h3>
+    <p>
+     Listed Properties
+    </p>
+   </div>
+   <div class="stat">
+    <h3>
+     4500+
+    </h3>
+    <p>
+     Happy Customers
+    </p>
+   </div>
+   <div class="stat">
+    <h3>
+     100+
+    </h3>
+    <p>
+     Awards
+    </p>
+   </div>
+  </div>
+        <title>About Us</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #fff;
+                color: #333;
+            }
+            .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            width: 200px;
+            height: 59px;
+            margin-right: 10px;
+        }
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .navbar .nav-links li {
+            margin: 0 15px;
+        }
+        .navbar .nav-links li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+        }
+        .navbar .nav-links li a:hover {
+            color: #007bff;
+        }
+        .navbar .cta {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .navbar .cta:hover {
+            background-color: #333;
+        }
+            .container {
+                text-align: center;
+                padding: 50px 20px;
+            }
+            .about-us {
+                font-size: 36px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            .mission {
+                font-size: 16px;
+                max-width: 600px;
+                margin: 0 auto 50px;
+                color: #666;
+            }
+            .features {
+                display: flex;
+                justify-content: space-around;
+                text-align: left;
+                flex-wrap: wrap;
+            }
+            .feature {
+                max-width: 300px;
+                margin: 20px;
+            }
+            .feature-number {
+                font-size: 72px;
+                font-weight: 700;
+                color: #e0e0e0;
+                margin: 0;
+            }
+            .feature-title {
+                font-size: 18px;
+                font-weight: 700;
+                margin: 10px 0;
+                color: #000;
+            }
+            .feature-description {
+                font-size: 14px;
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="about-us">ABOUT US</div>
+            <div class="mission">Rentalog is a web application that makes it easy for landlords to manage their rental properties. With Rentalog, landlords can keep track of important information about their renters, including their names, addresses, and rental payment history. This information is stored in a secure and organized manner, so landlords can access it whenever they need to. In addition to keeping track of renters' information, Rentalog also makes it easy for landlords to collect and track monthly rent payments. This way, landlords always know exactly how much money they're earning from their properties and can make informed decisions about their business. Using Rentalog is simple and straightforward. All of the information is organized in a user-friendly interface, so landlords can access what they need quickly and easily. And, if they ever have questions or need help, they can reach out to Rentalog's dedicated support team for assistance. Overall, Rentalog is a convenient and efficient tool for landlords who want to keep their rental business organized and running smoothly.</div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-number">01</div>
+                    <div class="feature-title">Tenant Management</div>
+                    <div class="feature-description">Store and access your renters' personal information like name, address, and phone number with ease.</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-number">02</div>
+                    <div class="feature-title">Track Payment Records</div>
+                    <div class="feature-description">Keep a record of all your renters' monthly rent payments and have a complete overview of your rental income.</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-number">03</div>
+                    <div class="feature-title">Rent Calculations</div>
+                    <div class="feature-description">Automatically calculate the total rent received each month and see a breakdown of payments.</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-number">04</div>
+                    <div class="feature-title">Property Listing</div>
+                    <div class="feature-description">Showcase your rental properties and attract potential tenants by listing them on Rentalog.</div>
+                </div>
+            </div>
         </div>
-        <div class="plan">
-            <h2>YEARLY</h2>
-            <ul>
-                <li><i class="fas fa-check"></i>Rental Market Analysis</li>
-                <li><i class="fas fa-check"></i>Property Maintenance and Upgrades</li>
-                <li><i class="fas fa-check"></i>Financial Planning</li>
-                <li><i class="fas fa-check"></i>Business Growth</li>
-            </ul>
-            <div class="price">$300<span>/year</span></div>
-            <a href="#" class="btn">BUY NOW</a>
+    </body>
+    </html>
+
+        <title>OUR PLANS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <style>
+    
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #87CEEB; /* Light sky blue */
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 50px;
+                background-color: #fff;
+            }
+            .navbar .logo {
+                display: flex;
+                align-items: center;
+            }
+            .navbar .logo img {
+                width: 200px;
+                height: 59px;
+                margin-right: 10px;
+            }
+            .navbar .nav-links {
+                display: flex;
+                list-style: none;
+            }
+            .navbar .nav-links li {
+                margin: 0 15px;
+            }
+            .navbar .nav-links li a {
+                text-decoration: none;
+                color: #000;
+                font-weight: 500;
+            }
+            .navbar .nav-links li a:hover {
+                color: #007bff;
+            }
+            .navbar .cta {
+                padding: 10px 20px;
+                background-color: #000;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            .navbar .cta:hover {
+                background-color: #333;
+            }
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #FFFFFF; /* White */
+            }
+            .plan {
+                background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+                padding: 20px;
+                margin: 10px;
+                width: 300px;
+                text-align: center;
+                border-radius: 10px;
+                transition: background-color 0.3s;
+            }
+            .plan:hover {
+                background-color: #87CEEB; /* Light sky blue */
+            }
+            .plan h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            .plan ul {
+                list-style: none;
+                padding: 0;
+                text-align: left;
+            }
+            .plan ul li {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+            .plan ul li i {
+                color: #87CEEB; /* Light sky blue */
+                margin-right: 10px;
+            }
+            .price {
+                font-size: 36px;
+                margin: 20px 0;
+            }
+            .price span {
+                font-size: 18px;
+            }
+            .btn {
+                background-color: #87CEEB; /* Light sky blue */
+                color: #fff;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+            .btn:hover {
+                background-color: #4682B4; /* Solid sky blue */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img alt="luxury-house" src="img2.jpg">
+            <div class="plan">
+                <h2>MONTHLY</h2>
+                <ul>
+                    <li><i class="fas fa-check"></i>Tenant Communication</li>
+                    <li><i class="fas fa-check"></i>Financial Management</li>
+                    <li><i class="fas fa-check"></i>Maintenance and Repairs</li>
+                    <li><i class="fas fa-check"></i>Legal Compliance</li>
+                </ul>
+                <div class="price">$30<span>/month</span></div>
+                <a href="#" class="btn">BUY NOW</a>
+            </div>
+            <div class="plan">
+                <h2>YEARLY</h2>
+                <ul>
+                    <li><i class="fas fa-check"></i>Rental Market Analysis</li>
+                    <li><i class="fas fa-check"></i>Property Maintenance and Upgrades</li>
+                    <li><i class="fas fa-check"></i>Financial Planning</li>
+                    <li><i class="fas fa-check"></i>Business Growth</li>
+                </ul>
+                <div class="price">$300<span>/year</span></div>
+                <a href="#" class="btn">BUY NOW</a>
+            </div>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
+      <style>
+       body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+            .property-container {
+                width: 80%;
+                margin: 20px auto;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .property-header {
+                display: flex;
+                align-items: center;
+                padding: 20px;
+                background-color: #20c997;
+                color: white;
+            }
+            .property-header img {
+                border-radius: 50%;
+                margin-right: 20px;
+            }
+            .property-header h2 {
+                margin: 0;
+            }
+            .property-details {
+                padding: 20px;
+            }
+            .property-details table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .property-details th, .property-details td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            .property-details th {
+                background-color: #f8f8f8;
+            }
+      </style>
+     </head>
+     <body>
+      <div class="property-container">
+       <div class="property-header">
+        <img alt="Property Image" height="100" src="img3.jpg" width="100"/>
+        <h2>
+         2bhk
+        </h2>
+       </div>
+       <div class="property-details">
+        <table>
+         <tr>
+          <th>
+           Property Name
+          </th>
+          <td>
+           2bhk
+          </td>
+         </tr>
+         <tr>
+          <th>
+           Property Location
+          </th>
+          <td>
+           Siwan
+          </td>
+         </tr>
+         <tr>
+          <th>
+           Property Price
+          </th>
+          <td>
+           7000000
+          </td>
+         </tr>
+         <tr>
+          <th>
+           Owner's Contact Number
+          </th>
+          <td>
+           1234567890
+          </td>
+         </tr>
+         <tr>
+          <th>
+           Owner's Contact Number
+          </th>
+          <td>
+           1234567890
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+      <div class="property-container">
+       <div class="property-header">
+        <img alt="Property Image" height="100" src="img3.jpg" width="100"/>
+        <h2>
+         csk
+        </h2>
+       </div>
+       <div class="property-details">
+        <table>
+         <tr>
+          <th>
+           Property Name
+          </th>
+          <td>
+           csk
+          </td>
+         </tr>
+         <tr>
+          <th>
+           Property Location
+          </th>
+          <td>
+           sdf
+          </td>
+         </tr>
+         <tr>
+          <th>
+           Property Price
+          </th>
+          <td>
+           3333333
+          </td>
+         </tr>
+         <tr>
+          <th>
+           Owner's Contact Number
+          </th>
+          <td>
+           1234567894
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+      <div class="property-container">
+       <div class="property-header">
+        <img alt="Property Image" height="100" src="img3.jpg" width="100"/>
+        <h2>
+         3 BHK
+        </h2>
+       </div>
+       <div class="property-details">
+        <table>
+         <tr>
+          <th>
+           Property Name
+          </th>
+          <td>
+           3 BHK
+          </td>
+         </tr>
+         <tr>
+          <th>
+           Property Location
+          </th>
+          <td>
+           Chennai bjkk
+          </td>
+         </tr>
+         <tr>
+          <th>
+           Property Price
+          </th>
+          <td>
+           5500
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+     </body>
+    </html>
+    
