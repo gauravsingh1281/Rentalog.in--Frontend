@@ -1,80 +1,59 @@
-import { useState } from "react";
+import { useState,useEffect,useRef } from "react";
 import rentBoardImg from "../.././assets/Images/rent-board.png";
 import "./AboutUs-section.css";
 import Lottie from "lottie-react";
 import rent from "./rent.json";
+import about1 from "../../assets/Images/about-1.svg"
+import about2 from "../../assets/Images/about-2.jpg"
+import about3 from "../../assets/Images/about-3.jpg"
+import about4 from "../../assets/Images/about-4.jpg"
+
+import { AboutCard, AboutCard2 } from './AboutCard';
+
 
 const AboutUs = () => {
-  const [gradientStyle, setGradientStyle] = useState({});
+  
 
-  // Function to handle mouse movement and update gradient
-  const handleMouseMove = (e) => {
-    const { offsetX, offsetY, target } = e.nativeEvent;
-    const { clientWidth, clientHeight } = target;
-
-    // Calculate percentage position of the mouse within the card
-    const xPercent = (offsetX / clientWidth) * 100;
-    const yPercent = (offsetY / clientHeight) * 100;
-
-    // Set radial gradient color based on mouse position
-    setGradientStyle({
-      background: `radial-gradient(circle at ${xPercent}% ${yPercent}%, #FFB74D, #FFAB91, #FFF9C4)`,
-    });
-  };
-
-  // Reset gradient when mouse leaves the section
-  const handleMouseLeave = () => {
-    setGradientStyle({
-      background: "#EBB4B6", // Default background color (soft mint)
-    });
-  };
+  
 
   return (
     <div className="aboutUs-section">
-      <div id="AboutUs"></div>
-      <span className="text-3xl md:text-4xl font-semibold text-[#312F2F] text-center pt-10">
-        About Us
-      </span>
-      <div
-        className="row flex flex-col justify-center items-center lg:flex-row m-[5%] rounded-3xl transition-all duration-500 ease-in-out transform hover:scale-105"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-          ...gradientStyle,
-          background: gradientStyle.background
-            ? gradientStyle.background
-            : "#D1F2EB", // Default background color
-        }}
-      >
-        <Lottie
-          className="rent-board-img text-primaryGreen w-[80%] lg:w-[50%]"
-          animationData={rent}
-          loop={true}
-        />
-        <div className="w-full lg:w-[50%] p-[5%]">
-          <p className="paragraph text-justify text-[#312F2F] leading-6 md:leading-8 ">
-          Rentalog is a web application that makes it easy for landlords to
-            manage their rental properties. With Rentalog, landlords can keep
-            track of important information about their renters, including their
-            names, addresses, and rental payment history. This information is
-            stored in a secure and organized manner, so landlords can access it
-            whenever they need to. In addition to keeping track of renters&apos;
-            information, Rentalog also makes it easy for landlords to collect and
-            track monthly rent payments. This way, landlords always know exactly
-            how much money they&apos;re earning from their properties and can make
-            informed decisions about their business. Using Rentalog is simple and
-            straightforward. All of the information is organized in a
-            user-friendly interface, so landlords can access what they need
-            quickly and easily. And, if they ever have questions or need help,
-            they can reach out to Rentalog&apos;s dedicated support team for
-            assistance. Overall, Rentalog is a convenient and efficient tool for
-            landlords who want to keep their rental business organized and running
-            smoothly.
-          </p>
+      <div id="AboutUs" ></div>
+
+      <div className="flex flex-col md:flex-row items-start w-full">
+
+        {/* About Us Content */}
+        <div className="md:w-full flex flex-col">
+          <h2 className=" text-2xl md:text-5xl font-bold my-3 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent" >
+            About Us
+          </h2>
+
+          <div className='flex flex-col'>
+            <AboutCard
+              image={about1}
+              heading={"Simplified Rental Property Management"}
+              desc={"Rentalog is a web application designed to simplify rental property management for landlords. With an intuitive interface, it helps landlords keep track of essential information about their properties and tenants in a secure and organized way."} />
+            <AboutCard2
+              image={about2}
+              heading={"Efficient Tenant Management"}
+              desc={"Landlords can easily store and access important details about their tenants, including names, addresses, and rental payment history. This ensures that all relevant information is readily available, helping landlords stay on top of their responsibilities."} />
+            <AboutCard
+              image={about3}
+              heading={"Rent Collection and Financial Tracking"}
+              desc={"Rentalog streamlines the process of collecting and tracking monthly rent payments. By providing clear financial insights, landlords can effortlessly monitor their income and make data-driven decisions to optimize their rental business."} />
+            <AboutCard2
+              image={about4}
+              heading={"User-Friendly Interface & Support"}
+              desc={"Rentalog’s user-friendly interface makes it simple to navigate and access all necessary information quickly. Plus, landlords can rely on the dedicated support team for any questions or assistance, ensuring a smooth and hassle-free experience."} />
+          </div>
+
+
         </div>
       </div>
     </div>
   );
 };
+
+
 
 export default AboutUs;
