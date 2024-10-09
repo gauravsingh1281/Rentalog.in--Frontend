@@ -8,6 +8,12 @@ export default function Login() {
     password: "",
   });
 
+  
+  const [hover, setHovers] = useState({
+    email: false,
+    password: false,
+  });
+
   const [errors, setErrors] = useState({});
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -18,11 +24,11 @@ export default function Login() {
     const validationErrors = {};
 
     if (!form.email.trim()) {
-      validationErrors.email = "email is required";
+      validationErrors.email = "Email is required";
     }
 
     if (!form.password.trim()) {
-      validationErrors.password = "password is required";
+      validationErrors.password = "Password is required";
     }
 
     setErrors(validationErrors);
@@ -35,16 +41,32 @@ export default function Login() {
       });
     }
   };
+  const handleMouseEnter =(field) => {
+    setHovers({ ...hover, [field] : true});
+  };
+  const handleMouseLeave =(field) => {
+    setHovers({ ...hover, [field] : false});
+  };
+
+  const inputStyle = (isHovered) => ({
+    backgroundColor : "#FAFAFA",
+    padding :"0.5rem",
+    border: '1px solid ${isHovered? "#007bff : #dedede"}',
+    borderRadius: "0.5rem",
+    outline:"none",
+    boxShadow: isHovered ? "0 0 10px rgba(0,123,255,0.2)" : "none",
+    transition: "border-color 0.3s, box-shadow 0.3s",
+  });
 
   return (
-    <article className="flex flex-col justify-center h-[100vh]  bg-primaryGreen/10 overflow-hidden">
+    <article className="flex flex-col justify-center h-[100vh]  bg-primaryBlue/10 overflow-hidden">
       <Navbar />
       <br className=" hidden xl:block"></br>
       <section className="flex flex-row justify-baseline items-center ">
         <div className="hidden w-full lg:flex lg:mt-12 flex-col lg:justify-start xl:justify-center  xl:h-full  ">
           <div className="mb-10 mx-10 mr-auto">
             <h2 className=" text-3xl font-bold text-gray-dark/90 ">
-              <span className="text-customRed italic"> Best way</span> to manage
+              <span className="text-customBlue italic"> Best way</span> to manage
               you rent
             </h2>
 
@@ -59,7 +81,7 @@ export default function Login() {
           />
         </div>
 
-        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-screen xl:h-fit justify-between  lg:rounded-bl-3xl lg:rounded-tl-3xl  bg-primaryGreen/10 ">
+        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-screen xl:h-fit justify-between  lg:rounded-bl-3xl lg:rounded-tl-3xl  bg-primaryBlue/10 ">
           <div className="w-full h-[100vh] flex flex-col justify-start mt-20  lg:mt-0 lg:justify-center items-center">
             <TitleCard />
 
@@ -74,7 +96,10 @@ export default function Login() {
                 type="email"
                 placeholder="E-mail Address"
                 onChange={handleChange}
-                className="input-bar"
+                onMouseEnter={() => handleMouseEnter("email")}
+                onMouseLeave={() => handleMouseLeave("email")}
+                style={inputStyle(hover.email)}
+                // className="input-bar"
               />
               <span className="pl-4 text-[#ff0000] text-sm">
                 {errors.email}
@@ -86,6 +111,10 @@ export default function Login() {
                 type="password"
                 placeholder="Password"
                 onChange={handleChange}
+                onMouseEnter={() => handleMouseEnter("password")}
+                onMouseLeave={() => handleMouseLeave("password")}
+                style={inputStyle(hover.password)}
+
                 className="input-bar"
               />
               <span className="pl-4 text-[#ff0000] text-sm">
@@ -93,7 +122,7 @@ export default function Login() {
               </span>
               <Link
                 to="#"
-                className="float-right relative bottom-3 text-green hover:underline"
+                className="float-right relative bottom-3 text-blue hover:underline"
               >
                 Forgot Password?
               </Link>
@@ -101,7 +130,7 @@ export default function Login() {
               <div className="">
                 <button
                   type="submit"
-                  className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
+                  className="border-2 border-blue rounded-lg h-10 bg-primaryBlue w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryBlue/80 text-textWhite font-semibold mt-2"
                 >
                   Log In
                 </button>
@@ -147,7 +176,7 @@ export default function Login() {
                 Don&rsquo;t have any account?{" "}
                 <Link
                   to="/register"
-                  className=" text-primaryGreen font-semibold hover:text-primaryGreen/60"
+                  className=" text-primaryBlue font-semibold hover:text-primaryGreen/60"
                 >
                   Sign Up
                 </Link>
@@ -174,7 +203,7 @@ const TitleCard = () => {
   return (
     <div className="flex flex-col">
       <h2 className="mt-16 text-left text-3xl font-extrabold leading-9 tracking-tight  text-gray-dark/90 ">
-        <span className=" text-customRed text-4xl">Welcome</span>
+        <span className=" text-customBlue text-4xl">Welcome</span>
         <span> </span>back!!
       </h2>
 
@@ -192,8 +221,10 @@ const Input = (props) => {
     <div className="flex flex-col">
       <input
         {...rest}
-        className="bg-[#FAFAFA] p-2 border border-[#dedede] outline-none rounded-xl focus:shadow-md"
+        className="bg-[#FAFAFA] p-2 border border-[#dedede] outline-none rounded-xl focus:shadow-md ${className}"
       />
     </div>
   );
 };
+
+
