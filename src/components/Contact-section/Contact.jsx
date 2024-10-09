@@ -18,26 +18,57 @@ const Contact = () => {
         <ContactText />
         <ContactForm />
       </main>
-
-      <div className="flex items-center justify-center p-0">
-        <article className="flex flex-col items-center md:items-start text-center md:text-left">
-          <h2 className="text-3xl lg:text-5xl font-bold tracking-wider mb-10 font-monsterrat text-textBlack">
-            Connect with <span className="text-customRed">Us</span>
-          </h2>
-          <div className="flex gap-[27px] flex-wrap justify-center md:justify-start md:ml-20">
-            <a href="https://twitter.com/gauravsingh1281">
-              <img src={Twitter} alt="Twitter-logo" className="h-14" />
-            </a>
-            <a href="https://github.com/gauravsingh1281">
-              <img src={Github} alt="Github-logo" className="h-14" />
-            </a>
-            <a href="https://www.instagram.com/gauravsingh1281">
-              <img src={Insta} alt="Insta-logo" className="h-14" />
-            </a>
-          </div>
-        </article>
+      <h2 className="text-5xl text-center font-bold tracking-wider  font-monsterrat text-textBlack">
+        Connect with <span className="text-customRed">Us</span>
+      </h2>
+      <div className="md:flex items-center justify-between">
+        <div className="flex items-center justify-center p-0  md:w-1/2">
+          <article className="flex flex-col items-center text-center ">
+            <div className="flex gap-[27px] justify-center ">
+              <a href="https://twitter.com/gauravsingh1281">
+                <img
+                  src={Twitter}
+                  alt="Twitter-logo"
+                  className="md:h-12 h-10"
+                />
+              </a>
+              <a href="https://github.com/gauravsingh1281">
+                <img src={Github} alt="Github-logo" className="md:h-12 h-10" />
+              </a>
+              <a href="https://www.instagram.com/gauravsingh1281">
+                <img src={Insta} alt="Insta-logo" className="md:h-12 h-10" />
+              </a>
+            </div>
+            <div className="mt-4">
+              <p className="font-semibold">Get in touch :</p>
+              <p>
+                Email:
+                <a
+                  href="mailto:support@rentalog.in"
+                  className="ml-1 font-bold text-primaryGreen underline"
+                >
+                  support@rentalog.in
+                </a>
+              </p>
+              <p>
+                Phone:
+                <a
+                  href="tel:+916201577047"
+                  className="ml-1 font-bold text-primaryGreen underline"
+                >
+                  +91 62015 77047
+                </a>
+              </p>
+              <p>
+                Address: Shaktinagar, Sonebhadra <br /> UP, 231222
+              </p>
+            </div>
+          </article>
+        </div>
+        <div className="  md:w-1/2">
+          <GoogleMap />
+        </div>
       </div>
-      <GoogleMap />
     </section>
   );
 };

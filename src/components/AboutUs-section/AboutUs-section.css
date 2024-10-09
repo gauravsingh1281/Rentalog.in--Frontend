@@ -1,3 +1,4 @@
+
 .aboutUs-section {
   text-align: center;
   padding-bottom: 150px;
@@ -23,4 +24,8 @@
 
 #AboutUs {
   margin-bottom: 5rem;
+}
+
+.mf-cursor::before {
+  transform: scale(2);
 }
