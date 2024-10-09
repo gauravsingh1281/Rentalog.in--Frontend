@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        'colors': 'background-color, border-color, color',
+        'shadow': 'box-shadow',
+      },
+      transitionTimingFunction: {
+        'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+    },
     screens: {
       sm: "480px",
       md: "768px",
@@ -10,17 +18,17 @@ export default {
       xl: "1440px",
     },
     colors: {
-      "primaryGreen": "#1ABC9C",
-      "customRed": "#CD4347",
-      "green": "#1ABC93",
+      primaryGreen: "#1ABC9C",
+      customRed: "#CD4347",
+      green: "#1ABC93",
       "green-dark": "#047558",
-      "textBlack": "#312F2F",
-      "textWhite": "#F8F8F8",
-      "black": "#000000",
+      textBlack: "#312F2F",
+      textWhite: "#F8F8F8",
+      black: "#000000",
       "gray-dark": "#273444",
-      "gray": "#8492a6",
+      gray: "#8492a6",
       "gray-light": "#d3dce6",
-      "light-blue":"#e8f8f4"
+      "light-blue": "#e8f8f4",
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
@@ -28,8 +36,8 @@ export default {
       monsterrat: ["Montserrat", "sans-serif"],
     },
     boxShadow: {
-      'widget': '3px 3px #b9c3c1;',
-      'widget-hover': '5px 5px #b9c3c1;',
+      widget: '3px 3px #b9c3c1',
+      'widget-hover': '5px 5px #b9c3c1',
     },
   },
   plugins: [],
