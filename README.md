@@ -17,7 +17,7 @@ This GitHub repository focuses on the development of the frontend part of [Renta
   
 ## 📸 Screenshots
 
-## Desktop and MobileView
+## Desktop and Mobile View
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d625f76d-8f7c-41ab-bace-692f685764c2" alt="Desktop View" width="45%" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" />
