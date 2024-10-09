@@ -72,15 +72,19 @@
   .header-section {
     width: 100%;
     height: 100vh;
-    background: url(/src/assets/Images/red-house.png);
+    /* background: url(/src/assets/Images/red-house.png); */
     background-position: center center;
-    background-color: #262626;
+    /* background-color: #262626; */
     background-size: cover;
     position: relative;
   }
 
+  .header-desc {
+    font-weight: 500;
+  }
+
   .header-text {
-    position: relative;
+    /* position: relative; */
     left: 4%;
     width: 74%;
   }

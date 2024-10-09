@@ -15,15 +15,15 @@ const Header = () => {
         <div id="home"></div>
         <Carousel autoPlay = {true} infiniteLoop = {true} showStatus = {false} showThumbs = {false} stopOnHover ={false} swipeable = {false} animationHandler="fade">
           <div>
-            <img src={carImg1} />
+            <img src={carImg1} className="h-screen object-cover"/>
             
           </div>
           <div>
-            <img src={carImg2} />
+            <img src={carImg2} className="h-screen object-cover"/>
             
           </div>
           <div>
-            <img src={carImg3} />
+            <img src={carImg3} className="h-screen object-cover"/>
             
           </div>
         </Carousel>
@@ -31,7 +31,7 @@ const Header = () => {
           <h1>
             Welcome to <span>Rentalog</span>
           </h1>
-          <p>
+          <p className="header-desc">
             Rentalog is the ultimate solution for landlords looking to simplify <br />
             their rent management process. Keep track of your <br /> renters personal
             details, their payment history, and much more with ease.
