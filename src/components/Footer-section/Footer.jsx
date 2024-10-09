@@ -2,6 +2,7 @@ import { useState } from "react";
 import logo from "../../assets/Images/logo.png";
 import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
 import { LuSendHorizonal } from "react-icons/lu";
+import GoogleTranslate from "./GoogleTranslate";
 let date = new Date();
 let year = date.getFullYear();
 
@@ -55,6 +56,21 @@ const Footer = () => {
               <a href="#Service">Rentals</a>
             </li>
           </ul>
+          <div className="translator"
+              style={{
+                marginLeft: 'auto',
+                marginRight: '0',
+                marginBottom : '4px',
+                marginTop: '16px',
+                color: "white",
+                display: "block",
+                alignItems: "center",
+                width: 'fit-content',
+              }}>
+
+                <img src="/google.png" alt="" className="google-translate" style={{display: 'block',width:'45px', margin: 'auto',}} />
+                <GoogleTranslate/>
+                        </div>
         </div>
         <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[150px] mx-5 my-2">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
