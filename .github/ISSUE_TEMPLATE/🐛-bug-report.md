@@ -67,7 +67,7 @@ Suggest a fix or reason for the bug if known.
 ---
 
 ### Checklist  
-- [ ] I have searched the existing issues and this bug is not reported yet.  
+- [ ] I have searched the existing issues and this bug has not been reported yet.  
 - [ ] I have updated the project to the latest version.  
 - [ ] I have provided all the necessary details.  
 - [ ] I have **starred this repository**.
