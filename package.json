@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "gsap": "^3.12.5",
     "lottie-react": "^2.4.0",
     "mouse-follower": "^1.1.2",
