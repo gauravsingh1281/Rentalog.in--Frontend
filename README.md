@@ -17,13 +17,12 @@ This GitHub repository focuses on the development of the frontend part of [Renta
   
 ## 📸 Screenshots
 
-### Desktop View
+## Desktop and MobileView
 
-![image](https://github.com/user-attachments/assets/d625f76d-8f7c-41ab-bace-692f685764c2)
-
-### Mobile View
-
-![image](https://github.com/user-attachments/assets/185e1708-f2cb-4430-b1af-dc18a8c4fd79)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d625f76d-8f7c-41ab-bace-692f685764c2" alt="Desktop View" width="45%" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" />
+  <img src="https://github.com/user-attachments/assets/185e1708-f2cb-4430-b1af-dc18a8c4fd79" alt="Mobile View" width="15%" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" />
+</p>
 
 ## 📦 Technologies Used
 
