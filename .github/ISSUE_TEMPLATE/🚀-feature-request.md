@@ -2,7 +2,7 @@
 name: "\U0001F680 Feature Request"
 about: Suggest an idea to improve the Rentalog.in frontend
 title: "[FEATURE]"
-labels: enhancement
+labels: ''
 assignees: ''
 
 ---
