@@ -10,6 +10,13 @@ export default function Registration() {
     confirmPassword: "",
   });
 
+    // Show password
+    const [showPassword, setShowPassword] = useState(false);
+    const handleShowPassword = () => setShowPassword(!showPassword);
+
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const handleShowConfirmPassword = () => setShowConfirmPassword(!showConfirmPassword);
+
   const [errors, setErrors] = useState({});
 
   const handlechange = (e) => {
@@ -108,29 +115,47 @@ export default function Registration() {
                   {errors.email}
                 </span>
               )}
-              <Input
-                title="Password"
-                name="password"
-                value={form.password}
-                type="password"
-                placeholder="Password"
-                onChange={handlechange}
-                className="input-bar"
-              />
+              <div className="flex justify-center relative items-center w-full">
+                <Input
+                  title="Password"
+                  name="password"
+                  value={form.password}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  onChange={handlechange}
+                  className="input-bar"
+                />
+                <button
+                  type="button"
+                  onClick={handleShowPassword}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                >
+                  {showPassword ? <i class="fa-regular fa-eye-slash"></i> : <i class="fa-regular fa-eye"></i>}
+                </button>
+              </div>
               {errors.password && (
                 <span className="pl-4 text-[#ff0000] text-sm">
                   {errors.password}
                 </span>
               )}
-              <Input
-                title="Confirm password"
-                name="confirmPassword"
-                type="password"
-                placeholder="Confirm Password"
-                value={form.confirmPassword}
-                onChange={handlechange}
-                className="input-bar"
-              />
+              <div className="flex justify-center relative items-center w-full">
+                <Input
+                  title="Confirm password"
+                  name="confirmPassword"
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Confirm Password"
+                  value={form.confirmPassword}
+                  onChange={handlechange}
+                  className="input-bar"
+                />
+                <button
+                  type="button"
+                  onClick={handleShowConfirmPassword}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                >
+                  {showConfirmPassword ? <i class="fa-regular fa-eye-slash"></i> : <i class="fa-regular fa-eye"></i>}
+                </button>
+              </div>
               {errors.confirmPassword && (
                 <span className="pl-4 text-[#ff0000] text-sm">
                   {errors.confirmPassword}
