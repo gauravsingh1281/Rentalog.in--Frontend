@@ -2,6 +2,80 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
 
+
+const styles = {
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    height: '100vh',
+    backgroundColor: 'rgba(30, 144, 255, 0.1)',
+    overflow: 'hidden'
+  },
+  formContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'start',
+    alignItems: 'center',
+    width: '100%',
+    height: '100vh',
+    marginTop: '20px'
+  },
+  form: {
+    marginTop: '5px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '70%',
+    maxWidth: '500px',
+    transition: 'all 0.3s ease-in-out',
+    '&:hover': {
+      transform: 'translateY(-5px)', // Lift the form slightly when hovering
+    }
+  },
+  input: {
+    backgroundColor: '#FAFAFA',
+    padding: '10px',
+    border: '1px solid #dedede',
+    borderRadius: '12px',
+    outline: 'none',
+    transition: 'box-shadow 0.3s ease, background-color 0.3s ease',
+    width: '100%',
+    marginBottom: '10px',
+    '&:hover': {
+      backgroundColor: '#F0F8FF' // Light blue background on hover
+    },
+    '&:focus': {
+      boxShadow: '0 0 0 3px rgba(30, 144, 255, 0.3)' // Box shadow on focus
+    }
+  },
+  button: {
+    border: '2px solid #1e90ff',
+    borderRadius: '8px',
+    height: '40px',
+    backgroundColor: '#1e90ff',
+    width: '100%',
+    padding: '1.5px',
+    color: '#ffffff',
+    fontWeight: 'semibold',
+    marginTop: '10px',
+    transition: 'background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease',
+    '&:hover': {
+      backgroundColor: 'rgba(30, 144, 255, 0.8)',
+      transform: 'translateY(-2px)', // Slightly lift the button on hover
+      boxShadow: '0px 4px 15px rgba(30, 144, 255, 0.5)' // Add a shadow effect on hover
+    },
+    '&:focus': {
+      boxShadow: '0 0 0 3px rgba(30, 144, 255, 0.3)'
+    }
+  },
+  error: {
+    color: '#ff0000',
+    fontSize: '0.875rem',
+    paddingLeft: '4px'
+  }
+};
 export default function Registration() {
   const [form, setForm] = useState({
     name: "",
@@ -55,30 +129,32 @@ export default function Registration() {
   };
 
   return (
-    <article className="flex flex-col justify-center h-screen bg-primaryGreen/10 overflow-hidden">
+     <div style = {styles.root}>
+     <article className="flex flex-col justify-center h-screen bg-primaryBlue/10 overflow-hidden">
       <Navbar />
-      <section className="flex flex-row justify-center items-center">
+      <section className="flex flex-row justify-center items-center h-full">
         <div className="hidden w-full lg:flex lg:mt-12 flex-col justify-center xl:justify-center  xl:h-full ">
           <div className="mb-10 mx-10 mr-auto">
             <h2 className=" text-3xl font-bold text-gray-dark/90 ">
-              <span className="text-customRed italic"> Best way</span> to manage
-              you rent
+              <span className="text-customBlue italic"> Best way</span> to manage
+              your rent
             </h2>
+           
 
             <p className="mt-2  text-gray-dark/70 ">
               Create a new account to access all the features of our website
             </p>
-          </div>
+          
           <img src="undraw_for_sale_re_egkk.svg" alt="" className="m-10" />
+          
+        </div>
         </div>
 
-        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-[100vh]   xl:h-fit justify-between  lg:rounded-bl-3xl lg:rounded-tl-3xl  bg-primaryGreen/10 ">
+        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-[100vh]   xl:h-fit justify-between  lg:rounded-bl-3xl lg:rounded-tl-3xl  bg-primaryBlue/10 ">
           <div className="w-full h-[100vh] flex flex-col justify-start mt-20 lg:mt-0 lg:justify-center items-center">
             <TitleCard />
-            <form
-              onSubmit={handleSubmit}
-              className="mt-5 space-y-4 w-[70%] md:w-[50%] lg:w-[60%]"
-            >
+            <form onSubmit={handleSubmit} style ={styles.form}>
+             
               <Input
                 title="Name"
                 name="name"
@@ -87,12 +163,11 @@ export default function Registration() {
                 placeholder="Name"
                 onChange={handlechange}
                 className="input-bar"
+                style = {styles.input}
+
               />
-              {errors.username && (
-                <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.username}
-                </span>
-              )}
+               {errors.username && <span style={styles.error}>{errors.username}</span>}
+             
 
               <Input
                 title="Email address"
@@ -102,12 +177,11 @@ export default function Registration() {
                 placeholder="E-mail Address"
                 onChange={handlechange}
                 className="input-bar"
+                style = {styles.input}
+
               />
-              {errors.email && (
-                <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.email}
-                </span>
-              )}
+              {errors.email && <span style={styles.error}>{errors.email}</span>}
+              
               <Input
                 title="Password"
                 name="password"
@@ -116,12 +190,10 @@ export default function Registration() {
                 placeholder="Password"
                 onChange={handlechange}
                 className="input-bar"
+                style = {styles.input}
               />
-              {errors.password && (
-                <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.password}
-                </span>
-              )}
+               {errors.password && <span style={styles.error}>{errors.password}</span>}
+            
               <Input
                 title="Confirm password"
                 name="confirmPassword"
@@ -130,72 +202,26 @@ export default function Registration() {
                 value={form.confirmPassword}
                 onChange={handlechange}
                 className="input-bar"
+                style = {styles.input}
               />
-              {errors.confirmPassword && (
-                <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.confirmPassword}
-                </span>
-              )}
-              <div className="">
-                <button
-                  type="submit"
-                  className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
-                >
-                  Register
-                </button>
-              </div>
-
-              <div className="flex flex-col justify-center">
-                <div className="flex flex-row justify-center items-center">
-                  <hr className="w-1/4  text-gray/60"></hr>
-                  <p className=" text-gray text-sm text-center">
-                    &nbsp;Or Connect with&nbsp;
-                  </p>
-                  <hr className="w-1/4 text-gray/60"></hr>
-                </div>
-
-                <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
-                  <button
-                    type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
-                  >
-                    <img
-                      // src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                      alt="Google logo"
-                      className="h-5"
-                    />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
-                      alt="Facebook logo"
-                      className="h-5"
-                    />
-                  </button>
-                </div>
-              </div>
-
-              <p className="text-center text-sm text-gray font-semibold">
-                Already have an account?{" "}
-                <Link
-                  to="/login"
-                  className=" text-primaryGreen font-semibold hover:text-primaryGreen/60"
-                >
-                  Login
-                </Link>
-              </p>
-            </form>
-          </div>
-        </div>
-      </section>
-    </article>
-  );
+               {errors.confirmPassword && <span style={styles.error}>{errors.confirmPassword}</span>}
+              
+              
+               <div style={{ width: '100%' }}>
+               <button type="submit" style={styles.button}>
+                 Register
+               </button>
+             </div>
+           </form>
+         </div>
+       </div>
+     </section>
+   </article>
+ </div>
+);
 }
+
+          
 
 const Navbar = () => {
   return (
@@ -210,7 +236,7 @@ const TitleCard = () => {
   return (
     <div className="">
       <h2 className=" lg:mt-10 text-left text-3xl font-extrabold leading-9 tracking-tight  text-gray-dark/90 ">
-        Welcome to <span className=" text-customRed text-4xl">Rentlog</span>
+        Welcome to <span className=" text-customBlue text-4xl">Rentlog</span>
       </h2>
 
       <p className="text-left  text-gray text-sm mt-1">
