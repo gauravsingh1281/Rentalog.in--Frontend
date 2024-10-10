@@ -18,7 +18,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="flex flex-col bg-[#3c6e71] text-textWhite px-5 py-2">
+    <div className="flex flex-col bg-[#2ec4b6] text-textWhite px-5 py-2">
       <div className="flex justify-center flex-wrap gap-10">
         
         <div className="flex  justify-center items-center text-center lg:items-start lg:text-start basis-[200px] mx-5 my-2">
@@ -79,7 +79,7 @@ const Footer = () => {
 
           <p className="mt-4 text-sm font-[300]">
             Subscribe to our{" "}
-            <span className="text-[#9ef01a] font-bold text-justify">
+            <span className="text-[#f64d4a] font-bold text-justify">
               Newsletter
             </span>{" "}
             for latest updates and offers!
