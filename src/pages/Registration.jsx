@@ -115,7 +115,8 @@ export default function Registration() {
                   {errors.email}
                 </span>
               )}
-              <div className="flex justify-center relative items-center w-full">
+
+            <div className="relative mb-6">
                 <Input
                   title="Password"
                   name="password"
@@ -123,39 +124,50 @@ export default function Registration() {
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   onChange={handlechange}
-                  className="input-bar"
+                  className="input-bar pr-10"
                 />
                 <button
                   type="button"
                   onClick={handleShowPassword}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
                 >
-                  {showPassword ? <i class="fa-regular fa-eye-slash"></i> : <i class="fa-regular fa-eye"></i>}
+                  {showPassword ? (
+                    <i className="fa-regular fa-eye-slash"></i>
+                  ) : (
+                    <i className="fa-regular fa-eye"></i>
+                 )}
                 </button>
-              </div>
+            </div>
+
               {errors.password && (
                 <span className="pl-4 text-[#ff0000] text-sm">
                   {errors.password}
                 </span>
               )}
-              <div className="flex justify-center relative items-center w-full">
+
+            <div className="relative mb-6">
                 <Input
-                  title="Confirm password"
+                  title="Confirm Password"
                   name="confirmPassword"
+                  value={form.confirmPassword}
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder="Confirm Password"
-                  value={form.confirmPassword}
                   onChange={handlechange}
-                  className="input-bar"
+                  className="input-bar pr-10"
                 />
                 <button
                   type="button"
                   onClick={handleShowConfirmPassword}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
                 >
-                  {showConfirmPassword ? <i class="fa-regular fa-eye-slash"></i> : <i class="fa-regular fa-eye"></i>}
+                  {showConfirmPassword ? (
+                    <i className="fa-regular fa-eye-slash"></i>
+                  ) : (
+                    <i className="fa-regular fa-eye"></i>
+                  )}
                 </button>
-              </div>
+             </div>
+
               {errors.confirmPassword && (
                 <span className="pl-4 text-[#ff0000] text-sm">
                   {errors.confirmPassword}

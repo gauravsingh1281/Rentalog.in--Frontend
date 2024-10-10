@@ -85,7 +85,8 @@ export default function Login() {
               <span className="pl-4 text-[#ff0000] text-sm">
                 {errors.email}
               </span>
-              <div className="flex justify-center relative items-center w-full">
+
+              <div className="relative mb-6">
                 <Input
                   title="Password"
                   name="password"
@@ -93,16 +94,21 @@ export default function Login() {
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   onChange={handleChange}
-                  className="input-bar"
+                  className="input-bar pr-10"
                 />
                 <button
                   type="button"
                   onClick={handleShowPassword}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
                 >
-                  {showPassword ? <i class="fa-regular fa-eye-slash"></i> : <i class="fa-regular fa-eye"></i>}
+                  {showPassword ? (
+                    <i className="fa-regular fa-eye-slash"></i>
+                  ) : (
+                    <i className="fa-regular fa-eye"></i>
+                  )}
                 </button>
               </div>
+
               <span className="pl-4 text-[#ff0000] text-sm">
                 {errors.password}
               </span>
