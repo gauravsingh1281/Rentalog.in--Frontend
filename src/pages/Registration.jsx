@@ -11,6 +11,8 @@ export default function Registration() {
   });
 
   const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false); // Add state for password visibility
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // For confirm password visibility
 
   const handlechange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -54,6 +56,14 @@ export default function Registration() {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   return (
     <article className="flex flex-col justify-center h-screen bg-primaryGreen/10 overflow-hidden">
       <Navbar />
@@ -62,7 +72,7 @@ export default function Registration() {
           <div className="mb-10 mx-10 mr-auto">
             <h2 className=" text-3xl font-bold text-gray-dark/90 ">
               <span className="text-customRed italic"> Best way</span> to manage
-              you rent
+              your rent
             </h2>
 
             <p className="mt-2  text-gray-dark/70 ">
@@ -108,34 +118,57 @@ export default function Registration() {
                   {errors.email}
                 </span>
               )}
-              <Input
-                title="Password"
-                name="password"
-                value={form.password}
-                type="password"
-                placeholder="Password"
-                onChange={handlechange}
-                className="input-bar"
-              />
+
+              {/* Password field with toggle */}
+              <div className="relative">
+                <Input
+                  title="Password"
+                  name="password"
+                  value={form.password}
+                  type={showPassword ? "text" : "password"} // Toggle type based on state
+                  placeholder="Password"
+                  onChange={handlechange}
+                  className="input-bar"
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-2 text-gray"
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? "Hide" : "Show"} {/* Toggle text */}
+                </button>
+              </div>
               {errors.password && (
                 <span className="pl-4 text-[#ff0000] text-sm">
                   {errors.password}
                 </span>
               )}
-              <Input
-                title="Confirm password"
-                name="confirmPassword"
-                type="password"
-                placeholder="Confirm Password"
-                value={form.confirmPassword}
-                onChange={handlechange}
-                className="input-bar"
-              />
+
+              {/* Confirm Password field with toggle */}
+              <div className="relative">
+                <Input
+                  title="Confirm password"
+                  name="confirmPassword"
+                  type={showConfirmPassword ? "text" : "password"} // Toggle type based on state
+                  placeholder="Confirm Password"
+                  value={form.confirmPassword}
+                  onChange={handlechange}
+                  className="input-bar"
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-2 text-gray"
+                  onClick={toggleConfirmPasswordVisibility}
+                >
+                  {showConfirmPassword ? "Hide" : "Show"} {/* Toggle text */}
+                </button>
+              </div>
               {errors.confirmPassword && (
                 <span className="pl-4 text-[#ff0000] text-sm">
                   {errors.confirmPassword}
                 </span>
               )}
+
               <div className="">
                 <button
                   type="submit"
@@ -206,6 +239,7 @@ const Navbar = () => {
     </div>
   );
 };
+
 const TitleCard = () => {
   return (
     <div className="">
