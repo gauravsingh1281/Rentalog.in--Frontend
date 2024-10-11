@@ -2,6 +2,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import logo from "../../../assets/Images/logo.png"
+
 
 const FeatureCard = ({ icon, title, description }) => (
   <div className="bg-textWhite rounded-lg shadow-md p-6">
@@ -23,9 +25,13 @@ const TotalRentCollected = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-[#1abc9c] text-textWhite py-4">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold">rentalog</h1>
-        </div>
+      <div className="px-4 bg-textWhite w-fit rounded-xl absolute top-0 left-0 m-[1.5rem]">
+              <img
+                className="self-start w-40"
+                src={logo}
+                alt="Rentalog-logo"
+              />
+            </div>
       </header>
 
       <main>

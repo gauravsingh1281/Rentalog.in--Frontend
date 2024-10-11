@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import logo from "../../../assets/Images/logo.png"
+
 
 const FeatureCard = ({ icon, title, description }) => (
   <div className="bg-textWhite p-6 rounded-lg shadow-md">
@@ -14,9 +16,13 @@ const TimeManagement = () => {
   return (
     <div className="min-h-screen bg-gray-light">
       <header className="bg-[#1abc9c] text-textWhite py-4">
-        <div className="container mx-auto px-4">
-          <h1 className="text-2xl font-bold">rentalog</h1>
-        </div>
+      <div className="px-4 bg-textWhite w-fit rounded-xl absolute top-0 left-0 m-[1.5rem]">
+              <img
+                className="self-start w-40"
+                src={logo}
+                alt="Rentalog-logo"
+              />
+            </div>
       </header>
 
       <main>

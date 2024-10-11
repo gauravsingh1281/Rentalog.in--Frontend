@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import logo from "../../../assets/Images/logo.png"
+
 
 const initialPayments = [
   { id: 1, date: '2023-06-01', amount: 1000, description: 'Rent payment' },
@@ -33,6 +35,13 @@ export default function PaymentsRecord() {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
+      <div className="px-4 bg-textWhite w-fit rounded-xl absolute top-0 left-0 m-[1.5rem]">
+              <img
+                className="self-start w-40"
+                src={logo}
+                alt="Rentalog-logo"
+              />
+            </div>
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Payments Record</h1>
         
         <div className="bg-white shadow-md rounded-lg overflow-hidden mb-8">

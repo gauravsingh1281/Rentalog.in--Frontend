@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import logo from "../../../assets/Images/logo.png"
 
 const HomeIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -41,6 +42,13 @@ export default function PropertyListingService() {
       <main className="flex-1">
         <section className="bg-[#1abc9c] text-textWhite w-full py-12 md:py-24 bg-white text-gray-800">
           <div className="container px-4 md:px-6 mx-auto max-w-6xl">
+          <div className="px-4 bg-textWhite w-fit rounded-xl absolute top-0 left-0 m-[1.5rem]">
+              <img
+                className="self-start w-40"
+                src={logo}
+                alt="Rentalog-logo"
+              />
+            </div>
             <div className="flex flex-col items-center space-y-4 text-center">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Simplify Your Property Listings
