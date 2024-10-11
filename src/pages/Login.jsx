@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -28,7 +29,8 @@ export default function Login() {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      alert("Login Succesful");
+      // alert("Login Succesful");
+      navigate("/home");
       setForm({
         email: "",
         password: "",
@@ -124,7 +126,6 @@ export default function Login() {
                     <img
                       // src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                       src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-
                       alt="Google logo"
                       className="h-5"
                     />
