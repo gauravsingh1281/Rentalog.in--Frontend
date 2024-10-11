@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
 
 export default function Registration() {
+  const navigate=useNavigate();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -44,7 +46,10 @@ export default function Registration() {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      alert("Form Submitted successfully");
+      // alert("Form Submitted successfully");
+
+      navigate("/home")
+      
       setForm({
         name: "",
         email: "",
