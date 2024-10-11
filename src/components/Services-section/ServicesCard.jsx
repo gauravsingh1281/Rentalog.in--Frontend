@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ServicesCard = (props) => {
   const [gradientStyle, setGradientStyle] = useState({});
+
+  useEffect(() => {
+
+    AOS.init({duration:1000});
+
+  }, []);
 
   const handleMouseMove = (e) => {
     const { offsetX, offsetY, target } = e.nativeEvent;
@@ -29,30 +38,35 @@ const ServicesCard = (props) => {
     setGradientStyle({});
   };
 
+
+
   return (
-    <div
-      className={
-        props.bgColor +
-        " rounded-xl cursor-pointer hover:scale-105 transition-all duration-500 relative border border-transparent hover:border-opacity-70"
-      }
-      style={{
-        ...gradientStyle,
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)",
-        backgroundColor: "rgba(255, 255, 255, 0.15)",
-        boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-        transition: "background 0.2s ease-in-out",
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="flex gap-4 p-8">
-        <img className="w-10 h-10 mt-1.5" src={props.icon} alt={props.alt} />
-        <h1 className="text-[#312F2F] font-bold md:text-2xl text-xl">
-          {props.title}
-        </h1>
+    <div data-aos={props.aos}>
+      <div
+        className={
+          props.bgColor +
+          " rounded-xl cursor-pointer hover:scale-105 transition-all duration-500 relative border border-transparent hover:border-opacity-70"
+        }
+        style={{
+          ...gradientStyle,
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          backgroundColor: "rgba(255, 255, 255, 0.15)",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+          transition: "background 0.2s ease-in-out",
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+
+      >
+        <div className="flex gap-4 p-8" >
+          <img className="w-10 h-10 mt-1.5" src={props.icon} alt={props.alt} />
+          <h1 className="text-[#312F2F] font-bold md:text-2xl text-xl">
+            {props.title}
+          </h1>
+        </div>
+        <p className="px-8 pb-20">{props.description}</p>
       </div>
-      <p className="px-8 pb-20">{props.description}</p>
     </div>
   );
 };

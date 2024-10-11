@@ -1,5 +1,13 @@
 import PropTypes from "prop-types";
+import {useEffect} from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ServicesAvailableIn = (props) => {
+    useEffect(() => {
+
+        AOS.init();
+    
+      }, []);
     return (
         <div
             className="flex items-center gap-8 flex-col relative group"
@@ -14,6 +22,8 @@ const ServicesAvailableIn = (props) => {
                 props.setBgImage('')
                 // props.setImageUrl('')
             }}
+
+            data-aos="fade-up"
         >
             <img src={props.placeImage} alt="image" className="w-52 h-64 rounded-xl group-hover:scale-110 hover:shadow-2xl  transition duration-300 cursor-pointer object-cover" />
             {/* <h1 className="bg-[#EBB4B6] w-28 h-28   rounded-full"></h1> */}
