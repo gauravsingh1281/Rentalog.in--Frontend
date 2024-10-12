@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import zxcvbn from "zxcvbn";
 import logo from "../assets/Images/logo.png";
 
 export default function Registration() {
@@ -11,9 +12,24 @@ export default function Registration() {
   });
 
   const [errors, setErrors] = useState({});
+  const [passwordStrength, setPasswordStrength] = useState({
+    score: 0,
+    label: "Very Weak",
+  });
 
   const handlechange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+
+    if (name === "password") {
+      const strength = zxcvbn(value);
+      const score = strength.score; // Score between 0 and 4
+      const labels = ["Very Weak", "Weak", "Fair", "Good", "Strong"];
+      setPasswordStrength({
+        score,
+        label: labels[score],
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -62,7 +78,7 @@ export default function Registration() {
           <div className="mb-10 mx-10 mr-auto">
             <h2 className=" text-3xl font-bold text-gray-dark/90 ">
               <span className="text-customRed italic"> Best way</span> to manage
-              you rent
+              your rent
             </h2>
 
             <p className="mt-2  text-gray-dark/70 ">
@@ -122,6 +138,32 @@ export default function Registration() {
                   {errors.password}
                 </span>
               )}
+
+              {/* Password Strength Meter */}
+              {form.password && (
+                <div className="w-full mt-2">
+                  <label>Password Strength: {passwordStrength.label}</label>
+                  <div className="w-full h-2 bg-gray-300 rounded">
+                    <div
+                      className="h-full bg-green-500 rounded"
+                      style={{
+                        width: `${(passwordStrength.score + 1) * 20}%`,
+                        backgroundColor:
+                          passwordStrength.score === 0
+                            ? "#d73f40"
+                            : passwordStrength.score === 1
+                            ? "#dc6551"
+                            : passwordStrength.score === 2
+                            ? "#f2b84f"
+                            : passwordStrength.score === 3
+                            ? "#bde952"
+                            : "#3ba62f",
+                      }}
+                    ></div>
+                  </div>
+                </div>
+              )}
+
               <Input
                 title="Confirm password"
                 name="confirmPassword"
@@ -160,7 +202,6 @@ export default function Registration() {
                     className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
                   >
                     <img
-                      // src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                       src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                       alt="Google logo"
                       className="h-5"
@@ -169,38 +210,10 @@ export default function Registration() {
 
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
-                  >
-                    <img
-                      
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"
-
-                      alt="X logo"
-                      className="h-5"
-                    />
-                  </button>
-
-
-
-
-
-                  <button
-                    type="button"
                     className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
                   >
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
-                      alt="Facebook logo"
-                      className="h-5"
-                    />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center  px-2 h-10"
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png "
                       alt="Facebook logo"
                       className="h-5"
                     />
