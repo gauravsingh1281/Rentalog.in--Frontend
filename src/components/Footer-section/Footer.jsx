@@ -130,8 +130,8 @@ const Footer = () => {
        
       <div className=" self-center text-center">
         {" "}
-  
-        {year} || All Rights Reserved || The Virtual World Maker
+
+        © {year} || All Rights Reserved || The Virtual World Maker || rentalog
         </div>
          
         

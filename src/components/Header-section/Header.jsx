@@ -32,9 +32,10 @@ const Header = () => {
             Welcome to <span>Rentalog</span>
           </h1>
           <p className="header-desc">
-            Rentalog is the ultimate solution for landlords looking to simplify <br />
-            their rent management process. Keep track of your <br /> renters personal
-            details, their payment history, and much more with ease.
+            Experience the serenity of effortless rent management with Rentalog.<br />
+            Say goodbye to the complexities of tracking tenant details and payment histories.<br/>
+            Our intuitive platform streamlines the entire process, providing you with a centralized hub for all your rental needs.<br/>
+            Enjoy peace of mind knowing your rental business is in safe and capable hands.<br/>
           </p>
           <Link to="/register">
             <button className="btn">Get Started</button>
