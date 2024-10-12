@@ -119,7 +119,19 @@ export default function Login() {
 
                   <button
                     type="button"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10">
+                    <img
+                      
+                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"
+
+                      alt="X logo"
+                      className="h-5"
+                    />
+                  </button>
+
+                  <button
+                    type="button"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center  px-2 h-10"
                   >
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
@@ -127,6 +139,19 @@ export default function Login() {
                       className="h-5"
                     />
                   </button>
+
+                  <button
+                    type="button"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center  px-2 h-10"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png "
+                      alt="Facebook logo"
+                      className="h-5"
+                    />
+                  </button>
+
+               
                 </div>
               </div>
 
