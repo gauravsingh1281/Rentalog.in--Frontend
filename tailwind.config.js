@@ -28,8 +28,8 @@ export default {
       monsterrat: ["Montserrat", "sans-serif"],
     },
     boxShadow: {
-      'widget': '5px 5px #e5fcc2;',
-      'widget-hover': '3px 3px #e5fcc2;',
+      'widget': '3px 3px #b9c3c1;',
+      'widget-hover': '3px 3px #b9c3c1;',
     },
   },
   plugins: [],
