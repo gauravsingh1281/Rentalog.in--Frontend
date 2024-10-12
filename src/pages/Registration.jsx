@@ -1,5 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import zxcvbn from "zxcvbn";
 import logo from "../assets/Images/logo.png";
 
 export default function Registration() {
@@ -21,98 +22,89 @@ export default function Registration() {
 
   const handlechange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  }
+
+  // Password strength meter logic (using zxcvbn)
+  const getPasswordStrength = (password) => {
+    const strength = zxcvbn(password);
+    const score = strength.score;
+    const labels = ["Very Weak", "Weak", "Fair", "Good", "Strong"];
+    return {
+      score,
+      label: labels[score],
+      color:
+        score === 0
+          ? "#d73f40"
+          : score === 1
+          ? "#dc6551"
+          : score === 2
+          ? "#f2b84f"
+          : score === 3
+          ? "#bde952"
+          : "#3ba62f",
+    };
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = {};
-    if (!form.name.trim()) {
-      validationErrors.username = "username is required";
-    }
-
-    if (!form.email.trim()) {
-      validationErrors.email = "email is required";
-    }
-    if (!/\S+@\S+\.\S+/.test(form.email)) {
-      validationErrors.email = "email is not valid";
-    }
-    if (!form.password.trim()) {
-      validationErrors.password = "password is required";
-    } else if (form.password.length < 6) {
-      validationErrors.password = "password should be at least 6 characters";
-    }
-
-    if (!form.confirmPassword.trim()) {
-      validationErrors.confirmPassword = "password confirmation is required";
-    } else if (form.confirmPassword !== form.password) {
-      validationErrors.confirmPassword = "password not matched";
-    }
-
-    setErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length === 0) {
-      alert("Form Submitted successfully");
-      setForm({
-        name: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
-    }
-  };
+  const passwordStrength = getPasswordStrength(password); // Compute password strength
 
   return (
     <article className="flex flex-col justify-center h-screen bg-primaryGreen/10 overflow-hidden">
       <Navbar />
       <section className="flex flex-row justify-center items-center">
-        <div className="hidden w-full lg:flex lg:mt-12 flex-col justify-center xl:justify-center  xl:h-full ">
+        <div className="hidden w-full lg:flex lg:mt-12 flex-col justify-center xl:justify-center xl:h-full ">
           <div className="mb-10 mx-10 mr-auto">
             <h2 className=" text-3xl font-bold text-gray-dark/90 ">
               <span className="text-customRed italic"> Best way</span> to manage
-              you rent
+              your rent
             </h2>
-
-            <p className="mt-2  text-gray-dark/70 ">
+            <p className="mt-2 text-gray-dark/70">
               Create a new account to access all the features of our website
             </p>
           </div>
           <img src="undraw_for_sale_re_egkk.svg" alt="" className="m-10" />
         </div>
 
-        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-[100vh]   xl:h-fit justify-between  lg:rounded-bl-3xl lg:rounded-tl-3xl  bg-primaryGreen/10 ">
+        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-[100vh] xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
           <div className="w-full h-[100vh] flex flex-col justify-start mt-20 lg:mt-0 lg:justify-center items-center">
             <TitleCard />
+
             <form
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit(onSubmit)}
               className="mt-5 space-y-4 w-[70%] md:w-[50%] lg:w-[60%]"
             >
+              {/* Name Field */}
               <Input
                 title="Name"
                 name="name"
-                value={form.name}
                 type="text"
                 placeholder="Name"
-                onChange={handlechange}
-                className="input-bar"
+                register={register("name", {
+                  required: "Name is required",
+                })}
               />
-              {errors.username && (
+              {errors.name && (
                 <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.username}
+                  {errors.name.message}
                 </span>
               )}
 
+              {/* Email Field */}
               <Input
                 title="Email address"
                 name="email"
-                value={form.email}
                 type="email"
                 placeholder="E-mail Address"
-                onChange={handlechange}
-                className="input-bar"
+                register={register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /\S+@\S+\.\S+/,
+                    message: "Email is not valid",
+                  },
+                })}
               />
               {errors.email && (
                 <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.email}
+                  {errors.email.message}
                 </span>
               )}
 
@@ -138,98 +130,91 @@ export default function Registration() {
                  )}
                 </button>
             </div>
-
               {errors.password && (
                 <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.password}
+                  {errors.password.message}
                 </span>
               )}
-              <Input
-                title="Confirm password"
-                name="confirmPassword"
-                type="password"
-                placeholder="Confirm Password"
-                value={form.confirmPassword}
-                onChange={handlechange}
-                className="input-bar"
-              />
+
+              {/* Password Strength Meter */}
+              {password && (
+                <div className="w-full mt-2">
+                  <label>Password Strength: {passwordStrength.label}</label>
+                  <div className="w-full h-2 bg-gray-300 rounded">
+                    <div
+                      className="h-full rounded"
+                      style={{
+                        width: `${(passwordStrength.score + 1) * 20}%`,
+                        backgroundColor: passwordStrength.color,
+                      }}
+                    ></div>
+                  </div>
+                </div>
+              )}
+
+              {/* Confirm Password Field */}
+               <div className="relative mb-6">
+                <Input
+                  title="Password"
+                  name="confirmPassword"
+                  value={form.confirmPassword}
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Password"
+                  onChange={handlechange}
+                  className="input-bar pr-10"
+                />
+                <button
+                  type="button"
+                  onClick={handleShowConfirmPassword}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                >
+                  {showConfirmPassword ? (
+                    <i className="fa-regular fa-eye-slash"></i>
+                  ) : (
+                    <i className="fa-regular fa-eye"></i>
+                 )}
+                </button>
+            </div>
               {errors.confirmPassword && (
                 <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.confirmPassword}
+                  {errors.confirmPassword.message}
                 </span>
               )}
-              <div className="">
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
+              >
+                Register
+              </button>
+
+              {/* Social Buttons */}
+              <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
                 <button
-                  type="submit"
-                  className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
+                  type="button"
+                  className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
                 >
-                  Register
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                    alt="Google logo"
+                    className="h-5"
+                  />
+                </button>
+
+                <button
+                  type="button"
+                  className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+                    alt="Facebook logo"
+                    className="h-5"
+                  />
                 </button>
               </div>
 
-              <div className="flex flex-col justify-center">
-                <div className="flex flex-row justify-center items-center">
-                  <hr className="w-1/4  text-gray/60"></hr>
-                  <p className=" text-gray text-sm text-center">
-                    &nbsp;Or Connect with&nbsp;
-                  </p>
-                  <hr className="w-1/4 text-gray/60"></hr>
-                </div>
-
-                <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
-                  <button
-                    type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
-                  >
-                    <img
-                      // src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                      alt="Google logo"
-                      className="h-5"
-                    />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
-                  >
-                    <img
-                      
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"
-
-                      alt="X logo"
-                      className="h-5"
-                    />
-                  </button>
-
-
-
-
-
-                  <button
-                    type="button"
-                    className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
-                      alt="Facebook logo"
-                      className="h-5"
-                    />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center  px-2 h-10"
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png "
-                      alt="Facebook logo"
-                      className="h-5"
-                    />
-                  </button>
-                </div>
-              </div>
-
+              {/* Login Link */}
               <p className="text-center text-sm text-gray font-semibold">
                 Already have an account?{" "}
                 <Link
@@ -249,34 +234,35 @@ export default function Registration() {
 
 const Navbar = () => {
   return (
-    <div className="absolute  top-4 left-4">
+    <div className="absolute top-4 left-4">
       <Link to="/">
         <img src={logo} alt="Rentalog-logo" className="h-12 w-auto" />
       </Link>
     </div>
   );
 };
+
 const TitleCard = () => {
   return (
     <div className="">
-      <h2 className=" lg:mt-10 text-left text-3xl font-extrabold leading-9 tracking-tight  text-gray-dark/90 ">
-        Welcome to <span className=" text-customRed text-4xl">Rentlog</span>
+      <h2 className="lg:mt-10 text-left text-3xl font-extrabold leading-9 tracking-tight text-gray-dark/90">
+        Welcome to <span className="text-customRed text-4xl">Rentlog</span>
       </h2>
-
-      <p className="text-left  text-gray text-sm mt-1">
-        Create a new account to access all the features <br></br>of our website
+      <p className="text-left text-gray text-sm mt-1">
+        Create a new account to access all the features
+        <br />
+        of our website
       </p>
     </div>
   );
 };
 
-const Input = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const { ...rest } = props;
+const Input = ({ register, ...rest }) => {
   return (
     <div className="flex flex-col">
       <input
         {...rest}
+        {...register}
         className="bg-[#FAFAFA] p-2 border border-[#dedede] outline-none rounded-xl focus:shadow-md"
       />
     </div>
