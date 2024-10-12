@@ -6,7 +6,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:auto;
 }
 
 .placeholder-text {
@@ -17,5 +17,5 @@ html {
 }
 
 .mb-0{
-  margin-bottom: 0;
+  margin-bottom: 10;
 }

@@ -12,14 +12,14 @@
 }
 
 .aboutUs-section .row .rent-board-img {
-  position: relative;
+  position: fixed;
   top: 20px;
 }
 
 .aboutUs-section .primary-heading {
-  font-size: 48px;
-  font-weight: 600;
-  color: #312F2F;
+  font-size: 55px;
+  font-weight: 700;
+  color: #0d0c0c;
 }
 
 #AboutUs {
@@ -27,5 +27,5 @@
 }
 
 .mf-cursor::before {
-  transform: scale(2);
+  transform: scale(3);
 }

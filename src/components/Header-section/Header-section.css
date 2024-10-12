@@ -13,12 +13,12 @@
   list-style: none;
   font-weight: 600;
   font-size: 18.5px;
-  color: #262626;
+  color: #3e3d3d;
   transition: ease 200ms;
 }
 
 .header-section li:hover {
-  color: #1abc9c;
+  color: #26d5b2;
 }
 
 .user-cta :last-child {
@@ -35,7 +35,7 @@
 }
 
 .header-text h1 span {
-  color: #cd4347;
+  color: #f0494e;
 }
 
 .header-text p {
@@ -47,6 +47,7 @@
   /* position: relative; */
   left: 4%;
   width: 68%;
+  font-size: medium;
 }
 
 .btn {
@@ -63,7 +64,7 @@
 
 .btn:hover {
   background: transparent;
-  border-color: #1abc9c;
+  border-color: #01a847;
   border-width: 2px;
   color: #1abc9c;
 }
@@ -102,7 +103,7 @@
     font-weight: 700;
     width: 31%;
     height: 47px;
-    background: #1abc9c;
+    background: #0253ab;
   }
 }
 
