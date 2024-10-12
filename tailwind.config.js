@@ -11,15 +11,15 @@ export default {
     },
     colors: {
       "primaryGreen": "#1ABC9C",
-      "customRed": "#547980",
-      "green": "#ADD468",
+      "customRed": "#CD4347",
+      "green": "#1ABC93",
       "green-dark": "#047558",
       "textBlack": "#312F2F",
       "textWhite": "#F8F8F8",
       "black": "#000000",
       "gray-dark": "#273444",
       "gray": "#8492a6",
-      "gray-light": "#475C7a",
+      "gray-light": "#d3dce6",
       "light-blue":"#e8f8f4"
     },
     fontFamily: {
