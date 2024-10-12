@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import zxcvbn from "zxcvbn";
 import logo from "../assets/Images/logo.png";
 
 export default function Registration() {
@@ -18,9 +19,24 @@ export default function Registration() {
     const handleShowConfirmPassword = () => setShowConfirmPassword(!showConfirmPassword);
 
   const [errors, setErrors] = useState({});
+  const [passwordStrength, setPasswordStrength] = useState({
+    score: 0,
+    label: "Very Weak",
+  });
 
   const handlechange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+
+    if (name === "password") {
+      const strength = zxcvbn(value);
+      const score = strength.score; // Score between 0 and 4
+      const labels = ["Very Weak", "Weak", "Fair", "Good", "Strong"];
+      setPasswordStrength({
+        score,
+        label: labels[score],
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -69,7 +85,7 @@ export default function Registration() {
           <div className="mb-10 mx-10 mr-auto">
             <h2 className=" text-3xl font-bold text-gray-dark/90 ">
               <span className="text-customRed italic"> Best way</span> to manage
-              you rent
+              your rent
             </h2>
 
             <p className="mt-2  text-gray-dark/70 ">
@@ -144,30 +160,40 @@ export default function Registration() {
                   {errors.password}
                 </span>
               )}
+              {/* Password Strength Meter */}
+              {form.password && (
+                <div className="w-full mt-2">
+                  <label>Password Strength: {passwordStrength.label}</label>
+                  <div className="w-full h-2 bg-gray-300 rounded">
+                    <div
+                      className="h-full bg-green-500 rounded"
+                      style={{
+                        width: `${(passwordStrength.score + 1) * 20}%`,
+                        backgroundColor:
+                          passwordStrength.score === 0
+                            ? "#d73f40"
+                            : passwordStrength.score === 1
+                            ? "#dc6551"
+                            : passwordStrength.score === 2
+                            ? "#f2b84f"
+                            : passwordStrength.score === 3
+                            ? "#bde952"
+                            : "#3ba62f",
+                      }}
+                    ></div>
+                  </div>
+                </div>
+              )}
 
-            <div className="relative mb-6">
-                <Input
-                  title="Confirm Password"
-                  name="confirmPassword"
-                  value={form.confirmPassword}
-                  type={showConfirmPassword ? "text" : "password"}
-                  placeholder="Confirm Password"
-                  onChange={handlechange}
-                  className="input-bar pr-10"
-                />
-                <button
-                  type="button"
-                  onClick={handleShowConfirmPassword}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
-                >
-                  {showConfirmPassword ? (
-                    <i className="fa-regular fa-eye-slash"></i>
-                  ) : (
-                    <i className="fa-regular fa-eye"></i>
-                  )}
-                </button>
-             </div>
-
+              <Input
+                title="Confirm password"
+                name="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                value={form.confirmPassword}
+                onChange={handlechange}
+                className="input-bar"
+              />
               {errors.confirmPassword && (
                 <span className="pl-4 text-[#ff0000] text-sm">
                   {errors.confirmPassword}
@@ -197,7 +223,6 @@ export default function Registration() {
                     className="border bg-textWhite focus:shadow-md  lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
                   >
                     <img
-                      // src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                       src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                       alt="Google logo"
                       className="h-5"
