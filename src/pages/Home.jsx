@@ -3,8 +3,9 @@ import Contact from "../components/Contact-section/Contact";
 import Footer from "../components/Footer-section/Footer";
 import Header from "../components/Header-section/Header";
 import Services from "../components/Services-section/Services-section";
-import ScrollToTop from "react-scroll-to-top";
 import Testimonials from "../components/testimonial-section/Testimonial";
+import { ScrollToTop } from 'react-simple-scroll-up';
+import carImg3 from "../assets/Icons/arrow-up.png"
 
 function Home() {
   return (
@@ -16,9 +17,17 @@ function Home() {
       <Contact />
       <Footer />
       <ScrollToTop
-        smooth
-        color="darkgreen"
-        className="flex justify-center hover:scale-125 duration-200 transition items-center p-1"
+        symbol={
+          <img src={carImg3} alt="" style={{ width: "80px" }} />
+        }
+        size={
+          80
+        }
+        bgColor="rgb(256,256,256)"
+        strokeWidth={10}
+        strokeFillColor="rgb(113, 242, 214)"
+        strokeEmptyColor="rgb(256,256,256)"
+
       />
     </>
   );
