@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import zxcvbn from "zxcvbn";
 import logo from "../assets/Images/logo.png";
 
 export default function Registration() {
@@ -11,22 +12,45 @@ export default function Registration() {
     reset,
   } = useForm();
 
+  const password = watch("password", ""); // Watch password to match confirm password
+
   const onSubmit = (data) => {
     console.log(data); // Log form data to the console
     alert("Form Submitted successfully");
     reset(); // Resets the form after submission
   };
 
-  const password = watch("password", ""); // Watch password to match confirm password
+  // Password strength meter logic (using zxcvbn)
+  const getPasswordStrength = (password) => {
+    const strength = zxcvbn(password);
+    const score = strength.score;
+    const labels = ["Very Weak", "Weak", "Fair", "Good", "Strong"];
+    return {
+      score,
+      label: labels[score],
+      color:
+        score === 0
+          ? "#d73f40"
+          : score === 1
+          ? "#dc6551"
+          : score === 2
+          ? "#f2b84f"
+          : score === 3
+          ? "#bde952"
+          : "#3ba62f",
+    };
+  };
+
+  const passwordStrength = getPasswordStrength(password); // Compute password strength
 
   return (
     <article className="flex flex-col justify-center h-screen bg-primaryGreen/10 overflow-hidden">
       <Navbar />
       <section className="flex flex-row justify-center items-center">
-        <div className="hidden w-full lg:flex lg:mt-12 flex-col justify-center xl:justify-center  xl:h-full ">
+        <div className="hidden w-full lg:flex lg:mt-12 flex-col justify-center xl:justify-center xl:h-full ">
           <div className="mb-10 mx-10 mr-auto">
-            <h2 className="text-3xl font-bold text-gray-dark/90">
-              <span className="text-customRed italic">Best way</span> to manage
+            <h2 className=" text-3xl font-bold text-gray-dark/90 ">
+              <span className="text-customRed italic"> Best way</span> to manage
               your rent
             </h2>
             <p className="mt-2 text-gray-dark/70">
@@ -44,6 +68,7 @@ export default function Registration() {
               onSubmit={handleSubmit(onSubmit)}
               className="mt-5 space-y-4 w-[70%] md:w-[50%] lg:w-[60%]"
             >
+              {/* Name Field */}
               <Input
                 title="Name"
                 name="name"
@@ -59,6 +84,7 @@ export default function Registration() {
                 </span>
               )}
 
+              {/* Email Field */}
               <Input
                 title="Email address"
                 name="email"
@@ -78,6 +104,7 @@ export default function Registration() {
                 </span>
               )}
 
+              {/* Password Field */}
               <Input
                 title="Password"
                 name="password"
@@ -97,6 +124,23 @@ export default function Registration() {
                 </span>
               )}
 
+              {/* Password Strength Meter */}
+              {password && (
+                <div className="w-full mt-2">
+                  <label>Password Strength: {passwordStrength.label}</label>
+                  <div className="w-full h-2 bg-gray-300 rounded">
+                    <div
+                      className="h-full rounded"
+                      style={{
+                        width: `${(passwordStrength.score + 1) * 20}%`,
+                        backgroundColor: passwordStrength.color,
+                      }}
+                    ></div>
+                  </div>
+                </div>
+              )}
+
+              {/* Confirm Password Field */}
               <Input
                 title="Confirm password"
                 name="confirmPassword"
@@ -114,12 +158,49 @@ export default function Registration() {
                 </span>
               )}
 
+              {/* Submit Button */}
               <button
                 type="submit"
                 className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
               >
                 Register
               </button>
+
+              {/* Social Buttons */}
+              <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
+                <button
+                  type="button"
+                  className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                    alt="Google logo"
+                    className="h-5"
+                  />
+                </button>
+
+                <button
+                  type="button"
+                  className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+                    alt="Facebook logo"
+                    className="h-5"
+                  />
+                </button>
+              </div>
+
+              {/* Login Link */}
+              <p className="text-center text-sm text-gray font-semibold">
+                Already have an account?{" "}
+                <Link
+                  to="/login"
+                  className=" text-primaryGreen font-semibold hover:text-primaryGreen/60"
+                >
+                  Login
+                </Link>
+              </p>
             </form>
           </div>
         </div>
