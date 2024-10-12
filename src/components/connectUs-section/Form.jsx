@@ -1,97 +1,78 @@
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 const Form = () => {
-  const [contactForm, setContactForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: "",
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  const [contactErrors, setContactErrors] = useState({});
-
-  const handlechange = (e) => {
-    setContactForm({ ...contactForm, [e.target.name]: e.target.value });
+  const onSubmit = (data) => {
+    alert("Message sent successfully");
+    console.log(data);
+    reset(); // reset form fields after successful submission
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationContactErrors = {};
-    if (!contactForm.firstName.trim()) {
-      validationContactErrors.firstName = "First name is required";
-    }
-    if (!contactForm.lastName.trim()) {
-      validationContactErrors.lastName = "last name is required";
-    }
-    if (!contactForm.email.trim()) {
-      validationContactErrors.email = "email is required";
-    }
-    if (!/\S+@\S+\.\S+/.test(contactForm.email)) {
-      validationContactErrors.email = "email is not valid";
-    }
-    if (!contactForm.message.trim()) {
-      validationContactErrors.message = "message is required";
-    }
-    setContactErrors(validationContactErrors);
-
-    if (Object.keys(validationContactErrors).length === 0) {
-      alert("Message sent successfully");
-      setContactForm({
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: "",
-      });
-    }
-  };
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-4 md:px-4">
           <div className="flex justify-between gap-2">
+            {/* First Name Input */}
             <input
               type="text"
-              name="firstName"
-              id=""
               placeholder="First Name"
-              onChange={handlechange}
+              {...register("firstName", { required: "First name is required" })}
               className="placeholder-text"
             />
             <span className="pl-4 text-[#ff0000] text-sm">
-              {contactErrors.firstName}
+              {errors.firstName && errors.firstName.message}
             </span>
+
+            {/* Last Name Input */}
             <input
               type="text"
-              name="lastName"
               placeholder="Last Name"
-              onChange={handlechange}
+              {...register("lastName", { required: "Last name is required" })}
               className="placeholder-text"
             />
             <span className="pl-4 text-[#ff0000] text-sm">
-              {contactErrors.lastName}
+              {errors.lastName && errors.lastName.message}
             </span>
           </div>
+
+          {/* Email Input */}
           <input
             type="email"
-            name="email"
-            placeholder="Write yout Email here"
-            onChange={handlechange}
+            placeholder="Write your Email here"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: "Email is not valid",
+              },
+            })}
             className="placeholder-text"
           />
           <span className="pl-4 text-[#ff0000] text-sm">
-            {contactErrors.email}
+            {errors.email && errors.email.message}
           </span>
+
+          {/* Message Input */}
           <textarea
             name="message"
             cols="30"
             rows="10"
-            onChange={handlechange}
+            placeholder="Your Message"
+            {...register("message", { required: "Message is required" })}
             className="placeholder-text"
-            placeholder="Your Massege"
           ></textarea>
           <span className="pl-4 text-[#ff0000] text-sm">
-            {contactErrors.message}
+            {errors.message && errors.message.message}
           </span>
+
+          {/* Submit Button */}
           <button
             className="bg-primary-green rounded-2xl w-[100px] p-3 font-semibold text-text-white"
             type="submit"
