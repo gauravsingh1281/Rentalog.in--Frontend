@@ -29,7 +29,7 @@ export default {
     },
     boxShadow: {
       'widget': '5px 5px #e5fcc2;',
-      'widget-hover': '5px 5px #e5fcc2;',
+      'widget-hover': '3px 3px #e5fcc2;',
     },
   },
   plugins: [],
