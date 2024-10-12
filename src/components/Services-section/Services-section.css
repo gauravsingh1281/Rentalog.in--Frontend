@@ -1,3 +1,11 @@
 #Service {
     margin-bottom: 80px;
 }
+
+.service-card {
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.service-card:hover {
+    background-color: rgba(200, 200, 200, 0.5); /* Change this to your desired hover color */
+}
