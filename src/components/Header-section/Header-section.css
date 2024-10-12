@@ -87,7 +87,7 @@
   .header-text {
     /* position: relative; */
     left: 4%;
-    width: 74%;
+    width: 79%;
   }
 
   .header-text h1 {
@@ -107,9 +107,13 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 600px) {
   .navbar .logo {
     width: 170px;
+  }
+  .navbar .logo:hover{
+      color: #0253ab;
+      transition: .3s ease;
   }
 
   .navbar .menu-icon {
