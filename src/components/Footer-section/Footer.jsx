@@ -2,6 +2,8 @@ import { useState } from "react";
 import logo from "../../assets/Images/logo.png";
 import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
 import { LuSendHorizonal } from "react-icons/lu";
+// import Link from "react-router-dom"
+import { Link } from "react-router-dom";
 let date = new Date();
 let year = date.getFullYear();
 
@@ -34,10 +36,18 @@ const Footer = () => {
         <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[150px] mx-5 my-2">
           <ul>
             <li className="font-semibold pb-2">Services</li>
+            <Link to="/dashboard/propertylisting">
             <li>Property Listing</li>
+            </Link>
+            <Link to="/dashboard/paymentsrecord">
             <li>Track Payment record</li>
+            </Link>
+            <Link to="/dashboard/totalrentcollected">
             <li>Rent Calculation</li>
+            </Link>
+            <Link to="/dashboard/timemanagement">
             <li>Time Management</li>
+            </Link>
           </ul>
         </div>
         <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-start basis-[150px] mx-5 my-2">
