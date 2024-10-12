@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -28,7 +29,8 @@ export default function Login() {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      alert("Login Succesful");
+      // alert("Login Succesful");
+      navigate("/home");
       setForm({
         email: "",
         password: "",
@@ -122,8 +124,22 @@ export default function Login() {
                     className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
                   >
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                      // src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                      src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                       alt="Google logo"
+                      className="h-5"
+                    />
+                  </button>
+
+                  <button
+                    type="button"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                  >
+                    <img
+                      
+                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"
+
+                      alt="X logo"
                       className="h-5"
                     />
                   </button>
@@ -138,6 +154,19 @@ export default function Login() {
                       className="h-5"
                     />
                   </button>
+
+                  <button
+                    type="button"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center  px-2 h-10"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png "
+                      alt="Facebook logo"
+                      className="h-5"
+                    />
+                  </button>
+
+               
                 </div>
               </div>
 

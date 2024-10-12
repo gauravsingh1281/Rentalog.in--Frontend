@@ -1,4 +1,5 @@
 import { useState } from "react";
+<link rel="stylesheet" href="Contact-section.css" />
 import Github from "../../assets/Social-Icons/Github.png";
 import Insta from "../../assets/Social-Icons/instagram.png";
 import Twitter from "../../assets/Social-Icons/Twitter.png";
@@ -106,8 +107,9 @@ const ContactForm = () => {
             <span className="pl-4 text-[#ff0000] text-sm">
               {contactErrors.message}
             </span>
-            <div className="flex justify-center md:justify-start ">
+            <div className="flex justify-center md:justify-start " >
               <button
+                id="text"
                 className="relative flex cursor-pointer items-center justify-center mt-5 bg-green rounded-lg w-40 lg:w-60 p-3 text-textWhite text-2xl md:text-xl font-bold font-monsterrat ease-in-out duration-300 hover:bg-[transparent] hover:text-green hover:border-green hover:border-[2px]"
                 type="submit"
               >
