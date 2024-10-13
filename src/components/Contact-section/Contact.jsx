@@ -4,7 +4,7 @@ import { ContactText } from "./ContactText";
 import "./Contact-section.css";
 import Github from "../../assets/Social-Icons/Github.png";
 import Insta from "../../assets/Social-Icons/instagram.png";
-import Twitter from "../../assets/Social-Icons/Twitter.png";
+import { RiTwitterXFill } from "react-icons/ri";
 
 const Contact = () => {
   return (
@@ -26,11 +26,7 @@ const Contact = () => {
           <article className="flex flex-col items-center text-center ">
             <div className="flex gap-[27px] justify-center ">
               <a href="https://twitter.com/gauravsingh1281">
-                <img
-                  src={Twitter}
-                  alt="Twitter-logo"
-                  className="md:h-12 h-10"
-                />
+                <RiTwitterXFill className="md:h-12 h-10 w-auto text-black" />
               </a>
               <a href="https://github.com/gauravsingh1281">
                 <img src={Github} alt="Github-logo" className="md:h-12 h-10" />
