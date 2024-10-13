@@ -79,7 +79,7 @@ const Services = () => {
                 <ServicesAvailableIn
                   placeName={name}
                   placeImage={image}
-                  placeBlurImage={blurImage} //added a new prop which passes blurred image.
+                  placeBlurImage={blurImage} //Added a new prop which passes blurred image.
                   mt={mt}
                   setBgImage={setBgImage}
                   setImageUrl={setImageUrl}
