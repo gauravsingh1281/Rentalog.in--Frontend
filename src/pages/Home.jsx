@@ -19,9 +19,9 @@ function Home() {
 
       <ScrollToTop
           symbol={
-            <img src={carImg3} alt="" style={{ width: "80px",marginTop:"60px"}} />
+            <img src={carImg3} alt="" style={{ width: "60px",marginTop:"60px",bottom:"60px",right:"20px"}} />
           }
-          size={80}
+          size={60}
           bgColor="rgb(256,256,256)"
           strokeWidth={10}
           strokeFillColor="rgb(113, 242, 214)"
