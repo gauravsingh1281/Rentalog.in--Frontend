@@ -4,6 +4,7 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 import { LuSendHorizonal } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { RiTwitterXFill } from "react-icons/ri";
+import SocialShare from './SocialShare';
 
 let date = new Date();
 let year = date.getFullYear();
@@ -25,6 +26,7 @@ const Footer = () => {
       <div className="flex justify-center flex-wrap gap-10">
         <div className="flex  justify-center items-center text-center lg:items-start lg:text-start basis-[200px] mx-5 my-2">
           <div>
+            
             <h3 className="font-bold mb-4">About Us</h3>
             <p className="my-2 pb-1">
               Rentalog is the ultimate solution for landlords looking to simplify
@@ -121,10 +123,12 @@ const Footer = () => {
         </a>
       </div>
           
-
+     
           </div>
         </div>
+        <SocialShare />
       </div>
+      
       <div className="h-10"></div>
       <hr className="my-1 mx-10 border-1 border-t border-gray-light" />
       
@@ -133,15 +137,15 @@ const Footer = () => {
         {" "}
   
         {year} || All Rights Reserved || The Virtual World Maker
-        </div>
+      </div>
          
         
         
 
   
-      
+     
     </div>
-  );
+  )
 };
 
 

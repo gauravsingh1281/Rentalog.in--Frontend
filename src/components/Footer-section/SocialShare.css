@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
+
+.Sharing {
+
+  position: relative;
+  z-index: 1;
+  margin-left:70px;
+  margin-top:50px;
+}
+
+.Sharing .circle-share {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #eb3b5a;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 3px #1f2d3a;
+  cursor: pointer;
+  text-align: center;
+  
+ 
+}
+
+.Sharing .circle-share .fa-share-alt {
+  line-height: 50px;
+  color: #fff;
+}
+
+.Sharing ul {
+  list-style-type: none;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color:#071952;
+  top: -50px;
+  left: -50px;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 3px #1f2d3a, 0px 0px 0px 5px #fff;
+  transform: scale(.3) rotate(-180deg);
+  transition: .5s ease-in;
+}
+
+.Sharing:hover ul {
+  transform: scale(1) rotate(0deg);
+}
+
+  
+
+.Sharing ul:before,
+.Sharing ul:after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: wheat;
+  top: 50%;
+}
+
+.Sharing ul:before {
+  left: -1px;
+  transform: rotate(45deg);
+}
+
+.Sharing ul:after {
+  right: -1px;
+  transform: rotate(-45deg);
+}
+
+.Sharing ul li a {
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.Sharing ul li:first-of-type a {
+  color: #3b5999;
+}
+
+.Sharing ul li:nth-of-type(2) a {
+  color: #25D366;
+}
+
+.Sharing ul li:nth-of-type(3) a {
+  color:white;
+  
+}
+
+  
+.Sharing ul li:last-of-type a {
+  color: #e4405f;
+}
+
+.Sharing ul li:first-of-type {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+}
+
+.Sharing ul li:nth-of-type(2) {
+  position: absolute;
+  left: 10px;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.Sharing ul li:nth-of-type(3) {
+  position: absolute;
+  right: 10px;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.Sharing ul li:last-of-type {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+}
