@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
 import gsap from 'gsap'
-const tl=gsap.timeline()
+const tl = gsap.timeline()
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
@@ -15,7 +15,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const tl = gsap.timeline();  // Initialize the timeline
-  
+
     const ctx = gsap.context(() => {
       tl.fromTo('.navbar',
         {
@@ -58,11 +58,11 @@ const Navbar = () => {
       );
 
     });
-  
+
     return () => ctx.revert(); // Cleanup when the component unmounts
   }, []);
-  
-  
+
+
 
   // Intersection Observer to Highlight Links on Scroll and Update URL
   useEffect(() => {
@@ -232,7 +232,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white fixed w-full z-20 top-0 left-0">
+      <nav className="bg-green fixed w-full z-20 top-0 left-0">
         <div
           className={
             doBlure
@@ -244,11 +244,11 @@ const Navbar = () => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex flex-row justify-center items-center">
             <a href="#home" aria-current="page">
-                <img
-                  className="self-start w-40 navbar"
-                  src={logo}
-                  alt="Rentalog-logo"
-                />
+              <img
+                className="self-start w-40 navbar"
+                src={logo}
+                alt="Rentalog-logo"
+              />
             </a>
           </div>
           <div className="flex md:order-2">
@@ -273,7 +273,7 @@ const Navbar = () => {
           <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li className=" navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#home"  aria-current="page">
+                <a href="#home" aria-current="page">
                   {activeSection === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
                 </a>
               </li>
