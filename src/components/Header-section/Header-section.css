@@ -67,7 +67,7 @@
   border-width: 2px;
   color: #1abc9c;
 }
-
+  /* #1abc9c */
 @media (max-width: 768px) {
   .header-section {
     width: 100%;

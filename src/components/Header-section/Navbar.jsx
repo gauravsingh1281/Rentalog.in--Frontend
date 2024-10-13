@@ -132,10 +132,10 @@ const Navbar = () => {
     window.onscroll = () => {
       window.scrollTo(scrollLeft, scrollTop);
     };
-
+    // 
     return (
       <>
-        <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
+        <div className="md:hidden bg-[green] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
           <button
             onClick={() => {
               setShowMenu("");
@@ -232,12 +232,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-green fixed w-full z-20 top-0 left-0">
+      <nav className="bg-[pink] fixed w-full z-20 top-0 left-0">
         <div
           className={
             doBlure
-              ? `absolute w-full h-full -z-20 bg-gray-light opacity-0`
-              : `absolute w-full h-full -z-20 bg-gray-light opacity-80`
+              ? `absolute w-full h-full -z-20 bg-[pink] opacity-0 `
+              : `absolute w-full h-full -z-20 bg-[pink] opacity-80`
           }
         ></div>
 
@@ -260,25 +260,25 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
-            <Link to="/register">
+            {/* <Link to="/register">
               <button
                 type="button"
-                className="navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+                className="navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-gray-dark"
               >
                 <FiUser className="text-2xl" />
                 Register
               </button>
-            </Link>
+            </Link> */}
           </div>
           <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
-              <li className=" navbar2 hover:scale-[1.081] hover transition duration-300">
+              <li className=" navbar2 hover:scale-[1.081] hover transition duration-300 ">
                 <a href="#home" aria-current="page">
                   {activeSection === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
                 </a>
               </li>
 
-              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
+              <li className="navbar2 hover:scale-[1.080] hover transition duration-300">
                 <a href="#Service" aria-current="page">
                   {activeSection === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
                 </a>
