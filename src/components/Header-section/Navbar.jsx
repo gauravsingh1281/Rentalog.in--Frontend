@@ -236,8 +236,8 @@ const Navbar = () => {
         <div
           className={
             doBlure
-              ? `absolute w-full h-full -z-20 bg-[pink] opacity-0 `
-              : `absolute w-full h-full -z-20 bg-[pink] opacity-80`
+              ? `absolute w-full h-full -z-20 bg-[#c0e8ff] opacity-0 `
+              : `absolute w-full h-full -z-20 bg-[#c0e1ff] opacity-80`
           }
         ></div>
 
