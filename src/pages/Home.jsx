@@ -6,6 +6,7 @@ import Services from "../components/Services-section/Services-section";
 import Testimonials from "../components/testimonial-section/Testimonial";
 import { ScrollToTop } from 'react-simple-scroll-up';
 import carImg3 from "../assets/Icons/arrow-up.png"
+import './home.css'
 
 function Home() {
   return (
@@ -15,20 +16,19 @@ function Home() {
       <AboutUs />
       <Testimonials />
       <Contact />
-      <Footer />
-      <ScrollToTop
-        symbol={
-          <img src={carImg3} alt="" style={{ width: "80px" }} />
-        }
-        size={
-          80
-        }
-        bgColor="rgb(256,256,256)"
-        strokeWidth={10}
-        strokeFillColor="rgb(113, 242, 214)"
-        strokeEmptyColor="rgb(256,256,256)"
 
-      />
+      <ScrollToTop
+          symbol={
+            <img src={carImg3} alt="" style={{ width: "80px",marginTop:"60px"}} />
+          }
+          size={80}
+          bgColor="rgb(256,256,256)"
+          strokeWidth={10}
+          strokeFillColor="rgb(113, 242, 214)"
+          strokeEmptyColor="rgb(256,256,256)"
+        />
+      <Footer />
+
     </>
   );
 }
