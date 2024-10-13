@@ -19,3 +19,19 @@ html {
 .mb-0{
   margin-bottom: 0;
 }
+/* Default Light Mode */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
