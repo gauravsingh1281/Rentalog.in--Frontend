@@ -14,7 +14,7 @@ const ServicesAvailableIn = (props) => {
             style={{ marginTop: props.mt }}
             onMouseEnter={() => { 
                 props.setBgImage('')
-                props.setImageUrl(props.placeImage) 
+                props.setImageUrl(props.placeBlurImage) 
                 props.setCurrPlace(props.placeName)
             }}
             

@@ -65,20 +65,21 @@ const Services = () => {
           {currPlace}
         </h2>
         <div className="flex justify-center gap-9 items-start flex-col pb-14 px-10 md:flex-row">
-          {placeName.map(({ id, name, image, mt }) => {
+          {placeName.map(({ id, name, image, blurImage, mt }) => {
             return (
               <div
                 key={id}
                 className="transition-transform transform hover:scale-105 cursor-pointer"
                 onMouseEnter={() => {
-                  setBgImage('image');
-                  setImageUrl(image);
+                  setBgImage('blurImage');
+                  setImageUrl(blurImage);
                   setCurrPlace(name);
                 }}
               >
                 <ServicesAvailableIn
                   placeName={name}
                   placeImage={image}
+                  placeBlurImage={blurImage}
                   mt={mt}
                   setBgImage={setBgImage}
                   setImageUrl={setImageUrl}
