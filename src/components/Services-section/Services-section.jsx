@@ -71,15 +71,15 @@ const Services = () => {
                 key={id}
                 className="transition-transform transform hover:scale-105 cursor-pointer"
                 onMouseEnter={() => {
-                  setBgImage('blurImage');
-                  setImageUrl(blurImage);
+                  setBgImage('blurImage'); // sets the blurred image as bgImage
+                  setImageUrl(blurImage); //sets the image url to blurred image's url
                   setCurrPlace(name);
                 }}
               >
                 <ServicesAvailableIn
                   placeName={name}
                   placeImage={image}
-                  placeBlurImage={blurImage}
+                  placeBlurImage={blurImage} //added a new prop which passes blurred image.
                   mt={mt}
                   setBgImage={setBgImage}
                   setImageUrl={setImageUrl}
