@@ -80,7 +80,7 @@ const Services = () => {
         >
           {currPlace}
         </h2>
-        <div className="flex justify-center gap-9 items-start flex-col pb-14 px-10 md:flex-row">
+        <div className="flex justify-center gap-9 items-center flex-col pb-14 px-10 md:flex-row">
           {placeName.map(({ id, name, image, mt }) => {
             return (
               <div
