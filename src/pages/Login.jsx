@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
 
+// List of allowed email domains
+const allowedDomains = ["gmail.com", "outlook.com", "yahoo.com", "protonmail.com", "icloud.com", "tutanota.com"];
+
 export default function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -14,6 +17,12 @@ export default function Login() {
   } = useForm();
 
   const handleShowPassword = () => setShowPassword(!showPassword);
+
+  // Function to validate email domain
+  const isValidEmailDomain = (email) => {
+    const domain = email.substring(email.lastIndexOf("@") + 1);
+    return allowedDomains.includes(domain);
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -63,6 +72,11 @@ export default function Login() {
                   pattern: {
                     value: /\S+@\S+\.\S+/,
                     message: "Invalid email format",
+                  },
+                  validate: {
+                    domainCheck: (value) =>
+                      isValidEmailDomain(value) ||
+                      "Please use an email from a reputable provider (e.g., Gmail, Outlook, Yahoo, Protonmail, icloud, tutanota).",
                   },
                 })}
                 className="input-bar"

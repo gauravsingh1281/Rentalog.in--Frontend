@@ -3,6 +3,7 @@ import { FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
+import GoogleTranslate from "./GoogleTranslate";
 import gsap from 'gsap'
 const tl=gsap.timeline()
 
@@ -221,6 +222,7 @@ const Navbar = () => {
                   </button>
                 </Link>
               </div>
+              <GoogleTranslate />
             </div>
           </div>
         </div>
@@ -269,6 +271,7 @@ const Navbar = () => {
                 Register
               </button>
             </Link>
+            <GoogleTranslate/>
           </div>
           <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
