@@ -216,27 +216,30 @@ export default function Registration() {
 
               {/* Social Buttons */}
               <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
+                <Link to="https://www.google.com/" className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10">
                 <button
                   type="button"
-                  className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
+                 
                 >
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                     alt="Google logo"
-                    className="h-5"
+                    className="h-5 mb-0"
                   />
                 </button>
-
+                </Link>
+                <Link to="https://www.facebook.com/" className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10">
                 <button
                   type="button"
-                  className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
+                  
                 >
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
                     alt="Facebook logo"
-                    className="h-5"
+                    className="h-5 mb-0"
                   />
                 </button>
+                </Link>
               </div>
 
               {/* Login Link */}
