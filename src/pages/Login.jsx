@@ -145,7 +145,7 @@ export default function Login() {
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                       alt="Google logo"
-                      className="h-5"
+                      className="h-5" style="margin-top:60px;"
                     />
                   </button>
 
@@ -156,7 +156,7 @@ export default function Login() {
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"
                       alt="X logo"
-                      className="h-5"
+                      className="h-5" style="margin-top:60px;"
                     />
                   </button>
 
@@ -167,7 +167,7 @@ export default function Login() {
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
                       alt="Facebook logo"
-                      className="h-5"
+                      className="h-5" style="margin-top:60px;"
                     />
                   </button>
 
@@ -178,7 +178,7 @@ export default function Login() {
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
                       alt="LinkedIn logo"
-                      className="h-5"
+                      className="h-5" style="margin-top:60px;"
                     />
                   </button>
                 </div>
