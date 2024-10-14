@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai"; // Importing the close icon
 import logo from "../assets/Images/logo.png";
 
 export default function Login() {
@@ -30,7 +31,6 @@ export default function Login() {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      // alert("Login Successful");
       navigate("/home");
       setForm({
         email: "",
@@ -40,42 +40,36 @@ export default function Login() {
   };
 
   const closeLogin = () => {
-    navigate("/home"); // Redirect to the home page on closing the login form
+    navigate("/home");
   };
 
   return (
-    <article className="flex flex-col justify-center h-[100vh] bg-primaryGreen/10 overflow-hidden">
+    <article className="flex flex-col justify-center min-h-screen bg-primaryGreen/10 overflow-hidden">
       <Navbar />
-      <br className=" hidden xl:block"></br>
-      <section className="flex flex-row justify-baseline items-center">
-        <div className="hidden w-full lg:flex lg:mt-12 flex-col lg:justify-start xl:justify-center xl:h-full">
+      <section className="flex flex-row justify-center items-center h-full">
+        <div className="hidden lg:flex w-full lg:mt-12 flex-col lg:justify-start xl:justify-center xl:h-full">
           <div className="mb-10 mx-10 mr-auto">
             <h2 className="text-3xl font-bold text-gray-dark/90">
               <span className="text-customRed italic">Best way</span> to manage your rent
             </h2>
-
-            <p className="mt-2 text-gray-dark/70">
-              Enter your credentials to access your account
-            </p>
+            <p className="mt-2 text-gray-dark/70">Enter your credentials to access your account</p>
           </div>
           <img src="undraw_for_sale_re_egkk.svg" alt="" className="m-10 w-auto" />
         </div>
 
-        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-screen xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
-          <div className="w-full h-[100vh] flex flex-col justify-start mt-20 lg:mt-0 lg:justify-center items-center relative">
-            {/* Close Icon */}
-            <span
+        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] lg:h-[100vh] justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
+          <div className="w-full h-full flex flex-col justify-start mt-20 lg:mt-0 lg:justify-center items-center relative">
+            {/* Close Icon using react-icons */}
+            <AiOutlineClose
               className="absolute top-5 right-5 text-2xl cursor-pointer font-bold text-red-600"
               onClick={closeLogin}
-            >
-              &times;
-            </span>
+            />
 
             <TitleCard />
 
             <form
               onSubmit={handleSubmit}
-              className="mt-5 space-y-5 w-[70%] md:w-[50%] lg:w-[60%]"
+              className="mt-5 space-y-4 w-[70%] md:w-[50%] lg:w-[60%]"
             >
               <Input
                 title="Email"
@@ -97,14 +91,11 @@ export default function Login() {
                 className="input-bar"
               />
               <span className="pl-4 text-[#ff0000] text-sm">{errors.password}</span>
-              <Link
-                to="#"
-                className="float-right relative bottom-3 text-green hover:underline"
-              >
+              <Link to="#" className="float-right relative bottom-3 text-green hover:underline">
                 Forgot Password?
               </Link>
 
-              <div className="">
+              <div>
                 <button
                   type="submit"
                   className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
@@ -148,11 +139,8 @@ export default function Login() {
               </div>
 
               <p className="text-center text-sm text-gray font-semibold">
-                Don&rsquo;t have any account?{" "}
-                <Link
-                  to="/register"
-                  className="text-primaryGreen font-semibold hover:text-primaryGreen/60"
-                >
+                Don’t have any account?{" "}
+                <Link to="/register" className="text-primaryGreen font-semibold hover:text-primaryGreen/60">
                   Sign Up
                 </Link>
               </p>
@@ -177,14 +165,11 @@ const Navbar = () => {
 const TitleCard = () => {
   return (
     <div className="flex flex-col">
-      <h2 className="mt-16 text-left text-3xl font-extrabold leading-9 tracking-tight text-gray-dark/90">
+      <h2 className="mt-10 text-left text-3xl font-extrabold leading-9 tracking-tight text-gray-dark/90">
         <span className="text-customRed text-4xl">Welcome</span>
         <span> </span>back!!
       </h2>
-
-      <p className="text-center text-gray text-sm mt-1">
-        Please enter your details
-      </p>
+      <p className="text-center text-gray text-sm mt-1">Please enter your details</p>
     </div>
   );
 };
