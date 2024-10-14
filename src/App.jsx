@@ -9,6 +9,7 @@ import TotalRentCollected from "./components/dashboard-components/TotalRentColle
 import PropertyListing from "./components/dashboard-components/PropertyListing/PropertyListing";
 import ListedProperty from "./components/dashboard-components/ListedProperty/ListedProperty";
 import CreateNewRental from "./components/dashboard-components/CreateNewRental/CreateNewRental";
+import RentCalculation from "./components/RentCalculation/RentCalculation"; // Updated import
 
 const App = () => {
   return (
@@ -23,12 +24,10 @@ const App = () => {
       <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />
       <Route path="/dashboard/renterdetails" element={<RenterDetails />} />
       <Route path="/dashboard/paymentsrecord" element={<PaymentsRecord />} />
-      <Route
-        path="/dashboard/totalrentcollected"
-        element={<TotalRentCollected />}
-      />
+      <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected />} />
       <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
       <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
+      <Route path="/dashboard/rentcalculation" element={<RentCalculation />} /> {/* Added route for RentCalculation */}
     </Routes>
   );
 };

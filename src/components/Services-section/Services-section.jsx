@@ -2,7 +2,8 @@ import ServicesCard from "./ServicesCard";
 import ourServices from "./services";
 import ServicesAvailableIn from "./ServicesAvailableIn";
 import placeName from "./placeName";
-import "./Services-section.css";
+import { Link } from "react-router-dom"; 
+import "./Services-section.css"; // Ensure your CSS file is imported
 import none from "../../assets/Images/none.png";
 import React, { useState } from 'react';
 
@@ -10,6 +11,7 @@ const Services = () => {
   const [bgImage, setBgImage] = useState('white');
   const [imageUrl, setImageUrl] = useState(null);
   const [currPlace, setCurrPlace] = useState("");
+  const [hoveredCardId, setHoveredCardId] = useState(null); // State to track hovered card
 
   return (
     <>
@@ -18,21 +20,35 @@ const Services = () => {
         Our Services Include
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 md:mx-24 lg:mx-36 sm:mx-24 mx-8">
-        {ourServices.map(({ id, bgColor, title, description, icon, alt , aos }) => {
+        {ourServices.map(({ id, bgColor, title, description, icon, alt, aos }, index) => {
+          // Determine the background color based on hover state
+          const isHovered = hoveredCardId === id;
+          const cardBgColor = isHovered ? 'rgba(200, 200, 200, 0.5)' : bgColor;
+
           return (
             <div
               key={id}
-              className={`rounded-xl p-6 shadow-md transition-all transform hover:scale-105 hover:shadow-lg`}
-              style={{ backgroundColor: bgColor }}
+              className={`service-card rounded-xl shadow-md border-2 border-gray-300 transition-all transform hover:scale-105 hover:shadow-lg`} 
+              style={{ backgroundColor: cardBgColor }} // Set the background color based on hover state
+              onMouseEnter={() => setHoveredCardId(id)} // Set hovered card id on mouse enter
+              onMouseLeave={() => setHoveredCardId(isHovered ? id : null)} // Reset hovered card id on mouse leave
             >
-              <ServicesCard
-                title={title}
-                bgColor={bgColor}
-                icon={icon}
-                alt={alt}
-                description={description}
-                aos = {aos}
-              />
+              {index === 2 ? ( 
+                // Rent Calculation Card
+                <Link to="/dashboard/rentcalculation" className="flex flex-col justify-center h-full text-black no-underline p-6"> 
+                  <h2 className="text-2xl font-bold mb-4 text-center">Rent Calculation</h2>
+                  <p className="text-center">Calculate the total rent based on amount and number of tenants.</p>
+                </Link>
+              ) : (
+                <ServicesCard
+                  title={title}
+                  bgColor={cardBgColor}
+                  icon={icon}
+                  alt={alt}
+                  description={description}
+                  aos={aos}
+                />
+              )}
             </div>
           );
         })}
