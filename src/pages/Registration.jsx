@@ -1,24 +1,28 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import zxcvbn from "zxcvbn";
 import logo from "../assets/Images/logo.png";
 
 export default function Registration() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    watch,
-    reset,
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-  const password = watch("password", ""); // Watch password to match confirm password
+  // Show password
+  const [showPassword, setShowPassword] = useState(false);
+  const handleShowPassword = () => setShowPassword(!showPassword);
 
-  const onSubmit = (data) => {
-    console.log(data); // Log form data to the console
-    alert("Form Submitted successfully");
-    reset(); // Resets the form after submission
-  };
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const handleShowConfirmPassword = () => setShowConfirmPassword(!showConfirmPassword);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
 
   // Password strength meter logic (using zxcvbn)
   const getPasswordStrength = (password) => {
@@ -29,19 +33,20 @@ export default function Registration() {
       score,
       label: labels[score],
       color:
-        score === 0
-          ? "#d73f40"
-          : score === 1
-          ? "#dc6551"
-          : score === 2
-          ? "#f2b84f"
-          : score === 3
-          ? "#bde952"
-          : "#3ba62f",
+        score === 0 ? "#d73f40" :
+        score === 1 ? "#dc6551" :
+        score === 2 ? "#f2b84f" :
+        score === 3 ? "#bde952" :
+        "#3ba62f",
     };
   };
 
-  const passwordStrength = getPasswordStrength(password); // Compute password strength
+  const passwordStrength = getPasswordStrength(form.password); // Compute password strength
+
+  const onSubmit = (data) => {
+    // Handle form submission logic here
+    console.log("Form Data:", data);
+  };
 
   return (
     <article className="flex flex-col justify-center h-screen bg-primaryGreen/10 overflow-hidden">
@@ -105,19 +110,31 @@ export default function Registration() {
               )}
 
               {/* Password Field */}
-              <Input
-                title="Password"
-                name="password"
-                type="password"
-                placeholder="Password"
-                register={register("password", {
-                  required: "Password is required",
-                  minLength: {
-                    value: 6,
-                    message: "Password should be at least 6 characters",
-                  },
-                })}
-              />
+              <div className="relative mb-6">
+                <Input
+                  title="Password"
+                  name="password"
+                  value={form.password}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  onChange={handleChange}
+                  className="input-bar pr-10"
+                  register={register("password", {
+                    required: "Password is required",
+                  })}
+                />
+                <button
+                  type="button"
+                  onClick={handleShowPassword}
+                  className="absolute right-4 top-3/4 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                >
+                  {showPassword ? (
+                    <i className="fa-regular fa-eye-slash"></i>
+                  ) : (
+                    <i className="fa-regular fa-eye"></i>
+                 )}
+                </button>
+              </div>
               {errors.password && (
                 <span className="pl-4 text-[#ff0000] text-sm">
                   {errors.password.message}
@@ -125,7 +142,7 @@ export default function Registration() {
               )}
 
               {/* Password Strength Meter */}
-              {password && (
+              {form.password && (
                 <div className="w-full mt-2">
                   <label>Password Strength: {passwordStrength.label}</label>
                   <div className="w-full h-2 bg-gray-300 rounded">
@@ -141,17 +158,32 @@ export default function Registration() {
               )}
 
               {/* Confirm Password Field */}
-              <Input
-                title="Confirm password"
-                name="confirmPassword"
-                type="password"
-                placeholder="Confirm Password"
-                register={register("confirmPassword", {
-                  required: "Confirm password is required",
-                  validate: (value) =>
-                    value === password || "Passwords do not match",
-                })}
-              />
+              <div className="relative mb-6">
+                <Input
+                  title="Confirm Password"
+                  name="confirmPassword"
+                  value={form.confirmPassword}
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Confirm Password"
+                  onChange={handleChange}
+                  className="input-bar pr-10"
+                  register={register("confirmPassword", {
+                    validate: (value) =>
+                      value === form.password || "Passwords do not match",
+                  })}
+                />
+                <button
+                  type="button"
+                  onClick={handleShowConfirmPassword}
+                  className="absolute right-4 top-3/4 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                >
+                  {showConfirmPassword ? (
+                    <i className="fa-regular fa-eye-slash"></i>
+                  ) : (
+                    <i className="fa-regular fa-eye"></i>
+                 )}
+                </button>
+              </div>
               {errors.confirmPassword && (
                 <span className="pl-4 text-[#ff0000] text-sm">
                   {errors.confirmPassword.message}
@@ -221,26 +253,25 @@ const Navbar = () => {
 
 const TitleCard = () => {
   return (
-    <div className="">
-      <h2 className="lg:mt-10 text-left text-3xl font-extrabold leading-9 tracking-tight text-gray-dark/90">
-        Welcome to <span className="text-customRed text-4xl">Rentlog</span>
+    <div>
+      <h2 className="text-2xl text-center font-bold mb-4 text-gray-dark">
+        Create Account
       </h2>
-      <p className="text-left text-gray text-sm mt-1">
-        Create a new account to access all the features
-        <br />
-        of our website
+      <p className="text-center text-gray-dark/70">
+        Join us for seamless rental management
       </p>
     </div>
   );
 };
 
-const Input = ({ register, ...rest }) => {
+const Input = ({ title, register, ...props }) => {
   return (
-    <div className="flex flex-col">
+    <div>
+      <label className="text-gray-dark font-semibold">{title}</label>
       <input
-        {...rest}
         {...register}
-        className="bg-[#FAFAFA] p-2 border border-[#dedede] outline-none rounded-xl focus:shadow-md"
+        {...props}
+        className="input-bar w-full p-2 border border-gray-300 rounded mt-2"
       />
     </div>
   );
