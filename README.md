@@ -1,6 +1,6 @@
-# [Rentalog.in](https://www.rentalog.in/) - Rent Management Web App For Landlords 🏠
+# [Rentalog.in](https://rentalog-in-frontend-la1f.vercel.app/#home) - Rent Management Web App For Landlords 🏠
 
-This GitHub repository focuses on the development of the frontend part of [Rentalog.in](https://www.rentalog.in/). It includes designing and coding the visual elements and interactive features for [Rentalog.in](https://www.rentalog.in/).
+This GitHub repository focuses on the development of the frontend part of [Rentalog.in](https://rentalog-in-frontend-la1f.vercel.app/#home). It includes designing and coding the visual elements and interactive features for [Rentalog.in](https://rentalog-in-frontend-la1f.vercel.app/#home).
 
 **Rentalog** is a web application that makes it easy for landlords to manage their rental properties. With Rentalog, landlords can keep track of important information about their renters, including their names, addresses, rental payment history, and much more.
 
