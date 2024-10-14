@@ -9,6 +9,7 @@ import TotalRentCollected from "./components/dashboard-components/TotalRentColle
 import PropertyListing from "./components/dashboard-components/PropertyListing/PropertyListing";
 import ListedProperty from "./components/dashboard-components/ListedProperty/ListedProperty";
 import CreateNewRental from "./components/dashboard-components/CreateNewRental/CreateNewRental";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/forgot" element={<ForgotPassword/>}/>
       <Route path="/register" element={<Registration />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/dashboard/searchrenter" element={<SearchRental />} />
