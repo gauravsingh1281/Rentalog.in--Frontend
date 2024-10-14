@@ -247,13 +247,13 @@ const Navbar = () => {
           <div className="flex flex-row justify-center items-center">
             <a href="#home" aria-current="page">
                 <img
-                  className="self-start w-40 navbar"
+                  className="self-start w-40 navbar my-auto"
                   src={logo}
                   alt="Rentalog-logo"
                 />
             </a>
           </div>
-          <div className="flex md:order-2">
+          <div className="flex md:order-2 items-center">
             <Link to="/login">
               <button
                 type="button"
