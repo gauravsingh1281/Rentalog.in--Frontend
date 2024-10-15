@@ -1,11 +1,13 @@
 import AboutUs from "../components/AboutUs-section/AboutUs";
+import Contributors from "../components/Contributors-page/Contributors";
 import Contact from "../components/Contact-section/Contact";
 import Footer from "../components/Footer-section/Footer";
 import Header from "../components/Header-section/Header";
 import Services from "../components/Services-section/Services-section";
-import ScrollToTop from "react-scroll-to-top";
 import Testimonials from "../components/testimonial-section/Testimonial";
-import FeedbackPage from "./FeedbackPage";
+import { ScrollToTop } from "react-simple-scroll-up";
+import carImg3 from "../assets/Icons/arrow-up.png";
+import "./home.css";
 
 function Home() {
   return (
@@ -15,13 +17,17 @@ function Home() {
       <AboutUs />
       <Testimonials />
       <Contact />
+      {/* <Contributors /> */}
       <Footer />
       <ScrollToTop
-        smooth
-        color="darkgreen"
-        className="flex justify-center hover:scale-125 duration-200 transition items-center p-1"
+        image={carImg3}
+        scrollUpBtnStyle={{
+          width: "50px",
+          height: "50px",
+          borderRadius: "50%",
+          backgroundColor: "#000",
+        }}
       />
-      <FeedbackPage/>
     </>
   );
 }

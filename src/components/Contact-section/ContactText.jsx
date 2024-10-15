@@ -1,9 +1,16 @@
 import React from "react";
-
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export const ContactText = () => {
+  useEffect(() => {
+
+    AOS.init({duration:1000});
+
+  }, []);
   return (
     <section className="mt-0 bg-gray-100  rounded-lg shadow-lg flex flex-col gap-6 justify-center  p-1 lg:w-[35%] w-full">
-      <div className="text-gray-800">
+      <div className="text-gray-800" data-aos = "fade-right">
         <h2 className="text-xl font-bold mb-4">Hey Rentalog Users,</h2>
         <p className="leading-relaxed">
           We are always looking forward to hearing from you. Please feel free to

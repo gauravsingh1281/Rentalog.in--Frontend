@@ -9,7 +9,8 @@ const ourServices = [
         title: "Tenant Management",
         description: "Store and access your renters' personal information like name, address, and phone number with ease.",
         icon: iconPerson,
-        alt: " iconPerson"
+        alt: " iconPerson",
+        aos: "fade-right"
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ const ourServices = [
         title: "Track Payment Records",
         description: "Keep a record of all your renters' monthly rent payments and have a complete overview of your rental income.",
         icon: iconCalendar,
-        alt: "iconCalendar"
+        alt: "iconCalendar",
+        aos: "fade-left"
     },
     {
         id: 3,
@@ -25,7 +27,8 @@ const ourServices = [
         title: " Rent Calculation",
         description: "Automatically calculate the total rent received each month and see a breakdown of payments.",
         icon: iconPencil,
-        alt: "iconPencil"
+        alt: "iconPencil",
+        aos: "fade-right"
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ const ourServices = [
         title: "Property Listing",
         description: " Showcase your rental properties and attract potential tenants by listing them on Rentalog.",
         icon: iconHome,
-        alt: "iconHome"
+        alt: "iconHome",
+        aos: "fade-left"
     }
 ]
 export default ourServices;

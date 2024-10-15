@@ -8,7 +8,7 @@ main {
     padding-top: 0; /* Remove extra padding if present */
     margin-bottom: 5rem;
 
-    background-color: #cdf6f6; /* Light cyan background */
+    background-color: #b4f8f8; /* Light cyan background */
     border: 2px solid #020202; /* Border color */
     border-radius: 8px; /* Rounded corners */
     padding: 10px; /* Spacing inside the section */
@@ -19,5 +19,6 @@ main {
     display: flex;
     text-align: center;
     margin-left: 98px;
+    font-style: bold;
 }
 
