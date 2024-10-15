@@ -3,6 +3,7 @@ import { FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
+import GoogleTranslate from "./GoogleTranslate";
 import gsap from 'gsap'
 const tl = gsap.timeline()
 
@@ -221,6 +222,7 @@ const Navbar = () => {
                   </button>
                 </Link>
               </div>
+              <GoogleTranslate />
             </div>
           </div>
         </div>
@@ -260,7 +262,7 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
-            {/* <Link to="/register">
+            <Link to="/register">
               <button
                 type="button"
                 className="navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-gray-dark"
@@ -268,64 +270,69 @@ const Navbar = () => {
                 <FiUser className="text-2xl" />
                 Register
               </button>
-            </Link> */}
-          </div>
-          <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
-            <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
-              <li className=" navbar2 hover:scale-[1.081] hover transition duration-300 ">
-                <a href="#home" aria-current="page">
-                  {activeSection === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
-                </a>
-              </li>
 
-              <li className="navbar2 hover:scale-[1.080] hover transition duration-300">
-                <a href="#Service" aria-current="page">
-                  {activeSection === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
-                </a>
-              </li>
+            </Link>
 
-              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#AboutUs" aria-current="page">
-                  {activeSection === "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
-                </a>
-              </li>
+         
+          <GoogleTranslate />
 
-              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#ContactUs" aria-current="page">
-                  {activeSection === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <button
-            onClick={() => {
-              setShowMenu("show");
-            }}
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
-            aria-controls="navbar-sticky"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
         </div>
-      </nav>
+        <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
+          <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
+            <li className=" navbar2 hover:scale-[1.081] hover transition duration-300 ">
+              <a href="#home" aria-current="page">
+                {activeSection === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
+              </a>
+            </li>
+
+            <li className="navbar2 hover:scale-[1.080] hover transition duration-300">
+              <a href="#Service" aria-current="page">
+                {activeSection === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
+              </a>
+            </li>
+
+            <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
+              <a href="#AboutUs" aria-current="page">
+                {activeSection === "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
+              </a>
+            </li>
+
+            <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
+              <a href="#ContactUs" aria-current="page">
+                {activeSection === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <button
+          onClick={() => {
+            setShowMenu("show");
+          }}
+          type="button"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+          aria-controls="navbar-sticky"
+          aria-expanded="false"
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav >
     </>
   );
 };

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import logo from "../../assets/Images/logo.png";
-import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaInstagram } from "react-icons/fa";
 import { LuSendHorizonal } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import { RiTwitterXFill } from "react-icons/ri";
 
 let date = new Date();
 let year = date.getFullYear();
@@ -109,16 +110,16 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-4 mt-2 justify-center">
-            <a href="https://twitter.com/gauravsingh1281">
-              <FaTwitter className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#1DA1F2]" />
-            </a>
-            <a href="https://github.com/gauravsingh1281">
-              <FaGithub className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-black" />
-            </a>
-            <a href="https://www.instagram.com/gauravsingh1281">
-              <FaInstagram className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
-            </a>
-          </div>
+        <a href="https://twitter.com/gauravsingh1281">
+          <RiTwitterXFill className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#1DA1F2]" />
+        </a>
+        <a href="https://github.com/gauravsingh1281">
+          <FaGithub className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-black" />
+        </a>
+        <a href="https://www.instagram.com/gauravsingh1281">
+          <FaInstagram className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
+        </a>
+      </div>
           
 
           </div>
