@@ -1,6 +1,6 @@
 import { Route, Routes} from "react-router-dom";
 import "./App.css";
-import { Home, Login, Registration , Dashboard} from "./pages";
+import { Home, Login, Registration , Dashboard, FeedbackPage} from "./pages";
 import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";
 import SearchRental from "./components/dashboard-components/SearchRental-section/SearchRental";
 import RenterDetails from "./components/dashboard-components/RenterDetails/RenterDetails";
@@ -9,6 +9,11 @@ import TotalRentCollected from "./components/dashboard-components/TotalRentColle
 import PropertyListing from "./components/dashboard-components/PropertyListing/PropertyListing";
 import ListedProperty from "./components/dashboard-components/ListedProperty/ListedProperty";
 import CreateNewRental from "./components/dashboard-components/CreateNewRental/CreateNewRental";
+
+
+
+
+
 
 const App = () => {
   
@@ -25,8 +30,10 @@ const App = () => {
         <Route path="/dashboard/paymentsrecord" element={<PaymentsRecord/>}/>
         <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected/>}/>
         <Route path="/dashboard/propertylisting" element={<PropertyListing/>}/>
-        <Route path="/dashboard/listedproperty" element={<ListedProperty/>}/>
+        <Route path="/dashboard/listedproperty" element={<ListedProperty/>}/>  
+        <Route path="/feedback" element={<FeedbackPage/>}/>
     </Routes>
+    
   );
 };
 

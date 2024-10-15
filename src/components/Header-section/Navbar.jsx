@@ -3,7 +3,7 @@ import { FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
-
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
@@ -243,6 +243,18 @@ const Navbar = () => {
                   {activeSection === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
                 </a>
               </li>
+              
+              <li className="hover:scale-[1.081] transition duration-300">
+          <Link
+            to="/feedback"
+            smooth={true}
+            duration={500}
+            className="cursor-pointer"
+          >
+            <h1>FEEDBACK</h1>
+          </Link>
+        </li>
+             
             </ul>
           </div>
 
