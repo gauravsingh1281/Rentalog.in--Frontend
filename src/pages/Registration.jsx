@@ -1,11 +1,21 @@
-import { Link } from "react-router-dom";
+
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import zxcvbn from "zxcvbn";
+
+
+import { Link, useNavigate } from "react-router-dom";
+
+
 import logo from "../assets/Images/logo.png";
 
+
+import { useForm } from "react-hook-form";
+import zxcvbn from "zxcvbn";
+
 export default function Registration() {
+  const navigate=useNavigate();
+
   const { register, handleSubmit, formState: { errors }, setError } = useForm();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -50,18 +60,30 @@ export default function Registration() {
     return allowedDomains.includes(emailDomain);
   };
 
+
   const onSubmit = (data) => {
     // Validate email domain
     if (!isValidEmailDomain(data.email)) {
       setError("email", {
         type: "manual",
         message: "Please use an email from a reputable provider (e.g., Gmail, Outlook, Yahoo, Protonmail, icloud, tutanota)."
+
       });
       return;
     }
 
     // Handle form submission logic here
     console.log("Form Data:", data);
+    
+    navigate("/home");
+    
+    setForm({
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
+    
   };
 
   return (
