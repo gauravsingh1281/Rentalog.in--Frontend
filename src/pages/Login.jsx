@@ -3,6 +3,16 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
 
+// List of allowed email domains
+const allowedDomains = [
+  "gmail.com",
+  "outlook.com",
+  "yahoo.com",
+  "protonmail.com",
+  "icloud.com",
+  "tutanota.com",
+];
+
 export default function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -14,6 +24,12 @@ export default function Login() {
   } = useForm();
 
   const handleShowPassword = () => setShowPassword(!showPassword);
+
+  // Function to validate email domain
+  const isValidEmailDomain = (email) => {
+    const domain = email.substring(email.lastIndexOf("@") + 1);
+    return allowedDomains.includes(domain);
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -64,6 +80,11 @@ export default function Login() {
                     value: /\S+@\S+\.\S+/,
                     message: "Invalid email format",
                   },
+                  validate: {
+                    domainCheck: (value) =>
+                      isValidEmailDomain(value) ||
+                      "Please use an email from a reputable provider (e.g., Gmail, Outlook, Yahoo, Protonmail, icloud, tutanota).",
+                  },
                 })}
                 className="input-bar"
               />
@@ -99,7 +120,7 @@ export default function Login() {
               </span>
 
               <Link
-                to="#"
+                to="/forgot"
                 className="float-right relative bottom-3 text-green hover:underline"
               >
                 Forgot Password?
@@ -124,49 +145,55 @@ export default function Login() {
                 </div>
 
                 <div className="flex flex-row md:flex-row items-center space-x-2 justify-center mt-5 lg:mt-2">
-                  <button
-                    type="button"
+                  <Link
+                    to="https://www.google.com/"
                     className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
                   >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                      alt="Google logo"
-                      className="h-5"
-                    />
-                  </button>
+                    <button type="button">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                        alt="Google logo"
+                        className="h-5 mb-0"
+                      />
+                    </button>
+                  </Link>
 
-                  <button
-                    type="button"
+                  <Link
+                    to="https://www.twitter.com/"
                     className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
                   >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"
-                      alt="X logo"
-                      className="h-5"
-                    />
-                  </button>
-
-                  <button
-                    type="button"
+                    <button type="button">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"
+                        alt="X logo"
+                        className="h-5 mb-0"
+                      />
+                    </button>
+                  </Link>
+                  <Link
+                    to="https://www.facebook.com/"
                     className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
                   >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
-                      alt="Facebook logo"
-                      className="h-5"
-                    />
-                  </button>
-
-                  <button
-                    type="button"
+                    <button type="button">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+                        alt="Facebook logo"
+                        className="h-5 mb-0"
+                      />
+                    </button>
+                  </Link>
+                  <Link
+                    to="https://www.linkedin.com/uas/login"
                     className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
                   >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                      alt="LinkedIn logo"
-                      className="h-5"
-                    />
-                  </button>
+                    <button type="button">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                        alt="LinkedIn logo"
+                        className="h-5 mb-0"
+                      />
+                    </button>
+                  </Link>
                 </div>
               </div>
 
