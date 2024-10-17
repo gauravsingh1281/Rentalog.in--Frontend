@@ -1,11 +1,21 @@
-import { Link } from "react-router-dom";
+
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import zxcvbn from "zxcvbn";
+
+
+import { Link, useNavigate } from "react-router-dom";
+
+
 import logo from "../assets/Images/logo.png";
 
+
+import { useForm } from "react-hook-form";
+import zxcvbn from "zxcvbn";
+
 export default function Registration() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigate=useNavigate();
+
+  const { register, handleSubmit, formState: { errors }, setError } = useForm();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -13,7 +23,8 @@ export default function Registration() {
     confirmPassword: "",
   });
 
-  // Show password
+  const allowedDomains = ["gmail.com", "outlook.com", "yahoo.com", "protonmail.com", "icloud.com", "tutanota.com"];
+
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
 
@@ -22,7 +33,7 @@ export default function Registration() {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-  }
+  };
 
   // Password strength meter logic (using zxcvbn)
   const getPasswordStrength = (password) => {
@@ -43,9 +54,36 @@ export default function Registration() {
 
   const passwordStrength = getPasswordStrength(form.password); // Compute password strength
 
+  // Function to check if the email is from a valid domain
+  const isValidEmailDomain = (email) => {
+    const emailDomain = email.split("@")[1];
+    return allowedDomains.includes(emailDomain);
+  };
+
+
   const onSubmit = (data) => {
+    // Validate email domain
+    if (!isValidEmailDomain(data.email)) {
+      setError("email", {
+        type: "manual",
+        message: "Please use an email from a reputable provider (e.g., Gmail, Outlook, Yahoo, Protonmail, icloud, tutanota)."
+
+      });
+      return;
+    }
+
     // Handle form submission logic here
     console.log("Form Data:", data);
+    
+    navigate("/home");
+    
+    setForm({
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
+    
   };
 
   return (
@@ -200,27 +238,30 @@ export default function Registration() {
 
               {/* Social Buttons */}
               <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
+                <Link to="https://www.google.com/" className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10">
                 <button
                   type="button"
-                  className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
+                 
                 >
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                     alt="Google logo"
-                    className="h-5"
+                    className="h-5 mb-0"
                   />
                 </button>
-
+                </Link>
+                <Link to="https://www.facebook.com/" className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10">
                 <button
                   type="button"
-                  className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10"
+                  
                 >
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
                     alt="Facebook logo"
-                    className="h-5"
+                    className="h-5 mb-0"
                   />
                 </button>
+                </Link>
               </div>
 
               {/* Login Link */}
