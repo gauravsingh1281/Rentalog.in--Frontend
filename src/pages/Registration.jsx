@@ -1,14 +1,21 @@
-import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+
+import { Link, useNavigate } from "react-router-dom";
+
+
+import logo from "../assets/Images/logo.png";
+
+
 import { useForm } from "react-hook-form";
 import zxcvbn from "zxcvbn";
-import logo from "../assets/Images/logo.png";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 export default function Registration() {
 
   const { register, handleSubmit, formState: { errors },reset } = useForm();
   const navigate=useNavigate()
+
 
   const [form, setForm] = useState({
     name: "",
@@ -54,6 +61,7 @@ export default function Registration() {
     return allowedDomains.includes(emailDomain);
   };
 
+
   const onSubmit = (data) => {
     localStorage.setItem(
       "user",
@@ -75,7 +83,6 @@ export default function Registration() {
     setTimeout(() => {
       navigate("/login");
     }, 1000);
-
   };
 
   return (
@@ -171,7 +178,7 @@ export default function Registration() {
                 </span>
               )}
 
-              {/* Password Strength Meter */}
+             
               {form.password && (
                 <div className="w-full mt-2">
                   <label>Password Strength: {passwordStrength.label}</label>
@@ -187,7 +194,7 @@ export default function Registration() {
                 </div>
               )}
 
-              {/* Confirm Password Field */}
+             
               <div className="relative mb-6">
                 <Input
                   title="Confirm Password"

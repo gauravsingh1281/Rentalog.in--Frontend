@@ -257,7 +257,6 @@ const Navbar = () => {
                             : `absolute w-full h-full -z-20 bg-gray-light opacity-80`
                     }
                 ></div>
-
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <div className="flex flex-row justify-center items-center">
                         <a href="#home" aria-current="page">
