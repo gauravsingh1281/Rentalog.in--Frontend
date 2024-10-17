@@ -1,9 +1,10 @@
-import { useState } from "react";
+\import { useState } from "react";
 import logo from "../../assets/Images/logo.png";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { LuSendHorizonal } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { RiTwitterXFill } from "react-icons/ri";
+import SocialShare from './SocialShare';
 
 let date = new Date();
 let year = date.getFullYear();
@@ -123,7 +124,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <SocialShare />
       </div>
+      
       <div className="h-10"></div>
       <hr className="my-1 mx-10 border-1 border-t border-gray-light" />
 
@@ -132,7 +135,7 @@ const Footer = () => {
         {year} || All Rights Reserved || The Virtual World Maker
       </div>
     </div>
-  );
+  )
 };
 
 export default Footer;
