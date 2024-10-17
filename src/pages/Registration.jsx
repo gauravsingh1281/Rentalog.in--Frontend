@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 
@@ -10,11 +9,13 @@ import logo from "../assets/Images/logo.png";
 
 import { useForm } from "react-hook-form";
 import zxcvbn from "zxcvbn";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 export default function Registration() {
-  const navigate=useNavigate();
 
-  const { register, handleSubmit, formState: { errors }, setError } = useForm();
+  const { register, handleSubmit, formState: { errors },reset } = useForm();
+  const navigate=useNavigate()
+
 
   const [form, setForm] = useState({
     name: "",
@@ -62,28 +63,26 @@ export default function Registration() {
 
 
   const onSubmit = (data) => {
-    // Validate email domain
-    if (!isValidEmailDomain(data.email)) {
-      setError("email", {
-        type: "manual",
-        message: "Please use an email from a reputable provider (e.g., Gmail, Outlook, Yahoo, Protonmail, icloud, tutanota)."
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        username: data.name, 
+        email: data.email,
+        password: data.password,
+      })
+    );
+    
+ 
+    toast.success("Registered successfully!"
+     );
 
-      });
-      return;
-    }
+  
+    // reset();
 
-    // Handle form submission logic here
-    console.log("Form Data:", data);
-    
-    navigate("/home");
-    
-    setForm({
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
-    
+  
+    setTimeout(() => {
+      navigate("/login");
+    }, 1000);
   };
 
   return (
@@ -179,7 +178,7 @@ export default function Registration() {
                 </span>
               )}
 
-              {/* Password Strength Meter */}
+             
               {form.password && (
                 <div className="w-full mt-2">
                   <label>Password Strength: {passwordStrength.label}</label>
@@ -195,7 +194,7 @@ export default function Registration() {
                 </div>
               )}
 
-              {/* Confirm Password Field */}
+             
               <div className="relative mb-6">
                 <Input
                   title="Confirm Password"
@@ -278,6 +277,7 @@ export default function Registration() {
           </div>
         </div>
       </section>
+      
     </article>
   );
 }

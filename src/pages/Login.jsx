@@ -1,7 +1,8 @@
-import React, { useState } from "react"; // Import useState
+import React, { useContext, useState } from "react"; // Import useState
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
+import { Appcontext } from "../context/AppContext";
 
 // List of allowed email domains
 const allowedDomains = [
@@ -14,16 +15,15 @@ const allowedDomains = [
 ];
 
 export default function Login() {
-  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
-
   const handleShowPassword = () => setShowPassword(!showPassword);
+
 
   // Function to validate email domain
   const isValidEmailDomain = (email) => {
@@ -31,17 +31,13 @@ export default function Login() {
     return allowedDomains.includes(domain);
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
-    // Perform login logic here
-    // If successful, navigate to home
-    // navigate("/home");
-    reset(); // Reset form after successful submission
-  };
+  
 
+  const {onSubmit,isLoggedIn}=useContext(Appcontext)
+console.log("status after login",isLoggedIn)
   return (
     <article className="flex flex-col justify-center h-[100vh] bg-primaryGreen/10 overflow-hidden">
-      <Navbar />
+      <Navbar/>
       <br className="hidden xl:block"></br>
       <section className="flex flex-row justify-baseline items-center">
         <div className="hidden w-full lg:flex lg:mt-12 flex-col lg:justify-start xl:justify-center xl:h-full">
@@ -65,12 +61,11 @@ export default function Login() {
           <div className="w-full h-[100vh] flex flex-col justify-start mt-20 lg:mt-0 lg:justify-center items-center">
             <TitleCard />
 
-            {/* Form using react-hook-form */}
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="mt-5 space-y-5 w-[70%] md:w-[50%] lg:w-[60%]"
             >
-              {/* Email Input */}
+         
               <Input
                 type="text"
                 placeholder="E-mail Address"

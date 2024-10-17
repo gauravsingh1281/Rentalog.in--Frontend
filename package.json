@@ -24,6 +24,7 @@
     "react-router-dom": "^6.15.0",
     "react-scroll-to-top": "^3.0.0",
     "react-simple-scroll-up": "^0.2.3",
+    "react-toastify": "^10.0.6",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
