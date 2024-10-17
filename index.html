@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content=" With Rentalog, landlords can keep track of important information about their renters, including their names, addresses, and rental payment history."
-    />
-    <!-- fonts -->
+    <meta name="description" content="Rentalog - A web application for landlords to manage rental properties, track tenant information, and collect rent payments effortlessly." />
+    
+    <!-- Open Graph Meta Tags for social sharing -->
+    <meta property="og:title" content="Rentalog - Rent Management Web App" />
+    <meta property="og:description" content="Manage your rental properties with ease and keep track of tenants, payments, and property listings." />
+    <meta property="og:image" content="path/to/your/image.jpg" />
+    <meta property="og:url" content="https://www.rentalog.in/" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -23,12 +25,41 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-    <title>Rentalog || Free Rent Management Web App For Landlords</title>
-  </head>
 
-  <body>
-    <div id="root"></div>
+    <title>Rentalog || Free Rent Management Web App For Landlords</title>
+
+    <!-- Stylesheet for Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body class="font-montserrat bg-gray-100 text-gray-900">
+    <header class="bg-white shadow">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-blue-600">Rentalog</a>
+            <ul class="flex space-x-4">
+                <li><a href="#features" class="hover:text-blue-600">Features</a></li>
+                <li><a href="#about" class="hover:text-blue-600">About Us</a></li>
+                <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="root"></main>
+
+    <footer class="bg-white py-6 mt-10">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Rentalog. All rights reserved.</p>
+            <p>Follow us on 
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Twitter</a>, 
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Facebook</a>, 
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">LinkedIn</a>.
+            </p>
+        </div>
+    </footer>
+
     <script type="module" src="./index.jsx"></script>
+</body>
+
     <script>
       window.embeddedChatbotConfig = {
       chatbotId: "wQJs3fix9gu515zxNshBF",
