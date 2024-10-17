@@ -246,14 +246,22 @@ const Navbar = () => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex flex-row justify-center items-center">
             <a href="#home" aria-current="page">
+
               <img
                 className="self-start w-40 navbar"
                 src={logo}
                 alt="Rentalog-logo"
               />
+
+                <img
+                  className="self-start w-40 navbar my-auto"
+                  src={logo}
+                  alt="Rentalog-logo"
+                />
+
             </a>
           </div>
-          <div className="flex md:order-2">
+          <div className="flex md:order-2 items-center">
             <Link to="/login">
               <button
                 type="button"
