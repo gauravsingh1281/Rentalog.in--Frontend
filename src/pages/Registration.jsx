@@ -246,6 +246,7 @@ export default function Registration() {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                     alt="Google logo"
+                    className="h-5" style="margin-top:60px;"
                     className="h-5 mb-0"
                   />
                 </button>
@@ -258,6 +259,7 @@ export default function Registration() {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
                     alt="Facebook logo"
+                    className="h-5"style="margin-top:60px;"
                     className="h-5 mb-0"
                   />
                 </button>
