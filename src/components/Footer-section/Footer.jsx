@@ -43,16 +43,16 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Services</h3>
             <ul>
               <Link to="/dashboard/propertylisting">
-                <li>Property Listing</li>
+                <li    className="hover:scale-110 transition duration-300 ease-in-out">Property Listing</li>
               </Link>
-              <Link to="/dashboard/paymentsrecord">
-                <li>Track Payment Record</li>
+              <Link>
+                <li className="hover:scale-110 transition duration-300 ease-in-out">Track Payment Record</li>
               </Link>
               <Link to="/dashboard/totalrentcollected">
-                <li>Rent Calculation</li>
+                <li className="hover:scale-110 transition duration-300 ease-in-out">Rent Calculation</li>
               </Link>
               <Link to="/dashboard/timemanagement">
-                <li>Time Management</li>
+                <li className="hover:scale-110 transition duration-300 ease-in-out">Time Management</li>
               </Link>
             </ul>
           </div>
@@ -86,7 +86,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
             <p className="mt-4 text-sm font-[300]">
               Subscribe to our{" "}
-              <span className="text-[#f64d4a] font-bold text-justify">
+              <span className="font-bold text-justify">
                 Newsletter
               </span>{" "}
               for latest updates and offers!
