@@ -39,6 +39,8 @@
 }
 
 .header-text p {
+  line-height: 30px;
+  width: 50%;
   font-weight: 400;
   font-size: 17px;
 }
