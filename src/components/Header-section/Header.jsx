@@ -1,16 +1,36 @@
 import "../Header-section/Header-section.css";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import carImg1 from "../../assets/Images/red-house.png"
 import carImg2 from "../../assets/Images/carousel2.png"
 import carImg3 from "../../assets/Images/carousel3.png"
+
 const Header = () => {
   return (
     <>
       <div className="header-section mb-[80px]">
         <Navbar />
+
+        <div className="header-text-container">
+          <div className="header-text top-[15%] sm:top-[23%]">
+            <h1>
+              Welcome to <span className="highlighted">Rentalog</span>
+            </h1>
+            <p>
+              Rentalog is the ultimate solution for landlords looking to simplify
+              their rent management process. Easily track personal details, payment history, and more.
+            </p>
+            <Link to="/register">
+              <button className="btn">
+                Get Started
+                <span className="btn-icon">→</span>
+              </button>
+            </Link>
+          </div>
+
 
         <div id="home"></div>
         <Carousel autoPlay = {true} infiniteLoop = {true} showStatus = {false} showThumbs = {false} stopOnHover ={false} swipeable = {false} animationHandler="fade">
@@ -39,9 +59,11 @@ const Header = () => {
           <Link to="/register">
             <button className="btn">Get Started</button>
           </Link>
+
         </div>
       </div>
     </>
   );
 };
+
 export default Header;
