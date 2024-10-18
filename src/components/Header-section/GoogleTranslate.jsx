@@ -8,7 +8,7 @@ const GoogleTranslate = () => {
       } else {
         new window.google.translate.TranslateElement({
           pageLanguage: 'en',
-          includedLanguages: 'en,hi,pa,sa,mr,ur,bn,es,ja,ko,zh-CN,es,nl,fr,de,it,ta,te',
+          includedLanguages: 'en,hi,pa,sa,mr,ur,bn,es,ja,ko,zh-CN,nl,fr,de,it,ta,te',
           layout: window.google.translate.TranslateElement.InlineLayout.HORIZONTAL,
           defaultLanguage: 'en',
           autoDisplay: false,
@@ -42,48 +42,55 @@ const GoogleTranslate = () => {
     
     loadGoogleTranslateScript();
 
+    if (window.google && window.google.translate) {
+      window.googleTranslateInit();
+    }
+
     return () => {
-      const scriptElement = document.getElementById("google_translate_script");
-      if (scriptElement) {
-        scriptElement.remove();
-      }
+      // Cleanup logic if necessary
     };
   }, []);
 
   return (
-    <div id="google_element" className="google-translate-container navbar3 hidden md:flex flex-row justify-center items-center gap-3 font-bold rounded-xl text-md text-white px-4 py-2 text-center transition-transform duration-300 hover:scale-[1.1] hover:text-green shadow-lg">
+    <div className="google-translate-container navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green">
+      <span className="translate-icon" role="img" aria-label="Globe">🌍</span> {/* Globe icon */}
+      <div id="google_element" className="google-translate-dropdown"></div> {/* Google Translate dropdown */}
       <style jsx>{`
         .google-translate-container {
-          background: linear-gradient(90deg, #00c6ff, #0072ff); /* Cool gradient */
-          border-radius: 1rem; /* More rounded corners */
-          padding: 1rem; /* Consistent padding */
-          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-          transition: all 0.3s ease-in-out; /* Smooth transitions */
+          display: flex; /* Ensure it displays as a flex container */
+          align-items: center; /* Align items vertically centered */
         }
 
-        .google-translate-container:hover {
-          background: linear-gradient(90deg, #0092cc, #005bb5); /* Darker gradient on hover */
-          box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        .translate-icon {
+          font-size: 2rem; /* Increased size for the globe icon */
+          margin-right: 0.5rem; /* Spacing between globe and dropdown */
+          animation: spin 5s linear infinite; /* Spin animation */
+        }
+
+        /* Define the spin animation */
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
 
         .goog-te-combo {
-          background-color: #ffffff; /* White background for contrast */
-          border: 2px solid #0072ff; /* Blue border */
-          border-radius: 0.75rem; /* Rounded corners */
-          padding: 0.5rem 1.5rem; /* Comfortable padding */
-          font-size: 1rem; /* Slightly larger font */
-          color: #0072ff; /* Blue text */
-          font-weight: 600; /* Slightly bolder text */
+          background-color: white; /* White background for better contrast */
+          border: 2px solid black; /* Teal border */
+          border-radius: 0.5rem; /* Slightly more rounded */
+          padding: 0.5rem 1rem; /* Tailwind: p-2 */
+          font-size: 0.875rem; /* Tailwind: text-sm */
           transition: all 0.3s ease; /* Smooth transition */
           outline: none;
-          box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for focus */
+          color: black; /* Teal text */
+          font-weight: 500; /* Tailwind: font-medium */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow */
         }
 
         .goog-te-combo:hover {
           background-color: #e0f2ff; /* Lighter blue on hover */
-          border-color: #0092cc; /* Darker blue on hover */
-          color: #005bb5; /* Darker blue text on hover */
-          box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+          border-color: #20bc9c; /* Teal border on hover */
+          color: #20bc9c; /* Teal text on hover */
+          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
         }
 
         .goog-logo-link {
@@ -99,15 +106,32 @@ const GoogleTranslate = () => {
         }
 
         .goog-te-gadget .goog-te-combo {
-          color: #0072ff !important;
+          color: black !important; /* Teal text */
         }
 
         .goog-te-gadget .goog-te-combo:hover {
-          color: #005bb5 !important;
+          color: #20bc9c !important; /* Teal text */
+        }
+
+        #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:first-child {
+          display: none;
+        }
+
+        #google_translate_element .goog-te-gadget-simple .goog-te-menu-value:before {
+          content: 'Translate'; /* Change the default text */
+          color: #20bc9c; /* Teal text */
         }
 
         .goog-te-banner-frame {
           display: none !important; /* Hide the banner frame */
+        }
+
+        .goog-te-menu-frame {
+          max-height: 400px !important;
+          overflow-y: auto !important;
+          background-color: white; /* White background for dropdown */
+          border: 1px solid #20bc9c; /* Teal border */
+          border-radius: 0.5rem; /* Slightly more rounded */
         }
 
         .skiptranslate > iframe {
@@ -116,10 +140,9 @@ const GoogleTranslate = () => {
           box-shadow: none;
         }
 
-        .google-translate-container::before {
-          content: '🌍'; /* Add translate icon */
-          font-size: 1.5rem; /* Larger icon */
-          margin-right: 0.5rem; /* Spacing between icon and text */
+        body {
+          position: relative !important;
+          top: 0 !important;
         }
       `}</style>
     </div>
