@@ -29,11 +29,11 @@ const Header = () => {
         </Carousel>
         <div className="header-text top-[15%] sm:top-[23%] absolute">
           <h1>
-            Welcome to <span>Rentalog</span>
+            Welcome to <br /><span>Rentalog</span>
           </h1>
           <p className="header-desc">
-            Rentalog is the ultimate solution for landlords looking to simplify <br />
-            their rent management process. Keep track of your <br /> renters personal
+            Rentalog is the ultimate solution for landlords looking to simplify
+            their rent management process. Keep track of your renters personal
             details, their payment history, and much more with ease.
           </p>
           <Link to="/register">
