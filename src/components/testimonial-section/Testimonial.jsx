@@ -67,17 +67,25 @@ const Testimonial = () => {
           <img
             src={slides[slide - 1 < 0 ? slides.length - 1 : slide - 1].url}
             alt="image"
+            style={{ marginBottom: '0' }}   
+             /* 
+            Warning: A 60px margin is applied to all images in home.css, 
+            causing layout issues. Remove if unnecessary, 
+            or use overrides for specific components.
+            That's what I did overrided specific components becouse I don't know it that home.css code is needed or not.
+          */
+          
           />
         </div>
         <div className="flex justify-center items-center w-56 h-56 sm:w-96 sm:h-96 rounded-full overflow-hidden py-3 bg-center bg-cover duration-500 hover:scale-110 cursor-pointer">
           <img src={slides[slide].url} alt="image" />
         </div>
         <div className="flex justify-center items-center w-40 h-40 sm:w-40 sm:h-40 rounded-full overflow-hidden py-3 bg-center bg-cover duration-500">
-          <img
-            src={slides[slide + 1 > slides.length - 1 ? 0 : slide + 1].url}
-            alt="image"
-          />
+           <img src={slides[slide + 1 > slides.length - 1 ? 0 : slide + 1].url} alt="image" 
+            style={{ marginBottom: '0' }} 
+           />
         </div>
+
       </div>
       <div className="flex flex-col mx-auto w-[70%] justify-center text-center text-textWhite font-medium">
         <h2>{slides[slide].name}</h2>
