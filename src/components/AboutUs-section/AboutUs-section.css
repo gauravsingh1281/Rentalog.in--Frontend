@@ -30,3 +30,14 @@
 .mf-cursor::before {
   transform: scale(2.8);
 }
+
+.items-center img{
+  height: fit-content;
+    margin-top: 0.7rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 2rem;
+}
+
+.h-auto:hover{
+  transform: scale(1.020);
+}
