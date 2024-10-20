@@ -2,95 +2,236 @@
 
 Thank you for your interest in contributing to **Rentalog.in**! We welcome contributions from everyone, whether you're fixing bugs, suggesting new features, improving documentation, or helping with testing.
 
-## How to Contribute
+<br>
 
-### 1. Fork the Repository
-- Click the "Fork" button at the top right of this page to create a personal copy of the repository.
+# Code of Conduct
 
-### 2. Clone Your Fork
-- Clone your forked repository to your local machine:
-```bash
-  git clone https://github.com/your-username/Rentalog.in.git
-```
-* Replace your-username with your GitHub username.
+Please read and follow our [Code of Conduct.](https://github.com/gauravsingh1281/Rentalog.in--Frontend/blob/main/Code%20of%20Conduct.md)
 
-### 3. Create a New Branch
+<br>
 
-* Create a new branch for your feature or bug fix:
-```bash
-git checkout -b your-feature-branch
-```
-Use a descriptive name for your branch, such as feature/add-tenant-management or bugfix/fix-rent-calculation.
+# Need Help with the Basics? 🤔
 
-### 4. Make Your Changes
+If you're new to Git and GitHub, no worries! Here are some useful resources:
 
-* Make your changes in the codebase. Ensure that you:
-* Follow the existing coding style.
-* Write clear and concise commit messages.
-* Keep your commits focused on a single issue or feature.
+- [Forking a Repository](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+- [Cloning a Repository](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request)
+- [How to Create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
+- [Getting Started with Git and GitHub](https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6)
+- [Learn GitHub from Scratch](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources)
 
-### 5. Test Your Changes
+<br>
 
-* Run the application locally and ensure that your changes work as expected. If applicable, add unit tests to verify your modifications.
-
-### 6. Commit Your Changes
-
-* Stage your changes and commit them:
+# Project Structure 📂
 
 ```bash
-git add .
-git commit -m "Add a meaningful commit message"
+RENTALOG.IN--FRONTEND/
+├── .github/                  # GitHub-related configurations such as workflows, issue templates, etc
+│   
+├── public/                   # All the images for the reference of the public are included here
+│   
+├── src/                      # All the components of the project are included here
+│   
+├── eslintrc.cjs              
+│     
+├── .gitignore                
+│   
+├── Code of Conduct.md        # Some rules for the contributors
+│   
+├── CONTRIBUTING.md           # Instructions for the contributors
+│   
+├── index.css                 # Main stylesheet file of the project
+│   
+├── index.html                # Main document / structure file of the project
+│   
+├── index.jsx                 # Main script file of the project
+│   
+├── LICENSE                   # A permission to do something
+├──
+├── package-lock.json
+├──
+├── package.json
+├──           
+├── postcss.config.js
+├──
+├── README.md                 # Some basic instructions about the project
+├──
+├── tailwind.config.js
+├──
+├── vite.config.js
 ```
-Ensure your commit messages follow the convention: type(scope): subject (e.g., feat(tenant): add tenant management feature).
 
-### 7. Push to Your Fork
+<br>
 
-* Push your changes to your forked repository:
-```bash
-git push origin your-feature-branch
-```
+# Types of Contributions
 
-### 8. Open a Pull Request
-* Go to the original repository and click on the "New Pull Request" button.
+**Bug Reports**
+If you find a bug, please open an issue in the [Issues](https://github.com/gauravsingh1281/Rentalog.in--Frontend/issues/new/choose) section. Include the following information:
 
-* Select your branch and submit your pull request. Provide a clear description of your changes and reference any related issues.
-
-### Types of Contributions
-
-* Bug Reports
-If you find a bug, please open an issue in the [Issues](https://github.com/your-username/Rentalog.in/issues) section. Include the following information:
-
-* Steps to reproduce the bug.
-* Expected behavior.
-* Actual behavior.
-* Screenshots, if applicable.
-* Feature Requests
+- While raising an issue please kindly choose the appropriate template according to your issue.
+- Steps to reproduce the bug.
+- Expected behavior.
+- Actual behavior.
+- Screenshots, if applicable.
+- Feature Requests
 
 We welcome suggestions for new features! Please open an issue with the label Feature Request and describe:
 
-* The feature you'd like to see.
-* How it would improve the application.
-* Any relevant examples or use cases.
+- The feature you'd like to see.
+- How it would improve the application.
+- Any relevant examples or use cases.
 
-### Documentation Improvements
+**Documentation Improvements**
 
 If you notice any errors or areas for improvement in the documentation, feel free to submit a pull request with your changes. Clear and comprehensive documentation helps everyone!
 
-### Design Contributions
+**Design Contributions**
 
-If you're interested in contributing to the design aspect, please create mockups or suggest improvements for the user interface.
+If you're interested in contributing to the design aspnect, please create mockups or suggest improvements for the user interface.
 
-### Code of Conduct
+**Resources**
 
-By participating in this project, you agree to abide by our [Code of Conduct]. We strive to create a welcoming environment for all contributors.
+**[GitHub Flow]**(https://guides.github.com/introduction/flow/)<br>
+**[Markdown Guide]**(https://www.markdownguide.org/)<br>
+**[React Documentation]**(https://legacy.reactjs.org/docs/getting-started.html)
 
-Resources
-[GitHub Flow](https://guides.github.com/introduction/flow/)
-[Markdown Guide](https://www.markdownguide.org/)
-React Documentation
+<br>
 
-### Questions?
+# First Pull Request ✨
+
+1. **Star this repository**
+    Click on the top right corner marked as **Stars** at last.
+
+2. **Fork this repository**
+    Click on the top right corner marked as **Fork** at second last.
+
+3. **Clone the forked repository**
+
+```bash
+git clone https://github.com/<your-github-username>/Rentalog.in--Frontend.git
+```
+  
+4. **Navigate to the project directory**
+
+```bash
+cd Rentalog.in--Frontend
+```
+
+5. **Create a new branch**
+
+```bash
+git checkout -b <your_branch_name>
+```
+
+6. **To make changes**
+
+```bash
+git add .
+```
+
+7. **Now to commit**
+
+```bash
+git commit -m "add comment according to your changes or addition of features inside this"
+```
+
+8. **Push your local commits to the remote repository**
+
+```bash
+git push -u origin <your_branch_name>
+```
+
+9. **Create a Pull Request**
+
+10. **Congratulations! 🎉 you've made your contribution**
+
+<br>
+
+# Alternatively, contribute using GitHub Desktop 🖥️
+
+1. **Open GitHub Desktop:**
+  Launch GitHub Desktop and log in to your GitHub account if you haven't already.
+
+2. **Clone the Repository:**
+- If you haven't cloned the Project-Guidance repository yet, you can do so by clicking on the "File" menu and selecting "Clone Repository."
+- Choose the Project-Guidance repository from the list of repositories on GitHub and clone it to your local machine.
+
+3.**Switch to the Correct Branch:**
+- Ensure you are on the branch that you want to submit a pull request for.
+- If you need to switch branches, you can do so by clicking on the "Current Branch" dropdown menu and selecting the desired branch.
+
+4. **Make Changes:**
+- Make your changes to the code or files in the repository using your preferred code editor.
+
+5. **Commit Changes:**
+- In GitHub Desktop, you'll see a list of the files you've changed. Check the box next to each file you want to include in the commit.
+- Enter a summary and description for your changes in the "Summary" and "Description" fields, respectively. Click the "Commit to <branch-name>" button to commit your changes to the local branch.
+
+6. **Push Changes to GitHub:**
+- After committing your changes, click the "Push origin" button in the top right corner of GitHub Desktop to push your changes to your forked repository on GitHub.
+
+7. **Create a Pull Request:**
+- Go to the GitHub website and navigate to your fork of the Project-Guidance repository.
+- You should see a button to "Compare & pull request" between your fork and the original repository. Click on it.
+
+8. **Review and Submit:**
+- On the pull request page, review your changes and add any additional information, such as a title and description, that you want to include with your pull request.
+- Once you're satisfied, click the "Create pull request" button to submit your pull request.
+
+9. **Wait for Review:**
+Your pull request will now be available for review by the project maintainers. They may provide feedback or ask for changes before merging your pull request into the main branch of the Project-Guidance repository.
+
+<br>
+
+# For Help And Support 💬
+
+- Admin Github Profile:- [Gaurav Pratap Singh](https://github.com/gauravsingh1281)
+- Contact :- [Email](gs492979@gmail.com)
+
+<br>
+
+# Good Coding Practices 🧑‍💻
+
+1. **Follow the Project's Code Style**
+
+   - Maintain consistency with the existing code style (indentation, spacing, comments).
+   - Use meaningful and descriptive names for variables, functions, and classes.
+   - Keep functions short and focused on a single task.
+   - Avoid hardcoding values; instead, use constants or configuration files when possible.
+
+2. **Write Clear and Concise Comments**
+
+   - Use comments to explain why you did something, not just what you did.
+   - Avoid unnecessary comments that state the obvious.
+   - Document complex logic and functions with brief explanations to help others understand your thought -process.
+
+3. **Keep Code DRY (Don't Repeat Yourself)**
+
+   - Avoid duplicating code. Reuse functions, methods, and components whenever possible.
+   - If you find yourself copying and pasting code, consider creating a new function or component.
+
+4. **Write Tests**
+
+   - Write unit tests for your functions and components.
+   - Ensure your tests cover both expected outcomes and edge cases.
+   - Run tests locally before making a pull request to make sure your changes don’t introduce new bugs.
+
+5. **Code Reviews and Feedback**
+
+   - Be open to receiving constructive feedback from other contributors.
+   - Conduct code reviews for others and provide meaningful suggestions to improve the code.
+   - Always refactor your code based on feedback to meet the project's standards.
+
+<br>
+
+# Questions?
 
 If you have any questions or need further assistance, feel free to reach out to the maintainers or join the discussions in the [Discussions](https://github.com/your-username/Rentalog.in/discussions) section.
 
-## Thank you for contributing to Rentalog.in! Your support helps us improve the project for everyone.
+<br>
+
+# Thank you for contributing 💗
+
+We truly appreciate your time and effort to help improve our project. Feel free to reach out if you have any questions or need guidance. Happy coding! 🚀
+
+##
