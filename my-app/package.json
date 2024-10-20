@@ -1,0 +1,45 @@
+{
+  "name": "rentalog",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "axios": "^1.7.7",
+    "gsap": "^3.12.5",
+    "lottie-react": "^2.4.0",
+    "mouse-follower": "^1.1.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.53.0",
+    "react-icons": "^4.12.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.15.0",
+    "react-scroll-to-top": "^3.0.0",
+    "react-simple-scroll-up": "^0.2.3",
+    "zxcvbn": "^4.4.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.25.7",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react": "^4.0.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.1",
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.5.5"
+  }
+}

@@ -3,7 +3,7 @@ import ourServices from "./services";
 import ServicesAvailableIn from "./ServicesAvailableIn";
 import placeName from "./placeName";
 import "./Services-section.css";
-import none from "../../assets/Images/none.png";
+import none from "../../assets/Images/none.webp";
 import React, { useState } from 'react';
 
 const Services = () => {

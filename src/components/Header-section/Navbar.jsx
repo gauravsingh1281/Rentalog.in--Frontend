@@ -1,7 +1,7 @@
 import { FiUser } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/Images/logo.png";
+import logo from "../../assets/Images/logo.webp";
 import { useState, useEffect } from "react";
 import GoogleTranslate from "./GoogleTranslate";
 import gsap from 'gsap'

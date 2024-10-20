@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../../assets/Images/logo.png";
+import logo from "../../assets/Images/logo.webp";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { LuSendHorizonal } from "react-icons/lu";
 import { Link } from "react-router-dom";

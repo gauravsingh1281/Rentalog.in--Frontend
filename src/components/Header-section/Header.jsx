@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import carImg1 from "../../assets/Images/red-house.png"
-import carImg2 from "../../assets/Images/carousel2.png"
-import carImg3 from "../../assets/Images/carousel3.png"
+import carImg1 from "../../assets/Images/red-house.webp"
+import carImg2 from "../../assets/Images/carousel2.webp"
+import carImg3 from "../../assets/Images/carousel3.webp"
 const Header = () => {
   return (
     <>
