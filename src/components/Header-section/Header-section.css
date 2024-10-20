@@ -10,6 +10,8 @@
 }
 
 .header-section li {
+  border-radius: 10px;
+  padding: 6px 7px;
   list-style: none;
   font-weight: 600;
   font-size: 18.5px;
@@ -17,10 +19,11 @@
   transition: ease 200ms;
 }
 
-.header-section li:hover {
-  color: #1abc9c;
-}
 
+.header-section li:hover {
+  color: #191a1a;
+  background-color: #1abc9c;
+}
 .user-cta :last-child {
   justify-content: center;
   align-items: center;
