@@ -19,3 +19,24 @@ html {
 .mb-0{
   margin-bottom: 0;
 }
+
+/* Global Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebf5f6; /* Light green track background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1abc9c; /* Dark green thumb */
+  border-radius: 10px;
+  /* border: 1px solid #1abc9c; Gives some space around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #19987f; /* Even darker green on hover */
+}
