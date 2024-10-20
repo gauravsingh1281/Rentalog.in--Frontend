@@ -1,0 +1,8 @@
+/* src/Loader/Loader.css */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f5f5f5; /* Optional: background color */
+}

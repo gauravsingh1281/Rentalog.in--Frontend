@@ -1,8 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+/* src/App.css or any global CSS file */
+html,
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  overflow: hidden; /* Prevent scrolling while loading */
 }
 
 html {
@@ -12,10 +15,10 @@ html {
 .placeholder-text {
   @apply bg-primaryGreen rounded-2xl p-3 text-xs placeholder:text-[#4C4949];
 }
-.input-bar{
+.input-bar {
   @apply border-2 border-green rounded-lg h-9 w-full text-green-dark placeholder-textBlack p-2;
 }
 
-.mb-0{
+.mb-0 {
   margin-bottom: 0;
 }
