@@ -1,137 +1,111 @@
 import { useState } from "react";
-import logo from "../../assets/Images/logo.png";
-import { FaGithub, FaInstagram } from "react-icons/fa";
-import { LuSendHorizonal } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import logo from "../../assets/Images/logo.png";
+import { FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
+import { LuSendHorizonal } from "react-icons/lu";
 import { RiTwitterXFill } from "react-icons/ri";
-
-let date = new Date();
-let year = date.getFullYear();
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+
   const handleSubmit = (event) => {
-    try {
-      event.preventDefault();
-      console.log(email);
-      setEmail("");
-    } catch (error) {
-      console.log(`Error with newsletter input: ${error}`);
-    }
+    event.preventDefault();
+    console.log(email);
+    setEmail("");
   };
 
+  const year = new Date().getFullYear();
+
   return (
-    <div className="flex flex-col bg-[#2ec4b6] text-textWhite px-5 py-2">
-      <div className="flex justify-center flex-wrap gap-10">
-        <div className="flex  justify-center items-center text-center lg:items-start lg:text-start basis-[200px] mx-5 my-2">
-          <div>
-            <h3 className="font-bold mb-4">About Us</h3>
-            <p className="my-2 pb-1">
+    <footer className="bg-gray-100 text-gray-800 py-12 transition-all duration-300 ease-in-out">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="space-y-4 transform hover:scale-105 transition-all duration-300">
+            <h3 className="text-xl font-bold mb-4 text-[#2ec4b6]">About Us</h3>
+            <p className="text-sm">
               Rentalog is the ultimate solution for landlords looking to
-              simplify their rent management process.{" "}
+              simplify their rent management process.
             </p>
             <img
-              className="bg-[white] hover:cursor-pointer px-1 rounded-xl mb-2 h-[40px] w-[150px] hover:shadow-l hover:scale-105 transition duration-300 ease-in-out"
+              className="bg-white rounded-xl h-12 w-auto hover:shadow-lg transition duration-300 ease-in-out cursor-pointer"
               src={logo}
-              alt="logo"
+              alt="Rentalog logo"
             />
           </div>
-        </div>
 
-        <div className="flex  justify-center items-center text-center lg:items-start lg:text-start basis-[150px] mx-5 my-2">
-          <div>
-            <h3 className="font-bold mb-4">Services</h3>
-            <ul>
-              <Link to="/dashboard/propertylisting">
-                <li    className="hover:scale-110 transition duration-300 ease-in-out">Property Listing</li>
-              </Link>
-              <Link>
-                <li className="hover:scale-110 transition duration-300 ease-in-out">Track Payment Record</li>
-              </Link>
-              <Link to="/dashboard/totalrentcollected">
-                <li className="hover:scale-110 transition duration-300 ease-in-out">Rent Calculation</li>
-              </Link>
-              <Link to="/dashboard/timemanagement">
-                <li className="hover:scale-110 transition duration-300 ease-in-out">Time Management</li>
-              </Link>
+          <div className="transform hover:scale-105 transition-all duration-300">
+            <h3 className="text-xl font-bold mb-4 text-[#2ec4b6]">Services</h3>
+            <ul className="space-y-2">
+              {["Property Listing", "Track Payment Record", "Rent Calculation", "Time Management"].map((item, index) => (
+                <li key={index} className="hover:translate-x-2 transition-all duration-300 ease-in-out">
+                  <Link to={`/dashboard/${item.toLowerCase().replace(/\s+/g, '')}`} className="text-sm hover:text-[#2ec4b6]">
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-        </div>
 
-        <div className="flex justify-center items-center font-medium text-center lg:items-start lg:text-start basis-[150px] mx-5 my-2">
-          <div>
-            <h3 className="font-bold mb-4">Important Links</h3>
-            <ul>
-              <li className="hover:scale-110 transition duration-300 ease-in-out">
-                <a href="/">Home</a>
-              </li>
-              <li className="hover:scale-110 transition duration-300 ease-in-out">
-                <a href="#AboutUs">About Us</a>
-              </li>
-              <li className="hover:scale-110 transition duration-300 ease-in-out">
-                <a href="#ContactUs">Contact Us</a>
-              </li>
-              <li className="hover:scale-110 transition duration-300 ease-in-out">
-                <a href="#Service">Rentals</a>
-              </li>
-              <li className="hover:scale-110 transition duration-300 ease-in-out">
-                <Link to="/Contributors">Contributors</Link>
-              </li>
+          <div className="transform hover:scale-105 transition-all duration-300">
+            <h3 className="text-xl font-bold mb-4 text-[#2ec4b6]">Important Links</h3>
+            <ul className="space-y-2">
+              {["Home", "About Us", "Contact Us", "Rentals", "Contributors"].map((item, index) => (
+                <li key={index} className="hover:translate-x-2 transition-all duration-300 ease-in-out">
+                  <a href={`#${item.toLowerCase().replace(/\s+/g, '')}`} className="text-sm hover:text-[#2ec4b6]">
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
-        </div>
 
-        <div className="flex justify-center items-center text-center lg:items-start lg:text-start basis-[150px] mx-5 my-2">
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-            <p className="mt-4 text-sm font-[300]">
-              Subscribe to our{" "}
-              <span className="font-bold text-justify">
-                Newsletter
-              </span>{" "}
-              for latest updates and offers!
+          <div className="transform hover:scale-105 transition-all duration-300">
+            <h3 className="text-xl font-bold mb-4 text-[#2ec4b6]">Newsletter</h3>
+            <p className="text-sm mb-4">
+              Subscribe to our <span className="font-bold">Newsletter</span> for latest updates and offers!
             </p>
-            <div className="flex flex-row items-center space-x-4 mt-4 relative">
+            <form onSubmit={handleSubmit} className="flex group">
               <input
                 type="email"
-                id="newsletter"
-                maxLength={35}
                 value={email}
-                placeholder="Enter Email..."
                 onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
-                className="text-[#090303] text-sm font-[500] p-2 rounded-md focus:outline-none focus:ring"
+                placeholder="Enter Email..."
+                className="flex-grow p-2 rounded-l-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2ec4b6] transition-all duration-300"
               />
               <button
-                onClick={handleSubmit}
-                className="absolute right-1 p-2 bg-[#1ABC9C] text-white rounded-md hover:bg-gray-dark hover:text-[#1abc9c] hover:border hover:border-[#1abc9c] transition duration-3 ease-in-out"
+                type="submit"
+                className="bg-[#2ec4b6] p-2 rounded-r-md group-hover:bg-[#25a090] transition-all duration-300 ease-in-out"
               >
-                <LuSendHorizonal />
+                <LuSendHorizonal className="w-5 h-5 text-white" />
               </button>
-            </div>
-
-            <div className="flex gap-4 mt-2 justify-center">
-              <a href="https://twitter.com/gauravsingh1281">
-                <RiTwitterXFill className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#1DA1F2]" />
-              </a>
-              <a href="https://github.com/gauravsingh1281">
-                <FaGithub className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-black" />
-              </a>
-              <a href="https://www.instagram.com/gauravsingh1281">
-                <FaInstagram className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
-              </a>
+            </form>
+            <div className="flex space-x-4 mt-4 justify-center">
+              {[
+                { Icon: RiTwitterXFill, href: "https://twitter.com/gauravsingh1281" },
+                { Icon: FaGithub, href: "https://github.com/gauravsingh1281" },
+                { Icon: FaInstagram, href: "https://www.instagram.com/gauravsingh1281" },
+                { Icon: FaLinkedin, href: "#" },
+              ].map(({ Icon, href }, index) => (
+                <a 
+                  key={index} 
+                  href={href} 
+                  className="transform hover:scale-125 hover:text-[#2ec4b6] transition-all duration-300 ease-in-out"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Icon className="w-6 h-6" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
       </div>
-      <div className="h-10"></div>
-      <hr className="my-1 mx-10 border-1 border-t border-gray-light" />
-
-      <div className=" self-center text-center">
-        {" "}
-        {year} || All Rights Reserved || The Virtual World Maker
+      <div className="mt-8 pt-8 border-t border-gray-300 text-center text-sm">
+        <p className="animate-pulse">
+          © {year} || All Rights Reserved || The Virtual World Maker
+        </p>
       </div>
-    </div>
+    </footer>
   );
 };
 
