@@ -1,10 +1,10 @@
-# Contributing to Rentalog.in
+# Contributing Guidelines 🎯
 
 Thank you for your interest in contributing to **Rentalog.in**! We welcome contributions from everyone, whether you're fixing bugs, suggesting new features, improving documentation, or helping with testing.
 
 <br>
 
-# Code of Conduct
+# Code of Conduct 📖
 
 Please read and follow our [Code of Conduct.](https://github.com/gauravsingh1281/Rentalog.in--Frontend/blob/main/Code%20of%20Conduct.md)
 
@@ -224,7 +224,7 @@ Your pull request will now be available for review by the project maintainers. T
 
 <br>
 
-# Questions?
+# Questions ❓
 
 If you have any questions or need further assistance, feel free to reach out to the maintainers or join the discussions in the [Discussions](https://github.com/your-username/Rentalog.in/discussions) section.
 
