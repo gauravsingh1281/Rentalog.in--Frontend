@@ -1,0 +1,16 @@
+ 
+
+.button-3d {
+    perspective: 1000px;  
+    
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+  }
+  
+  .button-3d:hover {
+    transform: rotateY(15deg) rotateX(15deg);  
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+  }
+  .button-spacing {
+    margin-right: 20px; 
+  }
+  
