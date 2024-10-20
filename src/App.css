@@ -9,13 +9,97 @@ html {
   scroll-behavior: smooth;
 }
 
-.placeholder-text {
-  @apply bg-primaryGreen rounded-2xl p-3 text-xs placeholder:text-[#4C4949];
-}
-.input-bar{
-  @apply border-2 border-green rounded-lg h-9 w-full text-green-dark placeholder-textBlack p-2;
+/* Define a soft and professional green palette */
+:root {
+  --primaryGreen: #A0E1A7; /* Soft pastel green */
+  --accentGreen: #50B848; /* Darker green for accents */
+  --lightGray: #F3F4F6; /* Light gray for background */
+  --textGray: #4B5563; /* Softer gray for text */
+  --placeholderGray: #9CA3AF; /* Light gray for placeholder text */
+  --borderGreen: #C8E6C9; /* Lighter green for borders */
+  --backgroundGradient: linear-gradient(135deg, #E8F5E9, #A0E1A7); /* Gradient for background */
 }
 
-.mb-0{
+body {
+  background: var(--backgroundGradient);
+  color: var(--textGray);
+}
+
+/* Input styles with subtle green tones */
+.placeholder-text {
+  background-color: var(--primaryGreen);
+  border-radius: 16px;
+  padding: 12px;
+  font-size: 0.8rem;
+  color: var(--placeholderGray);
+}
+
+.input-bar {
+  border: 2px solid var(--borderGreen);
+  border-radius: 12px;
+  height: 40px;
+  width: 100%;
+  padding: 8px;
+  color: var(--accentGreen);
+  font-size: 1rem;
+}
+
+.input-bar::placeholder {
+  color: var(--placeholderGray);
+}
+
+.mb-0 {
   margin-bottom: 0;
+}
+
+/* Enhance button with green palette and hover effect */
+button {
+  background-color: var(--primaryGreen);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accentGreen);
+  cursor: pointer;
+}
+
+/* Subtle shadows for inputs and buttons */
+.input-bar,
+button {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Password eye icon style to blend seamlessly */
+.eye-icon {
+  background-color: transparent; /* No background color */
+  border: none; /* Remove border */
+  color: var(--textGray); /* Use text gray color for the icon */
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Subtle hover effect for eye icon */
+.eye-icon:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Slight background on hover */
+  border-radius: 8px; /* Rounded effect on hover */
+}
+
+/* Social media button styles, keeping them neutral with a rounded design */
+.social-btn {
+  background-color: var(--lightGray);
+  border: 1px solid var(--borderGreen);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 0 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.social-btn:hover {
+  background-color: var(--primaryGreen);
+  cursor: pointer;
 }
