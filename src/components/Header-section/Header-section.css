@@ -149,3 +149,16 @@
     background: #57ecce;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 860px) {
+  .getBtn {
+    margin-top: 55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 30%; 
+    max-width: 400px;
+    height: 44px;
+    background: #1abc9c;
+  }
+}
