@@ -14,7 +14,7 @@ const ourServices = [
     },
     {
         id: 2,
-        bgColor: "bg-[#D1F2EB]",
+        bgColor: "bg-[#2ec4b6]",
         title: "Track Payment Records",
         description: "Keep a record of all your renters' monthly rent payments and have a complete overview of your rental income.",
         icon: iconCalendar,
@@ -23,7 +23,7 @@ const ourServices = [
     },
     {
         id: 3,
-        bgColor: "bg-[#D1F2EB]",
+        bgColor: "bg-[#2ec4b6]",
         title: " Rent Calculation",
         description: "Automatically calculate the total rent received each month and see a breakdown of payments.",
         icon: iconPencil,

@@ -18,7 +18,7 @@ const Contact = () => {
         <ContactText />
         <ContactForm />
       </main>
-      <h2 className="text-5xl text-center font-bold tracking-wider  font-monsterrat text-textBlack">
+      <h2 className="text-5xl text-center font-bold tracking-wider  font-monsterrat text-transparent">
         Connect with <span className="text-customRed">Us</span>
       </h2>
       <div className="md:flex items-center justify-between">

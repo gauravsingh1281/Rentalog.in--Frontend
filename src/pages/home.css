@@ -1,5 +1,10 @@
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Warning: A 60px margin is applied to all images in home.css. 
- Remove if unnecessary, or override for specific cases. */
+   Remove if unnecessary, or override for specific cases. */
 img {
     margin-bottom: 60px;
 }
