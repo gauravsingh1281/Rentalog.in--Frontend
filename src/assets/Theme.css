@@ -1,0 +1,43 @@
+/* theme.css */
+
+body.light {
+    background-color: white; /* Light background */
+    color: black; /* Light text color */
+  }
+  
+  body.dark {
+    background-color: #000000; /* Dark background */
+    color: white; /* Dark text color */
+  }
+  
+  nav {
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  nav.bg-white {
+    background-color: white; /* Light navbar */
+  }
+  
+  nav.bg-dark {
+    background-color: #000000; /* Dark navbar */
+  }
+  
+  .nav-link {
+    padding: 10px;
+    color: inherit; /* Inherit color from body */
+    text-decoration: none;
+  }
+  
+  .nav-link.active {
+    font-weight: bold; /* Highlight active link */
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu.show {
+    display: block; /* Show menu when active */
+  }
+  

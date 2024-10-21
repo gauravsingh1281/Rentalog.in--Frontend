@@ -19,3 +19,13 @@ html {
 .mb-0{
   margin-bottom: 0;
 }
+
+body.light {
+  background-color: white; /* Light theme background */
+  color: black; /* Light theme text color */
+}
+
+body.dark {
+  background-color: #2c2c2c; /* Dark theme background */
+  color: white; /* Dark theme text color */
+}
