@@ -9,7 +9,7 @@ export const ContactText = () => {
 
   }, []);
   return (
-    <section className="mt-0 bg-gray-100  rounded-lg shadow-lg flex flex-col gap-6 justify-center  p-1 lg:w-[35%] w-full">
+    <section className="contact-section mt-0 bg-gray-100  rounded-lg shadow-lg flex flex-col gap-6 justify-center  p-1 lg:w-[35%] w-full">
       <div className="text-gray-800" data-aos = "fade-right">
         <h2 className="text-xl font-bold mb-4">Hey Rentalog Users,</h2>
         <p className="leading-relaxed">

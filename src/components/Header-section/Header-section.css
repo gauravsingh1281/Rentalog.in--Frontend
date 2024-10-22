@@ -1,12 +1,35 @@
 .header-section {
   width: 100%;
   height: 100vh;
-  /* background: url(/src/assets/Images/red-house.png); */
-  /* background-position: center center; */
-  /* background-color: #262626; */
   background-size: cover;
   position: relative;
   margin-bottom: 0;
+  overflow: hidden;
+}
+
+.dark-theme .header-text {
+  color: rgb(241, 241, 241);
+}
+.dark-theme .flex{
+  color: white;
+}
+.dark-theme .Caro{
+  background-image: "/src/assets/Images/red-house-dark.jpg";
+}
+.carousel{
+  display: block;
+}
+
+.carousel img {
+  transition: filter 0.5s; /* Ensure smooth transitions for the filter */
+}
+
+.light-theme .carousel img {
+  filter: brightness(1); /* Normal brightness for light mode */
+}
+
+.dark-theme .carousel img {
+  filter: brightness(0.9); /* Slightly dimmed for dark mode */
 }
 
 .header-section li {
@@ -46,7 +69,6 @@
 }
 
 .header-text {
-  /* position: relative; */
   left: 4%;
   width: 68%;
 }

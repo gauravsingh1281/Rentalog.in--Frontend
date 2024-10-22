@@ -4,10 +4,15 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
 import GoogleTranslate from "./GoogleTranslate";
+import { useTheme } from "../../../ThemeContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+
 import gsap from 'gsap'
 const tl=gsap.timeline()
 
 const Navbar = () => {
+  const { isDark, toggleTheme } = useTheme();
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
   const [navLinkbgColor, setNavlinkbgColor] = useState(true);
@@ -254,6 +259,12 @@ const Navbar = () => {
             </a>
           </div>
           <div className="flex md:order-2 items-center">
+            <button
+            onClick={toggleTheme}
+            className="navbar3 hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+            >
+              <FontAwesomeIcon icon = {isDark ? faSun : faMoon} />
+            </button>
             <Link to="/login">
               <button
                 type="button"

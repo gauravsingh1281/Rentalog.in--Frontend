@@ -1,0 +1,25 @@
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+.carousel {
+    transition: background-color 0.5s; /* Ensure smooth transitions */
+}
+
+.light .carousel {
+    background-color: transparent; /* May keep this */
+}
+
+.dark .carousel {
+    background-color: transparent; /* Ensure consistent background */
+}

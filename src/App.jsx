@@ -1,7 +1,8 @@
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Home, Login, Registration, Dashboard } from "./pages";
-import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";  
+import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";
 import SearchRental from "./components/dashboard-components/SearchRental-section/SearchRental";
 import RenterDetails from "./components/dashboard-components/RenterDetails/RenterDetails";
 import PaymentsRecord from "./components/dashboard-components/PaymentsRecord/PaymentsRecord";
@@ -12,26 +13,36 @@ import CreateNewRental from "./components/dashboard-components/CreateNewRental/C
 import Contributors from "./components/Contributors-page/Contributors";
 import ForgotPassword from "./pages/ForgotPassword";
 import AdminDashboard from './components/Admin-Dashboard/AdminDashboard';
+import { useTheme } from "../ThemeContext.jsx";
+
 const App = () => {
+  const { isDark, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    document.body.className = isDark ? 'dark' : 'light';
+  }, [isDark]);
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/forgot" element={<ForgotPassword />} />
-      <Route path="/register" element={<Registration />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/dashboard/searchrenter" element={<SearchRental />} />
-      <Route path="/dashboard/createnewrenter" element={<CreateNewRental />} />
-      <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />
-      <Route path="/dashboard/renterdetails" element={<RenterDetails />} />
-      <Route path="/dashboard/paymentsrecord" element={<PaymentsRecord />} />
-      <Route path="/Contributors" element={<Contributors />} />
-      <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected />} />
-      <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
-      <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
-      <Route path="/admin-dashboard" element={<AdminDashboard />} /> {/* Add your admin dashboard route */}
-    </Routes>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/forgot" element={<ForgotPassword />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/searchrenter" element={<SearchRental />} />
+        <Route path="/dashboard/createnewrenter" element={<CreateNewRental />} />
+        <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />
+        <Route path="/dashboard/renterdetails" element={<RenterDetails />} />
+        <Route path="/dashboard/paymentsrecord" element={<PaymentsRecord />} />
+        <Route path="/Contributors" element={<Contributors />} />
+        <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected />} />
+        <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
+        <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+      </Routes>
+    </div>
   );
 };
 

@@ -4,3 +4,30 @@
 
 @import "tailwindcss/utilities";
 
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.light-theme {
+    color: black;
+}
+
+.dark-theme {
+    background-color: rgb(57, 57, 57);
+    color: white;
+}
+.dark-theme .carousel{
+    background-image: "./src/assets/Images/red-house-dark.jpg";
+}
+
+.carousel {
+    transition: background-color 0.5s;
+}
+
+.light .carousel {
+    background-color: transparent;
+}
+
+.dark .carousel {
+    background-color: transparent;
+}

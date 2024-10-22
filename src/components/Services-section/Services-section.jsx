@@ -14,7 +14,7 @@ const Services = () => {
   return (
     <>
       <div id="Service"></div>
-      <h1 className="text-4xl md:text-5xl font-semibold text-[#312F2F] text-center pt-10">
+      <h1 className="hone text-4xl md:text-5xl font-semibold text-[#312F2F] text-center pt-10">
         Our Services Include
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 md:mx-24 lg:mx-36 sm:mx-24 mx-8">
