@@ -1,7 +1,17 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Clear session data (e.g., token from localStorage)
+    localStorage.removeItem("userToken");
+
+    // Redirect to login page
+    navigate("/");
+  };
   return (
     <div className="admin-dashboard">
       <aside className="sidebar">
@@ -14,7 +24,7 @@ const AdminDashboard = () => {
           <li>Property Listings</li>
           <li>Messages</li>
           <li>Settings</li>
-          <li>Logout</li>
+          <li onClick={handleLogout} style={{ cursor: 'pointer' }}>Logout</li>
         </ul>
       </aside>
       
