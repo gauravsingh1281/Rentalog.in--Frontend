@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import logo from "../../../assets/Images/logo.png"
+import logo from "../../../assets/Images/logo.webp"
 
 
 const FeatureCard = ({ icon, title, description }) => (

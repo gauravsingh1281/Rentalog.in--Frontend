@@ -1,4 +1,4 @@
-import banner from "../../../assets/Images/dashboardbanner.png";
+import banner from "../../../assets/Images/dashboardbanner.webp";
 const Header = () => {
   return (
     <>

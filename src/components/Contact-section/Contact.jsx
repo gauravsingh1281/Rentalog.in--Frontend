@@ -2,8 +2,8 @@ import ContactForm from "./ContactForm";
 import GoogleMap from "./GoogleMap";
 import { ContactText } from "./ContactText";
 import "./Contact-section.css";
-import Github from "../../assets/Social-Icons/Github.png";
-import Insta from "../../assets/Social-Icons/instagram.png";
+import Github from "../../assets/Social-Icons/Github.webp";
+import Insta from "../../assets/Social-Icons/instagram.webp";
 import { RiTwitterXFill } from "react-icons/ri";
 
 const Contact = () => {

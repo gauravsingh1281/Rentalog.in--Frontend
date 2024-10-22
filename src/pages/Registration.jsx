@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
-import logo from "../assets/Images/logo.png";
+import logo from "../assets/Images/logo.webp";
 
 
 import { useForm } from "react-hook-form";

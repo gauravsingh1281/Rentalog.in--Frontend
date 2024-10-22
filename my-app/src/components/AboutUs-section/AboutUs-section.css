@@ -1,0 +1,32 @@
+
+.aboutUs-section {
+  text-align: center;
+  padding-bottom: 150px;
+  overflow: hidden;
+}
+
+.aboutUs-section .row {
+
+  gap: 68px;
+  margin-top: 16px;
+}
+
+.aboutUs-section .row .rent-board-img {
+  position: relative;
+  top: 20px;
+}
+
+.aboutUs-section .primary-heading {
+  font-size: 48px;
+  font-weight: 600;
+  color: #141010;
+}
+
+#AboutUs {
+  margin-bottom: 5rem;
+  font-weight: 500;
+}
+
+.mf-cursor::before {
+  transform: scale(2.8);
+}

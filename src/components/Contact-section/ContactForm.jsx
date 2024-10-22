@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 <link rel="stylesheet" href="Contact-section.css" />
-import Github from "../../assets/Social-Icons/Github.png";
-import Insta from "../../assets/Social-Icons/instagram.png";
-import Twitter from "../../assets/Social-Icons/Twitter.png";
+import Github from "../../assets/Social-Icons/Github.webp";
+import Insta from "../../assets/Social-Icons/instagram.webp";
+import Twitter from "../../assets/Social-Icons/Twitter.webp";
 
 const ContactForm = () => {
   const {

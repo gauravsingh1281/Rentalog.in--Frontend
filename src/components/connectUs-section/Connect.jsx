@@ -1,6 +1,6 @@
-import github from "../../assets/Icons/github.png"
-import instagram from "../../assets/Icons/Instagram.png"
-import twitter from "../../assets/Icons/twitter.png"
+import github from "../../assets/Icons/github.webp"
+import instagram from "../../assets/Icons/Instagram.webp"
+import twitter from "../../assets/Icons/twitter.webp"
 import Form from "./Form"
 
 const Connect = () => {

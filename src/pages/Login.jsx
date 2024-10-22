@@ -1,7 +1,7 @@
 import React, { useState } from "react"; // Import useState
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/Images/logo.png";
+import logo from "../assets/Images/logo.webp";
 
 // List of allowed email domains
 const allowedDomains = [

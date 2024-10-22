@@ -1,12 +1,12 @@
 import { useState,useEffect,useRef } from "react";
-import rentBoardImg from "../.././assets/Images/rent-board.png";
+import rentBoardImg from "../.././assets/Images/rent-board.webp";
 import "./AboutUs-section.css";
 import Lottie from "lottie-react";
 import rent from "./rent.json";
 import about1 from "../../assets/Images/about-1.svg"
-import about2 from "../../assets/Images/about-2.jpg"
-import about3 from "../../assets/Images/about-3.jpg"
-import about4 from "../../assets/Images/about-4.jpg"
+import about2 from "../../assets/Images/about-2.webp"
+import about3 from "../../assets/Images/about-3.webp"
+import about4 from "../../assets/Images/about-4.webp"
 
 import { AboutCard, AboutCard2 } from './AboutCard';
 

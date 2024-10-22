@@ -1,0 +1,151 @@
+.header-section {
+  width: 100%;
+  height: 100vh;
+  /* background: url(/src/assets/Images/red-house.png); */
+  /* background-position: center center; */
+  /* background-color: #262626; */
+  background-size: cover;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.header-section li {
+  list-style: none;
+  font-weight: 600;
+  font-size: 18.5px;
+  color: #262626;
+  transition: ease 200ms;
+}
+
+.header-section li:hover {
+  color: #1abc9c;
+}
+
+.user-cta :last-child {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.header-text h1 {
+  font-size: 57px;
+  font-weight: 600;
+}
+
+.header-text h1 span {
+  color: #cd4347;
+}
+
+.header-text p {
+  line-height: 30px;
+  width: 50%;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.header-text {
+  /* position: relative; */
+  left: 4%;
+  width: 68%;
+}
+
+.btn {
+  margin-top: 55px;
+  border-radius: 8px;
+  color: white;
+  font-size: 21px;
+  font-weight: 700;
+  width: 22%;
+  height: 52px;
+  background: #1abc9c;
+  transition: ease-in-out 0.3s;
+}
+
+.btn:hover {
+  background: transparent;
+  border-color: #1abc9c;
+  border-width: 2px;
+  color: #099061;
+  transition-behavior:initial;
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    width: 100%;
+    height: 100vh;
+    /* background: url(/src/assets/Images/red-house.png); */
+    background-position: center center;
+    /* background-color: #262626; */
+    background-size: cover;
+    position: relative;
+  }
+
+  .header-desc {
+    font-weight: 500;
+  }
+
+  .header-text {
+    /* position: relative; */
+    left: 4%;
+    width: 74%;
+  }
+
+  .header-text h1 {
+    font-size: 46px;
+    font-weight: 600;
+  }
+
+  .btn {
+    margin-top: 55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 31%;
+    height: 47px;
+    background: #1abc9c;
+  }
+}
+
+@media (max-width: 580px) {
+  .navbar .logo {
+    width: 200px;
+  }
+
+  .navbar .menu-icon {
+    width: 40px;
+  }
+
+  .header-section li {
+    list-style: none;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: #262626;
+  }
+
+  .btn {
+    margin-top: 55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 36%;
+    height: 47px;
+    background: #1abc9c;
+  }
+}
+
+@media (max-width: 468px) {
+  .btn {
+    margin-top: 55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 42%;
+    height: 44px;
+    background: #57ecce;
+  }
+}

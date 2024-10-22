@@ -6,7 +6,7 @@ import Header from "../components/Header-section/Header";
 import Services from "../components/Services-section/Services-section";
 import Testimonials from "../components/testimonial-section/Testimonial";
 import { ScrollToTop } from "react-simple-scroll-up";
-import carImg3 from "../assets/Icons/arrow-up.png";
+import carImg3 from "../assets/Icons/arrow-up.webp";
 import "./home.css";
 
 function Home() {
