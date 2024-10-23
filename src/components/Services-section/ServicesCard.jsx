@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ServicesCard = (props) => {
   const [gradientStyle, setGradientStyle] = useState({});
+  const [customStyle, setCustomStyle] = useState({
+    border: `.2px solid #5c5c5c`,
+    backgroundPosition: `bottom`,
+  });
+  
 
   useEffect(() => {
-
-    AOS.init({duration:1000});
-
+    AOS.init({ duration: 1000 });
   }, []);
 
   const handleMouseMove = (e) => {
@@ -35,37 +38,46 @@ const ServicesCard = (props) => {
   };
 
   const handleMouseLeave = () => {
-    setGradientStyle({});
+   setCustomStyle({
+     border: `.2px solid #5c5c5c`,
+     backgroundPosition:`bottom`
+   });
   };
 
-
+  const handleMouseOver = () => {
+    setCustomStyle({
+      border: `.2px solid transparent`,
+      backgroundPosition: `100% 10%`,
+    });
+  };
 
   return (
     <div data-aos={props.aos}>
       <div
         className={
-          props.bgColor +
-          " rounded-xl cursor-pointer hover:scale-105 transition-all duration-500 relative border border-transparent hover:border-opacity-70"
+          "bg-cover bg-bottom  bg-no-repeat hover:shadow-[19px_29px_68px_rgba(49,13,2,0.38),_inset_-6px_-10px_12px_#3d3d3d,_inset_6px_10px_12px_#f5f2f2] transform-gpu perspective-1000 hover:rotate-x-6 hover:rotate-y-6 hover:scale-105 relative rounded-xl cursor-pointer"
         }
         style={{
-          ...gradientStyle,
+          // ...gradientStyle,
+          ...customStyle,
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
-          backgroundColor: "rgba(255, 255, 255, 0.15)",
-          boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-          transition: "background 0.2s ease-in-out",
+          backgroundImage: `url(${props.bgImg})`,
+          // backgroundColor: "rgba(255, 255, 255, 0.15)",
+          // boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+          transition: "all 0.2s ease-in-out,background-size 0.5s ease-in",
         }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-
+        onMouseOver={handleMouseOver}
       >
-        <div className="flex gap-4 p-8" >
+        <div className="flex gap-4 p-8">
           <img className="w-10 h-10 mt-1.5" src={props.icon} alt={props.alt} />
-          <h1 className="text-[#312F2F] font-bold md:text-2xl text-xl">
+          <h1 className="text-black font-bold md:text-2xl text-xl">
             {props.title}
           </h1>
         </div>
-        <p className="px-8 pb-20">{props.description}</p>
+        <p className="px-8 pb-24 text-black font-semibold">{props.description}</p>
       </div>
     </div>
   );
@@ -73,6 +85,7 @@ const ServicesCard = (props) => {
 
 ServicesCard.propTypes = {
   bgColor: PropTypes.string.isRequired,
+  bgImg: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
