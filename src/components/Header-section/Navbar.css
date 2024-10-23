@@ -1,0 +1,42 @@
+.button-3d {
+    perspective: 1000px;  
+
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+  }
+
+  .button-3d:hover {
+    transform: rotateY(15deg) rotateX(15deg);  
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+  }
+  .button-spacing {
+    margin-right: 20px; 
+  }
+  .navbar2 a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .navbar2 a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: green; /* Color of underline */
+    left: 50%;
+    bottom: 0;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  
+  .navbar2 a:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .navbar2 a:hover {
+    color: green; /* Optional: change text color on hover */
+  }
+  

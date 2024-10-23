@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import GoogleTranslate from "./GoogleTranslate";
 import gsap from 'gsap'
 const tl=gsap.timeline()
+import '../Header-section/Navbar.css'
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
@@ -254,23 +255,29 @@ const Navbar = () => {
             </a>
           </div>
           <div className="flex md:order-2 items-center">
-            <Link to="/login">
+                     {/* Login Button */}
+                     <Link to="/login">
               <button
                 type="button"
-                className="navbar3 hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+                className="navbar3 hidden md:block button-3d font-bold rounded-lg text-lg px-6 py-3 text-center button-spacing transition-all duration-300 bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg hover:scale-105 hover:bg-green-600 hover:shadow-2xl relative"
               >
                 Login
+                <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-white transition-all duration-500 ease-in-out hover:w-full rounded-md"></span>
               </button>
             </Link>
+
+            {/* Register Button */}
             <Link to="/register">
               <button
                 type="button"
-                className="navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+                className="navbar3 hidden md:flex items-center gap-2 button-3d font-bold rounded-lg text-lg px-6 py-3 text-center bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg hover:scale-105 hover:bg-green-600 hover:shadow-2xl relative"
               >
-                <FiUser className="text-2xl" />
-                Register
+                <FiUser className="text-2xl transition duration-300 hover:text-green-300 hover:scale-110" />
+                <span className="flex items-center">Register</span>
+                <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-white transition-all duration-500 ease-in-out hover:w-full rounded-md"></span>
               </button>
             </Link>
+
             <GoogleTranslate/>
           </div>
           <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
