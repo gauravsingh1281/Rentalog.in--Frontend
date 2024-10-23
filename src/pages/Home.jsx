@@ -1,5 +1,7 @@
 import AboutUs from "../components/AboutUs-section/AboutUs";
 import Contact from "../components/Contact-section/Contact";
+import FAQ from "../components/faq/FAQ";
+
 import Footer from "../components/Footer-section/Footer";
 import Header from "../components/Header-section/Header";
 import Services from "../components/Services-section/Services-section";
@@ -14,6 +16,7 @@ function Home() {
       <AboutUs />
       <Testimonials />
       <Contact />
+      <FAQ/>
       <Footer />
       <ScrollToTop
         smooth

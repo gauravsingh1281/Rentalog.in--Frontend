@@ -9,7 +9,7 @@ const Navbar = () => {
   const [doBlure, setDoBlure] = useState(false);
   const [navLinkbgColor, setNavlinkbgColor] = useState(true);
   const [activeSection, setActiveSection] = useState("home"); // Track active section
-  const sectionIds = ["home", "Service", "AboutUs", "ContactUs"]; // Section IDs
+  const sectionIds = ["home", "Service", "AboutUs", "ContactUs","FAQ"]; // Section IDs
   
 
   // Intersection Observer to Highlight Links on Scroll and Update URL
@@ -114,6 +114,7 @@ const Navbar = () => {
                   HOME
                 </div>
               </a>
+
               <a href="#Service" aria-current="page">
                 <div
                   className="text-textWhite"
@@ -121,7 +122,7 @@ const Navbar = () => {
                     setShowMenu("");
                   }}
                 >
-                  RENTALS
+                 
                 </div>
               </a>
               <a href="#AboutUs" aria-current="page">
@@ -142,6 +143,26 @@ const Navbar = () => {
                   }}
                 >
                   CONTACT
+                </div>
+              </a>
+              <a href="#FAQ" aria-current="page">
+                <div
+                  className="text-textWhite"
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
+                >
+                 FAQ
+                </div>
+              </a>
+              <a href="#Service" aria-current="page">
+                <div
+                  className="text-textWhite"
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
+                >
+                 FAQ
                 </div>
               </a>
               <div className="text-gray-dark">
@@ -241,6 +262,11 @@ const Navbar = () => {
               <li className="hover:scale-[1.081] hover transition duration-300">
                 <a href="#ContactUs" aria-current="page">
                   {activeSection === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
+                </a>
+              </li>
+              <li className="hover:scale-[1.081] hover transition duration-300">
+                <a href="#FAQ" aria-current="page">
+                  {activeSection === "FAQ" ? <h1 className="text-green">FAQ</h1> : <h1>FAQ</h1>}
                 </a>
               </li>
             </ul>
