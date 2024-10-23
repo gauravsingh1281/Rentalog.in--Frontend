@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { useEffect } from 'react';
 import logo from "../../../assets/Images/logo.png"
 
 
@@ -22,6 +23,9 @@ const TestimonialCard = ({ quote, author, role }) => (
 );
 
 const TotalRentCollected = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  })
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-[#1abc9c] text-textWhite py-4">

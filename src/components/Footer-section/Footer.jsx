@@ -15,6 +15,7 @@ let year = date.getFullYear();
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+
   const [showModal, setShowModal] = useState(false);
   const [rating, setRating] = useState(0);
   const [name, setName] = useState("");
@@ -31,7 +32,27 @@ const Footer = () => {
       setEmail("");
     } catch (error) {
       console.log(`Error with newsletter input: ${error}`);
+
+
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+    return emailRegex.test(email);
+  };
+
+    const handleSubmit = (event) => {
+
+    event.preventDefault();
+    
+    if (!validateEmail(email)) {
+      alert("❌ Please enter a valid email address."); // Alert for invalid email
+      return;
+
     }
+
+    console.log(email); // Log the valid email
+    alert("🙏 Thank you for subscribing to our newsletter!"); // Alert for successful submission
+    setEmail(""); // Clear input after submission
   };
 
   const handleFeedbackSubmit = async (e) => {
@@ -70,7 +91,7 @@ const Footer = () => {
               simplify their rent management process.
             </p>
             <img
-              className="bg-[white] hover:cursor-pointer px-1 rounded-xl mb-2 h-[40px] w-[150px] hover:shadow-l hover:scale-105 transition duration-300 ease-in-out"
+              className="bg-[white] mx-auto lg:mx-0 hover:cursor-pointer px-1 rounded-xl mb-2 h-[40px] w-[150px] hover:shadow-l hover:scale-105 transition duration-300 ease-in-out"
               src={logo}
               alt="logo"
             />
