@@ -5,12 +5,12 @@ import chennai from "../../assets/Images/chennai-1.jpg";
 import goa from "../../assets/Images/goa-1.jpg";
 import mumbai from "../../assets/Images/mumbai-1.jpg";
 // added blurred images 
-import blurAgra from "../../assets/Images/BlurAgra2.jpg";
-import blurBangalore from "../../assets/Images/BlurBangalore2.jpg";
-import blurChennai from "../../assets/Images/BlurChennai2.jpg";
-import blurDelhi from "../../assets/Images/BlurDelhi2.jpg";
-import blurGoa from "../../assets/Images/BlurGoa2.jpg";
-import blurMumbai from "../../assets/Images/BlurMumbai2.jpg";
+import blurAgra from "../../assets/Images/BlurAgra.jpg";
+import blurBangalore from "../../assets/Images/BlurBangalore.jpg";
+import blurChennai from "../../assets/Images/BlurChennai.jpg";
+import blurDelhi from "../../assets/Images/BlurDelhi.jpg";
+import blurGoa from "../../assets/Images/BlurGoa.jpg";
+import blurMumbai from "../../assets/Images/BlurMumbai.jpg";
 const placeName = [
   {
     id: 1,
