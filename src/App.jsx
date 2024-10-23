@@ -12,6 +12,8 @@ import CreateNewRental from "./components/dashboard-components/CreateNewRental/C
 import Contributors from "./components/Contributors-page/Contributors";
 import ForgotPassword from "./pages/ForgotPassword";
 import AdminDashboard from './components/Admin-Dashboard/AdminDashboard';
+import PrivacyPolicy from "./components/Privacy-Policy/PrivacyPolicy";
+import TermsConditions from "./components/Terms-Conditions/TermsConditions";
 const App = () => {
   return (
     <Routes>
@@ -31,6 +33,8 @@ const App = () => {
       <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
       <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} /> {/* Add your admin dashboard route */}
+      <Route path="/Privacy-Policy" element={<PrivacyPolicy/>} />
+      <Route path="/Terms-Conditions" element={<TermsConditions/>} />
     </Routes>
   );
 };

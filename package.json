@@ -12,6 +12,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "axios": "^1.7.7",
+    "esbuild": "^0.18.14",
     "gsap": "^3.12.5",
     "lottie-react": "^2.4.0",
     "mouse-follower": "^1.1.2",
