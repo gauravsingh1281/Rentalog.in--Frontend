@@ -26,8 +26,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Chart.js for Rent History Visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <!-- Mouse Follower CSS (If required) -->
+    <!-- Mouse Follower CSS (Optional) -->
     <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css" />
 
     <!-- Favicon -->
@@ -41,9 +44,115 @@
 
     <!-- Title -->
     <title>Rentalog || Free Rent Management Web App For Landlords</title>
+
+    <!-- Styling -->
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #5bbad5;
+        padding: 20px;
+        text-align: center;
+        color: white;
+      }
+      footer {
+        background-color: #5bbad5;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+      main {
+        padding: 20px;
+      }
+      form {
+        margin: 20px 0;
+      }
+      input, textarea, select {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+      button {
+        background-color: #5bbad5;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #4a9ab3;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: white;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+    </style>
   </head>
 
   <body>
+    <header>
+      <h1>Rentalog - Rent Management for Landlords</h1>
+    </header>
+
+    <main>
+      <!-- Add New Renter Form -->
+      <section>
+        <h2>Add New Renter</h2>
+        <form id="addRenterForm">
+          <input type="text" id="renterName" placeholder="Renter Name" />
+          <input type="text" id="renterAddress" placeholder="Renter Address" />
+          <button type="submit">Add Renter</button>
+        </form>
+      </section>
+
+      <!-- Renter List -->
+      <section>
+        <h2>Renter List</h2>
+        <ul id="renterList">
+          <!-- List of renters will be appended here -->
+        </ul>
+      </section>
+
+      <!-- Rent Payment History Chart -->
+      <section>
+        <h2>Rent Payment History</h2>
+        <canvas id="rentHistoryChart" width="400" height="200"></canvas>
+      </section>
+
+      <!-- Maintenance Request Form -->
+      <section>
+        <h2>Submit Maintenance Request</h2>
+        <form id="maintenanceForm">
+          <textarea id="maintenanceDescription" placeholder="Describe the issue"></textarea>
+          <select id="maintenancePriority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button type="submit">Submit Request</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Rentalog. All Rights Reserved.</p>
+    </footer>
+
     <!-- React Root -->
     <div id="root"></div>
 
@@ -65,5 +174,50 @@
       domain="www.chatbase.co"
       defer
     ></script>
+
+    <!-- Script for Interactive Features -->
+    <script>
+      // Add Renter Form Handler
+      document.getElementById('addRenterForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('renterName').value;
+        const address = document.getElementById('renterAddress').value;
+        const renterList = document.getElementById('renterList');
+        const li = document.createElement('li');
+        li.textContent = `${name} - ${address}`;
+        renterList.appendChild(li);
+      });
+
+      // Maintenance Request Handler
+      document.getElementById('maintenanceForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const description = document.getElementById('maintenanceDescription').value;
+        const priority = document.getElementById('maintenancePriority').value;
+        alert(`Maintenance Request Submitted: ${description}, Priority: ${priority}`);
+      });
+
+      // Rent History Chart
+      const ctx = document.getElementById('rentHistoryChart').getContext('2d');
+      const rentHistoryChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+          datasets: [{
+            label: 'Rent Payments',
+            data: [1200, 1500, 1100, 1900, 1700, 1300],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
   </body>
 </html>
