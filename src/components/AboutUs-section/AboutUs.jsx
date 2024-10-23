@@ -7,6 +7,7 @@ import about1 from "../../assets/Images/about-1.svg"
 import about2 from "../../assets/Images/about-2.jpg"
 import about3 from "../../assets/Images/about-3.jpg"
 import about4 from "../../assets/Images/about-4.jpg"
+import about5 from "../../assets/Images/about-5.jpg"
 
 import { AboutCard, AboutCard2 } from './AboutCard';
 
@@ -45,6 +46,10 @@ const AboutUs = () => {
               image={about4}
               heading={"User-Friendly Interface & Support"}
               desc={"Rentalog’s user-friendly interface makes it simple to navigate and access all necessary information quickly. Plus, landlords can rely on the dedicated support team for any questions or assistance, ensuring a smooth and hassle-free experience."} />
+            <AboutCard
+               image={about5}
+               heading={"Insurance Integration support"}
+               desc={"Our integrated insurance support ensures that both passengers and drivers are fully covered,whether it's daily commutes or long journeys, we’ve got you covered so you can travel with confidence and focus on the road ahead."} />
           </div>
 
 
