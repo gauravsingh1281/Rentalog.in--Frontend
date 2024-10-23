@@ -4,7 +4,31 @@ This GitHub repository focuses on the development of the frontend part of [Renta
 
 **Rentalog** is a web application that makes it easy for landlords to manage their rental properties. With Rentalog, landlords can keep track of important information about their renters, including their names, addresses, rental payment history, and much more.
 
+<table align="center">
+    <thead align="center">
+        <tr border: 2px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/gauravsingh1281/Rentalog.in--Frontend?style=flat&logo=github"/></td>
+             <td><img alt="Forks" src="https://img.shields.io/github/forks/gauravsingh1281/Rentalog.in--Frontend?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/gauravsingh1281/Rentalog.in--Frontend?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/gauravsingh1281/Rentalog.in--Frontend?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/gauravsingh1281/Rentalog.in--Frontend?style=flat&color=green&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+
 ![image](https://github.com/user-attachments/assets/f186883a-03a0-4c3a-ac20-5fe314899f2a)
+
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
 
 ## 🚀 Features
 
@@ -14,7 +38,10 @@ This GitHub repository focuses on the development of the frontend part of [Renta
 - **Property Listing** 🏘️: Showcase your rental properties and attract potential tenants through Rentalog listings.
 - **User-friendly Interface** 🧑🏻‍🦳: Intuitive and easy-to-navigate interface for quick access to information.
 - **Dedicated Support Team** 📲: Reach out to Rentalog's support team for assistance and guidance.
-  
+
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+
 ## 📸 Screenshots
 
 ## Desktop and Mobile View
@@ -24,15 +51,43 @@ This GitHub repository focuses on the development of the frontend part of [Renta
   <img src="https://github.com/user-attachments/assets/185e1708-f2cb-4430-b1af-dc18a8c4fd79" alt="Mobile View" width="15%" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" />
 </p>
 
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+
 ## 📦 Technologies Used
 
 Rentalog.in frontend is built using the following technologies:
 
-- **HTML5 🖋️:** For structuring the content of the web pages.
-- **CSS3 🎨:** For styling and creating responsive layouts.
-- **Tailwind CSS 🌟:** A utility-first CSS framework used to build custom designs rapidly and maintain consistency.
-- **JavaScript 🔧:** For adding interactivity and dynamic features.
-- **React ⚛️:** For building reusable UI components and managing application state. 
+<table align="center">
+	<tr>
+  <td><img height=40 src = "https://skillicons.dev/icons?i=html&theme=dark"></td>
+	<td><strong>HTML5</strong>: For structuring the content of the web pages.</td>
+</tr>
+
+<tr>
+  <td><img height=40 src = "https://skillicons.dev/icons?i=css" ></td>
+	<td><strong>CSS3</strong>: For styling and creating responsive layouts.</td>
+</tr>
+
+<tr>
+  <td><img height=40 src = "https://skillicons.dev/icons?i=tailwindcss&theme=dark"></td>
+	<td><strong>Tailwind CSS</strong>: A utility-first CSS framework</td>
+</tr>
+
+<tr>
+  <td><img height=40 src = "https://skillicons.dev/icons?i=js&theme=dark"></td>
+	<td><strong>JavaScript</strong>: For adding interactivity and dynamic features.</td>
+</tr>
+
+<tr>
+  <td><img height=40 src = "https://skillicons.dev/icons?i=react&theme=dark"></td>
+	<td><strong>React</strong>: For building reusable UI components and managing application state.</td>
+</tr>
+
+</table>
+
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
 
 ## 🤝 How to Contribute
 
@@ -48,39 +103,42 @@ We welcome contributions from the open-source community to enhance the frontend 
 
 1. **Fork the Repository 🍴:** Star the repository and then fork the repository by clicking the "Fork" button in the upper right corner of this page.
 2. **Clone Your Forked Repository 📥:** 
-   ```
-   git clone https://github.com/your-username/Rentalog.in--Frontend.git
-   ```
+```
+git clone https://github.com/your-username/Rentalog.in--Frontend.git
+```
 3. **Navigate to the Source Directory 🗂️:**
-   ```
-   cd Rentalog.in--Frontend
-   ```
+```
+cd Rentalog.in--Frontend
+```
 4. **Install Project Dependencies 📦:**
-   ```
-    npm install
-   ```
+```
+npm install
+```
 5. **Create a New Branch 🌿:**
-   ```
-   git checkout -b your-branch-name
-   ```
+```
+git checkout -b your-branch-name
+```
 6. **Make Your Changes 🛠️:** Implement features or fixes. Ensure that your code adheres to project standards and best practices.
 7. **Run the Development Server 🏃‍♂️:**
-    ```
-    npm run dev
-    ```
-8. **Commit Your Changes 💬:**
-   ```
-   git add .
-   git commit -m "Describe your changes"
-   ```
-9. **Push Your Changes ⬆️:** 
-    ```
-    git push origin your-branch-name
-    ```
-10. **Open a Pull Request 📩:** Submit a pull request to the main branch of this repository. Provide a detailed description of your changes and any relevant information.
-11. **Review Process 🔍:** Once your pull request is submitted, it will be reviewed by the project maintainers. Feedback and suggestions for further improvements may be provided. Your contribution will be reviewed and merged if it meets the project’s requirements.
+```
+npm run dev
+```
+9. **Commit Your Changes 💬:**
+```
+git add .
+git commit -m "Describe your changes"
+```
+10. **Push Your Changes ⬆️:** 
+```
+git push origin your-branch-name
+```
+11. **Open a Pull Request 📩:** Submit a pull request to the main branch of this repository. Provide a detailed description of your changes and any relevant information.
+12. **Review Process 🔍:** Once your pull request is submitted, it will be reviewed by the project maintainers. Feedback and suggestions for further improvements may be provided. Your contribution will be reviewed and merged if it meets the project’s requirements.
 
-Thank you for contributing to the enhancement of the frontend part of [Rentalog.in](https://www.rentalog.in/)! 🙌
+#### Thank you for contributing to the enhancement of the frontend part of [Rentalog.in](https://www.rentalog.in/)! 🙌
+
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
 
 ## 🔗 Inspiration Links
 
@@ -90,6 +148,9 @@ Thank you for contributing to the enhancement of the frontend part of [Rentalog.
 - **Rentalog Demo Account Credentials**:
 - **Username:** <demo@rentalog.in>
 - **Password:** @1a2b3c4d5E
+
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
 
 ## 📄 License
 
@@ -101,4 +162,26 @@ All Thanks to our contributors 💙
 
 [![GitHub Contributors](https://contrib.rocks/image?repo=gauravsingh1281/Rentalog-Rent-Management-Web-App-For-Landlords)](https://github.com/gauravsingh1281/Rentalog-Rent-Management-Web-App-For-Landlords/graphs/contributors)
 
-Feel free to join our team and contribute to making Rentalog even better! 🚀
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+
+
+## Stargazers ❤️
+
+<div align='left'>
+
+[![Stargazers repo roster for @gauravsingh1281/Rentalog.in--Frontend](https://reporoster.com/stars/gauravsingh1281/Rentalog.in--Frontend)](https://github.com/gauravsingh1281/Rentalog.in--Frontend/stargazers)
+
+</div>
+
+## Forkers ❤️
+
+[![Forkers repo roster for @gauravsingh1281/Rentalog.in--Frontend](https://reporoster.com/forks/gauravsingh1281/Rentalog.in--Frontend)](https://github.com/gauravsingh1281/Rentalog.in--Frontend/network/members)
+
+
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+
+
+
+### Feel free to join our team and contribute to making Rentalog even better! 🚀

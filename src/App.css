@@ -20,6 +20,7 @@ html {
   margin-bottom: 0;
 }
 
+
 /* Global Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 12px; /* Width of the scrollbar */
@@ -40,3 +41,4 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #19987f; /* Even darker green on hover */
 }
+
