@@ -25,12 +25,26 @@ const ServicesAvailableIn = (props) => {
 
             data-aos="fade-up"
         >
-            <img src={props.placeImage} alt="image" className="w-52 h-64 rounded-xl group-hover:scale-110 hover:shadow-2xl  transition duration-300 cursor-pointer object-cover" />
-            {/* <h1 className="bg-[#EBB4B6] w-28 h-28   rounded-full"></h1> */}
-            <div className="absolute bottom-0 w-full h-1/5 flex items-end justify-center rounded-b-xl group-hover:scale-110 group-hover:translate-y-[20%] transition duration-300" style={{
-                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.70) 63%)'
-            }} >
-                <h1 className="text-xl text-textWhite font-semibold" style={{ textShadow: '0 0 5px #ffffff' }}>{props.placeName}</h1>
+            <div className="relative w-52 h-64 rounded-xl overflow-hidden">
+                <img
+                    src={props.placeImage}
+                    alt="image"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 hover:shadow-2xl cursor-pointer"
+                />
+                <div
+                    className="absolute bottom-0 left-0 w-full h-1/5 flex items-end justify-center transition-transform duration-300"
+                    style={{
+                    background:
+                        "linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.70) 63%)",
+                    }}
+                >
+                    <h1
+                        className="text-xl text-textWhite font-semibold mb-2"
+                        style={{ textShadow: "0 0 5px #ffffff" }}
+                        >
+                        {props.placeName}
+                    </h1>
+                </div>
             </div>
 
         </div>
