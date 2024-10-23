@@ -162,4 +162,26 @@ All Thanks to our contributors 💙
 
 [![GitHub Contributors](https://contrib.rocks/image?repo=gauravsingh1281/Rentalog-Rent-Management-Web-App-For-Landlords)](https://github.com/gauravsingh1281/Rentalog-Rent-Management-Web-App-For-Landlords/graphs/contributors)
 
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+
+
+## Stargazers ❤️
+
+<div align='left'>
+
+[![Stargazers repo roster for @gauravsingh1281/Rentalog.in--Frontend](https://reporoster.com/stars/gauravsingh1281/Rentalog.in--Frontend)](https://github.com/gauravsingh1281/Rentalog.in--Frontend/stargazers)
+
+</div>
+
+## Forkers ❤️
+
+[![Forkers repo roster for @gauravsingh1281/Rentalog.in--Frontend](https://reporoster.com/forks/gauravsingh1281/Rentalog.in--Frontend)](https://github.com/gauravsingh1281/Rentalog.in--Frontend/network/members)
+
+
+<!--line-->
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+
+
+
 ### Feel free to join our team and contribute to making Rentalog even better! 🚀
