@@ -20,7 +20,7 @@ export default {
     colors: {
       primaryGreen: "#1ABC9C",
       customRed: "#CD4347",
-      green: "#1ABC93",
+      green: "#cd4347",
       "green-dark": "#047558",
       textBlack: "#312F2F",
       textWhite: "#F8F8F8",
