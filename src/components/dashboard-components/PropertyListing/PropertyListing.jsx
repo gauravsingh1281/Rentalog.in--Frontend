@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useEffect } from "react";
 // Sample properties data
 const properties = [
   {
@@ -53,6 +53,9 @@ const properties = [
 
 // PropertyCard Component
 const PropertyCard = ({ property }) => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  })
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-lg m-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
       <img
