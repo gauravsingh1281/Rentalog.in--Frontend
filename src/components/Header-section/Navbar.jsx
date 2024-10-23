@@ -3,13 +3,70 @@ import { FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
+import GoogleTranslate from "./GoogleTranslate";
+import gsap from 'gsap'
+const tl=gsap.timeline()
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
   const [navLinkbgColor, setNavlinkbgColor] = useState(true);
   const [activeSection, setActiveSection] = useState("home"); // Track active section
+
   const sectionIds = ["home", "Service", "AboutUs", "ContactUs","FAQ"]; // Section IDs
+
+  const sectionIds = ["home", "Service", "AboutUs", "ContactUs"]; // Section IDs
+
+  useEffect(() => {
+    const tl = gsap.timeline();  // Initialize the timeline
+  
+    const ctx = gsap.context(() => {
+      tl.fromTo('.navbar',
+        {
+          y: -100, // Starting position (from)
+          opacity: 0, // Starting opacity (from)
+        },
+        {
+          y: 0, // Ending position (to)
+          opacity: 1, // Ending opacity (to)
+          duration: 1, // Animation duration
+          ease: "power2.inOut", // Easing function
+          stagger: 0.3, // Stagger the animations for smoother effect
+        }
+      );
+      tl.fromTo('.navbar2',
+        {
+          y: -100, // Starting position (from)
+          opacity: 0, // Starting opacity (from)
+        },
+        {
+          y: 0, // Ending position (to)
+          opacity: 1, // Ending opacity (to)
+          duration: 0.5, // Animation duration
+          ease: "power2.inOut", // Easing function
+          stagger: 0.3, // Stagger the animations for smoother effect
+        }
+      );
+      tl.fromTo('.navbar3',
+        {
+          y: -100, // Starting position (from)
+          opacity: 0, // Starting opacity (from)
+        },
+        {
+          y: 0, // Ending position (to)
+          opacity: 1, // Ending opacity (to)
+          duration: 0.5, // Animation duration
+          ease: "power2.inOut", // Easing function
+          stagger: 0.3, // Stagger the animations for smoother effect
+        }
+      );
+
+    });
+  
+    return () => ctx.revert(); // Cleanup when the component unmounts
+  }, []);
+  
+
   
 
   // Intersection Observer to Highlight Links on Scroll and Update URL
@@ -95,7 +152,7 @@ const Navbar = () => {
           <div className="text-textWhite">
             <div className="px-4 bg-textWhite w-fit rounded-xl">
               <img
-                className="self-start w-40"
+                className="self-start w-40 "
                 src={logo}
                 alt="Rentalog-logo"
               />
@@ -106,7 +163,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-8 justify-center items-center mt-10">
               <a href="#home" aria-current="page">
                 <div
-                  className="text-textWhite"
+                  className="text-textWhite "
                   onClick={() => {
                     setShowMenu("");
                   }}
@@ -117,7 +174,7 @@ const Navbar = () => {
 
               <a href="#Service" aria-current="page">
                 <div
-                  className="text-textWhite"
+                  className="text-textWhite "
                   onClick={() => {
                     setShowMenu("");
                   }}
@@ -127,7 +184,7 @@ const Navbar = () => {
               </a>
               <a href="#AboutUs" aria-current="page">
                 <div
-                  className="text-textWhite"
+                  className="text-textWhite "
                   onClick={() => {
                     setShowMenu("");
                   }}
@@ -137,7 +194,7 @@ const Navbar = () => {
               </a>
               <a href="#ContactUs" aria-current="page">
                 <div
-                  className="text-textWhite"
+                  className="text-textWhite "
                   onClick={() => {
                     setShowMenu("");
                   }}
@@ -169,7 +226,7 @@ const Navbar = () => {
                 <Link to="/login">
                   <button
                     type="button"
-                    className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite  transition-transform duration-300 hover:scale-110 hover:text-sky-500"
+                    className=" flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite  transition-transform duration-300 hover:scale-110 hover:text-sky-500"
                   >
                     <FiUser className="text-2xl" />
                     Log In
@@ -183,13 +240,14 @@ const Navbar = () => {
                 <Link to="/register">
                   <button
                     type="button"
-                    className="flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite -mt-4"
+                    className=" flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite -mt-4"
                   >
                     <FiUser className="text-2xl" />
                     Register
                   </button>
                 </Link>
               </div>
+              <GoogleTranslate />
             </div>
           </div>
         </div>
@@ -214,17 +272,17 @@ const Navbar = () => {
           <div className="flex flex-row justify-center items-center">
             <a href="#home" aria-current="page">
                 <img
-                  className="self-start w-40"
+                  className="self-start w-40 navbar my-auto"
                   src={logo}
                   alt="Rentalog-logo"
                 />
             </a>
           </div>
-          <div className="flex md:order-2">
+          <div className="flex md:order-2 items-center">
             <Link to="/login">
               <button
                 type="button"
-                className="hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+                className="navbar3 hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
               >
                 Login
               </button>
@@ -232,34 +290,35 @@ const Navbar = () => {
             <Link to="/register">
               <button
                 type="button"
-                className="hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+                className="navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-green"
               >
                 <FiUser className="text-2xl" />
                 Register
               </button>
             </Link>
+            <GoogleTranslate/>
           </div>
           <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
-              <li className="hover:scale-[1.081] hover transition duration-300">
-                <a href="#home" aria-current="page">
+              <li className=" navbar2 hover:scale-[1.081] hover transition duration-300">
+                <a href="#home"  aria-current="page">
                   {activeSection === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
                 </a>
               </li>
 
-              <li className="hover:scale-[1.081] hover transition duration-300">
+              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
                 <a href="#Service" aria-current="page">
                   {activeSection === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
                 </a>
               </li>
 
-              <li className="hover:scale-[1.081] hover transition duration-300">
+              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
                 <a href="#AboutUs" aria-current="page">
                   {activeSection === "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
                 </a>
               </li>
 
-              <li className="hover:scale-[1.081] hover transition duration-300">
+              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
                 <a href="#ContactUs" aria-current="page">
                   {activeSection === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
                 </a>

@@ -1,0 +1,112 @@
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #212529;
+    color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Changed to flex-start for less space */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s;
+}
+
+.sidebar:hover {
+    width: 300px; /* Sidebar expands on hover */
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #343a40; /* Adding a separator */
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem; /* Added margin to adjust spacing */
+}
+
+.sidebar-menu li {
+    padding: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s, padding-left 0.3s; /* Adding padding transition */
+}
+
+.sidebar-menu li:hover {
+    background-color: #343a40;
+    padding-left: 1.5rem; /* Indent on hover */
+}
+
+.content {
+    flex-grow: 1;
+    padding: 2rem;
+    background-color: #ffffff;
+    position: relative; /* For overlay effects */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+    margin-bottom: 0.5rem; /* Added margin for spacing */
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.dashboard-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Adjusted gap between cards */
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Added shadow transition */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow deepens on hover */
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #343a40;
+}
+
+.card p {
+    font-size: 1.25rem;
+    color: #6c757d;
+}
+
+/* Optional: Add a footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #212529;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

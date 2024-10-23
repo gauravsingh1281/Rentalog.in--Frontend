@@ -19,3 +19,25 @@ html {
 .mb-0{
   margin-bottom: 0;
 }
+
+
+
+/* global.css or your main CSS file */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e5e7eb; /* Light gray track (background of the scrollbar) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2ec4b6; /* Blue scrollbar thumb */
+  border-radius: 9999px; /* Rounded edges for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2ec4b6; /* Darker blue when hovered */
+}
+
+
