@@ -19,13 +19,14 @@
 .aboutUs-section .primary-heading {
   font-size: 48px;
   font-weight: 600;
-  color: #312F2F;
+  color: #141010;
 }
 
 #AboutUs {
   margin-bottom: 5rem;
+  font-weight: 500;
 }
 
 .mf-cursor::before {
-  transform: scale(2);
+  transform: scale(2.8);
 }
