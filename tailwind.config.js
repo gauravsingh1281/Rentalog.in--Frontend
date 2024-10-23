@@ -31,9 +31,14 @@ export default {
       "light-blue": "#e8f8f4",
     },
     fontFamily: {
-      sans: ["Graphik", "sans-serif"],
-      serif: ["Merriweather", "serif"],
-      monsterrat: ["Montserrat", "sans-serif"],
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        serif: ["Merriweather", "serif"],
+        monsterrat: ["Montserrat", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"], 
+        roboto: ["Roboto", "sans-serif"], 
+      },
+      
     },
     boxShadow: {
       widget: '3px 3px #b9c3c1',
