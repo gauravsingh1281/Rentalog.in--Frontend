@@ -4,8 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
 import GoogleTranslate from "./GoogleTranslate";
-import gsap from 'gsap'
-const tl=gsap.timeline()
+import gsap from "gsap";
+const tl = gsap.timeline();
+import "../Header-section/Navbar.css";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState("");
@@ -15,10 +16,11 @@ const Navbar = () => {
   const sectionIds = ["home", "Service", "AboutUs", "ContactUs"]; // Section IDs
 
   useEffect(() => {
-    const tl = gsap.timeline();  // Initialize the timeline
-  
+    const tl = gsap.timeline(); // Initialize the timeline
+
     const ctx = gsap.context(() => {
-      tl.fromTo('.navbar',
+      tl.fromTo(
+        ".navbar",
         {
           y: -100, // Starting position (from)
           opacity: 0, // Starting opacity (from)
@@ -31,7 +33,8 @@ const Navbar = () => {
           stagger: 0.3, // Stagger the animations for smoother effect
         }
       );
-      tl.fromTo('.navbar2',
+      tl.fromTo(
+        ".navbar2",
         {
           y: -100, // Starting position (from)
           opacity: 0, // Starting opacity (from)
@@ -44,7 +47,8 @@ const Navbar = () => {
           stagger: 0.3, // Stagger the animations for smoother effect
         }
       );
-      tl.fromTo('.navbar3',
+      tl.fromTo(
+        ".navbar3",
         {
           y: -100, // Starting position (from)
           opacity: 0, // Starting opacity (from)
@@ -57,13 +61,10 @@ const Navbar = () => {
           stagger: 0.3, // Stagger the animations for smoother effect
         }
       );
-
     });
-  
+
     return () => ctx.revert(); // Cleanup when the component unmounts
   }, []);
-  
-  
 
   // Intersection Observer to Highlight Links on Scroll and Update URL
   useEffect(() => {
@@ -229,9 +230,8 @@ const Navbar = () => {
       </>
     );
   } else {
-    window.onscroll = () => { };
+    window.onscroll = () => {};
   }
-
   return (
     <>
       <nav className="bg-white fixed w-full z-20 top-0 left-0">
@@ -244,63 +244,71 @@ const Navbar = () => {
         ></div>
 
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        
           <div className="flex flex-row justify-center items-center">
             <a href="#home" aria-current="page">
-                <img
-                  className="self-start w-40 navbar my-auto"
-                  src={logo}
-                  alt="Rentalog-logo"
-                />
+              <img
+                className="self-start navbar my-auto logo-hover"  
+                src={logo}
+                alt="Rentalog-logo"
+              />
             </a>
           </div>
+
           <div className="flex md:order-2 items-center">
+            {/* Login Button */}
             <Link to="/login">
               <button
                 type="button"
-                className="navbar3 hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+                className="navbar3 hidden md:block button-3d font-bold rounded-lg text-lg px-6 py-3 text-center button-spacing transition-all duration-300 bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg hover:scale-105 hover:bg-green-600 hover:shadow-2xl relative"
               >
                 Login
+                <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-white transition-all duration-500 ease-in-out hover:w-full rounded-md"></span>
               </button>
             </Link>
+
+            {/* Register Button */}
             <Link to="/register">
               <button
                 type="button"
-                className="navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+                className="navbar3 hidden md:flex items-center gap-2 button-3d font-bold rounded-lg text-lg px-6 py-3 text-center bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg hover:scale-105 hover:bg-green-600 hover:shadow-2xl relative"
               >
-                <FiUser className="text-2xl" />
-                Register
+                <FiUser className="text-2xl transition duration-300 hover:text-green-300 hover:scale-110" />
+                <span className="flex items-center">Register</span>
+                <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-white transition-all duration-500 ease-in-out hover:w-full rounded-md"></span>
               </button>
             </Link>
-            <GoogleTranslate/>
+
+            <GoogleTranslate />
           </div>
-          <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
+
+          <div
+            className="hidden md:flex md:w-auto md:order-1"
+            id="navbar-sticky"
+          >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
-              <li className=" navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#home"  aria-current="page">
-                  {activeSection === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
-                </a>
-              </li>
-
-              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#Service" aria-current="page">
-                  {activeSection === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
-                </a>
-              </li>
-
-              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#AboutUs" aria-current="page">
-                  {activeSection === "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
-                </a>
-              </li>
-
-              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#ContactUs" aria-current="page">
-                  {activeSection === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
-                </a>
-              </li>
+              {sectionIds.map((section, index) => (
+                <li
+                  key={index}
+                  className="navbar2 hover:scale-105 transition duration-300 relative group"
+                >
+                  <a href={`#${section}`} aria-current="page">
+                    <h1
+                      className={`transition-all duration-300 ${
+                        activeSection === section
+                          ? "text-green"
+                          : "hover:text-green-400"
+                      }`}
+                    >
+                      {section.toUpperCase()}
+                    </h1>
+                  </a>
+                  {/* Animated Single Underline */}
+                  <div className="absolute left-0 bottom-0 h-[2px] w-0 bg-green group-hover:w-full transition-all duration-500 ease-in-out"></div>
+                </li>
+              ))}
             </ul>
           </div>
-
           <button
             onClick={() => {
               setShowMenu("show");
