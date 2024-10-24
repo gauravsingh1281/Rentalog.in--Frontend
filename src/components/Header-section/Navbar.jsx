@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const sectionIds = ["home", "Service", "AboutUs", "ContactUs","FAQ"]; // Section IDs
 
-  const sectionIds = ["home", "Service", "AboutUs", "ContactUs"]; // Section IDs
+
 
   useEffect(() => {
     const tl = gsap.timeline();  // Initialize the timeline
