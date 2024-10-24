@@ -7,8 +7,8 @@
 
 .sidebar {
     width: 250px;
-    background-color: #212529;
-    color: #ffffff;
+    background: linear-gradient(to bottom, #a5e4ec, #b4ead1);
+    color:black;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -23,33 +23,41 @@
 
 .sidebar-header {
     text-align: center;
+    font-weight:bold ;
     padding: 1rem 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     border-bottom: 1px solid #343a40; /* Adding a separator */
 }
 
 .sidebar-menu {
     list-style-type: none;
     padding: 0;
+    font-size: medium;
     margin-top: 1rem; /* Added margin to adjust spacing */
 }
 
 .sidebar-menu li {
+    margin-top: 1.5rem;
     padding: 1rem;
-    color: #ffffff;
+    font-weight: bold;
+    color:black;
     cursor: pointer;
+    border-radius: .7rem;
     transition: background 0.3s, padding-left 0.3s; /* Adding padding transition */
 }
 
 .sidebar-menu li:hover {
-    background-color: #343a40;
+    background-color: #000000;
     padding-left: 1.5rem; /* Indent on hover */
+     color: white;
+     text-align: center;
 }
 
 .content {
     flex-grow: 1;
     padding: 2rem;
-    background-color: #ffffff;
+    margin: 1.2rem;
+    background-color: #161616;
     position: relative; /* For overlay effects */
 }
 
@@ -60,13 +68,14 @@
 
 .header h1 {
     font-size: 2.5rem;
-    color: #343a40;
+    color: #fdfdfd;
+    font-weight: 900;
     margin-bottom: 0.5rem; /* Added margin for spacing */
 }
 
 .header p {
     font-size: 1.2rem;
-    color: #6c757d;
+    color: #eaed24;
 }
 
 .dashboard-overview {
@@ -76,7 +85,7 @@
 }
 
 .card {
-    background-color: #ffffff;
+    background-color: #ddd8d8;
     padding: 1.5rem;
     border: 1px solid #dee2e6;
     border-radius: 8px;
@@ -88,16 +97,20 @@
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow deepens on hover */
+    background-color: white;
+
 }
 
 .card h3 {
     font-size: 1.5rem;
-    color: #343a40;
+    color: #0317f8;
+    font-weight: 600;
 }
 
 .card p {
     font-size: 1.25rem;
     color: #6c757d;
+    font-weight: 600;
 }
 
 /* Optional: Add a footer */
