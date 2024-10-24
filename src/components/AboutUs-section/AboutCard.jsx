@@ -30,7 +30,6 @@ const AboutCard = ({ image, heading, desc }) => {
     },[]);
     return (
       <div className='flex justify-evenly md:justify-center h-[45vh]  gap-3 md:gap-20 overflow-x-hidden'>
-  
         <div className='w-[40%] flex flex-col justify-center gap-2 md:gap-5' data-aos = "fade-right"
         >
           <div className='text-lg md:text-2xl font-bold '>{heading}</div>
