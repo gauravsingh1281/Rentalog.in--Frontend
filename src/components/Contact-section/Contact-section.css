@@ -7,14 +7,27 @@ main {
     margin-top: 0; /* Remove any top margin between the Contact Us header and Contact Text Information */
     padding-top: 0; /* Remove extra padding if present */
     margin-bottom: 5rem;
-
+    text-color: black;
     background-color: #b4f8f8; /* Light cyan background */
     border: 2px solid #020202; /* Border color */
     border-radius: 8px; /* Rounded corners */
     padding: 10px; /* Spacing inside the section */
     padding: 10px 5px; /* Top and bottom padding: 10px, left and right padding: 5px */
 }
+.dark-theme .main{
+    text-color: black;
+    background-color: #637b7b;
+}
 
+.contact-section {
+    color: #6a0000;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.dark-theme .contact-section{
+    color: black;
+}
 #text{
     display: flex;
     text-align: center;
