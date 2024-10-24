@@ -1,110 +1,124 @@
-import { useState } from 'react'
-import logo from "../../../assets/Images/logo.png"
+import React from "react";
+import { useEffect } from "react";
+// Sample properties data
+const properties = [
+  {
+    imageUrl:
+      "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyaminmellish-186077.jpg&fm=jpg",
+    title: "Cozy Family Home",
+    description:
+      "A beautiful and spacious 3-bedroom family home with a backyard.",
+    price: "$1,500",
+    beds: 3,
+    baths: 2,
+  },
+  {
+    imageUrl:
+      "https://thumbs.dreamstime.com/z/beautiful-exterior-home-pictures-new-home-design-images-modern-best-house-design-images-best-house-images-images-latest-172194515.jpg",
+    title: "Modern Apartment",
+    description:
+      "A sleek modern apartment in the city center with amazing views.",
+    price: "$2,300",
+    beds: 2,
+    baths: 2,
+  },
+  {
+    imageUrl:
+      "https://i.pinimg.com/originals/41/30/5c/41305cb2f8391620d046a2a3518a7a35.jpg",
+    title: "Luxury Villa",
+    description: "A luxurious 5-bedroom villa with a swimming pool and garden.",
+    price: "$5,800",
+    beds: 5,
+    baths: 4,
+  },
+  {
+    imageUrl:
+      "https://th.bing.com/th/id/OIP.tOrydk5j46G7kWuS1elhsgHaE8?rs=1&pid=ImgDetMain",
+    title: "City Penthouse",
+    description: "An exclusive penthouse with panoramic views of the city.",
+    price: "$8,200",
+    beds: 4,
+    baths: 3,
+  },
+  {
+    imageUrl:
+      "https://th.bing.com/th/id/OIP.KfJQ1mYTxHgLaCTlsjO4bwHaE8?rs=1&pid=ImgDetMain",
+    title: "Beachfront Condo",
+    description: "A stylish condo directly on the beachfront.",
+    price: "$3,200",
+    beds: 2,
+    baths: 2,
+  },
+];
 
-const HomeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-  </svg>
-)
-
-const SearchIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8"></circle>
-    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-  </svg>
-)
-
-const BadgeCheckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path>
-    <path d="m9 12 2 2 4-4"></path>
-  </svg>
-)
-
-export default function PropertyListingService() {
-  const [email, setEmail] = useState('')
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log('Submitted email:', email)
-  }
-
-  const features = [
-    { Icon: HomeIcon, title: "Easy Listing Creation", description: "Create detailed property listings in minutes." },
-    { Icon: SearchIcon, title: "Enhanced Visibility", description: "Reach thousands of potential tenants." },
-    { Icon: BadgeCheckIcon, title: "Tenant Screening", description: "Access comprehensive screening reports." },
-  ]
-
+// PropertyCard Component
+const PropertyCard = ({ property }) => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  })
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-1">
-        <section className="bg-[#1abc9c] text-textWhite w-full py-12 md:py-24 bg-white text-gray-800">
-          <div className="container px-4 md:px-6 mx-auto max-w-6xl">
-          <div className="px-4 bg-textWhite w-fit rounded-xl absolute top-0 left-0 m-[1.5rem]">
-              <img
-                className="self-start w-40"
-                src={logo}
-                alt="Rentalog-logo"
-              />
-            </div>
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Simplify Your Property Listings
-              </h1>
-              <p className="mx-auto max-w-[600px] text-gray-600 md:text-xl">
-                Connect with reliable tenants and manage your properties with ease.
-              </p>
-              <button 
-                className="px-6 py-3 text-white bg-textWhite text-[#16a085] rounded-md font-semibold transition-colors"
-              >
-                List Your Property
-              </button>
-            </div>
+    <div className="bg-white rounded-lg overflow-hidden shadow-lg m-4 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+      <img
+        src={property.imageUrl}
+        alt={property.title}
+        className="w-full h-64 object-cover"
+      />
+      <div className="p-4">
+        <h2 className="text-xl font-bold text-gray-800">{property.title}</h2>
+        <p className="text-gray-600 mt-2">{property.description}</p>
+        <div className="flex justify-between items-center mt-4">
+          <span className="text-blue-600 font-semibold">{property.price}</span>
+          <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <span>{property.beds} beds</span>
+            <span>{property.baths} baths</span>
           </div>
-        </section>
-
-        <section className="w-full py-12 bg-gray-100">
-          <div className="container px-4 md:px-6 mx-auto max-w-6xl">
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-center mb-8">Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {features.map((feature, index) => (
-                <div key={index} className="bg-white border rounded-lg p-6 shadow-sm">
-                  <feature.Icon />
-                  <h3 className="text-xl font-semibold mb-2 mt-4">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-12 bg-gray-dark text-textWhite">
-          <div className="container px-4 md:px-6 mx-auto max-w-6xl text-center">
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl mb-4">Ready to Get Started?</h2>
-            <p className="mx-auto max-w-[600px] text-white/90 mb-8">
-              Join thousands of landlords who&lsquo;ve simplified their rental process.
-            </p>
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="px-4 py-2 border rounded-md w-full sm:w-auto text-gray-800"
-                required
-              />
-              <button 
-                type="submit"
-                className="px-6 py-2 bg-[#cd4347] text-white rounded-md font-semibold transition-colors w-full sm:w-auto"
-              >
-                Sign Up Now
-              </button>
-            </form>
-          </div>
-        </section>
-      </main>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
+
+// Navbar Component
+const Navbar = () => {
+  return (
+    <nav className="bg-white shadow-md sticky top-0 z-10">
+      <div className="container mx-auto flex justify-between items-center h-16 px-6">
+        <a href="/" className="text-2xl font-bold text-gray-800">
+          MyProperties
+        </a>
+        <div className="space-x-6">
+          <a href="#" className="text-gray-800 hover:text-blue-600 transition">
+            Home
+          </a>
+          <a href="#" className="text-gray-800 hover:text-blue-600 transition">
+            Listings
+          </a>
+          <a href="#" className="text-gray-800 hover:text-blue-600 transition">
+            Contact
+          </a>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+// PropertyListing Component
+const PropertyListing = () => {
+  return (
+    <div>
+      <Navbar />
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold text-gray-800 text-center my-8">
+          Property Listings
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {properties.map((property, index) => (
+            <PropertyCard key={index} property={property} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PropertyListing;

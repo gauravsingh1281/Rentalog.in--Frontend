@@ -9,15 +9,15 @@ const AboutCard = ({ image, heading, desc }) => {
   },[]);
 
     return (
-      <div className='flex justify-center h-[45vh] gap-20 overflow-x-hidden'>
-        <div className='w-[30%]' data-aos = "fade-right"
+      <div className='flex justify-evenly md:justify-center h-[45vh]  gap-3 md:gap-20 overflow-x-hidden'>
+        <div className='w-[40%] md:w-[30%] flex items-center h-full' data-aos = "fade-right"
         >
-          <img src={image} className='h-full' />
+          <img src={image} className='h-auto md:h-full' />
         </div>
         <div className='w-[40%] flex flex-col justify-center gap-5' data-aos = "fade-left"
         >
-          <div className='text-2xl font-bold '>{heading}</div>
-          <div className='text-lg'>{desc}</div>
+          <div className='text-lg md:text-2xl font-bold '>{heading}</div>
+          <div className='text-sm md:text-lg'>{desc}</div>
         </div>
       </div>
     );
@@ -29,16 +29,15 @@ const AboutCard = ({ image, heading, desc }) => {
       
     },[]);
     return (
-      <div className='flex justify-center h-[45vh] gap-20 overflow-x-hidden'>
-  
-        <div className='w-[40%] flex flex-col justify-center gap-5' data-aos = "fade-right"
+      <div className='flex justify-evenly md:justify-center h-[45vh]  gap-3 md:gap-20 overflow-x-hidden'>
+        <div className='w-[40%] flex flex-col justify-center gap-2 md:gap-5' data-aos = "fade-right"
         >
-          <div className='text-2xl font-bold '>{heading}</div>
-          <div className='text-lg'>{desc}</div>
+          <div className='text-lg md:text-2xl font-bold '>{heading}</div>
+          <div className='text-sm md:text-lg'>{desc}</div>
         </div>
-        <div className='w-[30%]' data-aos = "fade-left"
+        <div className='w-[40%] md:w-[30%] flex items-center h-full' data-aos = "fade-left"
         >
-          <img src={image} className='h-full' />
+          <img src={image} className='h-auto md:h-full' />
         </div>
       </div>
     );

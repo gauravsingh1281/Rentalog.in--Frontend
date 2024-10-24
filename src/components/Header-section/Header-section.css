@@ -39,6 +39,8 @@
 }
 
 .header-text p {
+  line-height: 30px;
+  width: 50%;
   font-weight: 400;
   font-size: 17px;
 }
@@ -65,7 +67,8 @@
   background: transparent;
   border-color: #1abc9c;
   border-width: 2px;
-  color: #1abc9c;
+  color: #099061;
+  transition-behavior:initial;
 }
 
 @media (max-width: 768px) {
@@ -108,7 +111,7 @@
 
 @media (max-width: 580px) {
   .navbar .logo {
-    width: 170px;
+    width: 200px;
   }
 
   .navbar .menu-icon {
@@ -143,6 +146,6 @@
     font-weight: 700;
     width: 42%;
     height: 44px;
-    background: #1abc9c;
+    background: #57ecce;
   }
 }
