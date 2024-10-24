@@ -100,7 +100,7 @@ export default function Registration() {
               Create a new account to access all the features of our website
             </p>
           </div>
-          <img src="undraw_for_sale_re_egkk.svg" alt="" className="m-10" />
+          <img src="https://cdn.dribbble.com/users/130603/screenshots/7849095/house_5.gif" alt="" className="m-10" />
         </div>
 
         <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-[100vh] xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
