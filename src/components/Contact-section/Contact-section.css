@@ -1,24 +1,42 @@
-
 #ContactUs {
-    margin-bottom: 0; /* Further reduced margin-bottom to minimize the space */
+  margin-bottom: 0; /* Further reduced margin-bottom to minimize the space */
 }
 
 main {
-    margin-top: 0; /* Remove any top margin between the Contact Us header and Contact Text Information */
-    padding-top: 0; /* Remove extra padding if present */
-    margin-bottom: 5rem;
+  margin-top: 0; /* Remove any top margin between the Contact Us header and Contact Text Information */
+  padding-top: 0; /* Remove extra padding if present */
+  margin-bottom: 5rem;
 
-    background-color: #b4f8f8; /* Light cyan background */
-    border: 2px solid #020202; /* Border color */
-    border-radius: 8px; /* Rounded corners */
-    padding: 10px; /* Spacing inside the section */
-    padding: 10px 5px; /* Top and bottom padding: 10px, left and right padding: 5px */
+  background-color: #b4f8f8; /* Light cyan background */
+  border: 2px solid #020202; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Spacing inside the section */
+  padding: 10px 5px; /* Top and bottom padding: 10px, left and right padding: 5px */
 }
 
-#text{
-    display: flex;
-    text-align: center;
-    margin-left: 98px;
-    font-style: bold;
+#text {
+  display: flex;
+  text-align: center;
+  margin-left: 98px;
+  font-style: bold;
+}
+/* Contact-section.css or your global CSS file */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+}
