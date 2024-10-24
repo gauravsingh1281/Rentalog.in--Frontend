@@ -1,0 +1,19 @@
+name: Issue Auto Comment
+
+# Created by @smog-root
+
+on:
+  issues:
+    types: [opened, closed]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add a comment when an issue is opened
+        if: github.event.action == 'opened'
+        uses: actions-ecosystem/action-create-comment@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_number: ${{ github.event.issue.number }}
+          body: "👋 Thanks for opening this issue! We appreciate your contribution. Please make sure you’ve provided all the necessary details and screenshots, and don't forget to follow our Guidelines and Code of Conduct. Happy coding! 🚀
