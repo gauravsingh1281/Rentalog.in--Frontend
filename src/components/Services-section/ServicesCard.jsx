@@ -10,7 +10,6 @@ const ServicesCard = (props) => {
     border: `.2px solid #5c5c5c`,
     backgroundPosition: `bottom`,
   });
-  
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -38,10 +37,10 @@ const ServicesCard = (props) => {
   };
 
   const handleMouseLeave = () => {
-   setCustomStyle({
-     border: `.2px solid #5c5c5c`,
-     backgroundPosition:`bottom`
-   });
+    setCustomStyle({
+      border: `.2px solid #5c5c5c`,
+      backgroundPosition: `bottom`,
+    });
   };
 
   const handleMouseOver = () => {
@@ -73,11 +72,19 @@ const ServicesCard = (props) => {
       >
         <div className="flex gap-4 p-8">
           <img className="w-10 h-10 mt-1.5" src={props.icon} alt={props.alt} />
-          <h1 className="text-black font-bold md:text-2xl text-xl">
+          <h1
+            className="text-black font-bold md:text-2xl text-xl"
+            style={{ textShadow: "1px 1px 5px #fffafa" }}
+          >
             {props.title}
           </h1>
         </div>
-        <p className="px-8 pb-24 text-black font-semibold">{props.description}</p>
+        <p
+          className="px-8 pb-24 text-black font-semibold"
+          style={{ textShadow: "1px 1px 5px #fffafa" }}
+        >
+          {props.description}
+        </p>
       </div>
     </div>
   );
