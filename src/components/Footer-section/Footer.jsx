@@ -8,10 +8,29 @@ import { RiTwitterXFill } from "react-icons/ri";
 const Footer = () => {
   const [email, setEmail] = useState("");
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(email);
     setEmail("");
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+    return emailRegex.test(email);
+  };
+
+    const handleSubmit = (event) => {
+
+    event.preventDefault();
+    
+    if (!validateEmail(email)) {
+      alert("❌ Please enter a valid email address."); // Alert for invalid email
+      return;
+    }
+
+    console.log(email); // Log the valid email
+    alert("🙏 Thank you for subscribing to our newsletter!"); // Alert for successful submission
+    setEmail(""); // Clear input after submission
   };
 
   const year = new Date().getFullYear();
@@ -28,6 +47,8 @@ const Footer = () => {
             </p>
             <img
               className="bg-white rounded-xl h-12 w-auto hover:shadow-lg transition duration-300 ease-in-out cursor-pointer"
+
+              className="bg-[white] mx-auto lg:mx-0 hover:cursor-pointer px-1 rounded-xl mb-2 h-[40px] w-[150px] hover:shadow-l hover:scale-105 transition duration-300 ease-in-out"
               src={logo}
               alt="Rentalog logo"
             />
