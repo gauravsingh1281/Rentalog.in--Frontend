@@ -7,7 +7,7 @@ import person01 from "../../assets/Images/person01.png";
 import person02 from "../../assets/Images/person02.png";
 import person03 from "../../assets/Images/person03.png";
 import testimonialbg from "../../assets/Images/testimonialbg.png";
-
+import '../../styles/global.css';  
 const slides = [
   {
     url: person01,

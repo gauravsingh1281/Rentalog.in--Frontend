@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import AboutUs from "../components/AboutUs-section/AboutUs";
 import Contributors from "../components/Contributors-page/Contributors";
 import Contact from "../components/Contact-section/Contact";
@@ -10,8 +11,59 @@ import carImg3 from "../assets/Icons/arrow-up.png";
 import "./home.css";
 
 function Home() {
+  const [hovering, setHovering] = useState(false);
+
+  useEffect(() => {
+    const cursor = document.querySelector('.cursor');
+    const handleMouseMove = (e) => {
+      cursor.style.top = `${e.clientY}px`;
+      cursor.style.left = `${e.clientX}px`;
+
+      // Create trailing dots
+      createTrailingDot(e.clientX, e.clientY);
+    };
+
+    const handleMouseOver = () => setHovering(true);
+    const handleMouseOut = () => setHovering(false);
+
+    // Add event listener for mouse move
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    // Add hover listeners for buttons and links
+    document.querySelectorAll('button, a, input, textarea').forEach((element) => {
+      element.addEventListener('mouseover', handleMouseOver);
+      element.addEventListener('mouseout', handleMouseOut);
+    });
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      document.querySelectorAll('button, a, input, textarea').forEach((element) => {
+        element.removeEventListener('mouseover', handleMouseOver);
+        element.removeEventListener('mouseout', handleMouseOut);
+      });
+    };
+  }, []);
+
+  const createTrailingDot = (x, y) => {
+    const dot = document.createElement("div");
+    dot.classList.add("trail-dot");
+    document.body.appendChild(dot);
+
+    // Set the position of the dot
+    dot.style.top = `${y}px`;
+    dot.style.left = `${x}px`;
+
+    // Remove the dot after the animation completes
+    setTimeout(() => {
+      dot.remove();
+    }, 1000); // The same duration as the animation
+  };
+
   return (
     <>
+      {/* Custom animated cursor */}
+      <div className={`cursor ${hovering ? "hover" : ""}`}></div>
+
       <Header />
       <Services />
       <AboutUs />
