@@ -5,6 +5,7 @@ import logo from "../../assets/Images/logo.png";
 import { useState, useEffect } from "react";
 import GoogleTranslate from "./GoogleTranslate";
 import gsap from 'gsap'
+import ProgressBar from "./ProgressBar";
 const tl=gsap.timeline()
 
 const Navbar = () => {
@@ -137,6 +138,7 @@ const Navbar = () => {
     return (
       <>
         <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
+          <ProgressBar/>
           <button
             onClick={() => {
               setShowMenu("");
@@ -235,6 +237,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-white fixed w-full z-20 top-0 left-0">
+      <ProgressBar/>
         <div
           className={
             doBlure
