@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Home, Login, Registration, Dashboard } from "./pages";
-import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";  
+import { Home, Login, Registration, Dashboard, ComingSoon } from "./pages";
+import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";
 import SearchRental from "./components/dashboard-components/SearchRental-section/SearchRental";
 import RenterDetails from "./components/dashboard-components/RenterDetails/RenterDetails";
 import PaymentsRecord from "./components/dashboard-components/PaymentsRecord/PaymentsRecord";
@@ -11,9 +11,10 @@ import ListedProperty from "./components/dashboard-components/ListedProperty/Lis
 import CreateNewRental from "./components/dashboard-components/CreateNewRental/CreateNewRental";
 import Contributors from "./components/Contributors-page/Contributors";
 import ForgotPassword from "./pages/ForgotPassword";
-import AdminDashboard from './components/Admin-Dashboard/AdminDashboard';
+import AdminDashboard from "./components/Admin-Dashboard/AdminDashboard";
 import PrivacyPolicy from "./components/Privacy-Policy/PrivacyPolicy";
 import TermsConditions from "./components/Terms-Conditions/TermsConditions";
+
 const App = () => {
   return (
     <Routes>
@@ -32,9 +33,10 @@ const App = () => {
       <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected />} />
       <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
       <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
-      <Route path="/admin-dashboard" element={<AdminDashboard />} /> {/* Add your admin dashboard route */}
-      <Route path="/Privacy-Policy" element={<PrivacyPolicy/>} />
-      <Route path="/Terms-Conditions" element={<TermsConditions/>} />
+      <Route path="/admin-dashboard" element={<AdminDashboard />} />
+      <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
+      <Route path="/Terms-Conditions" element={<TermsConditions />} />
+      <Route path="/comingsoon" element={<ComingSoon />} />
     </Routes>
   );
 };
