@@ -26,6 +26,7 @@ body {
   cursor: none; /* Hide the default cursor */
 }
 
+
 /* The custom cursor element */
 .cursor {
   position: fixed;
@@ -43,6 +44,12 @@ body {
   /* Adding hover effect */
   transform: scale(1);
   will-change: transform;
+
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+
 }
 
 /* Animation to make the cursor pulse */
@@ -57,6 +64,7 @@ body {
     transform: scale(1);
   }
 }
+
 
 /* When hovering over clickable elements */
 button, a, input, textarea {
@@ -91,3 +99,15 @@ button, a, input, textarea {
     opacity: 0;
   }
 }
+
+::-webkit-scrollbar-thumb {
+  background-color: #2ec4b6; /* Teal scrollbar thumb */
+  border-radius: 9999px; /* Rounded edges for the scrollbar thumb */
+  box-shadow: 0 0 10px #2ec4b6, 0 0 20px #f72585; /* Glow effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f72585; /* Neon pink when hovered */
+  box-shadow: 0 0 15px #2ec4b6, 0 0 25px #f72585; /* Increased glow on hover */
+}
+

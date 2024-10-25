@@ -1,8 +1,14 @@
 import { Route, Routes } from "react-router-dom";
+
 import React, { useEffect, useState } from "react";
 import "./App.css";  // Ensure this file includes the custom cursor styles
 import { Home, Login, Registration, Dashboard } from "./pages"; // Import your pages
 import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";
+
+import "./App.css";
+import { Home, Login, Registration, Dashboard , ComingSoon} from "./pages";
+import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";  
+
 import SearchRental from "./components/dashboard-components/SearchRental-section/SearchRental";
 import RenterDetails from "./components/dashboard-components/RenterDetails/RenterDetails";
 import PaymentsRecord from "./components/dashboard-components/PaymentsRecord/PaymentsRecord";
@@ -65,6 +71,7 @@ const App = () => {
   };
 
   return (
+
     <>
       {/* Custom animated cursor */}
       <div className={`cursor ${hovering ? "hover" : ""}`}></div>
@@ -89,6 +96,27 @@ const App = () => {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Routes>
     </>
+
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/forgot" element={<ForgotPassword />} />
+      <Route path="/register" element={<Registration />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard/searchrenter" element={<SearchRental />} />
+      <Route path="/dashboard/createnewrenter" element={<CreateNewRental />} />
+      <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />
+      <Route path="/dashboard/renterdetails" element={<RenterDetails />} />
+      <Route path="/dashboard/paymentsrecord" element={<PaymentsRecord />} />
+      <Route path="/Contributors" element={<Contributors />} />
+      <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected />} />
+      <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
+      <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
+      <Route path="/admin-dashboard" element={<AdminDashboard />} /> {/* Add your admin dashboard route */}
+      <Route path="/comingsoon" element={<ComingSoon />} />
+    </Routes>
+
   );
 };
 
