@@ -48,7 +48,7 @@ const Services = () => {
       >
         <h1 className="text-3xl md:text-4xl text-center py-10 font-[700]"
           style={{
-            textShadow: bgImage === 'white' ? '0 0 0px #000000' : '0 0 5px #ffffff',
+            // textShadow: bgImage === 'white' ? '0 0 0px #000000' : '0 0 5px #ffffff',
             color: bgImage === 'white' ? '#000000' : '#ffffff',
             transition: 'all 0.5s ease-in-out',
           }}
@@ -58,27 +58,28 @@ const Services = () => {
         <h2 className="text-textWhite font-semibold w-full text-center h-9 text-4xl"
           style={{
             opacity: bgImage === 'white' ? 0 : 1,
-            textShadow: '0 0 5px #ffffff',
+            // textShadow: '0 0 5px #ffffff',
             transition: 'opacity 0.5s ease-in-out',
           }}
         >
           {currPlace}
         </h2>
-        <div className="flex justify-center gap-9 items-center flex-col pb-14 px-10 md:flex-row">
-          {placeName.map(({ id, name, image, mt }) => {
+        <div className="flex justify-center gap-9 items-start flex-col pb-14 px-10 md:flex-row">
+          {placeName.map(({ id, name, image, blurImage, mt }) => {
             return (
               <div
                 key={id}
                 className="transition-transform transform hover:scale-105 cursor-pointer"
                 onMouseEnter={() => {
-                  setBgImage('image');
-                  setImageUrl(image);
+                  setBgImage('blurImage'); //passes blurred image
+                  setImageUrl(blurImage);  //passes url of blurred image
                   setCurrPlace(name);
                 }}
               >
                 <ServicesAvailableIn
                   placeName={name}
                   placeImage={image}
+                  placeBlurImage={blurImage} //new prop for passing blur image
                   mt={mt}
                   setBgImage={setBgImage}
                   setImageUrl={setImageUrl}
