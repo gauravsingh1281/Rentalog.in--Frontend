@@ -8,7 +8,6 @@ const ServicesCard = (props) => {
   const [gradientStyle, setGradientStyle] = useState({});
   const [customStyle, setCustomStyle] = useState({
     border: `.2px solid #5c5c5c`,
-    backgroundSize:`100%`,
   });
 
   useEffect(() => {
@@ -39,14 +38,12 @@ const ServicesCard = (props) => {
   const handleMouseLeave = () => {
     setCustomStyle({
       border: `.2px solid #5c5c5c`,
-      backgroundSize: `100%`,
     });
   };
 
   const handleMouseOver = () => {
     setCustomStyle({
       border: `.2px solid transparent`,
-      backgroundSize: `106%`,
     });
   };
 
@@ -54,16 +51,14 @@ const ServicesCard = (props) => {
     <div data-aos={props.aos}>
       <div
         className={
-          "hover:shadow-[19px_29px_68px_rgba(49,13,2,0.38),_inset_-6px_-10px_12px_#262626,_inset_6px_10px_12px_#f5f2f2] transform-gpu perspective-1000 hover:rotate-x-6 hover:rotate-y-6 hover:scale-105 relative rounded-xl cursor-pointer"
+          "bg-cover bg-bottom hover:bg-[right_top]  hover:shadow-[19px_29px_68px_rgba(49,13,2,0.38),_inset_-6px_-10px_12px_#262626,_inset_6px_10px_12px_#f5f2f2] transform-gpu perspective-1000 hover:rotate-x-6 hover:rotate-y-6 hover:scale-105 relative rounded-xl cursor-pointer"
         }
         style={{
           // ...gradientStyle,
           ...customStyle,
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
-          background: `linear-gradient(45deg,
-                  rgb(6 6 6 / 75%),
-                    rgb(213 212 212 / 75%))  center/cover no-repeat, url(${props.bgImg}) bottom/cover no-repeat`,
+          backgroundImage: `url(${props.bgImg})`,
           transition: "all 0.2s ease-in-out",
         }}
         onMouseMove={handleMouseMove}
@@ -74,12 +69,14 @@ const ServicesCard = (props) => {
           <img className="w-10 h-10 mt-1.5" src={props.icon} alt={props.alt} />
           <h1
             className="text-black font-bold md:text-2xl text-xl"
+            style={{ textShadow: "1px 1px 2.5px white" }}
           >
             {props.title}
           </h1>
         </div>
         <p
           className="px-8 pb-20 text-black font-semibold"
+          style={{ textShadow: "1px 1px 2.5px white" }}
         >
           {props.description}
         </p>
