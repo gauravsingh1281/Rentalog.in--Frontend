@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Home, Login, Registration, Dashboard } from "./pages";
+import { Home, Login, Registration, Dashboard , ComingSoon} from "./pages";
 import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";  
 import SearchRental from "./components/dashboard-components/SearchRental-section/SearchRental";
 import RenterDetails from "./components/dashboard-components/RenterDetails/RenterDetails";
@@ -31,6 +31,7 @@ const App = () => {
       <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
       <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} /> {/* Add your admin dashboard route */}
+      <Route path="/comingsoon" element={<ComingSoon />} />
     </Routes>
   );
 };
