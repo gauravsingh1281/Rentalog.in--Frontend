@@ -6,7 +6,7 @@ const ourServices = [
   {
     id: 1,
     bgColor: "bg-[#EBB4B6]",
-    bgImg: "/../src/assets/Images/services-1.png",
+    bgImg: "../../assets/Images/services-1.png",
     title: "Tenant Management",
     description:
       "Store and access your renters' personal information like name, address, and phone number with ease.",
@@ -17,7 +17,7 @@ const ourServices = [
   {
     id: 2,
     bgColor: "bg-[#D1F2EB]",
-    bgImg: "/../src/assets/Images/services-2.png",
+    bgImg: "../../assets/Images/services-2.png",
     title: "Track Payment Records",
     description:
       "Keep a record of all your renters' monthly rent payments and have a complete overview of your rental income.",
@@ -28,7 +28,7 @@ const ourServices = [
   {
     id: 3,
     bgColor: "bg-[#D1F2EB]",
-    bgImg: "/../src/assets/Images/services-3.png",
+    bgImg: "../../assets/Images/services-3.png",
     title: " Rent Calculation",
     description:
       "Automatically calculate the total rent received each month and see a breakdown of payments.",
@@ -39,7 +39,7 @@ const ourServices = [
   {
     id: 4,
     bgColor: "bg-[#EBB4B6]",
-    bgImg: "/../src/assets/Images/services-4.jpg",
+    bgImg: "../../assets/Images/services-4.jpg",
     title: "Property Listing",
     description:
       " Showcase your rental properties and attract potential tenants by listing them on Rentalog.",
