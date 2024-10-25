@@ -292,9 +292,7 @@ const Navbar = () => {
           <button onClick={toggleDarkMode} className="mr-4 text-2xl">
             {darkMode ? <FiSun /> : <FiMoon />}
           </button>
-
-            <Link to="/login">
-
+ 
                      {/* Login Button */}
                      <Link to="/login">
 
