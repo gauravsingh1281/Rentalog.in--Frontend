@@ -107,20 +107,30 @@ const Footer = () => {
                   Property Listing
                 </li>
               </Link>
+
               <Link to="#">
                 <li className="hover:scale-110 transition duration-300 ease-in-out">
                   Track Payment Record
                 </li>
+
+              <Link to= "/comingsoon">
+                <li className="hover:scale-110 transition duration-300 ease-in-out">Track Payment Record</li>
+
               </Link>
               <Link to="/dashboard/totalrentcollected">
                 <li className="hover:scale-110 transition duration-300 ease-in-out">
                   Rent Calculation
                 </li>
               </Link>
+
               <Link to="/dashboard/timemanagement">
                 <li className="hover:scale-110 transition duration-300 ease-in-out">
                   Time Management
                 </li>
+
+              <Link to="/comingsoon">
+                <li className="hover:scale-110 transition duration-300 ease-in-out">Time Management</li>
+
               </Link>
             </ul>
           </div>
