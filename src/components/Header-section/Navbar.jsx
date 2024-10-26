@@ -1,4 +1,4 @@
-import { FiUser } from "react-icons/fi";
+import { FiUser, FiSun, FiMoon } from "react-icons/fi"; // Import the icons
 import { FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
@@ -10,6 +10,7 @@ const tl=gsap.timeline()
 import '../Header-section/Navbar.css'
 
 const Navbar = () => {
+  const [darkMode, setDarkMode] = useState(false); // Track theme state
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
   const [navLinkbgColor, setNavlinkbgColor] = useState(true);
@@ -17,7 +18,12 @@ const Navbar = () => {
 
   const sectionIds = ["home", "Service", "AboutUs", "ContactUs","FAQ"]; // Section IDs
 
-
+  // Toggle Dark Mode
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode) => !prevMode);
+    // Toggle the dark class on the body element
+    document.body.classList.toggle("dark", !darkMode);
+  };
 
   useEffect(() => {
     const tl = gsap.timeline();  // Initialize the timeline
@@ -261,9 +267,12 @@ const Navbar = () => {
   }
 
   return (
-    <>
-      <nav className="bg-white fixed w-full z-20 top-0 left-0">
+    <> 
+      <nav className={`${
+        darkMode ? "bg-gray-900 text-white" : "bg-white text-black"
+      } fixed w-full z-20 top-0 left-0 transition-colors duration-500`}>
       <ProgressBar/>
+
         <div
           className={
             doBlure
@@ -283,8 +292,14 @@ const Navbar = () => {
             </a>
           </div>
           <div className="flex md:order-2 items-center">
+
+          <button onClick={toggleDarkMode} className="mr-4 text-2xl">
+            {darkMode ? <FiSun /> : <FiMoon />}
+          </button>
+ 
                      {/* Login Button */}
                      <Link to="/login">
+
               <button
                 type="button"
                 className="navbar3 hidden md:block button-3d font-bold rounded-lg text-lg px-6 py-3 text-center button-spacing transition-all duration-300 bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg hover:scale-105 hover:bg-green-600 hover:shadow-2xl relative"
@@ -307,7 +322,7 @@ const Navbar = () => {
             </Link>
 
             <GoogleTranslate/>
-          </div>
+            </div>
           <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li className=" navbar2 hover:scale-[1.081] hover transition duration-300">
@@ -338,7 +353,9 @@ const Navbar = () => {
                   {activeSection === "FAQ" ? <h1 className="text-green">FAQ</h1> : <h1>FAQ</h1>}
                 </a>
               </li>
+              
             </ul>
+            
           </div>
 
           <button
