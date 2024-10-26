@@ -141,7 +141,7 @@ const Navbar = () => {
 
     return (
       <>
-        <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
+        <div className="md:hidden bg-[#b1efe4] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
           <button
             onClick={() => {
               setShowMenu("");
@@ -239,31 +239,29 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white fixed w-full z-20 top-0 left-0">
+      <nav className="bg-[#b1efe4] fixed w-full z-20 top-0 left-0 text-black">
         <div
-          className={
-            doBlure
-              ? `absolute w-full h-full -z-20 bg-gray-light opacity-0`
-              : `absolute w-full h-full -z-20 bg-gray-light opacity-80`
-          }
+          className={doBlure
+            ? `absolute w-full h-full -z-20 bg-gray-light opacity-0`
+            : `absolute w-full h-full -z-20 bg-gray-light opacity-80`}
         ></div>
-
+  
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex flex-row justify-center items-center">
             <a href="#home" aria-current="page">
-                <img
-                  className="self-start w-40 navbar my-auto"
-                  src={logo}
-                  alt="Rentalog-logo"
-                />
+              <img
+                className="self-start w-40 navbar my-auto"
+                src={logo}
+                alt="Rentalog-logo"
+              />
             </a>
           </div>
           <div className="flex md:order-2 items-center">
             <button
-            onClick={toggleTheme}
-            className="navbar3 hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+              onClick={toggleTheme}
+              className="navbar3 hidden md:block font-bold rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
             >
-              <FontAwesomeIcon icon = {isDark ? faSun : faMoon} />
+              <FontAwesomeIcon icon={isDark ? faSun : faMoon} />
             </button>
             <Link to="/login">
               <button
@@ -276,42 +274,42 @@ const Navbar = () => {
             <Link to="/register">
               <button
                 type="button"
-                className="navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md text-[#262626] px-4 py-2 text-center mr-3 md:mr-0  transition-transform duration-300 hover:scale-[1.1] hover:text-green"
+                className="navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-black px-4 py-2 text-center mr-3 md:mr-0 transition-transform duration-300 hover:scale-[1.1] hover:text-green"
               >
                 <FiUser className="text-2xl" />
                 Register
               </button>
             </Link>
-            <GoogleTranslate/>
+            <GoogleTranslate />
           </div>
           <div className="hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
-              <li className=" navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#home"  aria-current="page">
-                  {activeSection === "home" ? <h1 className="text-green">HOME</h1> : <h1>HOME</h1>}
+              <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
+                <a href="#home" aria-current="page">
+                  {activeSection === "home" ? <h1 className="text-green">HOME</h1> : <h1 className="text-black">HOME</h1>}
                 </a>
               </li>
-
+  
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
                 <a href="#Service" aria-current="page">
-                  {activeSection === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1>RENTALS</h1>}
+                  {activeSection === "Service" ? <h1 className="text-green">RENTALS</h1> : <h1 className="text-black">RENTALS</h1>}
                 </a>
               </li>
-
+  
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
                 <a href="#AboutUs" aria-current="page">
-                  {activeSection === "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1>ABOUT</h1>}
+                  {activeSection === "AboutUs" ? <h1 className="text-green">ABOUT</h1> : <h1 className="text-black">ABOUT</h1>}
                 </a>
               </li>
-
+  
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
                 <a href="#ContactUs" aria-current="page">
-                  {activeSection === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1>CONTACT</h1>}
+                  {activeSection === "ContactUs" ? <h1 className="text-green">CONTACT</h1> : <h1 className="text-black">CONTACT</h1>}
                 </a>
               </li>
             </ul>
           </div>
-
+  
           <button
             onClick={() => {
               setShowMenu("show");
@@ -342,6 +340,7 @@ const Navbar = () => {
       </nav>
     </>
   );
+
 };
 
 export default Navbar;
