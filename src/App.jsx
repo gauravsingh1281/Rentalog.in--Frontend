@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { useState,useEffect } from "react";
 import "./App.css";
 import { Home, Login, Registration, Dashboard , ComingSoon} from "./pages";
 import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";  
@@ -12,27 +13,45 @@ import CreateNewRental from "./components/dashboard-components/CreateNewRental/C
 import Contributors from "./components/Contributors-page/Contributors";
 import ForgotPassword from "./pages/ForgotPassword";
 import AdminDashboard from './components/Admin-Dashboard/AdminDashboard';
+import Preloader  from "./components/Preloader/PreLoader";
 const App = () => {
+  // Preloader state
+  const [isPreloaderVisible, setIsPreloaderVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPreloaderVisible(false);
+    }, 5000); // Preloader visible for 5 seconds
+
+    return () => clearTimeout(timer); // Cleanup timer on component unmount
+  }, []);
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/forgot" element={<ForgotPassword />} />
-      <Route path="/register" element={<Registration />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/dashboard/searchrenter" element={<SearchRental />} />
-      <Route path="/dashboard/createnewrenter" element={<CreateNewRental />} />
-      <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />
-      <Route path="/dashboard/renterdetails" element={<RenterDetails />} />
-      <Route path="/dashboard/paymentsrecord" element={<PaymentsRecord />} />
-      <Route path="/Contributors" element={<Contributors />} />
-      <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected />} />
-      <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
-      <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
-      <Route path="/admin-dashboard" element={<AdminDashboard />} /> {/* Add your admin dashboard route */}
-      <Route path="/comingsoon" element={<ComingSoon />} />
-    </Routes>
+    <div className="App">
+      {isPreloaderVisible ? (
+        <Preloader /> // Show Preloader
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/forgot" element={<ForgotPassword />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/searchrenter" element={<SearchRental />} />
+          <Route path="/dashboard/createnewrenter" element={<CreateNewRental />} />
+          <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />
+          <Route path="/dashboard/renterdetails" element={<RenterDetails />} />
+          <Route path="/dashboard/paymentsrecord" element={<PaymentsRecord />} />
+          <Route path="/Contributors" element={<Contributors />} />
+          <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected />} />
+          <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
+          <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/comingsoon" element={<ComingSoon />} />
+        </Routes>
+      )}
+    </div>
   );
 };
 
