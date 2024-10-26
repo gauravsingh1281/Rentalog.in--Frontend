@@ -5,34 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Rentalog is a powerful rent management web application designed for landlords. Easily track tenant information, monitor rental payments, and manage properties efficiently."
+      content="Rentalog is your complete rent management solution, crafted for landlords. Effortlessly monitor tenants, payments, and properties—all in one place."
     />
-    <meta name="keywords" content="rental management, landlord tools, tenant tracking, rent payment, property management" />
-    
+    <meta name="keywords" content="rental management, landlord tools, tenant tracking, rent collection, property dashboard" />
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Rentalog | Rent Management App for Landlords" />
-    <meta property="og:description" content="Manage your rental properties efficiently with Rentalog. Track tenants, payments, and more!" />
+    <meta property="og:title" content="Rentalog | Comprehensive Rent Management for Landlords" />
+    <meta property="og:description" content="Effortlessly manage rentals, tenants, payments, and more with Rentalog!" />
     <meta property="og:image" content="/path/to/image.jpg" />
     <meta property="og:url" content="https://www.yourwebsite.com" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Rentalog | Rent Management App for Landlords" />
-    <meta name="twitter:description" content="Manage your rental properties efficiently with Rentalog. Track tenants, payments, and more!" />
+    <meta name="twitter:title" content="Rentalog | Simplify Rent Management" />
+    <meta name="twitter:description" content="Easily manage rental properties, tenants, and payments with Rentalog." />
     <meta name="twitter:image" content="/path/to/image.jpg" />
 
-    <!-- Preconnect for Performance Optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Google Fonts -->
+    <!-- Fonts & Icons -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    
-    <!-- FontAwesome for Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -40,29 +34,76 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    
-    <!-- Mouse Follower CSS (If required) -->
-    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css" />
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+    <!-- Styling (CSS) -->
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Roboto', sans-serif;
+        background: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: #333;
+      }
+      h1 {
+        font-size: 2em;
+        color: #2c3e50;
+        margin: 20px 0;
+        text-align: center;
+      }
+      #root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 700px;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      .logo {
+        font-size: 1.5em;
+        color: #2980b9;
+        font-weight: 700;
+      }
+      p {
+        text-align: center;
+        color: #7f8c8d;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        background-color: #2980b9;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+      }
+      .button:hover {
+        background-color: #3498db;
+      }
+    </style>
 
     <!-- Title -->
-    <title>Rentalog | Rent Management App for Landlords | Track Tenants & Payments</title>
+    <title>Rentalog | Comprehensive Rent Management for Landlords</title>
   </head>
 
   <body>
-    <!-- React Root -->
-    <div id="root"></div>
-
-    <!-- React App Script -->
-    <script type="module" src="./index.jsx"></script>
+    <!-- Main Content -->
+    <div id="root">
+      <div class="logo">Rentalog</div>
+      <h1>Effortlessly Manage Your Rentals</h1>
+      <p>Track tenants, receive payments, and keep your properties organized with ease. Rentalog makes rental management simple, efficient, and stress-free.</p>
+      <a href="#signup" class="button">Get Started</a>
+    </div>
 
     <!-- Chatbot Configuration -->
     <script>
