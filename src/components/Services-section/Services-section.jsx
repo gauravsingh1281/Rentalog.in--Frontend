@@ -18,7 +18,7 @@ const Services = () => {
         Our Services Include
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 md:mx-24 lg:mx-36 sm:mx-24 mx-8">
-        {ourServices.map(({ id, bgColor, title, description, icon, alt , aos }) => {
+        {ourServices.map(({ id, bgColor,bgImg, title, description, icon, alt , aos }) => {
           return (
             <div
               key={id}
@@ -28,10 +28,11 @@ const Services = () => {
               <ServicesCard
                 title={title}
                 bgColor={bgColor}
+                bgImg={bgImg}
                 icon={icon}
                 alt={alt}
                 description={description}
-                aos = {aos}
+                aos={aos}
               />
             </div>
           );
