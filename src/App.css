@@ -4,6 +4,35 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Default Light Mode Styles */
+body {
+  background-color: white; /* Light mode background */
+  color: black; /* Light mode text color */
+}
+
+/* Dark Mode Styles */
+body.dark {
+  background-color: #121212; /* Dark mode background */
+  color: white; /* Dark mode text color */
+}
+body.dark .header-text {
+  color: rgb(68, 66, 66); /* Change 'grey' to your desired shade, e.g., '#808080' */
+}
+body.dark nav{
+  background-color: grey;
+}
+/* Navbar Styles */
+nav {
+  transition: background-color 0.5s, color 0.5s;
+}
 
 html {
   scroll-behavior: smooth;
