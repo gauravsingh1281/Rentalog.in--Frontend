@@ -70,3 +70,29 @@ html {
   background-color: #f72585; /* Neon pink when hovered */
   box-shadow: 0 0 15px #2ec4b6, 0 0 25px #f72585; /* Increased glow on hover */
 }
+/* App.css */
+
+/* Custom Cursor Styling */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: green; /* Main cursor color */
+  pointer-events: none;
+  transform-origin: center;
+  transition: transform 0.1s ease;
+  z-index: 9999; /* Ensure cursor is on top */
+}
+
+/* Cursor Tail Styling */
+.cursor-tail {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green; /* Tail color */
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.1s ease;
+}
