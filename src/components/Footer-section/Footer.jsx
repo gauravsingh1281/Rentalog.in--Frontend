@@ -155,12 +155,21 @@ const Footer = () => {
               <li className="hover:scale-110 transition duration-300 ease-in-out">
                 <Link to="/Contributors">Contributors</Link>
               </li>
+
               <button
                 onClick={openModal}
                 className="hover:scale-110 transition duration-300 ease-in-out"
               >
                 Feedback
               </button>
+
+              <li className="hover:scale-110 transition duration-300 ease-in-out">
+                <Link to="/Privacy-Policy">Privacy & Policy</Link>
+              </li>
+              <li className="hover:scale-110 transition duration-300 ease-in-out">
+                <Link to="/Terms-Conditions">Terms & Conditions</Link>
+              </li>
+
             </ul>
           </div>
         </div>
