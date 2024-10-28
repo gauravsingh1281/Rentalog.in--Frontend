@@ -44,7 +44,6 @@ function Home() {
         strokeFillColor="rgb(113, 242, 214)"
         strokeEmptyColor="rgb(256,256,256)"
       />
-      <Footer />
     </>
   );
 }
