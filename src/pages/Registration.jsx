@@ -89,10 +89,10 @@ export default function Registration() {
   return (
     <article className="flex flex-col justify-center h-screen bg-primaryGreen/10 overflow-hidden">
       <Navbar />
-      <section className="flex flex-row justify-center items-center">
+      <section className="flex flex-row justify-center items-center mt-20">
         <div className="hidden w-full lg:flex lg:mt-12 flex-col justify-center xl:justify-center xl:h-full ">
-          <div className="mb-10 mx-10 mr-auto">
-            <h2 className=" text-3xl font-bold text-gray-dark/90 ">
+          <div className="mb-5 mx-10 mr-auto mt-2">
+            <h2 className=" text-3xl font-bold text-gray-dark/90  ">
               <span className="text-customRed italic"> Best way</span> to manage
               your rent
             </h2>
@@ -100,7 +100,7 @@ export default function Registration() {
               Create a new account to access all the features of our website
             </p>
           </div>
-          <img src="https://cdn.dribbble.com/users/130603/screenshots/7849095/house_5.gif" alt="" className="m-10" />
+          <img src="https://cdn.dribbble.com/users/130603/screenshots/7849095/house_5.gif" alt="" className="m-10 mt-0" />
         </div>
 
         <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-[100vh] xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
@@ -231,7 +231,7 @@ export default function Registration() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
+                className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 focus:shadow-md hover:bg-transparent hover:text-green font-semibold mt-2 text-textWhite transition-all duration-300 ease-in-out"
               >
                 Register
               </button>
