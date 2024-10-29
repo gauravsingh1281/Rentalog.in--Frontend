@@ -4,7 +4,9 @@
 import React from 'react';
 import { useEffect } from 'react';
 import logo from "../../../assets/Images/logo.png"
-
+import Footer from '../../Footer-section/Footer';
+import RentNavbar from '../../Header-section/RentNavbar';
+import Navbar from '../../Header-section/Navbar';
 
 const FeatureCard = ({ icon, title, description }) => (
   <div className="bg-textWhite rounded-lg shadow-md p-6">
@@ -28,15 +30,7 @@ const TotalRentCollected = () => {
   })
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-[#1abc9c] text-textWhite py-4">
-      <div className="px-4 bg-textWhite w-fit rounded-xl absolute top-0 left-0 m-[1.5rem]">
-              <img
-                className="self-start w-40"
-                src={logo}
-                alt="Rentalog-logo"
-              />
-            </div>
-      </header>
+      <RentNavbar/>
 
       <main>
         <section className="bg-[#1abc9c] text-textWhite py-20">
@@ -123,13 +117,8 @@ const TotalRentCollected = () => {
             </button>
           </div>
         </section>
+    <Footer/>
       </main>
-
-      <footer className="bg-gray-dark text-textWhite py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 Rentalog. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 };
