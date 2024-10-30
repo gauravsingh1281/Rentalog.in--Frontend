@@ -7,6 +7,7 @@ import Insta from "../../assets/Social-Icons/instagram.png";
 import { RiTwitterXFill } from "react-icons/ri";
 import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 
+
 const Contact = () => {
   return (
     <section className="flex flex-col w-full  px-[5%] gap-10 justify-center">
@@ -26,6 +27,7 @@ const Contact = () => {
         <div className="flex items-center justify-center p-0  md:w-1/2">
           <article className="flex flex-col items-center text-center ">
           <div className="flex gap-[27px] justify-center">
+
   <a href="https://twitter.com/gauravsingh1281" className="group">
     <RiTwitterXFill 
       className="md:h-12 h-10 w-auto text-black transition-transform duration-300 ease-in-out transform group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg"
@@ -46,8 +48,6 @@ const Contact = () => {
     />
   </a>
 </div>
-
-
             <div className="mt-4">
               <p className="font-semibold">Get in touch :</p>
               <p>
