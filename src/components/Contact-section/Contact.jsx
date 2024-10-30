@@ -19,7 +19,7 @@ const Contact = () => {
         <ContactText />
         <ContactForm />
       </main>
-      <h2 className="text-5xl text-center font-bold tracking-wider  font-monsterrat text-textBlack">
+      <h2 className="text-5xl text-center font-bold tracking-wider  font-monsterrat ">
         Connect with <span className="text-customRed">Us</span>
       </h2>
       <div className="md:flex items-center justify-between">
@@ -27,7 +27,7 @@ const Contact = () => {
           <article className="flex flex-col items-center text-center ">
           <div className="flex gap-[27px] justify-center">
               <a href="https://twitter.com/gauravsingh1281" className="group">
-                <RiTwitterXFill className="md:h-12 h-10 w-auto text-black transition-transform duration-300 ease-in-out transform group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg" />
+                <RiTwitterXFill className="md:h-12 h-10 w-auto  transition-transform duration-300 ease-in-out transform group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg" />
               </a>
 
               <a href="https://github.com/gauravsingh1281" className="group">
