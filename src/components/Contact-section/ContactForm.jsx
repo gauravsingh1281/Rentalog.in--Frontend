@@ -1,7 +1,18 @@
+import { useForm } from "react-hook-form";
+<link rel="stylesheet" href="Contact-section.css" />
+import Github from "../../assets/Social-Icons/Github.png";
+import Insta from "../../assets/Social-Icons/instagram.png";
+import Twitter from "../../assets/Social-Icons/Twitter.png";
 import React, { useState } from "react";
 import "./ContactSection.css"; // If you have external CSS
 
 const ContactForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   // Define state variables for the form fields and error messages
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -14,6 +25,11 @@ const ContactForm = () => {
     messageError: "",
   });
 
+  const onSubmit = (data) => {
+    alert("Message sent successfully");
+    console.log(data);
+    reset(); // reset form fields after submission
+    
   // Validation and form submission handler
   const handleSubmit = (event) => {
     event.preventDefault();
