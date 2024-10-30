@@ -20,7 +20,7 @@ export default {
     colors: {
       primaryGreen: "#1ABC9C",
       customRed: "#CD4347",
-      green: "#1ABC93",
+      green: "#cd4347",
       "green-dark": "#047558",
       textBlack: "#312F2F",
       textWhite: "#F8F8F8",
@@ -31,9 +31,14 @@ export default {
       "light-blue": "#e8f8f4",
     },
     fontFamily: {
-      sans: ["Graphik", "sans-serif"],
-      serif: ["Merriweather", "serif"],
-      monsterrat: ["Montserrat", "sans-serif"],
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        serif: ["Merriweather", "serif"],
+        monsterrat: ["Montserrat", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"], 
+        roboto: ["Roboto", "sans-serif"], 
+      },
+      
     },
     boxShadow: {
       widget: '3px 3px #b9c3c1',

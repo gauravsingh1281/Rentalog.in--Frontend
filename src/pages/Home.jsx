@@ -1,6 +1,8 @@
 import AboutUs from "../components/AboutUs-section/AboutUs";
 import Contributors from "../components/Contributors-page/Contributors";
 import Contact from "../components/Contact-section/Contact";
+import FAQ from "../components/faq/FAQ";
+
 import Footer from "../components/Footer-section/Footer";
 import Header from "../components/Header-section/Header";
 import Services from "../components/Services-section/Services-section";
@@ -17,6 +19,10 @@ function Home() {
       <AboutUs />
       <Testimonials />
       <Contact />
+
+      <FAQ/>
+      <Footer />
+
       {/* <Contributors /> */}
 
       <ScrollToTop
@@ -38,7 +44,7 @@ function Home() {
         strokeFillColor="rgb(113, 242, 214)"
         strokeEmptyColor="rgb(256,256,256)"
       />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

@@ -10,14 +10,25 @@ let year = date.getFullYear();
 
 const Footer = () => {
   const [email, setEmail] = useState("");
-  const handleSubmit = (event) => {
-    try {
-      event.preventDefault();
-      console.log(email);
-      setEmail("");
-    } catch (error) {
-      console.log(`Error with newsletter input: ${error}`);
+
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+    return emailRegex.test(email);
+  };
+
+    const handleSubmit = (event) => {
+
+    event.preventDefault();
+    
+    if (!validateEmail(email)) {
+      alert("❌ Please enter a valid email address."); // Alert for invalid email
+      return;
     }
+
+    console.log(email); // Log the valid email
+    alert("🙏 Thank you for subscribing to our newsletter!"); // Alert for successful submission
+    setEmail(""); // Clear input after submission
   };
 
   return (
@@ -31,7 +42,7 @@ const Footer = () => {
               simplify their rent management process.{" "}
             </p>
             <img
-              className="bg-[white] hover:cursor-pointer px-1 rounded-xl mb-2 h-[40px] w-[150px] hover:shadow-l hover:scale-105 transition duration-300 ease-in-out"
+              className="bg-[white] mx-auto lg:mx-0 hover:cursor-pointer px-1 rounded-xl mb-2 h-[40px] w-[150px] hover:shadow-l hover:scale-105 transition duration-300 ease-in-out"
               src={logo}
               alt="logo"
             />
@@ -45,13 +56,13 @@ const Footer = () => {
               <Link to="/dashboard/propertylisting">
                 <li    className="hover:scale-110 transition duration-300 ease-in-out">Property Listing</li>
               </Link>
-              <Link>
+              <Link to= "/comingsoon">
                 <li className="hover:scale-110 transition duration-300 ease-in-out">Track Payment Record</li>
               </Link>
               <Link to="/dashboard/totalrentcollected">
                 <li className="hover:scale-110 transition duration-300 ease-in-out">Rent Calculation</li>
               </Link>
-              <Link to="/dashboard/timemanagement">
+              <Link to="/comingsoon">
                 <li className="hover:scale-110 transition duration-300 ease-in-out">Time Management</li>
               </Link>
             </ul>
@@ -76,6 +87,12 @@ const Footer = () => {
               </li>
               <li className="hover:scale-110 transition duration-300 ease-in-out">
                 <Link to="/Contributors">Contributors</Link>
+              </li>
+              <li className="hover:scale-110 transition duration-300 ease-in-out">
+                <Link to="/Privacy-Policy">Privacy & Policy</Link>
+              </li>
+              <li className="hover:scale-110 transition duration-300 ease-in-out">
+                <Link to="/Terms-Conditions">Terms & Conditions</Link>
               </li>
             </ul>
           </div>

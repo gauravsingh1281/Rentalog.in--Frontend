@@ -10,6 +10,8 @@
 }
 
 .header-section li {
+  border-radius: 10px;
+  padding: 6px 7px;
   list-style: none;
   font-weight: 600;
   font-size: 18.5px;
@@ -18,8 +20,10 @@
 }
 
 .header-section li:hover {
-  color: #1abc9c;
+  color: #191a1a;
+  background-color: #1abc9c;
 }
+
 
 .user-cta :last-child {
   justify-content: center;
@@ -60,6 +64,7 @@
   width: 22%;
   height: 52px;
   background: #1abc9c;
+  
   transition: ease-in-out 0.3s;
 }
 
@@ -68,6 +73,27 @@
   border-color: #1abc9c;
   border-width: 2px;
   color: #099061;
+  transition-behavior:initial;
+}
+
+.btn2 {
+  border-radius: 8px;
+  color: white;
+  font-size: 21px;
+  font-weight: 700;
+  width: 100%;
+  /* height: 52px; */
+  border-color: #1abc9c;
+  border-width: 2px;
+  background: #1abc9c;
+  transition: ease-in-out 0.3s;
+}
+
+.btn2:hover {
+  background: transparent;
+  border-color: #1abc9c;
+  border-width: 2px;
+  color: #1abc9c;
   transition-behavior:initial;
 }
 
