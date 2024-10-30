@@ -96,6 +96,14 @@
     width: 74%;
   }
 
+  .header-text p {
+  line-height: 30px;
+  width: 90%;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+
   .header-text h1 {
     font-size: 46px;
     font-weight: 600;
@@ -139,6 +147,13 @@
     height: 47px;
     background: #1abc9c;
   }
+.header-text p {
+  line-height: 30px;
+  width: 90%;
+  font-weight: 500;
+  font-size: 17px;
+}
+
 }
 
 @media (max-width: 468px) {
@@ -150,6 +165,6 @@
     font-weight: 700;
     width: 42%;
     height: 44px;
-    background: #57ecce;
+    background: #25b396;
   }
 }
