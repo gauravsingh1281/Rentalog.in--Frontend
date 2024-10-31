@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@shadcn/ui": "^0.0.4",
     "aos": "^2.3.4",
     "axios": "^1.7.7",
     "esbuild": "^0.18.14",
     "gsap": "^3.12.5",
     "lottie-react": "^2.4.0",
+    "lucide-react": "^0.454.0",
     "mouse-follower": "^1.1.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -25,6 +27,7 @@
     "react-router-dom": "^6.15.0",
     "react-scroll-to-top": "^3.0.0",
     "react-simple-scroll-up": "^0.2.3",
+    "rentalog": "file:",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
