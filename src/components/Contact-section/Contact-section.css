@@ -8,8 +8,9 @@ main {
     padding-top: 0; /* Remove extra padding if present */
     margin-bottom: 5rem;
 
-    background-color: #b4f8f8; /* Light cyan background */
-    border: 2px solid #020202; /* Border color */
+  
+    background: linear-gradient(to right, #0000FF, #FF0000); /* Gradient from blue to red */
+    border: 2px solid #000000; /* Border color */
     border-radius: 8px; /* Rounded corners */
     padding: 10px; /* Spacing inside the section */
     padding: 10px 5px; /* Top and bottom padding: 10px, left and right padding: 5px */
