@@ -40,6 +40,19 @@ export const ContactText = () => {
               +91 62015 77047{" "}
             </a>
           </p>
+
+          <p>
+            Chat With Us:{" "}
+            <a
+              href="https://wa.me/+91 6201577047?"
+              className="ml-1 font-bold text-primaryGreen underline"
+            >
+              {" "}
+              Click for chat{" "}
+            </a>
+          </p>
+          
+
           <p>Address: Shaktinagar, Sonebhadra, UP, 231222</p>
         </div>
 
