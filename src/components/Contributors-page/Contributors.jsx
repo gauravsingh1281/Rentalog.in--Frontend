@@ -4,8 +4,9 @@ import "./Contributors.css";
 
 function Contributors() {
   const [contributors, setContributors] = useState([]);
+  const [repoStats, setRepoStats] = useState({});
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // Added error state
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchContributors() {
@@ -17,35 +18,75 @@ function Contributors() {
           const response = await axios.get(
             `https://api.github.com/repos/gauravsingh1281/Rentalog.in--Frontend/contributors`,
             {
-              params: {
-                per_page: 100,
-                page,
-              },
+              params: { per_page: 100, page },
             }
           );
           const data = response.data;
-          if (data.length === 0) {
-            break;
-          }
+          if (data.length === 0) break;
           allContributors = [...allContributors, ...data];
           page++;
         }
         setContributors(allContributors);
       } catch (error) {
         console.error("Error fetching contributors:", error.message);
-        setError("Failed to load contributors. Please try again later."); // Set error message
+        setError("Failed to load contributors. Please try again later.");
       } finally {
         setLoading(false);
       }
     }
+
+    async function fetchRepoStats() {
+      try {
+        const response = await axios.get(
+          `https://api.github.com/repos/gauravsingh1281/Rentalog.in--Frontend`
+        );
+        setRepoStats(response.data);
+      } catch (error) {
+        console.error("Error fetching repository stats:", error.message);
+        setError("Failed to load repository stats. Please try again later.");
+      }
+    }
+
     fetchContributors();
+    fetchRepoStats();
   }, []);
+
+  const totalContributions = contributors.reduce(
+    (sum, contributor) => sum + contributor.contributions,
+    0
+  );
 
   return (
     <div className="contributors-container">
       <h1 className="contributors-title">Our Contributors</h1>
+
+      {/* Stats Section */}
+      <div className="repo-stats-section">
+        <div className="repo-stat">
+          <h3>Total Contributors</h3>
+          <p>{contributors.length}</p>
+        </div>
+        <div className="repo-stat">
+          <h3>Total Contributions</h3>
+          <p>{totalContributions}</p>
+        </div>
+        <div className="repo-stat">
+          <h3>GitHub Stars</h3>
+          <p>{repoStats.stargazers_count || 0}</p>
+        </div>
+        <div className="repo-stat">
+          <h3>Forks</h3>
+          <p>{repoStats.forks_count || 0}</p>
+        </div>
+      </div>
+
+      {/* Contributors Grid */}
       <div className="contributors-grid">
-        {contributors.length > 0 ? (
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : contributors.length > 0 ? (
           contributors.map((contributor) => (
             <div key={contributor.id} className="contributor-card">
               <a
