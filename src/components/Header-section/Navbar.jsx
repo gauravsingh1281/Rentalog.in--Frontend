@@ -228,7 +228,7 @@ const Navbar = () => {
                     setShowMenu("");
                   }}
                 >
-                 FAQ
+                 Services
                 </div>
               </a>
               <div className="text-gray-dark">
