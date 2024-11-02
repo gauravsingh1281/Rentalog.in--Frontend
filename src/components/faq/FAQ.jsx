@@ -56,11 +56,24 @@ const FAQ = () => {
       <h2 className="faq-title">Frequently Asked Questions</h2>
       <div className="faq-list">
         {faqData.map((faq, index) => (
-          <div key={index} className={`faq-item ${activeIndex === index ? 'active' : ''}`}>
-            <div className="faq-question" onClick={() => toggleFAQ(index)}>
+          <div
+            key={index}
+            className={`faq-item ${activeIndex === index ? 'active' : ''}`}
+            onClick={() => toggleFAQ(index)}
+          >
+            <div className="faq-question">
               {faq.question}
+              <span className="faq-icon">{activeIndex === index ? '-' : '+'}</span>
             </div>
-            {activeIndex === index && <div className="faq-answer">{faq.answer}</div>}
+            <div
+              className="faq-answer"
+              style={{
+                maxHeight: activeIndex === index ? '1000px' : '0',
+                overflow: 'hidden',
+              }}
+            >
+              <p>{faq.answer}</p>
+            </div>
           </div>
         ))}
       </div>
