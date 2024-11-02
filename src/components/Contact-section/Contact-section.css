@@ -9,7 +9,8 @@ main {
     margin-bottom: 5rem;
 
   
-    background: linear-gradient(to right, #0000FF, #FF0000); /* Gradient from blue to red */
+   
+    background: linear-gradient(to right,#4bc2f5, #8c8cb2, #ee9898,#ef0381); /* Gradient from blue to red */
     border: 2px solid #000000; /* Border color */
     border-radius: 8px; /* Rounded corners */
     padding: 10px; /* Spacing inside the section */
