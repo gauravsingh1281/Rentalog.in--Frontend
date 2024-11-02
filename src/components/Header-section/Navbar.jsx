@@ -95,6 +95,7 @@ const Navbar = () => {
     window.onscroll = () => window.scrollTo(scrollLeft, scrollTop);
 
     return (
+
       <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
         <ProgressBar/>
         <button onClick={() => setShowMenu("")} className="absolute top-0 left-0 m-[1.5rem]">
