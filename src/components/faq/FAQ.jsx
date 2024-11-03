@@ -53,6 +53,8 @@ const faqData = [
 // Functional component for displaying the FAQ section.
 export default function FAQ() {
   return (
+    <>
+    <div className="faq-container" id="FAQ">
     <section className="w-full py-12 md:py-24 lg:py-32">
       {/* Container for the FAQ content */}
       <div className="container px-4 md:px-6">
@@ -78,5 +80,7 @@ export default function FAQ() {
         </div>
       </div>
     </section>
+    </div>
+    </>
   )
 }
