@@ -32,9 +32,10 @@ export default function Login() {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
+    //console.log(data);
     // Perform login logic here
     // If successful, navigate to admin dashboard
+    localStorage.setItem("userToken",data.email);
     navigate("/admin-dashboard");
     reset(); // Reset form after successful submission
   };

@@ -10,6 +10,7 @@ import Testimonials from "../components/testimonial-section/Testimonial";
 import { ScrollToTop } from "react-simple-scroll-up";
 import carImg3 from "../assets/Icons/arrow-up.png";
 import "./home.css";
+import { useEffect, useState } from "react";
 
 function Home() {
   return (
