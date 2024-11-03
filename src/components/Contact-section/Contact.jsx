@@ -5,7 +5,8 @@ import "./Contact-section.css";
 import Github from "../../assets/Social-Icons/Github.png";
 import Insta from "../../assets/Social-Icons/instagram.png";
 import { RiTwitterXFill } from "react-icons/ri";
-import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
+
 
 const Contact = () => {
   return (
@@ -19,32 +20,33 @@ const Contact = () => {
         <ContactText />
         <ContactForm />
       </main>
-      <h2 className="text-5xl text-center font-bold tracking-wider  font-monsterrat text-textBlack">
+      <h2 className="text-5xl text-center font-bold tracking-wider  font-monsterrat ">
         Connect with <span className="text-customRed">Us</span>
       </h2>
       <div className="md:flex items-center justify-between">
         <div className="flex items-center justify-center p-0  md:w-1/2">
           <article className="flex flex-col items-center text-center ">
           <div className="flex gap-[27px] justify-center">
+
               <a href="https://twitter.com/gauravsingh1281" className="group">
-                <RiTwitterXFill className="md:h-12 h-10 w-auto text-black transition-transform duration-300 ease-in-out transform group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg" />
+                <RiTwitterXFill className="md:h-12 h-10 w-auto  transition-transform duration-300 ease-in-out transform group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg" />
               </a>
 
-              <a href="https://github.com/gauravsingh1281" className="group">
-                <FaGithub className="text-6xl md:h-12 h-10 transition-transform duration-300 ease-in-out transform group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg" />
-              </a>
 
-              <a
-                href="https://www.instagram.com/gauravsingh1281"
-                className="group"
-              >
-                <img
-                  src={Insta}
-                  alt="Insta-logo"
-                  className="md:h-12 h-10 transition-transform duration-300 ease-in-out transform group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg"
-                />
-              </a>
-            </div>
+  <a href="https://github.com/gauravsingh1281" className="group">
+    <FaGithub 
+      className="text-6xl md:h-12 h-10 transition-transform duration-300 ease-in-out transform group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg"
+    />
+  </a>
+
+  <a href="https://www.instagram.com/gauravsingh1281" className="group">
+    <img 
+      src={Insta} 
+      alt="Insta-logo" 
+      className="md:h-12 h-10 transition-transform duration-300 ease-in-out transform group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg"
+    />
+  </a>
+</div>
             <div className="mt-4">
               <p className="font-semibold">Get in touch :</p>
               <p>
