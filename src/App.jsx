@@ -1,6 +1,6 @@
 // App.js
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Home, Login, Registration, Dashboard, ComingSoon } from "./pages";
 import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";
@@ -16,6 +16,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import AdminDashboard from "./components/Admin-Dashboard/AdminDashboard";
 import PrivacyPolicy from "./components/Privacy-Policy/PrivacyPolicy";
 import TermsConditions from "./components/Terms-Conditions/TermsConditions";
+import Feedback from "./components/Feedback/Feedback";
 
 const App = () => {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
@@ -30,8 +31,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('mousemove', updateCursor);
-    return () => window.removeEventListener('mousemove', updateCursor);
+    window.addEventListener("mousemove", updateCursor);
+    return () => window.removeEventListener("mousemove", updateCursor);
   }, [trail]);
 
   return (
@@ -67,18 +68,28 @@ const App = () => {
         <Route path="/register" element={<Registration />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/searchrenter" element={<SearchRental />} />
-        <Route path="/dashboard/createnewrenter" element={<CreateNewRental />} />
+        <Route
+          path="/dashboard/createnewrenter"
+          element={<CreateNewRental />}
+        />
         <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />
         <Route path="/dashboard/renterdetails" element={<RenterDetails />} />
         <Route path="/dashboard/paymentsrecord" element={<PaymentsRecord />} />
         <Route path="/Contributors" element={<Contributors />} />
-        <Route path="/dashboard/totalrentcollected" element={<TotalRentCollected />} />
-        <Route path="/dashboard/propertylisting" element={<PropertyListing />} />
+        <Route
+          path="/dashboard/totalrentcollected"
+          element={<TotalRentCollected />}
+        />
+        <Route
+          path="/dashboard/propertylisting"
+          element={<PropertyListing />}
+        />
         <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
         <Route path="/Terms-Conditions" element={<TermsConditions />} />
         <Route path="/comingsoon" element={<ComingSoon />} />
+        <Route path="/Feedback" element={<Feedback />} />
       </Routes>
     </>
   );

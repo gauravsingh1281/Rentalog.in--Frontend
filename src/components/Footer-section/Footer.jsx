@@ -25,29 +25,25 @@ const Footer = () => {
     setRating(star); // Ensure this is correctly setting the state
   };
 
-  const handleSubmit = (event) => {
-    try {
-      event.preventDefault();
-      console.log(email);
-      setEmail("");
-    } catch (error) {
-      console.log(`Error with newsletter input: ${error}`);
-
-
+  // const handleSubmit = (event) => {
+  //   try {
+  //     event.preventDefault();
+  //     console.log(email);
+  //     setEmail("");
+  //   } catch (error) {
+  //     console.log(`Error with newsletter input: ${error}`);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
     return emailRegex.test(email);
   };
 
-    const handleSubmit = (event) => {
-
+  const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     if (!validateEmail(email)) {
       alert("❌ Please enter a valid email address."); // Alert for invalid email
       return;
-
     }
 
     console.log(email); // Log the valid email
@@ -112,10 +108,6 @@ const Footer = () => {
                 <li className="hover:scale-110 transition duration-300 ease-in-out">
                   Track Payment Record
                 </li>
-
-              <Link to= "/comingsoon">
-                <li className="hover:scale-110 transition duration-300 ease-in-out">Track Payment Record</li>
-
               </Link>
               <Link to="/dashboard/totalrentcollected">
                 <li className="hover:scale-110 transition duration-300 ease-in-out">
@@ -127,10 +119,11 @@ const Footer = () => {
                 <li className="hover:scale-110 transition duration-300 ease-in-out">
                   Time Management
                 </li>
-
+              </Link>
               <Link to="/comingsoon">
-                <li className="hover:scale-110 transition duration-300 ease-in-out">Time Management</li>
-
+                <li className="hover:scale-110 transition duration-300 ease-in-out">
+                  Coming Soon
+                </li>
               </Link>
             </ul>
           </div>
@@ -156,12 +149,12 @@ const Footer = () => {
                 <Link to="/Contributors">Contributors</Link>
               </li>
 
-              <button
+              {/* <button
                 onClick={openModal}
                 className="hover:scale-110 transition duration-300 ease-in-out"
               >
                 Feedback
-              </button>
+              </button> */}
 
               <li className="hover:scale-110 transition duration-300 ease-in-out">
                 <Link to="/Privacy-Policy">Privacy & Policy</Link>
@@ -169,7 +162,9 @@ const Footer = () => {
               <li className="hover:scale-110 transition duration-300 ease-in-out">
                 <Link to="/Terms-Conditions">Terms & Conditions</Link>
               </li>
-
+              <li className="hover:scale-110 transition duration-300 ease-in-out">
+                <Link to="/Feedback">Feedback</Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -312,7 +307,7 @@ const Footer = () => {
                 ) : (
                   <div>
                     <FontAwesomeIcon
-                      icon={faTimesCircle}
+                      icoFn={faTimesCircle}
                       className="text-red-500 text-5xl mb-4"
                     />
                     <p className="text-lg font-bold text-black">
