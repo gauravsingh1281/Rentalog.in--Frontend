@@ -1,6 +1,14 @@
+
 import React, { useEffect, useState } from "react";
 import "./App.css";  // Ensure this file includes the custom cursor styles
 import { Home, Login, Registration, Dashboard } from "./pages"; // Import your pages
+
+// App.js
+import React, { useEffect, useState } from 'react';
+import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { Home, Login, Registration, Dashboard, ComingSoon } from "./pages";
+
 import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";
 import SearchRental from "./components/dashboard-components/SearchRental-section/SearchRental";
 import RenterDetails from "./components/dashboard-components/RenterDetails/RenterDetails";
@@ -17,6 +25,7 @@ import TermsConditions from "./components/Terms-Conditions/TermsConditions";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
+
   const [hovering, setHovering] = useState(false);
 
   // Mouse move event to update cursor position and create trailing dots
@@ -70,6 +79,49 @@ const App = () => {
       <div className={`cursor ${hovering ? "hover" : ""}`}></div>
 
       {/* Define your routes/pages */}
+
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [trail, setTrail] = useState(Array(10).fill({ x: 0, y: 0 }));
+
+  const updateCursor = (e) => {
+    const newTrail = trail.slice();
+    newTrail.unshift({ x: e.clientX, y: e.clientY });
+    newTrail.pop();
+    setTrail(newTrail);
+    setCursorPos({ x: e.clientX, y: e.clientY });
+  };
+
+  useEffect(() => {
+    window.addEventListener('mousemove', updateCursor);
+    return () => window.removeEventListener('mousemove', updateCursor);
+  }, [trail]);
+
+  return (
+    <>
+      {/* Custom Main Cursor */}
+      <div
+        className="custom-cursor"
+        style={{
+          left: `${cursorPos.x}px`,
+          top: `${cursorPos.y}px`,
+        }}
+      ></div>
+
+      {/* Cursor Tail */}
+      {trail.map((pos, index) => (
+        <div
+          key={index}
+          className="cursor-tail"
+          style={{
+            left: `${pos.x}px`,
+            top: `${pos.y}px`,
+            opacity: (10 - index) / 10, // Tail fades out
+          }}
+        ></div>
+      ))}
+
+      {/* Application Routes */}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -89,8 +141,14 @@ const App = () => {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
         <Route path="/Terms-Conditions" element={<TermsConditions />} />
+
       </Routes>
     </div>
+
+        <Route path="/comingsoon" element={<ComingSoon />} />
+      </Routes>
+    </>
+
   );
 };
 

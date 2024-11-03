@@ -138,6 +138,78 @@ body {
   transition: text-shadow 0.4s ease-in-out;
 }
 
+
+/* Style for the stats section container */
+.repo-stats-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; 
+}
+
+/* Individual stat box styling */
+.repo-stat {
+  text-align: center;
+  flex: 1; 
+  padding: 10px;
+  margin: 10px; 
+  min-width: 150px; 
+  box-sizing: border-box;
+}
+
+/* Stat heading */
+.repo-stat h3 {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* Stat value */
+.repo-stat p {
+  font-size: 1.6em;
+  color: #222;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .repo-stats-section {
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+
+  .repo-stat {
+    margin: 10px 0; 
+  }
+
+  .repo-stat h3 {
+    font-size: 1.2em; 
+  }
+
+  .repo-stat p {
+    font-size: 1.4em; 
+  }
+}
+
+@media (max-width: 480px) {
+  .repo-stat h3 {
+    font-size: 1em; 
+  }
+
+  .repo-stat p {
+    font-size: 1.2em; 
+  }
+}
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
   .contributor-card {
