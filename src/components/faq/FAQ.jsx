@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+// Array of FAQ data containing questions and their corresponding answers.
 const faqData = [
   {
     question: 'What is Rentalog?',
@@ -49,18 +50,25 @@ const faqData = [
   }
 ]
 
+// Functional component for displaying the FAQ section.
 export default function FAQ() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
+      {/* Container for the FAQ content */}
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-2xl">
+          {/* Heading for the FAQ section */}
           <h2 className="text-3xl font-bold tracking-tight mb-8">Frequently Asked Questions</h2>
+          {/* Accordion component for displaying FAQs in a collapsible format */}
           <Accordion type="single" collapsible className="w-full">
+            {/* Map through the FAQ data to create AccordionItems */}
             {faqData.map((item, index) => (
               <AccordionItem key={index} value={`item-${index + 1}`}>
+                {/* Trigger for expanding/collapsing the answer */}
                 <AccordionTrigger className="text-base hover:no-underline hover:text-primary">
                   {item.question}
                 </AccordionTrigger>
+                {/* Content displayed when the AccordionItem is expanded */}
                 <AccordionContent className="text-sm text-muted-foreground">
                   {item.answer}
                 </AccordionContent>
