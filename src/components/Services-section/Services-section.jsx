@@ -14,7 +14,7 @@ const Services = () => {
   return (
     <>
       <div id="Service"></div>
-      <h1 className="text-4xl md:text-5xl font-semibold text-[#312F2F] text-center pt-10">
+      <h1 className="text-4xl md:text-5xl font-semibold text-center pt-10 ">
         Our Services Include
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 md:mx-24 lg:mx-36 sm:mx-24 mx-8">
@@ -49,8 +49,8 @@ const Services = () => {
       >
         <h1 className="text-3xl md:text-4xl text-center py-10 font-[700]"
           style={{
-            // textShadow: bgImage === 'white' ? '0 0 0px #000000' : '0 0 5px #ffffff',
-            color: bgImage === 'white' ? '#000000' : '#ffffff',
+            text: bgImage === 'white' ? '#000000' : '#ffffff',
+            
             transition: 'all 0.5s ease-in-out',
           }}
         >
@@ -59,7 +59,6 @@ const Services = () => {
         <h2 className="text-textWhite font-semibold w-full text-center h-9 text-4xl"
           style={{
             opacity: bgImage === 'white' ? 0 : 1,
-            // textShadow: '0 0 5px #ffffff',
             transition: 'opacity 0.5s ease-in-out',
           }}
         >

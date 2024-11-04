@@ -87,11 +87,12 @@ export default function Registration() {
   };
 
   return (
-    <article className="flex flex-col justify-center h-screen bg-primaryGreen/10 overflow-hidden">
+    <article className="flex relative flex-col justify-center h-[100vh] bg-primaryGreen/10 overflow-hidden">
       <Navbar />
-      <section className="flex flex-row justify-center items-center">
-        <div className="hidden w-full lg:flex lg:mt-12 flex-col justify-center xl:justify-center xl:h-full ">
-          <div className="mb-10 mx-10 mr-auto">
+
+      <section className="flex flex-row justify-baseline items-center mt-28">
+        <div className="hidden w-[50vw] lg:flex lg:mt-12 flex-col justify-center xl:justify-center xl:h-full ">
+          <div className="mb-6 mx-10 mr-auto">
             <h2 className=" text-3xl font-bold text-gray-dark/90 ">
               <span className="text-customRed italic"> Best way</span> to manage
               your rent
@@ -100,16 +101,16 @@ export default function Registration() {
               Create a new account to access all the features of our website
             </p>
           </div>
-          <img src="https://cdn.dribbble.com/users/130603/screenshots/7849095/house_5.gif" alt="" className="m-10" />
+          <img src="https://cdn.dribbble.com/users/130603/screenshots/7849095/house_5.gif" alt="" className="mx-10 w-50 h-70" />
         </div>
 
-        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-[100vh] xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
-          <div className="w-full h-[100vh] flex flex-col justify-start mt-20 lg:mt-0 lg:justify-center items-center">
+        <div className="absolute py-4 top-0 right-0 flex mx-auto max-w-7xl w-full lg:w-[50vw] h-fit xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
+          <div className="w-full  h-fit flex flex-col justify-start mt-20 lg:mt-0 lg:justify-center items-center">
             <TitleCard />
 
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="mt-5 space-y-4 w-[70%] md:w-[50%] lg:w-[60%]"
+              className="mt-5 space-y-3 w-[70%] md:w-[50%] lg:w-[60%]"
             >
               {/* Name Field */}
               <Input
@@ -231,11 +232,11 @@ export default function Registration() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="border-2 border-green rounded-lg h-10 bg-primaryGreen w-full py-1.5 rounded-xl focus:shadow-md hover:bg-primaryGreen/80 text-textWhite font-semibold mt-2"
+                className="btn2 px-4 py-2"
               >
                 Register
               </button>
-
+            
               {/* Social Buttons */}
               <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
                 <Link to="https://www.google.com/" className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10">
@@ -295,7 +296,7 @@ const Navbar = () => {
 const TitleCard = () => {
   return (
     <div>
-      <h2 className="text-2xl text-center font-bold mb-4 text-gray-dark">
+      <h2 className="text-2xl text-center font-bold mb-2 text-gray-dark">
         Create Account
       </h2>
       <p className="text-center text-gray-dark/70">
