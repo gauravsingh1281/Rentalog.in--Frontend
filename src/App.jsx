@@ -1,6 +1,7 @@
 // App.js
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import ServicesCarousel from "./ServicesCarousel";
 import { Route, Routes } from "react-router-dom";
 import { Home, Login, Registration, Dashboard, ComingSoon } from "./pages";
 import AddNewRental from "./components/dashboard-components/AddNewRental/AddNewRental";
@@ -20,6 +21,10 @@ import TermsConditions from "./components/Terms-Conditions/TermsConditions";
 const App = () => {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [trail, setTrail] = useState(Array(10).fill({ x: 0, y: 0 }));
+
+  const [bgImage, setBgImage] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [currPlace, setCurrPlace] = useState("");
 
   const updateCursor = (e) => {
     const newTrail = trail.slice();
@@ -45,6 +50,15 @@ const App = () => {
         }}
       ></div>
 
+      <div className="App">
+      <h1>Our Services Available In</h1>
+      <ServicesCarousel
+        setBgImage={setBgImage}
+        setImageUrl={setImageUrl}
+        setCurrPlace={setCurrPlace}
+      />
+    </div>
+      
       {/* Cursor Tail */}
       {trail.map((pos, index) => (
         <div
