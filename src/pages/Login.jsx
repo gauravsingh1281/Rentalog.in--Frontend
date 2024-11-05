@@ -46,11 +46,11 @@ export default function Login() {
       <section className="flex flex-row justify-baseline items-center">
         <div className="hidden w-full lg:flex lg:mt-12 flex-col lg:justify-start xl:justify-center xl:h-full">
           <div className="mb-10 mx-10 mr-auto">
-            <h2 className="text-3xl font-bold text-gray-dark/90">
+            <h2 className="text-3xl font-bold ">
               <span className="text-customRed italic">Best way</span> to manage
               your rent
             </h2>
-            <p className="mt-2 text-gray-dark/70">
+            <p className="mt-2 ">
               Enter your credentials to access your account
             </p>
           </div>
@@ -227,9 +227,9 @@ const Navbar = () => {
 const TitleCard = () => {
   return (
     <div className="flex flex-col">
-      <h2 className="mt-16 text-left text-3xl font-extrabold leading-9 tracking-tight text-gray-dark/90">
+      <h2 className="mt-16 text-left text-3xl font-extrabold leading-9 tracking-tight ">
         <span className="text-customRed text-4xl">Welcome</span>
-        <span> </span>back!!
+        <span> back!!</span>
       </h2>
       <p className="text-center text-gray text-sm mt-1">
         Please login to your account
