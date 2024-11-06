@@ -1,9 +1,6 @@
 
 // App.jsx
 import React, { useEffect, useState } from 'react';
-
-// App.js
-import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import './App.css';
