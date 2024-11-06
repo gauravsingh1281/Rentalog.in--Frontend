@@ -1,5 +1,10 @@
+
 // App.jsx
 import React, { useEffect, useState } from 'react';
+
+// App.js
+import React, { useEffect, useState } from "react";
+import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import './App.css';
 
@@ -19,6 +24,7 @@ import AdminDashboard from "./components/Admin-Dashboard/AdminDashboard";
 import Preloader from "./components/Preloader/PreLoader";
 import PrivacyPolicy from "./components/Privacy-Policy/PrivacyPolicy";
 import TermsConditions from "./components/Terms-Conditions/TermsConditions";
+import Feedback from "./components/Feedback/Feedback";
 
 const App = () => {
   const [isPreloaderVisible, setIsPreloaderVisible] = useState(true);
@@ -41,8 +47,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('mousemove', updateCursor);
-    return () => window.removeEventListener('mousemove', updateCursor);
+    window.addEventListener("mousemove", updateCursor);
+    return () => window.removeEventListener("mousemove", updateCursor);
   }, [trail]);
 
   return (
@@ -95,6 +101,39 @@ const App = () => {
           <Route path="/comingsoon" element={<ComingSoon />} />
         </Routes>
       )}
+
+      {/* Application Routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/forgot" element={<ForgotPassword />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/searchrenter" element={<SearchRental />} />
+        <Route
+          path="/dashboard/createnewrenter"
+          element={<CreateNewRental />}
+        />
+        <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />
+        <Route path="/dashboard/renterdetails" element={<RenterDetails />} />
+        <Route path="/dashboard/paymentsrecord" element={<PaymentsRecord />} />
+        <Route path="/Contributors" element={<Contributors />} />
+        <Route
+          path="/dashboard/totalrentcollected"
+          element={<TotalRentCollected />}
+        />
+        <Route
+          path="/dashboard/propertylisting"
+          element={<PropertyListing />}
+        />
+        <Route path="/dashboard/listedproperty" element={<ListedProperty />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
+        <Route path="/Terms-Conditions" element={<TermsConditions />} />
+        <Route path="/comingsoon" element={<ComingSoon />} />
+        <Route path="/Feedback" element={<Feedback />} />
+      </Routes>
     </>
   );
 };
