@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"],                   // Alias for `src` folder
+        "@/components/*": ["src/components/*"],   // Alias for `src/components`
+        "@/utils/*": ["src/utils/*"],         // Alias for `src/utils`
+        "@/hooks/*": ["src/hooks/*"],         // Alias for `src/hooks`
+        "@/styles/*": ["src/styles/*"]        // Alias for `src/styles`
+      }
+    },
+    "exclude": ["node_modules", "dist"]
+  }

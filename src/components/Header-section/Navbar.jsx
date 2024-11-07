@@ -27,7 +27,6 @@ const Navbar = () => {
   // Toggle Dark Mode
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
-    // Toggle the dark class on the body element
     document.body.classList.toggle("dark", !darkMode);
   };
 
@@ -35,6 +34,7 @@ const Navbar = () => {
     const tl = gsap.timeline(); // Initialize the timeline
 
     const ctx = gsap.context(() => {
+ 
       tl.fromTo(
         ".navbar",
         {
@@ -82,43 +82,48 @@ const Navbar = () => {
     return () => ctx.revert(); // Cleanup when the component unmounts
   }, []);
  
+ 
+      tl.fromTo('.navbar',
+        { y: -100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.inOut", stagger: 0.3 }
+      );
+      tl.fromTo('.navbar2',
+        { y: -100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut", stagger: 0.3 }
+      );
+      tl.fromTo('.navbar3',
+        { y: -100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut", stagger: 0.3 }
+      );
+    });
+  
+    return () => ctx.revert();
+  }, []);
+  
+ 
 
   // Intersection Observer to Highlight Links on Scroll and Update URL
   useEffect(() => {
     const sections = sectionIds.map((id) => document.getElementById(id));
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const newActiveSection = entry.target.id;
             setActiveSection(newActiveSection);
-
-            // Update the URL without reloading the page
             if (window.location.hash !== `#${newActiveSection}`) {
               window.history.replaceState(null, null, `#${newActiveSection}`);
             }
           }
         });
       },
-      {
-        threshold: 0.9, // Reduce the threshold to detect sections earlier
-        rootMargin: "0px 0px -50% 0px", // Adjust root margin to highlight as sections enter
-      }
+      { threshold: 0.9, rootMargin: "0px 0px -50% 0px" }
     );
 
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
-    };
+    sections.forEach((section) => section && observer.observe(section));
+    return () => sections.forEach((section) => section && observer.unobserve(section));
   }, []);
 
-  // Fallback for "home" section when near top of the page
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY < 50) {
@@ -127,7 +132,7 @@ const Navbar = () => {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -136,148 +141,32 @@ const Navbar = () => {
       setDoBlure(window.pageYOffset <= 30);
     };
     window.addEventListener("scroll", scrollHandler);
-
     scrollHandler();
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
+    return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
   if (showMenu) {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft =
-      window.pageXOffset || document.documentElement.scrollLeft;
-    window.onscroll = () => {
-      window.scrollTo(scrollLeft, scrollTop);
-    };
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    window.onscroll = () => window.scrollTo(scrollLeft, scrollTop);
 
     return (
-      <>
-        <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
-          <ProgressBar/>
-          <button
-            onClick={() => {
-              setShowMenu("");
-            }}
-            className="absolute top-0 left-0 m-[1.5rem]"
-          >
-            <FiX className="m-2 text-textWhite" />
-          </button>
-          <div className="text-textWhite">
-            <div className="px-4 bg-textWhite w-fit rounded-xl">
-              <img
-                className="self-start w-40 "
-                src={logo}
-                alt="Rentalog-logo"
-              />
-            </div>
 
-            <div className="mt-4 h-[2px] w-600 bg-textWhite rounded-full"></div>
-
-            <div className="flex flex-col gap-8 justify-center items-center mt-10">
-              <a href="#home" aria-current="page">
-                <div
-                  className="text-textWhite "
-                  onClick={() => {
-                    setShowMenu("");
-                  }}
-                >
-                  HOME
-                </div>
-              </a>
-
-              <a href="#Service" aria-current="page">
-                <div
-                  className="text-textWhite "
-                  onClick={() => {
-                    setShowMenu("");
-                  }}
-                >
-                 
-                </div>
-              </a>
-              <a href="#AboutUs" aria-current="page">
-                <div
-                  className="text-textWhite "
-                  onClick={() => {
-                    setShowMenu("");
-                  }}
-                >
-                  ABOUT
-                </div>
-              </a>
-              <a href="#ContactUs" aria-current="page">
-                <div
-                  className="text-textWhite "
-                  onClick={() => {
-                    setShowMenu("");
-                  }}
-                >
-                  CONTACT
-                </div>
-              </a>
-              <a href="#FAQ" aria-current="page">
-                <div
-                  className="text-textWhite"
-                  onClick={() => {
-                    setShowMenu("");
-                  }}
-                >
-                 FAQ
-                </div>
-              </a>
-              <a href="#Service" aria-current="page">
-                <div
-                  className="text-textWhite"
-                  onClick={() => {
-                    setShowMenu("");
-                  }}
-                >
-                 FAQ
-                </div>
-              </a>
-              <div className="text-gray-dark">
-                <Link to="/login">
-                  <button
-                    type="button"
-                    className=" flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite  transition-transform duration-300 hover:scale-110 hover:text-sky-500"
-                  >
-                    <FiUser className="text-2xl" />
-                    Log In
-                  </button>
-                </Link>
-              </div>
-
-              <div className="mt-4 h-[2px] w-600 self-stretch bg-textWhite rounded-full"></div>
-
-              <div className="text-gray-dark">
-                <Link to="/register">
-                  <button
-                    type="button"
-                    className=" flex flex-row justify-center items-center gap-2 font-bold rounded-xl text-md px-6 py-2 text-center bg-textWhite -mt-4"
-                  >
-                    <FiUser className="text-2xl" />
-                    Register
-                  </button>
-                </Link>
-              </div>
-              <GoogleTranslate />
-            </div>
-          </div>
-        </div>
-      </>
+      <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
+        <ProgressBar/>
+        <button onClick={() => setShowMenu("")} className="absolute top-0 left-0 m-[1.5rem]">
+          <FiX className="m-2 text-textWhite text-lg" />
+        </button>
+        {/* Other elements */}
+      </div>
     );
   } else {
     window.onscroll = () => {};
   }
   return (
-    <> 
-      <nav className={`${
-        darkMode ? "bg-gray-900 text-white" : "bg-white text-black"
-      } fixed w-full z-20 top-0 left-0 transition-colors duration-500`}>
+    <nav className={`fixed w-full z-20 top-0 left-0 ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} transition-colors duration-500`}>
       <ProgressBar/>
-
+ 
         <div
           className={
             doBlure
@@ -303,10 +192,36 @@ const Navbar = () => {
             {/* Login Button */}
             <Link to="/login">
  
+ 
+      <div className={doBlure ? `absolute w-full h-full -z-20 bg-gray-light opacity-0` : `absolute w-full h-full -z-20 bg-gray-light opacity-80`}></div>
+      
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-2 text-sm">
+        
+        {/* Logo on the Left */}
+        <div className="flex flex-row items-center">
+          <a href="#home" aria-current="page">
+            <img className="self-start w-36 navbar my-auto" src={logo} alt="Rentalog-logo"/>
+          </a>
+        </div>
+ 
 
-          <button onClick={toggleDarkMode} className="mr-4 text-2xl">
+        {/* Center Navigation Links */}
+        <ul className="hidden md:flex items-center gap-4 text-sm font-light">
+          {sectionIds.map((section) => (
+            <li className="hover:scale-[1.05] transition duration-300" key={section}>
+              <a href={`#${section}`}>
+                <h1 className={activeSection === section ? "text-green" : ""}>{section.toUpperCase()}</h1>
+              </a>
+            </li>
+          ))}
+        </ul>
+        
+        {/* Right side: Login, Register, and GoogleTranslate */}
+        <div className="flex items-center space-x-2 md:space-x-4">
+          <button onClick={toggleDarkMode} className="text-lg">
             {darkMode ? <FiSun /> : <FiMoon />}
           </button>
+ 
  
                      {/* Login Button */}
                      <Link to="/login">
@@ -414,9 +329,29 @@ const Navbar = () => {
               />
             </svg>
           </button>
+ 
+
+          <Link to="/login">
+            <button className="navbar3 hidden md:block text-sm px-4 py-1 rounded-lg bg-green-500 text-white transition-transform hover:scale-105">Login</button>
+          </Link>
+          <Link to="/register">
+            <button className="navbar3 hidden md:flex items-center gap-1 px-4 py-1 text-sm rounded-lg bg-green-500 text-white transition-transform hover:scale-105">
+              <FiUser className="text-lg" />
+              Register
+            </button>
+          </Link>
+          <GoogleTranslate/>
+ 
         </div>
-      </nav>
-    </>
+
+        {/* Mobile Menu Button */}
+        <button onClick={() => setShowMenu("show")} type="button" className="md:hidden p-2">
+          <svg className="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
   );
 };
 
