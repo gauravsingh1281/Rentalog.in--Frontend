@@ -317,7 +317,7 @@ const Footer = () => {
                 )}
                 <button
                   onClick={() => setShowModal(false)}
-                  className="px-4 py-2 rounded mt-4 border-gray-300 rounded text-blackhover:bg-blue-600 text-black "
+                  className="px-4 py-2 mt-4 border-gray-300 rounded text-blackhover:bg-blue-600 text-black "
                 >
                   Close
                 </button>
