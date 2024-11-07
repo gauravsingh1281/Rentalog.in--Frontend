@@ -132,7 +132,7 @@ const Navbar = () => {
       <div
         className={
           doBlure
-            ? `absolute w-full h-full -z-20 bg-gray-light opacity-0`
+            ? `absolute w-full h-full -z-20 bg-beige `
             : `absolute w-full h-full -z-20 bg-beige `
         }
       ></div>
