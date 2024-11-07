@@ -318,7 +318,7 @@ const TitleCard = () => {
   );
 };
 
-const Input = ({ title, register, ...props }) => {
+const Input = ({title, register, ...props }) => {
   return (
     <div>
       <label className="text-gray-dark font-semibold">{title}</label>
