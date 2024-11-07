@@ -89,7 +89,7 @@ const RentNavbar = () => {
                   CONTACT
                 </div>
               </a>
-              <a href="/" aria-current="page">
+              <a href="/#FAQ" aria-current="page">
                 <div
                   className="text-textWhite"
                 //   onClick={() => {

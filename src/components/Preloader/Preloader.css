@@ -1,0 +1,55 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  background: rgb(255,221,221);
+  background: radial-gradient(circle, rgb(255, 231, 231) 0%, rgba(255,255,255,1) 46%, rgb(252, 225, 225) 100%);
+}
+
+/* Text animation */
+.animate-stroke {
+  animation: stroke 2.5s infinite alternate;
+  stroke-width: 2;
+  stroke: rgb(255, 255, 255);
+  font-size: 105px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Keyframes for the stroke animation */
+@keyframes stroke {
+  0% {
+    fill:  #cd4347;
+    stroke: #9b0000;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 3;
+  }
+
+  70% {
+    fill:  #cd4347;
+    stroke: #ec0000;
+  }
+
+  80% {
+    fill:  #cd4347;
+    stroke: #ff3030;
+    stroke-width: 2;
+  }
+
+  100% {
+    fill:  #cd4347;
+    stroke: #9b0000;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+    text-shadow: 0 0 10px #fff, 0 0 15px whitesmoke;
+  }
+}
