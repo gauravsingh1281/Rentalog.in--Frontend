@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+    darkMode: ["class"],
+    content: ["./index.html", "./src/**/*.{js,ts,tsx,js,jsx,tsx}"],
   theme: {
+
     extend: {
       transitionProperty: {
         'colors': 'background-color, border-color, color',
@@ -45,6 +47,7 @@ export default {
       widget: '3px 3px #b9c3c1',
       'widget-hover': '5px 5px #b9c3c1',
     },
+
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
