@@ -30,6 +30,7 @@ export default function Registration() {
 
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const handleShowConfirmPassword = () => setShowConfirmPassword(!showConfirmPassword);
+  const [showPasswordRequirements, setShowPasswordRequirements] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -158,6 +159,8 @@ export default function Registration() {
                   placeholder="Password"
                   onChange={handleChange}
                   className="input-bar pr-10"
+                  onFocus={() => setShowPasswordRequirements(true)}
+                  onBlur={() => setShowPasswordRequirements(false)}
                   register={register("password", {
                     required: "Password is required",
                   })}
@@ -193,6 +196,18 @@ export default function Registration() {
                       }}
                     ></div>
                   </div>
+                </div>
+              )}
+              {showPasswordRequirements && (
+                <div className="text-gray-dark text-sm mt-1">
+                  <p>Password must be:</p>
+                  <ul className="list-disc pl-5">
+                    <li>At least 8 characters long</li>
+                    <li>Contain at least one uppercase letter</li>
+                    <li>Contain at least one lowercase letter</li>
+                    <li>Contain at least one number</li>
+                    <li>Contain at least one special character</li>
+                  </ul>
                 </div>
               )}
 
