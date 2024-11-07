@@ -21,6 +21,9 @@ const TestimonialCard = ({ quote, author, role }) => (
   </div>
 );
 
+let date = new Date();
+let year = date.getFullYear();
+
 const TotalRentCollected = () => {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -123,7 +126,7 @@ const TotalRentCollected = () => {
 
       <footer className="bg-gray-dark text-textWhite py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 Rentalog. All rights reserved.</p>
+          <p>&copy; {year} Rentalog. All rights reserved.</p>
         </div>
       </footer>
     </div>
