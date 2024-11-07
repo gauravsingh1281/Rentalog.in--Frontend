@@ -105,7 +105,7 @@ export default function Registration() {
         </div>
 
         <div className="absolute py-4 top-0 right-0 flex mx-auto max-w-7xl w-full lg:w-[50vw] h-fit xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
-          <div className="w-full  h-fit flex flex-col justify-start mt-20 lg:mt-0 lg:justify-center items-center">
+          <div className="w-full h-fit min-h-screen flex flex-col justify-center items-center">
             <TitleCard />
 
             <form
@@ -259,6 +259,18 @@ export default function Registration() {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
                     alt="Facebook logo"
+                    className="h-5 mb-0"
+                  />
+                </button>
+                </Link>
+                <Link to="https://x.com/home" className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10">
+                <button
+                  type="button"
+                  
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg"
+                    alt="x logo"
                     className="h-5 mb-0"
                   />
                 </button>
