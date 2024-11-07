@@ -49,7 +49,7 @@ const faqData = [
   }
 ]
 
-export default function FAQ() {
+const FAQ = () => {
   return (
     <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/20">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
@@ -71,4 +71,6 @@ export default function FAQ() {
       </div>
     </section>
   )
-}
+};
+
+export default FAQ;
