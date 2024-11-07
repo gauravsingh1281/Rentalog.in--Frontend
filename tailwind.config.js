@@ -31,7 +31,7 @@ export default {
       gray: "#8492a6",
       "gray-light": "#d3dce6",
       "light-blue": "#e8f8f4",
-      beige:"#f5f5dc",
+      "beige":"#f5f5dc",
     },
     fontFamily: {
       fontFamily: {
