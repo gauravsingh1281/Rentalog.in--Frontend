@@ -59,13 +59,13 @@ const GoogleTranslate = () => {
     >
       <style jsx>{`
         .goog-te-combo {
-          background-color: #eef2f7; /* Light pastel */
-          border: 2px solid #2c3e50; /* Neutral dark */
-          border-radius: 0.75rem; /* Rounded corners */
-          padding: 0.5rem 1.5rem; /* Padding for comfort */
+          background-color: #1abc9c; /* Light pastel */
+          border:none;
+          border-radius: 0.25rem; /* Rounded corners */
+          padding: 0.5rem 0.9rem; /* Padding for comfort */
           font-size: 1rem; /* Readable font */
           transition: all 0.4s ease; /* Smooth transition for hover */
-          color: #2c3e50; /* Neutral text */
+          color: #fff; /* Neutral text */
           font-weight: 600;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
           cursor: pointer;
