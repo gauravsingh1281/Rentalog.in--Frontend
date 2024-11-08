@@ -1,230 +1,132 @@
-body {
+
+/* Stats Section */
+
+.contributor-header{
   background-color: #ebf5f6;
 }
-.contributors-container {
-  width: 100%;
-  height: 100%;
-  padding-top: 2rem;
-  overflow: hidden;
-}
 
-.github-icon {
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  fill: white; /* Adjust color as needed */
-}
-
-.contributors-title {
-  margin-top: 0rem;
+.contributor-stats {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0;
   text-align: center;
-  color: #0077b6;
-  font-size: 2.5rem;
-  font-weight: bold;
+}
+
+.contributor-stats h2 {
+  font-size: 2rem;
   margin-bottom: 2rem;
-  text-transform: uppercase;
 }
 
-.contributors-grid {
-  padding: 26px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.contributor-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 
-.contributor-card {
-  position: relative;
-  width: 80%;
-  max-width: 18%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgb(195, 195, 240);
-  border: 1px solid #030398;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  overflow: hidden;
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.3s ease;
-}
-
-.contributor-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 6px rgba(5, 205, 208, 0.752);
-}
-
-.contributor-card:hover p {
-  text-shadow:
-    1px 1px 2px rgb(0, 225, 255),
-    0 0 0.2em rgb(0, 191, 255),
-    0 0 0.8em rgb(135, 206, 235);
-  color: rgb(0, 0, 0);
-  font-weight: 500;
-}
-
-.contributor-card:hover h2 {
-  text-shadow:
-    1px 1px 2px rgba(237, 9, 176, 0.926),
-    0 0 0.2em rgb(0, 191, 255),
-    0 0 0.8em rgb(135, 206, 235);
-  color: white;
-  font-size: 1.04rem;
-  font-weight: 600;
-  text-decoration: wavy;
-}
-
-.contributor-card:hover .contributor-avatar {
-  border: 3.5px solid #89e6f0;
-  width: 5.2rem;
-  box-shadow: -2px 4px 10px 1px rgba(1, 41, 218, 0.75);
-  height: 5.2rem;
-}
-
-.contributor-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(152deg, #0077b6 50%, #023e8a 50%);
-  transition:
-    transform 0.3s ease-in-out,
-    opacity 0.3s ease-in-out;
-  transform: translate(-100%, -100%);
-  opacity: 0;
-  z-index: -1;
-}
-
-.contributor-card:hover::before {
-  transform: translate(0, 0);
-  opacity: 1;
-}
-
-.contributor-link {
-  display: block;
-}
-
-.contributor-avatar {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border: 2px solid #00b4d8;
-  transition:
-    border 0.4s ease-in-out,
-    height 0.4s ease-in-out,
-    width 0.4s ease-in-out,
-    box-shadow 0.3s ease-in-out;
-}
-
-.contributor-name {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #09090a;
-  margin-bottom: 0.5rem;
-  transition:
-    text-shadow 0.4s ease-in-out,
-    font-size 0.5s ease-in-out,
-    text-decoration 0.4s ease-in-out;
-}
-
-.contributor-contributions {
-  color: #043e96;
-  transition: text-shadow 0.4s ease-in-out;
-}
-
-
-/* Style for the stats section container */
-.repo-stats-section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px;
-  margin: 20px 0;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap; 
-}
-
-/* Individual stat box styling */
-.repo-stat {
+.contributor-stat-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
   text-align: center;
-  flex: 1; 
-  padding: 10px;
-  margin: 10px; 
-  min-width: 150px; 
-  box-sizing: border-box;
 }
 
-/* Stat heading */
-.repo-stat h3 {
-  font-size: 1em;
-  color: #555;
-  margin-bottom: 8px;
-  font-weight: 600;
+.contributor-stat-card .contributor-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-/* Stat value */
-.repo-stat p {
-  font-size: 1.6em;
-  color: #222;
-  font-weight: bold;
-  margin: 0;
+.contributor-stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .repo-stats-section {
-    flex-direction: column; 
-    align-items: stretch; 
-  }
-
-  .repo-stat {
-    margin: 10px 0; 
-  }
-
-  .repo-stat h3 {
-    font-size: 1.2em; 
-  }
-
-  .repo-stat p {
-    font-size: 1.4em; 
-  }
+.contributor-stat-card p {
+  color: #666;
 }
 
-@media (max-width: 480px) {
-  .repo-stat h3 {
-    font-size: 1em; 
-  }
-
-  .repo-stat p {
-    font-size: 1.2em; 
-  }
+/* Contributors Section */
+.contributor-contributors {
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem 0;
+  text-align: center;
 }
 
-
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-  .contributor-card {
-    max-width: 33.333%;
-  }
+.contributor-contributors h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #0077b6;
+  font-family: Montserrat, sans-serif;
 }
 
-@media (max-width: 992px) {
-  .contributor-card {
-    max-width: 50%;
-  }
+.contributor-contributors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
-@media (max-width: 768px) {
-  .contributor-card {
-    max-width: 97%;
-  }
+.contributor-contributor-card {
+  background-color: #c3c3f0;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contributor-contributor-card:hover {
+  transform: translateY(-5px);
+  border:unset;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contributor-contributor-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 1.5rem auto;
+  display: block;
+  border: 4px solid #f0f0f0;
+}
+
+.contributor-contributor-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contributor-contributor-card p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.contributor-contributor-card .contributor-contributions {
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.contributor-contributor-card .contributor-footer {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: outset;
+}
+
+.contributor-contributor-card .contributor-footer a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  margin: auto;
+}
+
+.contributor-contributor-card .contributor-footer svg {
+  margin-right: 0.5rem;
 }
