@@ -1,0 +1,58 @@
+.rent-calculator {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .rent-calculator h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+  }
+
+  .input-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .calculate-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #2ec4b6;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .calculate-btn:hover {
+    background-color: #238e8b;
+  }
+
+  .result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2ec4b6;
+  }

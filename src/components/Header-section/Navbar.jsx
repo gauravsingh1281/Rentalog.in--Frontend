@@ -221,6 +221,16 @@ const Navbar = () => {
                  FAQ
                 </div>
               </a>
+              <a href="#RentCalculator" aria-current="page">
+                <div
+                  className="text-textWhite"
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
+                >
+               Calculator
+                </div>
+              </a>
               <a href="#Service" aria-current="page">
                 <div
                   className="text-textWhite"
@@ -353,7 +363,11 @@ const Navbar = () => {
                   {activeSection === "FAQ" ? <h1 className="text-green">FAQ</h1> : <h1>FAQ</h1>}
                 </a>
               </li>
-              
+              <li className="hover:scale-[1.081] hover transition duration-300">
+                <a href="#RentCalculator" aria-current="page">
+                  {activeSection === "RentCalculator" ? <h1 className="text-green">RentCalculator</h1> : <h1>RentCalculator</h1>}
+                </a>
+              </li>
             </ul>
             
           </div>
