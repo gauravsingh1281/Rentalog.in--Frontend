@@ -1,7 +1,6 @@
 import AboutUs from "../components/AboutUs-section/AboutUs";
 import Contributors from "../components/Contributors-page/Contributors";
 import Contact from "../components/Contact-section/Contact";
-import FAQ from "../components/faq/FAQ";
 
 import RentCalculator from "../components/rent/RentCalculator";
 
@@ -23,7 +22,8 @@ function Home() {
       <Contact />
 
       <RentCalculator/>
-      <FAQ/>
+
+      
       <Footer />
 
       {/* <Contributors /> */}
