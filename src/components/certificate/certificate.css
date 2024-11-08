@@ -1,0 +1,227 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.certificate {
+  width: 700px;
+  height: 500px;
+  position: relative;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 30px 40px;
+}
+
+.certificate-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.8;
+  object-fit: cover;
+}
+
+.rentalog-logo {
+  display: block;
+  margin: 0;
+  height: 70px;
+  width: 160px;
+  position: absolute;
+  top: 10px;
+  left: 120px;
+  z-index: 2;
+}
+
+.rental-info {
+  text-align: left;
+  margin-top: 60px;
+}
+
+.rental-info p {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: -30px;
+  width: 60%;
+  margin-left: -2%;
+}
+
+.content {
+  position: relative;
+  padding: 20px;
+  z-index: 1;
+}
+
+.header p {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #060506;
+  text-align: left;
+  margin-left: -20px;
+}
+
+.name {
+  font-family: "Brush Script MT", cursive;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #4a148c;
+  text-align: left;
+  margin-left: -20px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  margin-top: 10px;
+  text-align: left;
+  margin-left: -20px;
+  width: 60%;
+}
+
+.description span {
+  font-weight: bold;
+  color: #4a148c;
+}
+
+.signatures-logos {
+  display: flex;
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+  width: calc(100% - 80px);
+}
+
+.signatures h2 {
+  font-size: 20px;
+  color: #4a148c;
+  margin-bottom: -10px;
+}
+
+.signatures p::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #daa520;
+  margin-top: 5px;
+}
+
+.signatures p {
+  font-size: 16px;
+  color: #555;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.signatures span {
+  color: #4a148c;
+  font-weight: bold;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  margin-left: 62px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .certificate {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .rentalog-logo {
+    height: 50px;
+    width: auto;
+    left: 20px;
+  }
+
+  .rental-info p {
+    font-size: 12px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .name {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .signatures-logos {
+    bottom: -90px;
+    width: calc(100% - 40px);
+  }
+
+  .logos {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .certificate {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .rentalog-logo {
+    height: 40px;
+    width: auto;
+    left: 30px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .signatures-logos {
+    bottom: -70px;
+    width: calc(100% - 20px);
+  }
+
+  .logos {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo {
+    height: 40px;
+  }
+}
