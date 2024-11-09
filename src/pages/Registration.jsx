@@ -12,7 +12,7 @@ import { useForm } from "react-hook-form";
 import zxcvbn from "zxcvbn";
 
 export default function Registration() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors }, setError } = useForm();
 
@@ -35,6 +35,10 @@ export default function Registration() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleBackToHome = () => {
+    navigate("/"); // Replace "/home" with the correct path to your home page
+  };
+
   // Password strength meter logic (using zxcvbn)
   const getPasswordStrength = (password) => {
     const strength = zxcvbn(password);
@@ -45,10 +49,10 @@ export default function Registration() {
       label: labels[score],
       color:
         score === 0 ? "#d73f40" :
-        score === 1 ? "#dc6551" :
-        score === 2 ? "#f2b84f" :
-        score === 3 ? "#bde952" :
-        "#3ba62f",
+          score === 1 ? "#dc6551" :
+            score === 2 ? "#f2b84f" :
+              score === 3 ? "#bde952" :
+                "#3ba62f",
     };
   };
 
@@ -74,43 +78,54 @@ export default function Registration() {
 
     // Handle form submission logic here
     console.log("Form Data:", data);
-    
+
     navigate("/home");
-    
+
     setForm({
       name: "",
       email: "",
       password: "",
       confirmPassword: "",
     });
-    
+
   };
 
   return (
     <article className="flex relative flex-col justify-center h-[100vh] bg-primaryGreen/10 overflow-hidden">
       <Navbar />
 
-      <section className="flex flex-row justify-baseline items-center mt-28">
-        <div className="hidden w-[50vw] lg:flex lg:mt-12 flex-col justify-center xl:justify-center xl:h-full ">
-          <div className="mb-6 mx-10 mr-auto">
-            <h2 className=" text-3xl font-bold text-gray-dark/90 ">
-              <span className="text-customRed italic"> Best way</span> to manage
-              your rent
+      <section className="mt-2 flex flex-col lg:flex-row w-full lg:w-4/5 items-center justify-center mx-auto p-6 border border-gray-300 bg-primaryGreen/10 lg:rounded-bl-3xl lg:rounded-tl-3xl py-4 lg:py-0 mt-4 lg:mt-0" style={{ padding: "0.8rem" }}>
+  {/* Section content */}
+
+        {/* Left Side - Text and Image */}
+        <div className="hidden lg:flex w-full lg:w-[50%] flex-col items-start lg:items-center justify-center p-4">
+          <div className="mb-6">
+            <h2 className="text-3xl font-bold text-gray-dark/90">
+              <span className="text-customRed italic">Best way</span> to manage your rent
             </h2>
             <p className="mt-2 text-gray-dark/70">
               Create a new account to access all the features of our website
             </p>
           </div>
-          <img src="https://cdn.dribbble.com/users/130603/screenshots/7849095/house_5.gif" alt="" className="mx-10 w-50 h-70" />
+          <img
+            src="https://cdn.dribbble.com/users/130603/screenshots/7849095/house_5.gif"
+            alt=""
+            className="w-[90%] lg:w-[80%]"
+          />
         </div>
 
         <div className="absolute py-4 top-0 right-0 flex mx-auto max-w-7xl w-full lg:w-[50vw] h-fit xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
           <div className="w-full h-fit min-h-screen flex flex-col justify-center items-center">
+
+        {/* Right Side - Form */}
+        <div className="w-full lg:w-[50%] flex justify-center items-center ">
+          <div className="w-full max-w-lg lg:max-w-md flex flex-col items-center">
+
             <TitleCard />
 
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="mt-5 space-y-3 w-[70%] md:w-[50%] lg:w-[60%]"
+              className="w-full px-4 md:w-[80%] lg:w-[90%] mt-5 space-y-3 bg-white rounded-lg"
             >
               {/* Name Field */}
               <Input
@@ -171,7 +186,7 @@ export default function Registration() {
                     <i className="fa-regular fa-eye-slash"></i>
                   ) : (
                     <i className="fa-regular fa-eye"></i>
-                 )}
+                  )}
                 </button>
               </div>
               {errors.password && (
@@ -220,7 +235,7 @@ export default function Registration() {
                     <i className="fa-regular fa-eye-slash"></i>
                   ) : (
                     <i className="fa-regular fa-eye"></i>
-                 )}
+                  )}
                 </button>
               </div>
               {errors.confirmPassword && (
@@ -230,38 +245,26 @@ export default function Registration() {
               )}
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                className="btn2 px-4 py-2"
-              >
+              <button type="submit" className="btn2 px-4 py-2 w-full rounded-lg bg-blue-500 text-white">
                 Register
               </button>
-            
+   
+
               {/* Social Buttons */}
-              <div className="flex flex-row md:flex-row items-center space-x-2 justify-center">
-                <Link to="https://www.google.com/" className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10">
-                <button
-                  type="button"
-                 
-                >
+              <div className="flex items-center justify-center space-x-4 mt-4">
+                <Link to="https://www.google.com/" className="flex items-center border bg-white border-[#c7c5c5] w-1/3 h-10 justify-center rounded-lg">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                     alt="Google logo"
-                    className="h-5 mb-0"
+                    className="h-5" style={{ margin: "0px" }}
                   />
-                </button>
                 </Link>
-                <Link to="https://www.facebook.com/" className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10">
-                <button
-                  type="button"
-                  
-                >
+                <Link to="https://www.facebook.com/" className="flex items-center border bg-white border-[#c7c5c5] w-1/3 h-10 justify-center rounded-lg">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
                     alt="Facebook logo"
-                    className="h-5 mb-0"
+                    className="h-5" style={{ margin: "0px" }}
                   />
-                </button>
                 </Link>
                 <Link to="https://x.com/home" className="border bg-textWhite focus:shadow-md lg:hover:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-1 flex items-center justify-center px-2 h-10">
                 <button
@@ -278,19 +281,34 @@ export default function Registration() {
               </div>
 
               {/* Login Link */}
-              <p className="text-center text-sm text-gray font-semibold">
+              <p className="text-center text-sm text-gray font-semibold mt-4">
                 Already have an account?{" "}
                 <Link
                   to="/login"
-                  className=" text-primaryGreen font-semibold hover:text-primaryGreen/60"
+                  className="text-primaryGreen font-semibold hover:text-primaryGreen/60"
                 >
                   Login
                 </Link>
               </p>
+              <div className="flex justify-center">
+      <button
+        type="button"
+        onClick={handleBackToHome} // Navigate to home on click
+        className="btn2 px-4 py-2 rounded-lg bg-blue-500 text-white flex items-center justify-center shadow hover:bg-blue-600 transition duration-200 ease-in-out" style={{width:"200px", fontWeight:'500', fontSize:"16px", marginTop:"0.4rem"}}
+      >
+        &larr; Back to Home
+      </button>
+      </div>
             </form>
           </div>
         </div>
       </section>
+      {/* Submit Button */}
+     
+
+
+
+
     </article>
   );
 }
@@ -308,7 +326,7 @@ const Navbar = () => {
 const TitleCard = () => {
   return (
     <div>
-      <h2 className="text-2xl text-center font-bold mb-2 text-gray-dark">
+      <h2 className="text-3xl text-center font-bold mb-2 text-gray-dark">
         Create Account
       </h2>
       <p className="text-center text-gray-dark/70">
@@ -318,7 +336,7 @@ const TitleCard = () => {
   );
 };
 
-const Input = ({title, register, ...props }) => {
+const Input = ({ title, register, ...props }) => {
   return (
     <div>
       <label className="text-gray-dark font-semibold">{title}</label>
