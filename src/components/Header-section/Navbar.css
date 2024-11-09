@@ -39,4 +39,9 @@
   .navbar2 a:hover {
     color: green; /* Optional: change text color on hover */
   }
+  .hovercolor:hover {
+    background-color: #1ABC9C; /* Color of underline */
+    font-weight: 500;
+
+  }
   

@@ -1,129 +1,126 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from 'react';
 
 const GoogleTranslate = () => {
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("Select Language");
+  const [isButtonVisible, setIsButtonVisible] = useState(true);
+
   useEffect(() => {
-    window.googleTranslateInit = () => {
-      if (!window.google?.translate?.TranslateElement) {
-        setTimeout(window.googleTranslateInit, 100);
-      } else {
-        new window.google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'en,hi,pa,sa,mr,ur,bn,es,ja,ko,zh-CN,es,nl,fr,de,it,ta,te',
-          layout: window.google.translate.TranslateElement.InlineLayout.HORIZONTAL,
-          defaultLanguage: 'en',
-          autoDisplay: false,
-        }, 'google_element');
-      }
-      cleanUpGadgetText();
-    };
-
     const loadGoogleTranslateScript = () => {
-      if (!document.getElementById("google_translate_script")) {
+      if (!document.querySelector("script#google-translate")) {
         const script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateInit";
-        script.id = "google_translate_script";
-        script.onerror = () => console.error('Error loading Google Translate script');
-        document.body.appendChild(script);
+        script.id = "google-translate";
+        script.src = "//translate.google.com/translate_a/element.js?cb=initializeGoogleTranslate";
+        document.head.appendChild(script);
       }
     };
 
-    const cleanUpGadgetText = () => {
-      const gadgetElement = document.querySelector('.goog-te-gadget');
-      if (gadgetElement) {
-        const textNodes = gadgetElement.childNodes;
-        textNodes.forEach((node) => {
-          if (node.nodeType === Node.TEXT_NODE) {
-            node.textContent = ''; // Clear text content
-          }
-        });
+    const initializeGoogleTranslate = () => {
+      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,es,fr,de,hi,ja,zh-CN",
+            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      } else {
+        setTimeout(initializeGoogleTranslate, 500);
       }
     };
 
     loadGoogleTranslateScript();
-
-    if (window.google && window.google.translate) {
-      window.googleTranslateInit();
-    }
+    setTimeout(initializeGoogleTranslate, 1000);
 
     return () => {
-      // Cleanup logic if necessary
+      const script = document.getElementById("google-translate");
+      if (script) {
+        script.remove();
+      }
     };
   }, []);
 
+  const handleLanguageSelect = (lang) => {
+    setSelectedLanguage(lang);
+
+    const languageCodes = {
+      English: "en",
+      Spanish: "es",
+      French: "fr",
+      German: "de",
+      Hindi: "hi",
+      Japanese: "ja",
+      Chinese: "zh-CN",
+    };
+
+    const code = languageCodes[lang];
+    if (code) {
+      const select = document.querySelector(".goog-te-combo");
+      if (select) {
+        select.value = code;
+        select.dispatchEvent(new Event("change"));
+      }
+    }
+
+    // Immediately update the button's displayed language
+    document.querySelector(".custom-language-dropdown").innerHTML = lang;
+
+    // Hide the dropdown and button immediately after selecting a language
+    setIsButtonVisible(false);
+  };
+
   return (
-    <div
-      id="google_element"
-      className="google-translate-container navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-lg text-md px-4 py-2 text-center mr-3 md:mr-0 transition-all duration-500 transform hover:scale-105 hover:shadow-lg"
-      title="Select language to translate"
-    >
-      <style jsx>{`
-        .goog-te-combo {
-          background-color: #1abc9c; /* Light pastel */
-          border:none;
-          border-radius: 0.25rem; /* Rounded corners */
-          padding: 0.5rem 0.9rem; /* Padding for comfort */
-          font-size: 1rem; /* Readable font */
-          transition: all 0.4s ease; /* Smooth transition for hover */
-          color: #fff; /* Neutral text */
-          font-weight: 600;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-          cursor: pointer;
-        }
-
-        .goog-te-combo:hover {
-          background-color: #d1fae5; /* Pastel green */
-          border-color: #38bdf8; /* Light blue border */
-          color: #0f766e; /* Darker text on hover */
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
-        }
-
-        .goog-logo-link {
-          display: none !important; /* Hide Google branding */
-        }
-
-        .goog-te-gadget {
-          color: transparent !important;
-        }
-
-        .goog-te-gadget > span > a {
-          display: none !important; /* Hide unwanted branding */
-        }
-
-        #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:first-child {
-          display: none;
-        }
-
-        #google_translate_element .goog-te-gadget-simple .goog-te-menu-value:before {
-          content: 'Translate'; /* Show text before the dropdown */
-          color: #38bdf8; /* Accent color */
-          font-weight: bold;
-        }
-
-        .goog-te-banner-frame {
-          display: none !important; /* Hide the banner */
-        }
-
-        .goog-te-menu-frame {
-          max-height: 400px !important;
-          overflow-y: auto !important;
-          background-color: #ffffff; /* Clean white dropdown */
-          border: 1px solid #38bdf8; /* Light blue border */
-          border-radius: 0.5rem; /* Rounded dropdown */
-        }
-
-        .skiptranslate > iframe {
-          height: 0 !important;
-          border-style: none;
-          box-shadow: none;
-        }
-
-        body {
-          position: relative !important;
-          top: 0 !important;
-        }
-      `}</style>
-    </div>
+    <>
+      {isButtonVisible && (
+        <div
+          className="custom-language-dropdown"
+          style={{
+            position: "fixed",
+            top: "10px",
+            right: "350px",
+            zIndex: "10000",
+            backgroundColor: "rgb(144, 238, 144)",
+            padding: "10px",
+            borderRadius: "4px",
+            cursor: "pointer",
+          }}
+          onClick={() => setIsDropdownVisible(!isDropdownVisible)}
+        >
+          {selectedLanguage}
+          {isDropdownVisible && (
+            <div
+              className="language-list"
+              style={{
+                position: "absolute",
+                top: "100%",
+                right: "0",
+                backgroundColor: "rgb(144, 238, 144)",
+                border: "1px solid #ddd",
+                borderRadius: "4px",
+                boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+                zIndex: "10001",
+                maxHeight: "150px",
+                overflowY: "auto",
+              }}
+            >
+              {["English", "Spanish", "French", "German", "Hindi", "Japanese", "Chinese"].map(
+                (lang) => (
+                  <div
+                    key={lang}
+                    style={{ padding: "8px", cursor: "pointer" }}
+                    onClick={() => handleLanguageSelect(lang)}
+                  >
+                    {lang}
+                  </div>
+                )
+              )}
+            </div>
+          )}
+        </div>
+      )}
+      <div id="google_translate_element" style={{ display: "none" }} />
+    </>
   );
 };
 
