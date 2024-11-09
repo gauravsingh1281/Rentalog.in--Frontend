@@ -15,12 +15,21 @@ function Home() {
   return (
     <>
       <Header />
-      <Services />
-      <AboutUs />
-      <Testimonials />
-      <Contact />
-
-      <FAQ/>
+      <section id="Service">
+        <Services />
+      </section>
+      <section id="AboutUs">
+        <AboutUs />
+      </section>
+      <section id="Testimonials">
+        <Testimonials />
+      </section>
+      <section id="ContactUs">
+        <Contact />
+      </section>
+      <section id="FAQ">
+        <FAQ />
+      </section>
       <Footer />
 
       {/* <Contributors /> */}
