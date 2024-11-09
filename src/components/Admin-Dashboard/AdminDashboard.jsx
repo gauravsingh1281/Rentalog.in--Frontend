@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -19,6 +19,7 @@ const AdminDashboard = () => {
           <h2>Admin Panel</h2>
         </div>
         <ul className="sidebar-menu">
+          <li><Link to="/">Home</Link></li>
           <li>Dashboard Overview</li>
           <li>Manage Users</li>
           <li>Property Listings</li>
