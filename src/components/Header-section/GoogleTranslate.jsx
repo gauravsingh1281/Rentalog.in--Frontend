@@ -119,7 +119,7 @@ const GoogleTranslate = () => {
           )}
         </div>
       )}
-      <div id="google_translate_element" style={{ display: "none" }} />
+      <div id="google_translate_element" style={{ display: "none" }}/>
     </>
   );
 };
