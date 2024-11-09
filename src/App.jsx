@@ -21,7 +21,6 @@ import Preloader from "./components/Preloader/PreLoader";
 import PrivacyPolicy from "./components/Privacy-Policy/PrivacyPolicy";
 import TermsConditions from "./components/Terms-Conditions/TermsConditions";
 import Feedback from "./components/Feedback/Feedback";
-import FAQ from "./components/faq/FAQ";
 
 const App = () => {
   const [isPreloaderVisible, setIsPreloaderVisible] = useState(true);
@@ -97,7 +96,6 @@ const App = () => {
           <Route path="/Terms-Conditions" element={<TermsConditions />} />
           <Route path="/comingsoon" element={<ComingSoon />} />
           <Route path="/Feedback" element={<Feedback />} />
-          <Route path="/faq" element={<FAQ />} /> {/* Corrected Route */}
         </Routes>
       )}
     </>

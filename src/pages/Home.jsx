@@ -14,22 +14,13 @@ import { useEffect, useState } from "react";
 function Home() {
   return (
     <>
-       <Header />
-      <section id="Service">
-        <Services />
-      </section>
-      <section id="AboutUs">
-        <AboutUs />
-      </section>
-      <section id="Testimonials">
-        <Testimonials />
-      </section>
-      <section id="ContactUs">
-        <Contact />
-      </section>
-      <section id="FAQ">
-        <FAQ />
-      </section>
+      <Header />
+      <Services />
+      <AboutUs />
+      <Testimonials />
+      <Contact />
+
+      <FAQ/>
       <Footer />
 
       {/* <Contributors /> */}
