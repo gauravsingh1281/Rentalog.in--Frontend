@@ -141,10 +141,10 @@ const Navbar = () => {
           </button>
 
           <Link to="/login">
-            <button className="navbar3 hidden md:block text-sm px-4 py-1 rounded-lg bg-green-500 text-white transition-transform hover:scale-105">Login</button>
+            <button className="navbar3 hidden md:block text-sm px-4 py-1 rounded-lg bg-green-500 text-white hovercolor transition-transform hover:scale-105">Login</button>
           </Link>
           <Link to="/register">
-            <button className="navbar3 hidden md:flex items-center gap-1 px-4 py-1 text-sm rounded-lg bg-green-500 text-white transition-transform hover:scale-105">
+            <button className="navbar3 hidden md:flex items-center gap-1 px-4 py-1 text-sm rounded-lg hovercolor bg-green-500 text-white transition-transform hover:scale-105">
               <FiUser className="text-lg" />
               Register
             </button>
