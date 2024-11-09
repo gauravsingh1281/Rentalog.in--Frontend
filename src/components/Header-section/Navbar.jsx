@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import GoogleTranslate from "./GoogleTranslate";
 import gsap from 'gsap'
 import ProgressBar from "./ProgressBar";
-const tl=gsap.timeline()
+const tl = gsap.timeline()
 import '../Header-section/Navbar.css'
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
   const [navLinkbgColor, setNavlinkbgColor] = useState(true);
   const [activeSection, setActiveSection] = useState("home"); // Track active section
 
-  const sectionIds = ["home", "Service", "AboutUs", "ContactUs","FAQ"]; // Section IDs
+  const sectionIds = ["home", "Service", "AboutUs", "ContactUs", "FAQ"]; // Section IDs
 
   // Toggle Dark Mode
   const toggleDarkMode = () => {
@@ -25,26 +25,34 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const tl = gsap.timeline();  // Initialize the timeline
-  
     const ctx = gsap.context(() => {
-      tl.fromTo('.navbar',
+      const tl = gsap.timeline({ repeat: 0 }); // No repeat for the timeline
+  
+      tl.fromTo(
+        '.navbar',
         { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "power2.inOut", stagger: 0.3 }
-      );
-      tl.fromTo('.navbar2',
+        { y: 0, opacity: 1, duration: 1, ease: "power2.inOut",  }
+      )
+      .fromTo(
+        '.navbar2',
         { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut", stagger: 0.3 }
-      );
-      tl.fromTo('.navbar3',
+        { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut",  }
+      )
+      .fromTo(
+        '.navbar3',
         { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut", stagger: 0.3 }
+        { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut", }
       );
     });
   
-    return () => ctx.revert();
-  }, []);
+    return () => {
+      // Clean up the animation context on unmount
+      ctx.revert();
+    };
+  }, []); // Empty dependency array to make sure this runs only once on mount
   
+  
+
 
   // Intersection Observer to Highlight Links on Scroll and Update URL
   useEffect(() => {
@@ -97,7 +105,7 @@ const Navbar = () => {
     return (
 
       <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
-        <ProgressBar/>
+        <ProgressBar />
         <button onClick={() => setShowMenu("")} className="absolute top-0 left-0 m-[1.5rem]">
           <FiX className="m-2 text-textWhite text-lg" />
         </button>
@@ -105,21 +113,21 @@ const Navbar = () => {
       </div>
     );
   } else {
-    window.onscroll = () => {};
+    window.onscroll = () => { };
   }
 
   return (
     <nav className={`fixed w-full z-20 top-0 left-0 ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} transition-colors duration-500`}>
-      <ProgressBar/>
+      <ProgressBar />
 
       <div className={doBlure ? `absolute w-full h-full -z-20 bg-gray-light opacity-0` : `absolute w-full h-full -z-20 bg-gray-light opacity-80`}></div>
-      
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-2 text-sm">
-        
+
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-2 text-sm  ">
+
         {/* Logo on the Left */}
         <div className="flex flex-row items-center">
           <a href="#home" aria-current="page">
-            <img className="self-start w-36 navbar my-auto" src={logo} alt="Rentalog-logo"/>
+            <img className="self-start w-36 navbar my-auto" src={logo} alt="Rentalog-logo" />
           </a>
         </div>
 
@@ -133,7 +141,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        
+
         {/* Right side: Login, Register, and GoogleTranslate */}
         <div className="flex items-center space-x-2 md:space-x-4">
           <button onClick={toggleDarkMode} className="text-lg">
@@ -155,7 +163,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button onClick={() => setShowMenu("show")} type="button" className="md:hidden p-2">
           <svg className="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 1h15M1 7h15M1 13h15"/>
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 1h15M1 7h15M1 13h15" />
           </svg>
         </button>
       </div>
