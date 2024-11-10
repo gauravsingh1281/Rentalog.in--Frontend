@@ -1,9 +1,12 @@
-
 .terms-container {
     padding: 20px;
     font-family: Arial, sans-serif;
-    background-color:#fba7a7;
+    background-color: #fba7a7;
     color: #333;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .terms-container h1 {
@@ -17,18 +20,27 @@
     font-size: 1.8em;
     color: #197e10;
     margin-top: 30px;
+    transition: color 0.3s;
+}
+
+.terms-container h2:hover {
+    color: #135c0d;
 }
 
 .terms-container p {
     font-size: 1.1em;
     line-height: 1.6;
     margin: 10px 0;
+    color: #444;
 }
 
 .terms-container section {
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 15px;
+    background-color: #fff8f8;
+    padding: 15px;
+    border-radius: 6px;
 }
 
 .terms-container section:last-child {
@@ -38,8 +50,24 @@
 .terms-container a {
     color: #007bff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .terms-container a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .terms-container h1 {
+        font-size: 2em;
+    }
+    
+    .terms-container h2 {
+        font-size: 1.5em;
+    }
+    
+    .terms-container p {
+        font-size: 1em;
+    }
 }
