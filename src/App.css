@@ -74,15 +74,20 @@ html {
 
 /* Custom Cursor Styling */
 .custom-cursor {
-  position: fixed;
+  position: absolute;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: green; /* Main cursor color */
   pointer-events: none;
   transform-origin: center;
-  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, opacity 0.2s ease; 
   z-index: 9999; /* Ensure cursor is on top */
+  opacity: 1;
+}
+
+.custom-cursor.hidden {
+  opacity: 0; 
 }
 
 /* Cursor Tail Styling */
@@ -94,5 +99,9 @@ html {
   background-color: green; /* Tail color */
   pointer-events: none;
   z-index: 9998;
-  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, opacity 0.2s ease; 
 }
+.cursor-tail.hidden {
+  opacity: 0;
+}
+
