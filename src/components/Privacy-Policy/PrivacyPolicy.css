@@ -1,45 +1,72 @@
 .privacy-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #ffa7a7;
-    color: #333;
-  }
-  
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffa7a7;
+  color: #333;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.privacy-container h1 {
+  font-size: 2.5em;
+  color: #197e10;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.privacy-container h2 {
+  font-size: 1.8em;
+  color: #14911a;
+  margin-top: 30px;
+  transition: color 0.3s;
+}
+
+.privacy-container h2:hover {
+  color: #0e6c12;
+}
+
+.privacy-container p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #444;
+}
+
+.privacy-container section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  background-color: #fff8f8;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.privacy-container section:last-child {
+  border-bottom: none;
+}
+
+.privacy-container a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.privacy-container a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .privacy-container h1 {
-    font-size: 2.5em;
-    color: #197e10;
-    text-align: center;
-    margin-bottom: 20px;
+      font-size: 2em;
   }
   
   .privacy-container h2 {
-    font-size: 1.8em;
-    color: #14911a;
-    margin-top: 30px;
+      font-size: 1.5em;
   }
   
   .privacy-container p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin: 10px 0;
+      font-size: 1em;
   }
-  
-  .privacy-container section {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
-  }
-  
-  .privacy-container section:last-child {
-    border-bottom: none;
-  }
-  
-  .privacy-container a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .privacy-container a:hover {
-    text-decoration: underline;
-  }
-  
+}

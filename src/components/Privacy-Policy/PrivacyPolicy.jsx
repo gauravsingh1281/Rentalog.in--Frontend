@@ -4,73 +4,67 @@ import "./PrivacyPolicy.css";
 const PrivacyPolicy = () => {
   return (
     <div className="privacy-container">
-      <h1>Privacy and Policy</h1>
+      <h1>Privacy Policy</h1>
+      <p className="policy-date">Last Updated: November 2024</p>
 
-      <section>
+      <article className="policy-section">
         <h2>1. Data Collection</h2>
         <p>
-          We collect various types of information, including personal data, such as your name, 
-          email address, and other contact details, as well as non-personal data, like browsing 
-          behavior and device information. This data is gathered through forms, cookies, and 
-          other technologies.
+          We collect personal data, such as your name, email, and contact details, along with non-personal 
+          data like browsing behavior. This data is gathered through forms, cookies, and other technologies 
+          with your consent in compliance with GDPR and CCPA.
         </p>
-      </section>
+      </article>
 
-      <section>
+      <article className="policy-section">
         <h2>2. Use of Information</h2>
         <p>
-          The information we collect is used to provide and improve our services, personalize user 
-          experiences, respond to your inquiries, and send you updates about our services. We may 
-          also use data for research and analytics purposes.
+          Collected data helps us enhance our services, personalize experiences, respond to inquiries, and 
+          improve site functionality. We may also conduct research and analysis to improve our offerings. 
+          Any use of your data aligns with legal requirements.
         </p>
-      </section>
+      </article>
 
-      <section>
+      <article className="policy-section">
         <h2>3. Data Security</h2>
         <p>
-          We take data security seriously and implement industry-standard measures to protect 
-          your information from unauthorized access, disclosure, or loss. However, no online 
-          service can be 100% secure, and we cannot guarantee absolute security.
+          We implement industry-standard security measures to protect your information. Despite these 
+          efforts, no online platform can be completely secure. We recommend taking additional precautions 
+          to protect your data.
         </p>
-      </section>
+      </article>
 
-      <section>
+      <article className="policy-section">
         <h2>4. Cookies</h2>
         <p>
-          Cookies are small files stored on your device that help us enhance your browsing 
-          experience. We use cookies to understand user behavior, track preferences, and 
-          optimize site performance. You can disable cookies in your browser settings, but 
-          some features of the site may not function properly.
+          Cookies help enhance your browsing experience by remembering preferences and tracking usage patterns. 
+          You can disable cookies in your browser settings, but some site features may be affected.
         </p>
-      </section>
+      </article>
 
-      <section>
+      <article className="policy-section">
         <h2>5. Third-Party Services</h2>
         <p>
-          We may use third-party services for hosting, analytics, and advertising. These 
-          third parties have their own privacy policies, and we are not responsible for 
-          their practices. However, we do our best to work with reputable companies that 
-          share our commitment to privacy.
+          We use third-party services for hosting, analytics, and advertising, each of which adheres to its 
+          privacy policies. While we work with reputable companies, we are not responsible for their practices.
         </p>
-      </section>
+      </article>
 
-      <section>
+      <article className="policy-section">
         <h2>6. Your Rights</h2>
         <p>
-          You have the right to access, correct, or delete your personal information. If 
-          you wish to exercise any of these rights, please contact us at the provided 
-          contact details.
+          You have the right to access, correct, or delete your personal information. For any requests 
+          regarding these rights, please contact us at privacy@yourdomain.com.
         </p>
-      </section>
+      </article>
 
-      <section>
+      <article className="policy-section">
         <h2>7. Policy Updates</h2>
         <p>
-          This privacy policy may be updated periodically to reflect changes in our practices. 
-          We encourage you to review this page regularly for the latest information on our 
-          privacy practices.
+          This policy may be updated periodically to reflect changes in practices or legal requirements. 
+          We encourage you to review this page regularly.
         </p>
-      </section>
+      </article>
     </div>
   );
 };
