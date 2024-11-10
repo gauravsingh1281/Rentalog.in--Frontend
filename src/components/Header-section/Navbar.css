@@ -8,7 +8,7 @@
     transform: rotateY(15deg) rotateX(15deg);  
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
   }
-  .button-spacing {
+  /* .button-spacing {
     margin-right: 20px; 
   }
   .navbar2 a {
@@ -19,7 +19,7 @@
     display: inline-block;
     padding-bottom: 5px;
   }
-  
+   */
   .navbar2 a::after {
     content: '';
     position: absolute;
