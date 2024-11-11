@@ -19,10 +19,27 @@ const Navbar = () => {
   const sectionIds = ["home", "Service", "AboutUs", "ContactUs", "FAQ"]; // Section IDs
 
   // Toggle Dark Mode
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-    document.body.classList.toggle("dark", !darkMode);
-  };
+ const toggleDarkMode = () => {
+  // Toggle dark mode
+  setDarkMode((prevMode) => {
+    const newMode = !prevMode;
+    // Save the new mode to localStorage
+    localStorage.setItem('darkMode', newMode ? 'true' : 'false');
+    return newMode;
+  });
+  
+  // Toggle the 'dark' class on the body element
+  document.body.classList.toggle("dark", !darkMode);
+};
+
+// On page load, check localStorage and set the dark mode accordingly
+useEffect(() => {
+  const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+  setDarkMode(savedDarkMode);
+  // Set the class based on the saved mode
+  document.body.classList.toggle("dark", savedDarkMode);
+}, []);
+
 
   useEffect(() => {
     const tl = gsap.timeline(); // Initialize the timeline
