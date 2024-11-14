@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import './App.css';
 
 // Pages and Components
 import { Home, Login, Registration, Dashboard, ComingSoon } from "./pages";
@@ -27,6 +26,7 @@ const App = () => {
   const [isPreloaderVisible, setIsPreloaderVisible] = useState(true);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [trail, setTrail] = useState(Array(10).fill({ x: 0, y: 0 }));
+  const [isCursorVisible, setIsCursorVisible] = useState(true); // Controls visibility
 
   // Hide Preloader after 5 seconds
   useEffect(() => {
@@ -43,16 +43,31 @@ const App = () => {
     setCursorPos({ x: e.clientX, y: e.clientY });
   };
 
+  const handleMouseLeave = () => {
+    setIsCursorVisible(false); 
+  };
+
+  const handleMouseEnter = () => {
+    setIsCursorVisible(true); 
+  };
+
   useEffect(() => {
-    window.addEventListener("mousemove", updateCursor);
-    return () => window.removeEventListener("mousemove", updateCursor);
+    document.addEventListener("mousemove", updateCursor);
+    document.addEventListener("mouseleave", handleMouseLeave); 
+    document.addEventListener("mouseenter", handleMouseEnter); 
+
+    return () => {
+      document.removeEventListener("mousemove", updateCursor);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("mouseenter", handleMouseEnter);
+    };
   }, [trail]);
 
   return (
     <>
       {/* Custom Main Cursor */}
       <div
-        className="custom-cursor"
+        className={`custom-cursor ${!isCursorVisible ? "hidden" : ""}`}
         style={{
           left: `${cursorPos.x}px`,
           top: `${cursorPos.y}px`,
@@ -63,7 +78,7 @@ const App = () => {
       {trail.map((pos, index) => (
         <div
           key={index}
-          className="cursor-tail"
+          className={`cursor-tail ${!isCursorVisible ? "hidden" : ""}`}
           style={{
             left: `${pos.x}px`,
             top: `${pos.y}px`,
