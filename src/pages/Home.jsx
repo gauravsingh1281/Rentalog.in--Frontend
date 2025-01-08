@@ -15,14 +15,15 @@ import { useEffect, useState } from "react";
 function Home() {
   return (
     <>
-      <Header />
+    <div>
+    <Header />
       <Services />
       <AboutUs />
       <Testimonials />
       <Contact />
       <RentCalculator/>
       <FAQ/>
-      <Footer />
+      {/* <Footer /> */}
 
       {/* <Contributors /> */}
 
@@ -45,7 +46,9 @@ function Home() {
         strokeFillColor="rgb(113, 242, 214)"
         strokeEmptyColor="rgb(256,256,256)"
       />
-      {/* <Footer /> */}
+    </div>
+      
+      <Footer/>
     </>
   );
 }

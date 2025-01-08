@@ -1,107 +1,146 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
+
+
 /* Global Styles */
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  transition: background-color 0.5s, color 0.5s;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    transition: background-color 0.5s, color 0.5s;
 }
+
 
 /* Default Light Mode Styles */
+
 body {
-  background-color: white; /* Light mode background */
-  color: black; /* Light mode text color */
+    background-color: white;
+    /* Light mode background */
+    color: black;
+    /* Light mode text color */
 }
 
+
 /* Dark Mode Styles */
+
 body.dark {
-  background-color: #121212; /* Dark mode background */
-  color: white; /* Dark mode text color */
+    background-color: #121212;
+    /* Dark mode background */
+    color: white;
+    /* Dark mode text color */
 }
+
 body.dark .header-text {
-  color: rgb(68, 66, 66); /* Change 'grey' to your desired shade, e.g., '#808080' */
+    color: rgb(68, 66, 66);
+    /* Change 'grey' to your desired shade, e.g., '#808080' */
 }
-body.dark nav{
-  background-color: grey;
+
+body.dark nav {
+    background-color: grey;
 }
+
+
 /* Navbar Styles */
+
 nav {
-  transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
-.placeholder-text {
-  @apply bg-primaryGreen rounded-2xl p-3 text-xs placeholder:text-[#4C4949];
-}
-.input-bar{
-  @apply border-2 border-green rounded-lg h-9 w-full text-green-dark placeholder-textBlack p-2;
+
+/* .placeholder-text {
+    @apply bg-primaryGreen rounded-2xl p-3 text-xs placeholder: text-[#4C4949];
 }
 
-.mb-0{
-  margin-bottom: 0;
-}
+.input-bar {
+    @apply border-2 border-green rounded-lg h-9 w-full text-green-dark placeholder-textBlack p-2;
+} */
 
+.mb-0 {
+    margin-bottom: 0;
+}
 
 
 /* Custom Scrollbar Styles */
+
 ::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
+    width: 12px;
+    /* Width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #e5e7eb; /* Light gray track (background of the scrollbar) */
+    background-color: #e5e7eb;
+    /* Light gray track (background of the scrollbar) */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #2ec4b6; /* Teal scrollbar thumb */
-  border-radius: 9999px; /* Rounded edges for the scrollbar thumb */
-  box-shadow: 0 0 10px #2ec4b6, 0 0 20px #f72585; /* Glow effect */
+    background-color: #2ec4b6;
+    /* Teal scrollbar thumb */
+    border-radius: 9999px;
+    /* Rounded edges for the scrollbar thumb */
+    box-shadow: 0 0 10px #2ec4b6, 0 0 20px #f72585;
+    /* Glow effect */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #f72585; /* Neon pink when hovered */
-  box-shadow: 0 0 15px #2ec4b6, 0 0 25px #f72585; /* Increased glow on hover */
+    background-color: #f72585;
+    /* Neon pink when hovered */
+    box-shadow: 0 0 15px #2ec4b6, 0 0 25px #f72585;
+    /* Increased glow on hover */
 }
+
+
 /* App.css */
 
+
 /* Custom Cursor Styling */
+
 .custom-cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: green; /* Main cursor color */
-  pointer-events: none;
-  transform-origin: center;
-  transition: transform 0.1s ease, opacity 0.2s ease; 
-  z-index: 9999; /* Ensure cursor is on top */
-  opacity: 1;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: green;
+    /* Main cursor color */
+    pointer-events: none;
+    transform-origin: center;
+    transition: transform 0.1s ease, opacity 0.2s ease;
+    z-index: 9999;
+    /* Ensure cursor is on top */
+    opacity: 1;
 }
 
 .custom-cursor.hidden {
-  opacity: 0; 
+    opacity: 0;
 }
+
 
 /* Cursor Tail Styling */
+
 .cursor-tail {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: green; /* Tail color */
-  pointer-events: none;
-  z-index: 9998;
-  transition: transform 0.1s ease, opacity 0.2s ease; 
-}
-.cursor-tail.hidden {
-  opacity: 0;
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    /* Tail color */
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.1s ease, opacity 0.2s ease;
 }
 
+.cursor-tail.hidden {
+    opacity: 0;
+}
+
+footer {
+    position: fixed;
+}
