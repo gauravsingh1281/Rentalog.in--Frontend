@@ -115,7 +115,7 @@ const App = () => {
       )}
 
       {/* Application Routes */}
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
@@ -143,8 +143,8 @@ const App = () => {
         <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
         <Route path="/Terms-Conditions" element={<TermsConditions />} />
         <Route path="/comingsoon" element={<ComingSoon />} />
-        <Route path="/Feedback" element={<Feedback />} />
-      </Routes>
+        <Route path="/Feedback" element={<Feedback />} /> */}
+      {/* </Routes> */}
     </>
   );
 };
