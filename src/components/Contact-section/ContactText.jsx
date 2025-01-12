@@ -24,7 +24,7 @@ export const ContactText = () => {
             Email:{" "}
             <a
               href="mailto:support@rentalog.in"
-              className="ml-1 font-bold text-primaryGreen underline"
+              className="ml-1 font text-gray-800 underline"
             >
               {" "}
               support@rentalog.in{" "}
@@ -34,7 +34,7 @@ export const ContactText = () => {
             Phone:{" "}
             <a
               href="tel:+916201577047"
-              className="ml-1 font-bold text-primaryGreen underline"
+              className="ml-1 font text-gray-800 underline"
             >
               {" "}
               +91 62015 77047{" "}
@@ -45,7 +45,7 @@ export const ContactText = () => {
             Chat With Us:{" "}
             <a
               href="https://wa.me/+91 6201577047?"
-              className="ml-1 font-bold text-primaryGreen underline"
+              className="ml-1 font text-gray-800 underline"
             >
               {" "}
               Click for chat{" "}
