@@ -39,4 +39,15 @@
   .navbar2 a:hover {
     color: green; /* Optional: change text color on hover */
   }
-  
+
+.navbar-light {
+  background-color: #F5F5DC; 
+  color: #000000; 
+}
+
+/* Dark mode styles */
+.navbar-dark {
+  background-color: #483C32; 
+  color: #ffffff;
+}
+

@@ -11,10 +11,10 @@
 
 .header-section li {
   border-radius: 10px;
-  padding: 6px 7px;
+  padding: 6px 3px;
   list-style: none;
   font-weight: 600;
-  font-size: 18.5px;
+  font-size: 15.5px;
   color: #262626;
   transition: ease 200ms;
 }

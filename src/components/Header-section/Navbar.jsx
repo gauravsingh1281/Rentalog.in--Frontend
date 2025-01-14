@@ -10,13 +10,13 @@ const tl = gsap.timeline();
 import "../Header-section/Navbar.css";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false); // Track theme state
+  const [dark, setDarkMode] = useState(false); // Track theme state
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
   const [navLinkbgColor, setNavlinkbgColor] = useState(true);
   const [activeSection, setActiveSection] = useState("home"); // Track active section
   const [checkToken, setCheckToken] = useState(false);
-  const sectionIds = ["home", "Service", "AboutUs", "ContactUs", "FAQ","RentCalculator"]; // Section IDs
+  const sectionIds = ["home", "Service", "About Us", "Contact Us", "FAQ","RentCalculator"]; // Section IDs
 
   // Toggle Dark Mode
  const toggleDarkMode = () => {
@@ -24,17 +24,17 @@ const Navbar = () => {
   setDarkMode((prevMode) => {
     const newMode = !prevMode;
     // Save the new mode to localStorage
-    localStorage.setItem('darkMode', newMode ? 'true' : 'false');
+    localStorage.setItem('dark', newMode ? 'true' : 'false');
     return newMode;
   });
   
   // Toggle the 'dark' class on the body element
-  document.body.classList.toggle("dark", !darkMode);
+  document.body.classList.toggle("dark", !dark);
 };
 
 // On page load, check localStorage and set the dark mode accordingly
 useEffect(() => {
-  const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+  const savedDarkMode = localStorage.getItem('dark') === 'true';
   setDarkMode(savedDarkMode);
   // Set the class based on the saved mode
   document.body.classList.toggle("dark", savedDarkMode);
@@ -142,15 +142,15 @@ useEffect(() => {
   };
   return (
     <nav
-      className={`fixed w-full z-20 top-0 left-0 ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} transition-colors duration-500`}
+    className={`fixed w-full z-20 top-0 left-0 ${dark ? 'navbar-dark' : 'navbar-light'} transition-colors duration-500`}
     >
       <ProgressBar />
 
       <div
         className={
           doBlure
-            ? `absolute w-full h-full -z-20 bg-beige `
-            : `absolute w-full h-full -z-20 bg-beige `
+            ? `absolute w-full h-full -z-20 bg-yellow-950`
+            : `absolute w-full h-full -z-20 bg-stone-950 `
         }
       ></div>
 
@@ -185,7 +185,7 @@ useEffect(() => {
         {/* Right side: Login, Register, and GoogleTranslate */}
         <div className="flex items-center space-x-2 md:space-x-4">
           <button onClick={toggleDarkMode} className="text-lg">
-            {darkMode ? <FiSun /> : <FiMoon />}
+            {dark ? <FiSun /> : <FiMoon />}
           </button>
 
           {checkToken ? (
