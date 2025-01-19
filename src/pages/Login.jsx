@@ -1,7 +1,8 @@
-import React, { useState } from "react"; // Import useState
+import React, { useState,useEffect } from "react"; // Import useState
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
+import Aos from "aos";
 
 // List of allowed email domains
 const allowedDomains = [
@@ -25,6 +26,12 @@ export default function Login() {
 
   const handleShowPassword = () => setShowPassword(!showPassword);
 
+  useEffect(() => {
+  
+          Aos.init();
+      
+        }, []);
+
   // Function to validate email domain
   const isValidEmailDomain = (email) => {
     const domain = email.substring(email.lastIndexOf("@") + 1);
@@ -45,8 +52,8 @@ export default function Login() {
       <Navbar />
       <br className="hidden xl:block"></br>
       <section className="flex flex-row justify-baseline items-center">
-        <div className="hidden w-full lg:flex lg:mt-12 flex-col lg:justify-start xl:justify-center xl:h-full">
-          <div className="mb-10 mx-10 mr-auto">
+        <div  data-aos="fade-right" className="hidden w-full lg:flex lg:mt-12 flex-col lg:justify-start xl:justify-center xl:h-full">
+          <div className="mb-10 mx-10 mr-auto hover:scale-110 transition duration-300 ease-in-out">
             <h2 className="text-3xl font-bold ">
               <span className="text-customRed italic">Best way</span> to manage
               your rent
@@ -58,11 +65,11 @@ export default function Login() {
           <img
             src="undraw_for_sale_re_egkk.svg"
             alt=""
-            className="m-10 w-auto"
+            className="m-10 w-auto hover:scale-110 transition duration-300 ease-in-out"
           />
         </div>
 
-        <div className="flex mx-auto max-w-7xl w-full lg:w-[75vw] h-screen xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
+        <div className="flex mx-auto max-w-7xl w-full lg:w-[120vw] h-screen xl:h-fit justify-between lg:rounded-bl-3xl lg:rounded-tl-3xl bg-primaryGreen/10">
           <div className="w-full h-[100vh] flex flex-col justify-start mt-20 lg:mt-0 lg:justify-center items-center">
             <TitleCard />
 
@@ -87,7 +94,7 @@ export default function Login() {
                       "Please use an email from a reputable provider (e.g., Gmail, Outlook, Yahoo, Protonmail, icloud, tutanota).",
                   },
                 })}
-                className="input-bar"
+                className="input-bar w-full p-2 border border-gray-300 rounded mt-2"
               />
               <span className="pl-4 text-[#ff0000] text-sm">
                 {errors.email && errors.email.message}
@@ -102,12 +109,12 @@ export default function Login() {
                   {...register("password", {
                     required: "Password is required",
                   })}
-                  className="input-bar pr-10"
+                  className="input-bar pr-10 w-full p-2 border border-gray-300 rounded mt-2"
                 />
                 <button
                   type="button"
                   onClick={handleShowPassword}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none "
                 >
                   {showPassword ? (
                     <i className="fa-regular fa-eye-slash"></i>
@@ -148,7 +155,7 @@ export default function Login() {
                 <div className="flex flex-row md:flex-row items-center space-x-2 justify-center mt-5 lg:mt-2">
                   <Link
                     to="https://www.google.com/"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10 hover:scale-110 transition duration-300 ease-in-out"
                   >
                     <button type="button">
                       <img
@@ -161,7 +168,7 @@ export default function Login() {
 
                   <Link
                     to="https://www.twitter.com/"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10 hover:scale-110 transition duration-300 ease-in-out"
                   >
                     <button type="button">
                       <img
@@ -173,7 +180,7 @@ export default function Login() {
                   </Link>
                   <Link
                     to="https://www.facebook.com/"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10 hover:scale-110 transition duration-300 ease-in-out"
                   >
                     <button type="button">
                       <img
@@ -185,7 +192,7 @@ export default function Login() {
                   </Link>
                   <Link
                     to="https://www.linkedin.com/uas/login"
-                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10"
+                    className="border bg-textWhite focus:shadow-md border-[#c7c5c5] w-[30%] py-1.5 rounded-xl text-black mt-2 flex items-center justify-center px-2 h-10 hover:scale-110 transition duration-300 ease-in-out"
                   >
                     <button type="button">
                       <img
@@ -198,7 +205,7 @@ export default function Login() {
                 </div>
               </div>
 
-              <p className="text-center text-sm text-gray font-semibold">
+              <p className="text-center text-sm text-gray font-semibold hover:scale-110 transition duration-300 ease-in-out">
                 Don’t have any account?{" "}
                 <Link
                   to="/register"
@@ -227,7 +234,7 @@ const Navbar = () => {
 
 const TitleCard = () => {
   return (
-    <div className="flex flex-col">
+    <div data-aos="fade-left" className="flex flex-col hover:scale-110 transition duration-300 ease-in-out" >
       <h2 className="mt-16 text-left text-3xl font-extrabold leading-9 tracking-tight ">
         <span className="text-customRed text-4xl">Welcome</span>
         <span> back!!</span>
