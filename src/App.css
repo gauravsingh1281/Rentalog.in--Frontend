@@ -108,7 +108,7 @@ html {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: green;
+    /* background-color: rgb(65, 237, 159); */
     /* Main cursor color */
     pointer-events: none;
     transform-origin: center;
@@ -130,7 +130,7 @@ html {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: green;
+    background-color: rgb(65, 237, 159);
     /* Tail color */
     pointer-events: none;
     z-index: 9998;
