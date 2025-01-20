@@ -19,7 +19,7 @@ const AboutUs = () => {
 
   return (
     <div className="aboutUs-section">
-      <div id="AboutUs" ></div>
+      <div id="About Us" ></div>
 
       <div className="flex flex-col md:flex-row items-start w-full">
 

@@ -11,7 +11,7 @@ import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 const Contact = () => {
   return (
     <section className="flex flex-col w-full  px-[5%] gap-10 justify-center">
-      <header id="ContactUs" className="flex justify-center align-middle mt-20">
+      <header id="Contact Us" className="flex justify-center align-middle mt-20">
         <h1 className="text-5xl font-bold tracking-wider text-text-black font-monsterrat">
           Contact Us
         </h1>
