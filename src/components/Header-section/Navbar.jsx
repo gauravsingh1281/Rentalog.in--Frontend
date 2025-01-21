@@ -114,8 +114,7 @@ useEffect(() => {
 
   if (showMenu) {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft =
-      window.pageXOffset || document.documentElement.scrollLeft;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
     window.onscroll = () => window.scrollTo(scrollLeft, scrollTop);
 
     return (
@@ -123,13 +122,26 @@ useEffect(() => {
         <ProgressBar />
         <button
           onClick={() => setShowMenu("")}
-          className="absolute top-0 left-0 m-[1.5rem]"
+           className="absolute top-4 right-4 text-white text-2xl"
         >
-          <FiX className="m-2 text-textWhite text-lg" />
+          <FiX/>
         </button>
-        {/* Other elements */}
-      </div>
-    );
+         {/* Mobile Navigation Links */}
+      <ul className="flex flex-col gap-6 text-lg">
+        {sectionIds.map((section) => (
+          <li key={section}>
+            <a
+              href={`#${section}`}
+              className="hover:underline"
+              onClick={() => setShowMenu("")} // Close the menu on link click
+            >
+              {section.toUpperCase()}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
   } else {
     window.onscroll = () => {};
   }
@@ -154,20 +166,22 @@ useEffect(() => {
         }
       ></div>
 
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-2 text-sm">
+      <div className="max-w-screen-xl w-50 flex items-center justify-between mx-auto p-2 text-sm">
         {/* Logo on the Left */}
         <div className="flex flex-row items-center">
           <a href="#home" aria-current="page">
             <img
-              className="self-start w-36 navbar my-auto"
+              className="self-start navbar my-auto"
+              style={{ height: "70px", width:"15rem"}}
               src={logo}
               alt="Rentalog-logo"
             />
           </a>
+          <div className="ml-4"> {/* Adds 1rem (16px) of space */}</div>
         </div>
 
         {/* Center Navigation Links */}
-        <ul className="hidden md:flex items-center gap-4 text-sm font-light">
+        <ul className="hidden md:flex items-center gap-5 text-sm font-light">
           {sectionIds.map((section) => (
             <li
               className="hover:scale-[1.05] transition duration-300"
