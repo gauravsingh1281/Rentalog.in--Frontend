@@ -92,13 +92,13 @@ export default function Registration() {
 
   return (
     <article className="flex relative flex-col justify-center h-[100vh] bg-primaryGreen/10 overflow-hidden">
-      <Navbar />
-
+      <div className="lg:hidden"><Navbar/></div>
       <section className="mt-2 flex flex-col lg:flex-row w-full lg:w-4/5 items-center justify-center mx-auto p-6 border border-gray-300 bg-primaryGreen/10 lg:rounded-bl-3xl lg:rounded-tl-3xl py-4 lg:py-0 mt-4 lg:mt-0" style={{ padding: "0.8rem" }}>
   {/* Section content */}
-
+        
         {/* Left Side - Text and Image */}
         <div className="hidden lg:flex w-full lg:w-[50%] flex-col items-start lg:items-center justify-center p-4">
+          <Navbar />
           <div className="mb-6">
             <h2 className="text-3xl font-bold text-gray-dark/90">
               <span className="text-customRed italic">Best way</span> to manage your rent
@@ -299,11 +299,11 @@ export default function Registration() {
 
 const Navbar = () => {
   return (
-    <div className="absolute top-4 left-4">
+    <div className="relative top-[-7px] flex items-center justify-center lg:left-[-171px] lg:top-0 ">
       <Link to="/">
-        <img src={logo} alt="Rentalog-logo" className="h-12 w-auto" />
+        <img src={logo} alt="Rentalog-logo" className="h-12 w-auto lg:mt-[-1rem]" />
       </Link>
-    </div>
+      </div>
   );
 };
 
