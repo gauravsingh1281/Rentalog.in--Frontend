@@ -16,7 +16,7 @@ const Navbar = () => {
   const [navLinkbgColor, setNavlinkbgColor] = useState(true);
   const [activeSection, setActiveSection] = useState("home"); // Track active section
   const [checkToken, setCheckToken] = useState(false);
-  const sectionIds = ["home", "Service", "About Us", "Contact Us", "FAQ","RentCalculator"]; // Section IDs
+  const sectionIds = ["home","Service","AboutUs","ContactUs","FAQ","RentCalculator"]; // Section IDs
 
   // Toggle Dark Mode
  const toggleDarkMode = () => {

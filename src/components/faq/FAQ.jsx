@@ -51,7 +51,7 @@ const faqData = [
 
 const FAQ = () => {
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/20">
+    <section id="FAQ" className="w-full py-16 md:py-24 lg:py-32 bg-secondary/20">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <div className="w-full space-y-8">
           <h2 className="text-4xl font-bold tracking-tight text-center text-foreground mb-12">Frequently Asked Questions</h2>

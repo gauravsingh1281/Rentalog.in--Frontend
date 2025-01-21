@@ -209,7 +209,7 @@ const RentNavbar = () => {
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li className=" navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="/#home" aria-current="page">
+                <a href="#home" aria-current="page">
                   {activeSection === "home" ? (
                     <h1 className="text-green">HOME</h1>
                   ) : (
@@ -219,7 +219,7 @@ const RentNavbar = () => {
               </li>
 
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="/#Service" aria-current="page">
+                <a href="#Service" aria-current="page">
                   {activeSection === "Service" ? (
                     <h1 className="text-green">RENTALS</h1>
                   ) : (
@@ -229,7 +229,7 @@ const RentNavbar = () => {
               </li>
 
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="/#AboutUs" aria-current="page">
+                <a href="#AboutUs" aria-current="page">
                   {activeSection === "AboutUs" ? (
                     <h1 className="text-green">ABOUT</h1>
                   ) : (
@@ -239,7 +239,7 @@ const RentNavbar = () => {
               </li>
 
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="/#ContactUs" aria-current="page">
+                <a href="#ContactUs" aria-current="page">
                   {activeSection === "ContactUs" ? (
                     <h1 className="text-green">CONTACT</h1>
                   ) : (
@@ -248,7 +248,7 @@ const RentNavbar = () => {
                 </a>
               </li>
               <li className="hover:scale-[1.081] hover transition duration-300">
-                <a href="/#FAQ" aria-current="page">
+                <a href="#FAQ" aria-current="page">
                   {activeSection === "FAQ" ? (
                     <h1 className="text-green">FAQ</h1>
                   ) : (
