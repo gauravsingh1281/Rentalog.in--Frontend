@@ -77,7 +77,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="flex flex-col bg-[#2ec4b6] text-textWhite px-5 py-2">
+    <div className="flex flex-col bg-gradient-to-r from-[#4facfe] via-[#1a8c7c] to-[#ff006e] text-textWhite px-5 py-2">
       <div className="flex justify-center flex-wrap gap-10">
         <div className="flex  justify-center items-center text-center lg:items-start lg:text-start basis-[200px] mx-5 my-2">
           <div>
