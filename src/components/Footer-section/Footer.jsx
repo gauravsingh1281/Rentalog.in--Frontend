@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../../assets/Images/logo.png";
-import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaDiscord, FaFacebook, FaGithub, FaInstagram, FaLinkedin ,} from "react-icons/fa";
 import { LuSendHorizonal } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { RiTwitterXFill } from "react-icons/ri";
@@ -205,6 +205,15 @@ const Footer = () => {
               </a>
               <a href="https://www.instagram.com/gauravsingh1281">
                 <FaInstagram className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
+              </a>
+              <a href="https://www.instagram.com/gauravsingh1281">
+                <FaFacebook className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
+              </a>
+              <a href="https://www.instagram.com/gauravsingh1281">
+                <FaDiscord className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
+              </a>
+              <a href="https://www.instagram.com/gauravsingh1281">
+                <FaLinkedin className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
               </a>
             </div>
           </div>
