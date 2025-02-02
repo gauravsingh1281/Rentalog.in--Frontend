@@ -9,18 +9,10 @@ import ProgressBar from "./ProgressBar";
 // const tl=gsap.timeline()
 import "../Header-section/Navbar.css";
 
-const RentNavbar = () => {
-  const [darkMode, setDarkMode] = useState(false); // Track theme state
+const RentNavbar = ({ darkMode, toggleDarkMode }) => {
   const [showMenu, setShowMenu] = useState("");
   const [doBlure, setDoBlure] = useState(false);
   const [activeSection, setActiveSection] = useState("home"); // Track active section
-
-  // Toggle Dark Mode
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-    // Toggle the dark class on the body element
-    document.body.classList.toggle("dark", !darkMode);
-  };
 
   if (showMenu) {
 
