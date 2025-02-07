@@ -128,7 +128,7 @@ export default function Registration() {
                 title="Name"
                 name="name"
                 type="text"
-                placeholder="Name"
+                placeholder="Enter your full name"
                 register={register("name", {
                   required: "Name is required",
                 })}
@@ -144,7 +144,7 @@ export default function Registration() {
                 title="Email address"
                 name="email"
                 type="email"
-                placeholder="E-mail Address"
+                placeholder="example@domain.com"
                 register={register("email", {
                   required: "Email is required",
                   pattern: {
@@ -166,7 +166,7 @@ export default function Registration() {
                   name="password"
                   value={form.password}
                   type={showPassword ? "text" : "password"}
-                  placeholder="Password"
+                  placeholder="Choose a strong password"
                   onChange={handleChange}
                   className="input-bar pr-10"
                   register={register("password", {
@@ -214,7 +214,7 @@ export default function Registration() {
                   name="confirmPassword"
                   value={form.confirmPassword}
                   type={showConfirmPassword ? "text" : "password"}
-                  placeholder="Confirm Password"
+                  placeholder="Re-enter your password"
                   onChange={handleChange}
                   className="input-bar pr-10"
                   register={register("confirmPassword", {
