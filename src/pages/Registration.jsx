@@ -327,7 +327,7 @@ const Input = ({ title, register, ...props }) => {
       <input
         {...register}
         {...props}
-        className="input-bar w-full p-2 border border-gray-300 rounded mt-2"
+        className="input-bar w-full p-2 border border-gray-300 rounded mt-2 text-black"
       />
     </div>
   );
