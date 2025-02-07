@@ -100,10 +100,10 @@ export default function Registration() {
         <div className="hidden lg:flex w-full lg:w-[50%] flex-col items-start lg:items-center justify-center p-4">
           <Navbar />
           <div className="mb-6">
-            <h2 className="text-3xl font-bold text-gray-dark/90">
+            <h2 className="text-3xl font-bold">
               <span className="text-customRed italic">Best way</span> to manage your rent
             </h2>
-            <p className="mt-2 text-gray-dark/70">
+            <p className="mt-2">
               Create a new account to access all the features of our website
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function Registration() {
                 title="Name"
                 name="name"
                 type="text"
-                placeholder="Name"
+                placeholder="Enter your full name"
                 register={register("name", {
                   required: "Name is required",
                 })}
@@ -144,7 +144,7 @@ export default function Registration() {
                 title="Email address"
                 name="email"
                 type="email"
-                placeholder="E-mail Address"
+                placeholder="example@domain.com"
                 register={register("email", {
                   required: "Email is required",
                   pattern: {
@@ -166,7 +166,7 @@ export default function Registration() {
                   name="password"
                   value={form.password}
                   type={showPassword ? "text" : "password"}
-                  placeholder="Password"
+                  placeholder="Choose a strong password"
                   onChange={handleChange}
                   className="input-bar pr-10"
                   register={register("password", {
@@ -214,7 +214,7 @@ export default function Registration() {
                   name="confirmPassword"
                   value={form.confirmPassword}
                   type={showConfirmPassword ? "text" : "password"}
-                  placeholder="Confirm Password"
+                  placeholder="Re-enter your password"
                   onChange={handleChange}
                   className="input-bar pr-10"
                   register={register("confirmPassword", {
@@ -310,10 +310,10 @@ const Navbar = () => {
 const TitleCard = () => {
   return (
     <div>
-      <h2 className="text-3xl text-center font-bold mb-2 text-gray-dark">
+      <h2 className="text-3xl text-center font-bold mb-2">
         Create Account
       </h2>
-      <p className="text-center text-gray-dark/70">
+      <p className="text-center">
         Join us for seamless rental management
       </p>
     </div>
@@ -323,11 +323,11 @@ const TitleCard = () => {
 const Input = ({ title, register, ...props }) => {
   return (
     <div>
-      <label className="text-gray-dark font-semibold">{title}</label>
+      <label className="font-semibold">{title}</label>
       <input
         {...register}
         {...props}
-        className="input-bar w-full p-2 border border-gray-300 rounded mt-2"
+        className="input-bar w-full p-2 border border-gray-300 rounded mt-2 text-black"
       />
     </div>
   );
