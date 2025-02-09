@@ -80,43 +80,6 @@ function Contributors() {
         </div>
       </div>
 
-      {/* Contributors Grid */}
-
-      
-      <div className="flex flex-wrap justify-center gap-8 ">
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p>{error}</p>
-        ) : contributors.length > 0 ? (
-          contributors.map((contributor) => (
-            <div key={contributor.id} className="flex justify-center flex-col items-center p-3 bg-black">
-              <img
-                src={contributor.avatar_url}
-                alt={contributor.login}
-                className="h-20 w-20 rounded-full border-2 border-textWhite "
-              />
-              <a
-                href={contributor.html_url}
-                className=""
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-              </a>
-              <h2 className="">{contributor.login}</h2>
-              <p className="">
-                Contributions: {contributor.contributions}
-              </p>
-            </div>
-          ))
-        ) : (
-          <p>No contributors found.</p>
-        )}
-      </div>
-
-
-
-
       <div className="contributors-grid">
         {loading ? (
           <p>Loading...</p>
