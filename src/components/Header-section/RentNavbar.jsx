@@ -1,6 +1,7 @@
 import { FiUser, FiSun, FiMoon } from "react-icons/fi"; // Import the icons
 import {} from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import logo from "../../assets/Images/logo.png";
 import { useState } from "react";
 import GoogleTranslate from "./GoogleTranslate";
@@ -162,9 +163,9 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
             </a>
           </div>
           <div className="flex md:order-3 items-center">
-            <button onClick={toggleDarkMode} className="mr-4 text-2xl">
+            {/* <button onClick={toggleDarkMode} className="mr-4 text-2xl">
               {darkMode ? <FiSun /> : <FiMoon />}
-            </button>
+            </button> */}
 
             {/* Login Button */}
             <div>
@@ -201,52 +202,52 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li className=" navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#home" aria-current="page">
+              <HashLink smooth to="/#home" aria-current="page">
                   {activeSection === "home" ? (
                     <h1 className="text-green">HOME</h1>
                   ) : (
                     <h1>HOME</h1>
                   )}
-                </a>
+                </HashLink>
               </li>
 
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#Service" aria-current="page">
+              <HashLink smooth to="/#Service" aria-current="page">
                   {activeSection === "Service" ? (
                     <h1 className="text-green">RENTALS</h1>
                   ) : (
                     <h1>RENTALS</h1>
                   )}
-                </a>
+                </HashLink>
               </li>
 
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#AboutUs" aria-current="page">
+              <HashLink smooth to="/#AboutUs" aria-current="page">
                   {activeSection === "AboutUs" ? (
                     <h1 className="text-green">ABOUT</h1>
                   ) : (
                     <h1>ABOUT</h1>
                   )}
-                </a>
+                </HashLink>
               </li>
 
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-                <a href="#ContactUs" aria-current="page">
+              <HashLink smooth to="/#ContactUs" aria-current="page">
                   {activeSection === "ContactUs" ? (
                     <h1 className="text-green">CONTACT</h1>
                   ) : (
                     <h1>CONTACT</h1>
                   )}
-                </a>
+                </HashLink>
               </li>
               <li className="hover:scale-[1.081] hover transition duration-300">
-                <a href="#FAQ" aria-current="page">
+              <HashLink smooth to="/#FAQ" aria-current="page">
                   {activeSection === "FAQ" ? (
                     <h1 className="text-green">FAQ</h1>
                   ) : (
                     <h1>FAQ</h1>
                   )}
-                </a>
+                </HashLink>
               </li>
             </ul>
           </div>

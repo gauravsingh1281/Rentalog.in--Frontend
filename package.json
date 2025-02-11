@@ -31,6 +31,7 @@
     "react-icons": "^4.12.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.15.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scroll-to-top": "^3.0.0",
     "react-simple-scroll-up": "^0.2.3",
     "rentalog": "file:",

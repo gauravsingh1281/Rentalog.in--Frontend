@@ -11,9 +11,11 @@ body {
   max-width: 1200px;
   margin: 50px auto;
   padding: 20px;
+  position: relative;
+  top: 37px;
 }
 
-h1 {
+.privacy-container h1 {
   font-size: 2.5rem;
   color: #2c3e50;
   text-align: center;
@@ -21,14 +23,14 @@ h1 {
   font-weight: 600;
 }
 
-.card-container {
+.privacy-container .card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
   justify-content: space-between;
 }
 
-section {
+.privacy-container section {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -38,20 +40,20 @@ section {
   box-sizing: border-box;
 }
 
-section:hover {
+.privacy-container section:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-section:nth-child(odd) {
+.privacy-container section:nth-child(odd) {
   background-color: #ffffff;
 }
 
-section:nth-child(even) {
+.privacy-container section:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-h2 {
+.privacy-container h2 {
   font-size: 1.8rem;
   color: #34495e;
   margin-top: 0;
@@ -61,13 +63,13 @@ h2 {
   display: inline-block;
 }
 
-p {
+.privacy-container p {
   font-size: 1rem;
   color: #555;
   margin-bottom: 0;
 }
 
-section h2::before {
+.privacy-container section h2::before {
   content: "•";
   color: #3498db;
   margin-right: 10px;
@@ -79,25 +81,26 @@ section h2::before {
   .privacy-container {
     margin: 20px;
     padding: 15px;
+    top: 74px;
   }
 
-  h1 {
+  .privacy-container h1 {
     font-size: 2rem;
   }
 
-  h2 {
+  .privacy-container h2 {
     font-size: 1.5rem;
   }
 
-  p {
+  .privacy-container p {
     font-size: 0.9rem;
   }
 
-  .card-container {
+  .privacy-container .card-container {
     flex-direction: column;
   }
 
-  section {
+  .privacy-container section {
     flex: 1 1 100%;
   }
 }
