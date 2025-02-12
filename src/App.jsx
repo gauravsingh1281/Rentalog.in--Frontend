@@ -110,6 +110,7 @@ const App = () => {
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
           <Route path="/Terms-Conditions" element={<TermsConditions />} />
+          <Route path="/Feedback" element={<Feedback />} />
           <Route path="/comingsoon" element={<ComingSoon />} />
         </Routes>
       )}

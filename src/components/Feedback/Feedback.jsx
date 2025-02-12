@@ -1,122 +1,76 @@
-import React, { useState } from "react";
+import { useState,useEffect } from "react";
+import { Star } from "lucide-react";
 import "./Feedback.css";
-import Footer from "../Footer-section/Footer";
 import RentNavbar from "../Header-section/RentNavbar";
+import Footer from "../Footer-section/Footer";
 
-const Feedback = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [rating, setRating] = useState(0);
-  const [hoverRating, setHoverRating] = useState(0);
-  const [feedback, setFeedback] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
+export default function FeedbackPage() {
+  const [feedback, setFeedback] = useState({ name: "", email: "", rating: 0, message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const handleRating = (rate) => {
-    setRating(rate);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFeedback({ ...feedback, [name]: value });
+  };
+
+  const handleRating = (rating) => {
+    setFeedback({ ...feedback, rating });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && email && rating && feedback) {
-      setIsSubmitted(true);
-      // Here, handle actual submission, such as sending to a backend API
-      console.log({
-        name,
-        email,
-        rating,
-        feedback,
-      });
-      // Reset form after submission
-      setName("");
-      setEmail("");
-      setRating(0);
-      setFeedback("");
-      setHoverRating(0);
+    if (feedback.name && feedback.email && feedback.message) {
+      setError("");
+      setSubmitted(true);
+      setFeedback({ name: "", email: "", rating: 0, message: "" });
+      setTimeout(() => setSubmitted(false), 3000);
     } else {
-      alert("Please fill out all fields");
+      setError("Please fill out all required fields.");
     }
-  };
-
-  const closePopup = () => {
-    setIsSubmitted(false);
   };
 
   return (
     <>
-      <div className="feedback-form-container">
-        <RentNavbar />
-
-        <form onSubmit={handleSubmit}>
-          <h1 className="title">Feedback Form</h1>
-
-          {/* Name Input */}
-          <input
-            className="name"
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-
-          {/* Email Input */}
-          <input
-            className="email"
-            type="email"
-            placeholder="Your Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-          {/* Star Rating */}
-          <div className="stars">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span
-                key={star}
-                className={
-                  star <= (hoverRating || rating) ? "star-filled" : "star"
-                }
-                onClick={() => handleRating(star)}
-                onMouseEnter={() => setHoverRating(star)}
-                onMouseLeave={() => setHoverRating(0)}
-              >
-                ★
-              </span>
-            ))}
-          </div>
-
-          {/* Feedback Textarea */}
-          <textarea
-            className="message"
-            value={feedback}
-            onChange={(e) => setFeedback(e.target.value)}
-            placeholder="Describe your experience.."
-            required
-          />
-
-          {/* Submit Button */}
-          <button type="submit" className="post-button">
-            Submit
-          </button>
-        </form>
-
-        {/* Success Pop-up */}
-        {isSubmitted && (
-          <div className="popup-overlay">
-            <div className="popup">
-              <h3>Thank You!</h3>
-              <p>Your feedback has been successfully submitted.</p>
-              <button onClick={closePopup} className="close-popup-button">
-                Close
-              </button>
+      <RentNavbar />
+      <div className="feedback-container">
+        <div className="feedback-card">
+          <h2 className="feedback-title">We Value Your Feedback</h2>
+          {submitted && <p className="feedback-success">🎉 Feedback submitted! Thank you!</p>}
+          {error && <p className="feedback-error">⚠️ {error}</p>}
+          <form onSubmit={handleSubmit} className="feedback-form">
+            <div className="input-group">
+              <label>Name</label>
+              <input type="text" name="name" value={feedback.name} onChange={handleInputChange} placeholder="Enter your name" required />
             </div>
-          </div>
-        )}
+            <div className="input-group">
+              <label>Email</label>
+              <input type="email" name="email" value={feedback.email} onChange={handleInputChange} placeholder="Enter your email" required />
+            </div>
+            <div className="input-group">
+              <label>Rating</label>
+              <div className="feedback-stars">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star
+                    key={star}
+                    onClick={() => handleRating(star)}
+                    className={feedback.rating >= star ? "star-selected" : "star-unselected"}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="input-group">
+              <label>Message</label>
+              <textarea name="message" value={feedback.message} onChange={handleInputChange} placeholder="Write your feedback here..." required />
+            </div>
+            <button type="submit" className="feedback-submit">Submit Feedback</button>
+          </form>
+        </div>
       </div>
       <Footer />
     </>
   );
-};
-
-export default Feedback;
+}
