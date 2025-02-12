@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import { Star } from "lucide-react";
-import "./feedback.css";
+import "./Feedback.css";
 import RentNavbar from "../Header-section/RentNavbar";
 import Footer from "../Footer-section/Footer";
 
