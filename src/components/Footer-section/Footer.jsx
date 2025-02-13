@@ -114,12 +114,6 @@ const Footer = () => {
                   Rent Calculation
                 </li>
               </Link>
-
-              <Link to="/dashboard/timemanagement">
-                <li className="hover:scale-110 transition duration-300 ease-in-out">
-                  Time Management
-                </li>
-              </Link>
               <Link to="/comingsoon">
                 <li className="hover:scale-110 transition duration-300 ease-in-out">
                   Coming Soon
