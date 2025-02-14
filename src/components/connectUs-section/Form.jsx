@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import clickSound from "../../assets/mixkit-mouse-click-close-1113.wav"; // Import the sound effect
 
 const Form = () => {
   const {
@@ -8,7 +9,13 @@ const Form = () => {
     reset,
   } = useForm();
 
+  const playSound = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
+
   const onSubmit = (data) => {
+    playSound(); // Play sound effect on submit
     alert("Message sent successfully");
     console.log(data);
     reset(); // reset form fields after successful submission

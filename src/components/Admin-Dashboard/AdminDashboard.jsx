@@ -1,17 +1,25 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import './AdminDashboard.css';
+import clickSound from "../../assets/mixkit-mouse-click-close-1113.wav"; // Import the sound effect
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
 
+  const playSound = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
+
   const handleLogout = () => {
+    playSound(); // Play sound effect on logout
     // Clear session data (e.g., token from localStorage)
     localStorage.removeItem("userToken");
 
     // Redirect to login page
     navigate("/");
   };
+
   return (
     <div className="admin-dashboard">
       <aside className="sidebar">
@@ -66,4 +74,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard
+export default AdminDashboard;

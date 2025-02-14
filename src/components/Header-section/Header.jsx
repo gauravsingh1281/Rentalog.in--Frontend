@@ -1,30 +1,34 @@
 import "../Header-section/Header-section.css";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 import carImg1 from "../../assets/Images/red-house.png"
 import carImg2 from "../../assets/Images/carousel2.png"
 import carImg3 from "../../assets/Images/carousel3.png"
+import clickSound from "../../assets/mixkit-mouse-click-close-1113.wav"; 
+
 const Header = () => {
+  const playSound = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
+
   return (
     <>
       <div className="header-section mb-[80px]">
         <Navbar />
 
         <div id="home"></div>
-        <Carousel autoPlay = {true} infiniteLoop = {true} showStatus = {false} showThumbs = {false} stopOnHover ={false} swipeable = {false} animationHandler="fade">
+        <Carousel autoPlay={true} infiniteLoop={true} showStatus={false} showThumbs={false} stopOnHover={false} swipeable={false} animationHandler="fade">
           <div>
-            <img src={carImg1} className="h-screen object-cover"/>
-            
+            <img src={carImg1} className="h-screen object-cover" />
           </div>
           <div>
-            <img src={carImg2} className="h-screen object-cover"/>
-            
+            <img src={carImg2} className="h-screen object-cover" />
           </div>
           <div>
-            <img src={carImg3} className="h-screen object-cover"/>
-            
+            <img src={carImg3} className="h-screen object-cover" />
           </div>
         </Carousel>
         <div className="header-text top-[15%] sm:top-[23%] absolute">
@@ -37,11 +41,12 @@ const Header = () => {
             details, their payment history, and much more with ease.
           </p>
           <Link to="/register">
-            <button className="btn getBtn">Get Started</button>
+            <button className="btn getBtn" onClick={playSound}>Get Started</button>
           </Link>
         </div>
       </div>
     </>
   );
 };
+
 export default Header;
