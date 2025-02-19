@@ -56,3 +56,28 @@
     font-weight: bold;
     color: #2ec4b6;
   }
+
+  .summary-card {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-left: 5px solid #28a745;
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  .summary-card h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .summary-card p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .summary-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #28a745;
+  }
