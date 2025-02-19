@@ -27,6 +27,15 @@ const RentCalculator = () => {
     setShowSummary(true); 
   };
 
+  const resetForm = () => {
+    setBaseRent("");
+    setPowerBill("");
+    setWaterBill("");
+    setOtherFees("");
+    setTotalRent(null);
+    setShowSummary(false);
+  };
+
   return (
     <div id="RentCalculator" className="rent-calculator">
       <h1>Monthly Rent Calculator</h1>
@@ -72,20 +81,28 @@ const RentCalculator = () => {
       </div>
 
       <button onClick={calculateTotalRent} className="calculate-btn">
-        Calculate Total Rent
-      </button>
+  Calculate Total Rent
+</button>
 
-      {showSummary && (
-        <div className="summary-card">
-          <h2>🏠 Rent Summary</h2>
-          <p><strong>Base Rent:</strong> {formatCurrency(baseRent)}</p>
-          <p><strong>Power Bill:</strong> {formatCurrency(powerBill)}</p>
-          <p><strong>Water Bill:</strong> {formatCurrency(waterBill)}</p>
-          <p><strong>Other Fees:</strong> {formatCurrency(otherFees)}</p>
-          <hr />
-          <h3>Total Monthly Rent: {formatCurrency(totalRent)}</h3>
-        </div>
-      )}
+{showSummary && (
+  <>
+    <div className="summary-card">
+      <h2>🏠 Rent Summary</h2>
+      <p><strong>Base Rent:</strong> {formatCurrency(baseRent)}</p>
+      <p><strong>Power Bill:</strong> {formatCurrency(powerBill)}</p>
+      <p><strong>Water Bill:</strong> {formatCurrency(waterBill)}</p>
+      <p><strong>Other Fees:</strong> {formatCurrency(otherFees)}</p>
+      <hr />
+      <h3>Total Monthly Rent: {formatCurrency(totalRent)}</h3>
+    </div>
+
+    <button onClick={resetForm} className="reset-btn">
+      Reset
+    </button>
+  </>
+)}
+
+
     </div>
   );
 };
