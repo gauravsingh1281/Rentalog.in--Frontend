@@ -1,45 +1,106 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
 .privacy-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  position: relative;
+  top: 37px;
+}
+
+.privacy-container h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.privacy-container .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-between;
+}
+
+.privacy-container section {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 calc(50% - 25px);
+  box-sizing: border-box;
+}
+
+.privacy-container section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.privacy-container section:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.privacy-container section:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.privacy-container h2 {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+  display: inline-block;
+}
+
+.privacy-container p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.privacy-container section h2::before {
+  content: "•";
+  color: #3498db;
+  margin-right: 10px;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .privacy-container {
+    margin: 20px;
+    padding: 15px;
+    top: 74px;
   }
-  
+
   .privacy-container h1 {
-    font-size: 2.5em;
-    color: #1abc9c;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 2rem;
   }
-  
+
   .privacy-container h2 {
-    font-size: 1.8em;
-    color: #1abc9c;
-    margin-top: 30px;
+    font-size: 1.5rem;
   }
-  
+
   .privacy-container p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin: 10px 0;
+    font-size: 0.9rem;
   }
-  
+
+  .privacy-container .card-container {
+    flex-direction: column;
+  }
+
   .privacy-container section {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
+    flex: 1 1 100%;
   }
-  
-  .privacy-container section:last-child {
-    border-bottom: none;
-  }
-  
-  .privacy-container a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .privacy-container a:hover {
-    text-decoration: underline;
-  }
-  
+}
