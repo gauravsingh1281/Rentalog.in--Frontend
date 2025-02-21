@@ -34,11 +34,9 @@
     border-radius: 5px;
   }
 
-  .calculate-btn {
+  .calculate-btn, .reset-btn {
     width: 100%;
     padding: 10px;
-    background-color: #2ec4b6;
-    color: white;
     font-size: 16px;
     border: none;
     border-radius: 5px;
@@ -46,13 +44,66 @@
     transition: background-color 0.3s ease;
   }
 
+  .calculate-btn {
+    background-color: #2ec4b6;
+    color: white;
+  }
+  
   .calculate-btn:hover {
     background-color: #238e8b;
   }
-
-  .result {
+  
+  .reset-btn {
+    margin-top: 10px;
+    background-color: #f44336; /* Red color */
+    color: white;
+  }
+  
+  .reset-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Rent Summary Card */
+  .summary-card {
     margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .summary-card h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .summary-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .summary-card hr {
+    margin: 10px 0;
+    border: 1px solid #ddd;
+  }
+  
+  .summary-card h3 {
     font-size: 18px;
-    font-weight: bold;
     color: #2ec4b6;
+    font-weight: bold;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
