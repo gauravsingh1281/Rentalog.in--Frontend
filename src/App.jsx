@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // Pages and Components
 import { Home, Login, Registration, Dashboard, ComingSoon } from "./pages";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -65,6 +66,9 @@ const App = () => {
 
   return (
     <>
+
+<ToastContainer position="top-right" autoClose={3000} />
+
       {/* Custom Main Cursor */}
       <div
         className={`custom-cursor ${!isCursorVisible ? "hidden" : ""}`}
@@ -98,6 +102,7 @@ const App = () => {
           <Route path="/forgot" element={<ForgotPassword />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/payment-record" element={<PaymentsRecord/>} />
           <Route path="/dashboard/searchrenter" element={<SearchRental />} />
           <Route path="/dashboard/createnewrenter" element={<CreateNewRental />} />
           <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />

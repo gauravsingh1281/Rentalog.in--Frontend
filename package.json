@@ -34,6 +34,7 @@
     "react-router-hash-link": "^2.4.3",
     "react-scroll-to-top": "^3.0.0",
     "react-simple-scroll-up": "^0.2.3",
+    "react-toastify": "^11.0.3",
     "rentalog": "file:",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",

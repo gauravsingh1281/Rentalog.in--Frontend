@@ -9,6 +9,8 @@ const RentCalculator = () => {
   const [totalRent, setTotalRent] = useState(null);
   const [showSummary, setShowSummary] = useState(false);
 
+  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+  
   const formatCurrency = (value) => {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -37,6 +39,9 @@ const RentCalculator = () => {
   };
 
   return (
+
+    <div>
+    {isAuthenticated ? (
     <div id="RentCalculator" className="rent-calculator">
       <h1>Monthly Rent Calculator</h1>
 
@@ -103,6 +108,12 @@ const RentCalculator = () => {
 )}
 
 
+    </div>) : 
+    (
+      <p style={{ textAlign: "center", fontSize: "18px", color: "red" }}>
+        ⚠️ Please log in to access the Rent Calculator.
+      </p>
+    )}
     </div>
   );
 };

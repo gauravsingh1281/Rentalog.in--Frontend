@@ -57,7 +57,7 @@ const GoogleTranslate = () => {
       className="google-translate-container navbar3 hidden md:flex flex-row justify-center items-center gap-2 font-bold rounded-lg text-md px-4 py-2 text-center mr-3 md:mr-0 transition-all duration-500 transform hover:scale-105 hover:shadow-lg"
       title="Select language to translate"
     >
-      <style jsx>{`
+      <style>{`
         .goog-te-combo {
           background-color: #1abc9c; /* Light pastel */
           border:none;
