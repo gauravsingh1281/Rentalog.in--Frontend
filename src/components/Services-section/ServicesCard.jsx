@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { toast } from "react-toastify";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -51,11 +52,20 @@ const ServicesCard = (props) => {
     });
   };
 
-  const handleClick=()=>{
-    if(props.title==="Track Payment Records"){
-      navigate("/payment-record");
+  const handleClick = () => {
+    if (props.title === "Track Payment Records") {
+      const isAuthenticated = localStorage.getItem("isAuthenticated") === "true"; 
+  
+      console.log("Auth for card: ", isAuthenticated);
+  
+      if (isAuthenticated) {
+        navigate("/payment-record");
+      } else {
+        toast.error("Please log in first to access payment records.");
+      }
     }
-  }
+  };
+  
 
   return (
     <div data-aos={props.aos} onClick={handleClick} className="cursor-pointer">
