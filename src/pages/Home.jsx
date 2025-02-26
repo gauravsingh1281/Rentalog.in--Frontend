@@ -21,7 +21,6 @@ function Home() {
       <AboutUs />
       <Testimonials />
       <Contact />
-      <RentCalculator/>
       <FAQ/>
       {/* <Footer /> */}
 

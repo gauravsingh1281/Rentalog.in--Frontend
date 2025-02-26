@@ -68,7 +68,7 @@ const ServicesCard = (props) => {
   
 
   return (
-    <div data-aos={props.aos} onClick={handleClick} className="cursor-pointer">
+    <div data-aos={props.aos} className="cursor-pointer">
       <div
         className={
           "bg-cover bg-bottom hover:bg-[right_top]  hover:shadow-[19px_29px_68px_rgba(49,13,2,0.38),_inset_-6px_-10px_12px_#262626,_inset_6px_10px_12px_#f5f2f2] transform-gpu perspective-1000 hover:rotate-x-6 hover:rotate-y-6 hover:scale-105 relative rounded-xl cursor-pointer"

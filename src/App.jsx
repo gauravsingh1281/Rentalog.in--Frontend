@@ -22,6 +22,7 @@ import Preloader from "./components/Preloader/PreLoader";
 import PrivacyPolicy from "./components/Privacy-Policy/PrivacyPolicy";
 import TermsConditions from "./components/Terms-Conditions/TermsConditions";
 import Feedback from "./components/Feedback/Feedback";
+import RentCalculator from './components/rent/RentCalculator';
 
 const App = () => {
   const [isPreloaderVisible, setIsPreloaderVisible] = useState(true);
@@ -103,6 +104,8 @@ const App = () => {
           <Route path="/register" element={<Registration />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/payment-record" element={<PaymentsRecord/>} />
+          <Route path="/rent-cal" element={<RentCalculator/>} />
+
           <Route path="/dashboard/searchrenter" element={<SearchRental />} />
           <Route path="/dashboard/createnewrenter" element={<CreateNewRental />} />
           <Route path="/dashboard/addnewrenter" element={<AddNewRental />} />
