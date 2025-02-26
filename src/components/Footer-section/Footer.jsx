@@ -1,6 +1,12 @@
 import { useState } from "react";
 import logo from "../../assets/Images/logo.png";
-import { FaDiscord, FaFacebook, FaGithub, FaInstagram, FaLinkedin ,} from "react-icons/fa";
+import {
+  FaDiscord,
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+} from "react-icons/fa";
 import { LuSendHorizonal } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { RiTwitterXFill } from "react-icons/ri";
@@ -79,6 +85,11 @@ const Footer = () => {
   return (
     <div className="flex flex-col bg-gradient-to-r from-[#4facfe] via-[#1a8c7c] to-[#ff006e] text-textWhite px-5 py-2">
       <div className="flex justify-center flex-wrap gap-10">
+        <img
+          className="bg-[white] mx-auto lg:mx-0 hover:cursor-pointer px-1 rounded-xl mb-2 h-[40px] w-[150px] hover:shadow-l hover:scale-105 transition duration-300 ease-in-out mt-4"
+          src={logo}
+          alt="logo"
+        />
         <div className="flex  justify-center items-center text-center lg:items-start lg:text-start basis-[200px] mx-5 my-2">
           <div>
             <h3 className="font-bold mb-4">About Us</h3>
@@ -86,11 +97,6 @@ const Footer = () => {
               Rentalog is the ultimate solution for landlords looking to
               simplify their rent management process.
             </p>
-            <img
-              className="bg-[white] mx-auto lg:mx-0 hover:cursor-pointer px-1 rounded-xl mb-2 h-[40px] w-[150px] hover:shadow-l hover:scale-105 transition duration-300 ease-in-out"
-              src={logo}
-              alt="logo"
-            />
           </div>
         </div>
 
@@ -184,7 +190,7 @@ const Footer = () => {
               />
               <button
                 onClick={handleSubmit}
-                className="absolute right-1 p-2 bg-[#1ABC9C] text-white rounded-md hover:bg-gray-dark hover:text-[#1abc9c] hover:border hover:border-[#1abc9c] transition duration-3 ease-in-out"
+                className="absolute right-8 p-2  bg-[#1ABC9C] text-white rounded-md hover:bg-gray-dark hover:text-[#1abc9c] hover:border hover:border-[#1abc9c] transition duration-3 ease-in-out"
               >
                 <LuSendHorizonal />
               </button>
@@ -192,22 +198,22 @@ const Footer = () => {
 
             <div className="flex gap-4 mt-2 justify-center">
               <a href="https://twitter.com/gauravsingh1281">
-                <RiTwitterXFill className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#1DA1F2]" />
+                <RiTwitterXFill className="w-6 h-6 transition duration-300 ease-in-out hover:scale-125 hover:rotate-[10deg] hover:shadow-[4px_4px_10px_rgba(29,161,242,0.6)] hover:text-[#1DA1F2]" />
               </a>
               <a href="https://github.com/gauravsingh1281">
-                <FaGithub className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-black" />
+                <FaGithub className="w-6 h-6 transition duration-300 ease-in-out hover:scale-125 hover:rotate-[10deg] hover:shadow-[4px_4px_10px_rgba(0,0,0,0.6)] hover:text-black" />
               </a>
               <a href="https://www.instagram.com/gauravsingh1281">
-                <FaInstagram className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
+                <FaInstagram className="w-6 h-6 transition duration-300 ease-in-out hover:scale-125 hover:rotate-[10deg] hover:shadow-[4px_4px_10px_rgba(255,105,180,0.6)] hover:text-[#FF69B4]" />
               </a>
-              <a href="https://www.instagram.com/gauravsingh1281">
-                <FaFacebook className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
+              <a href="https://www.facebook.com/gauravsingh1281">
+                <FaFacebook className="w-6 h-6 transition duration-300 ease-in-out hover:scale-125 hover:rotate-[10deg] hover:shadow-[4px_4px_10px_rgba(59,89,152,0.6)] hover:text-[#1877F2]" />
               </a>
-              <a href="https://www.instagram.com/gauravsingh1281">
-                <FaDiscord className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
+              <a href="https://discord.com/">
+                <FaDiscord className="w-6 h-6 transition duration-300 ease-in-out hover:scale-125 hover:rotate-[10deg] hover:shadow-[4px_4px_10px_rgba(114,137,218,0.6)] hover:text-[#5865F2]" />
               </a>
-              <a href="https://www.instagram.com/gauravsingh1281">
-                <FaLinkedin className="w-6 h-6 hover:shadow-2xl hover:scale-110 transition duration-300 ease-in-out hover:text-[#FF69B4]" />
+              <a href="https://www.linkedin.com/in/gauravsingh1281">
+                <FaLinkedin className="w-6 h-6 transition duration-300 ease-in-out hover:scale-125 hover:rotate-[10deg] hover:shadow-[4px_4px_10px_rgba(0,119,181,0.6)] hover:text-[#0077B5]" />
               </a>
             </div>
           </div>
