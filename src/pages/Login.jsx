@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
 import Aos from "aos";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 // List of allowed email domains
 const allowedDomains = [
@@ -38,11 +41,22 @@ export default function Login() {
     return allowedDomains.includes(domain);
   };
 
+  useEffect(() => {
+      localStorage.setItem("isAuthenticated", "false");
+    
+  }, []);
+  
+  console.log("Auth: ", localStorage.getItem("isAuthenticated"));
+
   const onSubmit = (data) => {
     //console.log(data);
     // Perform login logic here
     // If successful, navigate to admin dashboard
     localStorage.setItem("userToken",data.email);
+    localStorage.setItem("isAuthenticated", "true");
+    console.log("Auth: ",localStorage.getItem("isAuthenticated"))
+    toast.success("Login successful!");
+
     navigate("/admin-dashboard");
     reset(); // Reset form after successful submission
   };

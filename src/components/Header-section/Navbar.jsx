@@ -37,6 +37,7 @@ const Navbar = () => {
   const handleLogout = () => {
     playSound(); // Play sound effect on logout
     localStorage.removeItem("userToken");
+    localStorage.setItem("isAuthenticated", "false");
     setCheckToken(false);
   };
 

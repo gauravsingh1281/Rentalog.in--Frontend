@@ -68,6 +68,14 @@ const AdminDashboard = () => {
             <h3>Total Revenue</h3>
             <p>$5000</p>
           </div>
+          <div className="card" onClick={() => navigate("/payment-record")}>
+          <h3>Track Payment Records</h3>
+            <p>Rent Payments</p>
+          </div>
+          <div className="card" onClick={() => navigate("/rent-cal")}>
+          <h3>Rent Calculator</h3>
+            <p>Calculate rent received</p>
+          </div>
         </section>
       </main>
     </div>
