@@ -22,7 +22,7 @@ const Contact = () => {
           Contact Us
         </h1>
       </header>
-      <main className=" mt-0 flex flex-wrap lg:gap-[5%] gap-[20px] justify-center items-center">
+      <main className="mt-0 flex flex-wrap justify-center items-start lg:space-x-[150px] space-y-10 lg:space-y-0">
         <ContactText />
         <ContactForm />
       </main>

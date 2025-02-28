@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import clickSound from "../../assets/mixkit-mouse-click-close-1113.wav"; // Importing the sound file
+import clickSound from "../../assets/mixkit-mouse-click-close-1113.wav";
 
 const ContactForm = () => {
   const {
@@ -11,89 +11,85 @@ const ContactForm = () => {
 
   const playSound = () => {
     const audio = new Audio(clickSound);
-    audio.play(); // Play the sound
+    audio.play();
   };
 
   const onSubmit = (data) => {
-    playSound(); // Play sound on submit
+    playSound();
     alert("Message sent successfully");
     console.log(data);
-    reset(); // reset form fields after submission
+    reset();
   };
 
   return (
-    <>
-      <section className="flex flex-col my-20 md:flex-row gap-y-10">
-        <article className="flex justify-center flex-1 p-5 md:p-0 md:mr-24">
-          <form onSubmit={handleSubmit(onSubmit)} className="w-full gap-x-5">
-            <div className="flex flex-col justify-between mb-6 md:flex-row">
-              <div className="flex flex-col md:w-6/12">
-                <input
-                  {...register("firstName", {
-                    required: "First name is required",
-                  })}
-                  className="h-16 p-2 mb-6 border-2 rounded-lg border-green text-green-dark md:mb-0 placeholder-textBlack"
-                  placeholder="First name"
-                  style={{ marginRight: "5px" }}
-                />
-                <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.firstName && errors.firstName.message}
-                </span>
-              </div>
-              <div className="flex flex-col md:w-6/12">
-                <input
-                  {...register("lastName", {
-                    required: "Last name is required",
-                  })}
-                  className="h-16 p-2 border-2 rounded-lg border-green text-green-dark placeholder-textBlack"
-                  placeholder="Last name"
-                />
-                <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.lastName && errors.lastName.message}
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col justify-between mb-6 md:flex-row">
-              <div className="flex flex-col w-full">
-                <input
-                  {...register("email", {
-                    required: "Email is required",
-                    pattern: {
-                      value: /\S+@\S+\.\S+/,
-                      message: "Email is not valid",
-                    },
-                  })}
-                  className="h-16 p-2 border-2 rounded-lg border-green text-green-dark placeholder-textBlack"
-                  placeholder="Email"
-                />
-                <span className="pl-4 text-[#ff0000] text-sm">
-                  {errors.email && errors.email.message}
-                </span>
-              </div>
-            </div>
-
-            <textarea
-              {...register("message", {
-                required: "Message is required",
-              })}
-              className="w-full h-40 p-2 border-2 rounded-lg border-green text-green-dark placeholder-textBlack"
-              placeholder="Your message here"
+    <section className="bg-light-blue shadow-lg rounded-lg p-8">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex-1">
+            <input
+              {...register("firstName", { required: "First name is required" })}
+              className="w-full h-12 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primaryGreen transition duration-200 ease-in-out"
+              placeholder="First Name"
             />
-            <span className="pl-4 text-[#ff0000] text-sm">
-              {errors.message && errors.message.message}
-            </span>
-            <div className="flex justify-center md:justify-start">
-              <button
-                className="relative flex cursor-pointer items-center justify-center mt-5 bg-green rounded-lg w-40 lg:w-60 p-3 text-textWhite text-2xl md:text-xl font-bold font-monsterrat ease-in-out duration-300 hover:bg-[transparent] hover:text-green hover:border-green hover:border-[2px]"
-                type="submit"
-              >
-                Submit
-              </button>
+            <div className="min-h-[1.5rem]">
+            {errors.firstName && (
+              <span className="text-customRed text-sm">{errors.firstName.message}</span>
+            )}
             </div>
-          </form>
-        </article>
-      </section>
-    </>
+          </div>
+          <div className="flex-1">
+            <input
+              {...register("lastName", { required: "Last name is required" })}
+              className="w-full h-12 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primaryGreen transition duration-200 ease-in-out"
+              placeholder="Last Name"
+            />
+            <div className="min-h-[1.5rem]">
+            {errors.lastName && (
+              <span className="text-customRed text-sm">{errors.lastName.message}</span>
+            )}
+            </div>
+          </div>
+        </div>
+        <div>
+          <input
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: "Email is not valid",
+              },
+            })}
+            className="w-full h-12 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primaryGreen transition duration-200 ease-in-out"
+            placeholder="Email"
+          />
+          <div className="min-h-[1.5rem]">
+          {errors.email && (
+            <span className="text-customRed text-sm">{errors.email.message}</span>
+          )}
+          </div>
+        </div>
+        <div>
+          <textarea
+            {...register("message", { required: "Message is required" })}
+            className="w-full h-32 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primaryGreen transition duration-200 ease-in-out"
+            placeholder="Your Message"
+          />
+          <div className="min-h-[1.5rem]">
+          {errors.message && (
+            <span className="text-customRed text-sm">{errors.message.message}</span>
+          )}
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            className="w-40 py-3 bg-primaryGreen text-textWhite rounded-full transition-all duration-300 hover:bg-customRed focus:outline-none focus:ring-2 focus:ring-black"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </section>
   );
 };
 

@@ -1,26 +1,29 @@
-
+/* Contact-section.css */
 #ContactUs {
-    margin-bottom: 0; /* Further reduced margin-bottom to minimize the space */
-}
-
-main {
-    margin-top: 0; /* Remove any top margin between the Contact Us header and Contact Text Information */
-    padding-top: 0; /* Remove extra padding if present */
-    margin-bottom: 5rem;
-
+    margin-bottom: 0;
+  }
   
-   
-    background: linear-gradient(to right,#4bc2f5, #8c8cb2, #ee9898,#ef0381); /* Gradient from blue to red */
-    border: 2px solid #000000; /* Border color */
-    border-radius: 8px; /* Rounded corners */
-    padding: 10px; /* Spacing inside the section */
-    padding: 10px 5px; /* Top and bottom padding: 10px, left and right padding: 5px */
-}
-
-#text{
+  main {
+    margin-top: 0;
+    margin-bottom: 5rem;
+    background-color: #ffffff; /* Clean white background */
+    border-radius: 12px; /* Modern rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 2rem; /* Increased padding for a more spacious feel */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  main:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Optional text adjustments if #text is used within your components */
+  #text {
     display: flex;
+    justify-content: center;
     text-align: center;
-    margin-left: 98px;
-    font-style: bold;
-}
-
+    font-weight: 600;
+    margin: 0 auto;
+    color: #333333; /* Darker text for improved readability */
+  }
+  
