@@ -248,18 +248,36 @@ export default function Registration() {
 
               {/* Social Buttons */}
               <div className="flex items-center justify-center space-x-4 mt-4">
-                <Link to="https://www.google.com/" className="flex items-center border bg-white border-[#c7c5c5] w-1/3 h-10 justify-center rounded-lg">
+                <Link to="https://www.google.com/" className="flex items-center border bg-white border-[#c7c5c5] w-1/4 h-10 justify-center rounded-lg">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                     alt="Google logo"
-                    className="h-5" style={{ margin: "0px" }}
+                    className="h-5"
+                    style={{ margin: "0px" }}
                   />
                 </Link>
-                <Link to="https://www.facebook.com/" className="flex items-center border bg-white border-[#c7c5c5] w-1/3 h-10 justify-center rounded-lg">
+                <Link to="https://twitter.com/" className="flex items-center border bg-white border-[#c7c5c5] w-1/4 h-10 justify-center rounded-lg">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"
+                    alt="Twitter logo"
+                    className="h-5"
+                    style={{ margin: "0px" }}
+                  />
+                </Link>
+                <Link to="https://www.facebook.com/" className="flex items-center border bg-white border-[#c7c5c5] w-1/4 h-10 justify-center rounded-lg">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
                     alt="Facebook logo"
-                    className="h-5" style={{ margin: "0px" }}
+                    className="h-5"
+                    style={{ margin: "0px" }}
+                  />
+                </Link>
+                <Link to="https://www.linkedin.com/" className="flex items-center border bg-white border-[#c7c5c5] w-1/4 h-10 justify-center rounded-lg">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                    alt="LinkedIn logo"
+                    className="h-5"
+                    style={{ margin: "0px" }}
                   />
                 </Link>
               </div>
