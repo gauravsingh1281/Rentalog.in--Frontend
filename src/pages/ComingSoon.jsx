@@ -22,7 +22,7 @@ const ComingSoon = () => {
       <div className="flex flex-col md:flex-row items-center justify-center h-screen text-center bg-gray-100 text-gray-900 p-6 md:space-x-20 mt-[55px]">
 
         <div className="md:w-1/2 flex justify-center">
-          <img src="src\assets\Images\comingsoon.png" alt="Coming Soon" className="max-w-full h-auto rounded-lg" />
+          <img src="https://www.pngkey.com/png/full/953-9530974_flat-build-illustration-website.png" alt="Coming Soon" className="max-w-full h-auto rounded-lg" />
         </div>
         <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-lg border border-gray-200 md:w-1/2">
           <FaClock className="text-5xl text-customRed mx-auto mb-4" />
