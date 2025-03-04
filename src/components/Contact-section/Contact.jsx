@@ -29,6 +29,7 @@ const Contact = () => {
       <h2 className="text-5xl font-bold tracking-wider text-center font-monsterrat ">
         Connect with <span className="text-customRed">Us</span>
       </h2>
+      <main className=" flex flex-wrap justify-center items-start">
       <div className="items-center justify-between md:flex">
         <div className="flex items-center justify-center p-0 md:w-1/2">
           <article className="flex flex-col items-center text-center ">
@@ -64,7 +65,7 @@ const Contact = () => {
                 Phone:
                 <a
                   href="tel:+916201577047"
-                  className="ml-1 font-bold underline text-primaryGreen"
+                  className="ml-1 font-bold text-primaryGreen"
                 >
                   +91 62015 77047
                 </a>
@@ -81,10 +82,11 @@ const Contact = () => {
             </button>
           </article>
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/1">
           <GoogleMap />
         </div>
       </div>
+      </main>
     </section>
   );
 };
