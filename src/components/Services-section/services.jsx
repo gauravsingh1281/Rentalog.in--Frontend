@@ -30,17 +30,6 @@ const ourServices = [
     aos: "fade-left",
   },
   {
-    id: 3,
-    bgColor: "bg-[#D1F2EB]",
-    bgImg: services_3,
-    title: " Rent Calculation",
-    description:
-      "Automatically calculate the total rent received each month and see a breakdown of payments.",
-    icon: iconPencil,
-    alt: "iconPencil",
-    aos: "fade-right",
-  },
-  {
     id: 4,
     bgColor: "bg-[#EBB4B6]",
     bgImg: services_4,
