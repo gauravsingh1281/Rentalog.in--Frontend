@@ -1,9 +1,39 @@
-import React from 'react';
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import './AdminDashboard.css';
+import "./AdminDashboard.css";
 import clickSound from "../../assets/mixkit-mouse-click-close-1113.wav"; // Import the sound effect
+import AdminDashboardImage from "../../assets/Images/AdminDashboardImage.png";
+import Navbar from "../Header-section/Navbar";
+import Footer from "../Footer-section/Footer";
 
 const AdminDashboard = () => {
+  const widgets = [
+    {
+      id: 1,
+      name: "Rental's Details",
+    },
+    {
+      id: 2,
+      name: "Rent Payment Record",
+    },
+    {
+      id: 3,
+      name: "Property Listing",
+    },
+    {
+      id: 4,
+      name: "Tenant Management",
+    },
+    {
+      id: 5,
+      name: "Tenant Feedback",
+    },
+    {
+      id: 6,
+      name: "Tenant Complains",
+    },
+  ];
+
   const navigate = useNavigate();
 
   const playSound = () => {
@@ -15,70 +45,59 @@ const AdminDashboard = () => {
     playSound(); // Play sound effect on logout
     // Clear session data (e.g., token from localStorage)
     localStorage.removeItem("userToken");
-
     // Redirect to login page
     navigate("/");
   };
 
   return (
-    <div className="admin-dashboard">
-      <aside className="sidebar">
-        <div className="sidebar-header">
-          <h2>Admin Panel</h2>
+    <>
+      <Navbar />
+      {/* welcome section + responseive*/}
+      <section className='admin-dashboard min-h-screen flex flex-col md:flex-row justify-between items-center px-4 md:px-12 lg:px-32'>
+        <div className='textColor pt-52 md:pt-36 md:py-40 lg:py-52'>
+          <h1 className='text-4xl lg:text-6xl font-bold'>Dashboard</h1>
+          <p className='text-xl lg:text-2xl mt-3 lg:mt-8'>
+            Hello{" "}
+            <span className='adminName'>
+              {"< "}Admin{" >"}
+            </span>
+            , Welcome to your Dashboard
+          </p>
         </div>
-        <ul className="sidebar-menu">
-          <li><Link to="/">Home</Link></li>
-          <li>Dashboard Overview</li>
-          <li>Manage Users</li>
-          <li>Property Listings</li>
-          <li>Messages</li>
-          <li>Settings</li>
-          <li onClick={handleLogout} style={{ cursor: 'pointer' }}>Logout</li>
-        </ul>
-      </aside>
-      
-      <main className="content">
-        <header className="header">
-          <h1>Welcome, Admin!</h1>
-          <p>Here is your dashboard overview</p>
-        </header>
-        
-        <section className="dashboard-overview">
-          <div className="card">
-            <h3>Total Users</h3>
-            <p>120</p>
+        {/* image section */}
+        <div>
+          <img
+            src={AdminDashboardImage}
+            alt='admin-dashboard-img'
+            className='md:w-[200px] lg:w-[400px]'
+          />
+        </div>
+      </section>
+
+      {/* actions section */}
+      <section className='min-h-screen widgetSection'>
+        <div className=' py-16 px-4 md:px-12 lg:px-32 textColor'>
+          <div className='flex justify-between'>
+            <h1 className='text-4xl lg:text-5xl font-bold lg:font-semibold'>
+              widgets
+            </h1>
+            <button className='px-3 py-3 lg:px-5 lg:py-4 font-semibold bg-textWhite  rounded-md text-xs'>
+              create new Rental
+            </button>
           </div>
-          <div className="card">
-            <h3>Properties Listed</h3>
-            <p>35</p>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-20 mb-8'>
+            {widgets.map((widget, id) => (
+              <div className='flex items-center justify-center bg-textWhite rounded-md py-16 shadow-widget hover:shadow-widget-hover transition-all duration-300 cursor-pointer'>
+                {widget.name}
+              </div>
+            ))}
           </div>
-          <div className="card">
-            <h3>New Messages</h3>
-            <p>8</p>
-          </div>
-          <div className="card">
-            <h3>Settings</h3>
-            <p>Configure your system</p>
-          </div>
-          <div className="card">
-            <h3>Recent Activity</h3>
-            <p>5 users logged in recently</p>
-          </div>
-          <div className="card">
-            <h3>Total Revenue</h3>
-            <p>$5000</p>
-          </div>
-          <div className="card" onClick={() => navigate("/payment-record")}>
-          <h3>Track Payment Records</h3>
-            <p>Rent Payments</p>
-          </div>
-          <div className="card" onClick={() => navigate("/rent-cal")}>
-          <h3>Rent Calculator</h3>
-            <p>Calculate rent received</p>
-          </div>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+
+      {/* footer  */}
+      <Footer />
+    </>
   );
 };
 
