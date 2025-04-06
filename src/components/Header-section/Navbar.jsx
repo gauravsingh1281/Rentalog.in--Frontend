@@ -25,7 +25,6 @@ const Navbar = () => {
       return newMode;
     });
     document.body.classList.toggle("dark", !dark);
-    alert("showMenu:", showMenu);
   };
 
   useEffect(() => {
@@ -43,16 +42,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='fixed w-screen z-20 top-0 left-0 backdrop-blur-lg'>
+    <nav className="fixed w-screen z-20 top-0 left-0 backdrop-blur-lg">
       <ProgressBar />
-      <div className='max-w-screen-xl w-50 flex items-center justify-between mx-auto p-2 text-sm'>
-        <div className='flex flex-row items-center'>
-          <a href='#home' aria-current='page'>
+      <div className="max-w-screen-xl w-50 flex items-center justify-between mx-auto p-2 text-sm">
+        <div className="flex flex-row items-center">
+          <a href="#home" aria-current="page">
             <img
-              className='self-start navbar my-auto'
+              className="self-start navbar my-auto"
               style={{ height: "70px", width: "15rem" }}
               src={logo}
-              alt='Rentalog-logo'
+              alt="Rentalog-logo"
             />
           </a>
         </div>
@@ -60,16 +59,16 @@ const Navbar = () => {
         {/* Nav Items for desktop*/}
         <div className={`hidden lg:block`}>
           <div className={` flex space-x-4 `}>
-            <a className='cursor-pointer hover:scale-105 ' href='/'>
+            <a className="cursor-pointer hover:scale-105 " href="/">
               Home
             </a>
-            <a className='cursor-pointer hover:scale-105 ' href='#Service'>
+            <a className="cursor-pointer hover:scale-105 " href="#Service">
               Rentals
             </a>
-            <a className='cursor-pointer hover:scale-105 ' href='#AboutUs'>
+            <a className="cursor-pointer hover:scale-105 " href="#AboutUs">
               About
             </a>
-            <a className='cursor-pointer hover:scale-105 ' href='#ContactUs'>
+            <a className="cursor-pointer hover:scale-105 " href="#ContactUs">
               Contact
             </a>
           </div>
@@ -81,29 +80,29 @@ const Navbar = () => {
         >
           <div className={` flex flex-col space-y-6 `}>
             <a
-              className='cursor-pointer hover:scale-105 '
-              href='/'
+              className="cursor-pointer hover:scale-105 "
+              href="/"
               onClick={() => setShowMenu("")}
             >
               Home
             </a>
             <a
-              className='cursor-pointer hover:scale-105 '
-              href='#Service'
+              className="cursor-pointer hover:scale-105 "
+              href="#Service"
               onClick={() => setShowMenu("")}
             >
               Rentals
             </a>
             <a
-              className='cursor-pointer hover:scale-105 '
-              href='#AboutUs'
+              className="cursor-pointer hover:scale-105 "
+              href="#AboutUs"
               onClick={() => setShowMenu("")}
             >
               About
             </a>
             <a
-              className='cursor-pointer hover:scale-105 '
-              href='#ContactUs'
+              className="cursor-pointer hover:scale-105 "
+              href="#ContactUs"
               onClick={() => setShowMenu("")}
             >
               Contact
@@ -111,36 +110,36 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className='flex items-center space-x-2 md:space-x-4'>
-          <button onClick={toggleDarkMode} className='text-lg'>
+        <div className="flex items-center space-x-2 md:space-x-4">
+          <button onClick={toggleDarkMode} className="text-lg">
             {dark ? <FiSun /> : <FiMoon />}
           </button>
 
           {checkToken ? (
-            <Link to='/'>
+            <Link to="/">
               <button
                 onClick={handleLogout}
-                className='navbar3 hidden md:block text-sm px-4 py-1 rounded-lg bg-green-500 text-white transition-transform hover:scale-105'
+                className="navbar3 hidden md:block text-sm px-4 py-1 rounded-lg bg-green-500 text-white transition-transform hover:scale-105"
               >
                 Logout
               </button>
             </Link>
           ) : (
             <>
-              <Link to='/login'>
+              <Link to="/login">
                 <button
                   onClick={playSound}
-                  className='navbar3 hidden md:block text-sm px-4 py-1 rounded-lg bg-green-500 text-white transition-transform hover:scale-105'
+                  className="navbar3 hidden md:block text-sm px-4 py-1 rounded-lg bg-green-500 text-white transition-transform hover:scale-105"
                 >
                   Login
                 </button>
               </Link>
-              <Link to='/register'>
+              <Link to="/register">
                 <button
                   onClick={playSound}
-                  className='navbar3 hidden md:flex items-center gap-1 px-4 py-1 text-sm rounded-lg bg-green-500 text-white transition-transform hover:scale-105'
+                  className="navbar3 hidden md:flex items-center gap-1 px-4 py-1 text-sm rounded-lg bg-green-500 text-white transition-transform hover:scale-105"
                 >
-                  <FiUser className='text-lg' />
+                  <FiUser className="text-lg" />
                   Register
                 </button>
               </Link>
@@ -154,21 +153,21 @@ const Navbar = () => {
           onClick={() =>
             showMenu === "show" ? setShowMenu("") : setShowMenu("show")
           }
-          type='button'
-          className='md:hidden p-2'
+          type="button"
+          className="md:hidden p-2"
         >
           <svg
-            className='w-4 h-4'
-            aria-hidden='true'
-            fill='none'
-            viewBox='0 0 17 14'
+            className="w-4 h-4"
+            aria-hidden="true"
+            fill="none"
+            viewBox="0 0 17 14"
           >
             <path
-              stroke='currentColor'
-              strokeLinecap='round'
-              strokeLinejoin='round'
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               strokeWidth={2}
-              d='M1 1h15M1 7h15M1 13h15'
+              d="M1 1h15M1 7h15M1 13h15"
             />
           </svg>
         </button>
