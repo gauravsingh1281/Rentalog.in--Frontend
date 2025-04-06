@@ -16,15 +16,14 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
   const [activeSection, setActiveSection] = useState("home"); // Track active section
 
   if (showMenu) {
-
     return (
       <>
         <div className="md:hidden bg-[#1ABC9C] fixed w-full z-20 top-0 left-0 h-full flex justify-center items-center">
-          <ProgressBar/>
+          <ProgressBar />
           <button
-            // onClick={() => {
-            //   setShowMenu("");
-            // }}
+            onClick={() => {
+              setShowMenu("");
+            }}
             className="absolute top-0 left-0 m-[1.5rem]"
           >
             <FiX className="m-2 text-textWhite" />
@@ -44,9 +43,9 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
               <a href="#home" aria-current="page">
                 <div
                   className="text-textWhite "
-                //   onClick={() => {
-                //     setShowMenu("");
-                //   }}
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
                 >
                   HOME
                 </div>
@@ -55,19 +54,17 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
               <a href="#Service" aria-current="page">
                 <div
                   className="text-textWhite "
-                //   onClick={() => {
-                //     setShowMenu("");
-                //   }}
-                >
-                 
-                </div>
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
+                ></div>
               </a>
               <a href="#AboutUs" aria-current="page">
                 <div
                   className="text-textWhite "
-                //   onClick={() => {
-                //     setShowMenu("");
-                //   }}
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
                 >
                   ABOUT
                 </div>
@@ -75,9 +72,9 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
               <a href="#ContactUs" aria-current="page">
                 <div
                   className="text-textWhite "
-                //   onClick={() => {
-                //     setShowMenu("");
-                //   }}
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
                 >
                   CONTACT
                 </div>
@@ -85,21 +82,11 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
               <a href="#FAQ" aria-current="page">
                 <div
                   className="text-textWhite"
-                //   onClick={() => {
-                //     setShowMenu("");
-                //   }}
+                  onClick={() => {
+                    setShowMenu("");
+                  }}
                 >
-                 FAQ
-                </div>
-              </a>
-              <a href="/" aria-current="page">
-                <div
-                  className="text-textWhite"
-                //   onClick={() => {
-                //     setShowMenu("");
-                //   }}
-                >
-                 FAQ
+                  FAQ
                 </div>
               </a>
               <div className="text-gray-dark">
@@ -133,7 +120,7 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
         </div>
       </>
     );
-  } 
+  }
 
   return (
     <>
@@ -202,7 +189,7 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
           >
             <ul className="flex flex-row lg:gap-10 md:gap-6 font-medium">
               <li className=" navbar2 hover:scale-[1.081] hover transition duration-300">
-              <HashLink smooth to="/#home" aria-current="page">
+                <HashLink smooth to="/#home" aria-current="page">
                   {activeSection === "home" ? (
                     <h1 className="text-green">HOME</h1>
                   ) : (
@@ -212,7 +199,7 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
               </li>
 
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-              <HashLink smooth to="/#Service" aria-current="page">
+                <HashLink smooth to="/#Service" aria-current="page">
                   {activeSection === "Service" ? (
                     <h1 className="text-green">RENTALS</h1>
                   ) : (
@@ -222,7 +209,7 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
               </li>
 
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-              <HashLink smooth to="/#AboutUs" aria-current="page">
+                <HashLink smooth to="/#AboutUs" aria-current="page">
                   {activeSection === "AboutUs" ? (
                     <h1 className="text-green">ABOUT</h1>
                   ) : (
@@ -232,7 +219,7 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
               </li>
 
               <li className="navbar2 hover:scale-[1.081] hover transition duration-300">
-              <HashLink smooth to="/#ContactUs" aria-current="page">
+                <HashLink smooth to="/#ContactUs" aria-current="page">
                   {activeSection === "ContactUs" ? (
                     <h1 className="text-green">CONTACT</h1>
                   ) : (
@@ -241,7 +228,7 @@ const RentNavbar = ({ darkMode, toggleDarkMode }) => {
                 </HashLink>
               </li>
               <li className="hover:scale-[1.081] hover transition duration-300">
-              <HashLink smooth to="/#FAQ" aria-current="page">
+                <HashLink smooth to="/#FAQ" aria-current="page">
                   {activeSection === "FAQ" ? (
                     <h1 className="text-green">FAQ</h1>
                   ) : (
