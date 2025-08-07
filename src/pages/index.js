@@ -3,3 +3,4 @@ export { default as Login } from "./Login";
 export { default as Registration } from "./Registration";
 export { default as Dashboard } from "./Dashboard";
 export { default as ComingSoon } from "./ComingSoon";
+export { default as Profile } from "./Profile";

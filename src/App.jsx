@@ -23,6 +23,7 @@ import PrivacyPolicy from "./components/Privacy-Policy/PrivacyPolicy";
 import TermsConditions from "./components/Terms-Conditions/TermsConditions";
 import Feedback from "./components/Feedback/Feedback";
 import RentCalculator from './components/rent/RentCalculator';
+import { Profile } from "./pages";
 
 const App = () => {
   const [isPreloaderVisible, setIsPreloaderVisible] = useState(true);
@@ -120,6 +121,7 @@ const App = () => {
           <Route path="/Terms-Conditions" element={<TermsConditions />} />
           <Route path="/Feedback" element={<Feedback />} />
           <Route path="/comingsoon" element={<ComingSoon />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       )}
 
