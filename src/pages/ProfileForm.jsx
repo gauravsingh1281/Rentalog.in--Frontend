@@ -1,5 +1,5 @@
-// src/pages/ProfileForm.jsx
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const ProfileForm = () => {
     const [formData, setFormData] = useState({
@@ -11,13 +11,19 @@ const ProfileForm = () => {
     });
 
     const handleChange = (e) => {
-        setFormData({...formData, [e.target.name]: e.target.value});
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Here you could call an API
+        toast.success("Profile details updated successfully!");
     };
 
     return (
         <div className="profile-section">
             <h2>Personal Information</h2>
-            <form className="profile-form">
+            <form className="profile-form" onSubmit={handleSubmit}>
                 <label>
                     Full Name:
                     <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} />
@@ -42,6 +48,8 @@ const ProfileForm = () => {
                     Email:
                     <input type="email" name="email" value={formData.email} disabled />
                 </label>
+
+                <button type="submit">Save Changes</button>
             </form>
         </div>
     );

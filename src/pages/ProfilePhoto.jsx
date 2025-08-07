@@ -1,5 +1,4 @@
-// src/pages/ProfilePhoto.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const ProfilePhoto = () => {
     const [photo, setPhoto] = useState(null);
@@ -9,10 +8,21 @@ const ProfilePhoto = () => {
         if (file) setPhoto(URL.createObjectURL(file));
     };
 
+    // Clean up object URL
+    useEffect(() => {
+        return () => {
+            if (photo) URL.revokeObjectURL(photo);
+        };
+    }, [photo]);
+
     return (
         <div className="profile-section">
             <h2>Profile Photo</h2>
-            {photo ? <img src={photo} alt="Profile Preview" className="profile-avatar" /> : <div className="profile-avatar placeholder">No photo</div>}
+            {photo ? (
+                <img src={photo} alt="Profile Preview" className="profile-avatar" />
+            ) : (
+                <div className="profile-avatar placeholder">No photo</div>
+            )}
             <input type="file" accept="image/*" onChange={handlePhotoChange} />
         </div>
     );
