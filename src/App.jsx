@@ -68,7 +68,9 @@ const App = () => {
   return (
     <>
 
-<ToastContainer position="top-right" autoClose={3000} />
+<div aria-live="polite" aria-atomic="false">
+  <ToastContainer position="top-right" autoClose={3000} />
+</div>
 
       {/* Custom Main Cursor */}
       <div
