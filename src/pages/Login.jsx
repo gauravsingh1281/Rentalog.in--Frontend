@@ -110,7 +110,7 @@ export default function Login() {
                 })}
                 className="input-bar w-full p-2 border border-gray-300 rounded mt-2"
               />
-              <span className="pl-4 text-[#ff0000] text-sm">
+              <span className="pl-4 text-[#ff0000] text-sm" role="alert" aria-live="assertive">
                 {errors.email && errors.email.message}
               </span>
 
@@ -137,7 +137,7 @@ export default function Login() {
                   )}
                 </button>
               </div>
-              <span className="pl-4 text-[#ff0000] text-sm">
+              <span className="pl-4 text-[#ff0000] text-sm" role="alert" aria-live="assertive">
                 {errors.password && errors.password.message}
               </span>
 

@@ -80,11 +80,11 @@ function Contributors() {
         </div>
       </div>
 
-      <div className="contributors-grid">
+      <div className="contributors-grid" aria-live="polite" aria-atomic="true" aria-label="Contributors list">
         {loading ? (
-          <p>Loading...</p>
+          <p>Loading contributors...</p>
         ) : error ? (
-          <p>{error}</p>
+          <p role="alert">{error}</p>
         ) : contributors.length > 0 ? (
           contributors.map((contributor) => (
             <div key={contributor.id} className="contributor-card">
