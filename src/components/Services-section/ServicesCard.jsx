@@ -88,14 +88,14 @@ const ServicesCard = (props) => {
         <div className="flex gap-4 p-8">
           <img className="w-10 h-10 mt-1.5" src={props.icon} alt={props.alt} />
           <h1
-            className="text-black font-bold md:text-2xl text-xl"
+            className="text-black dark:text-white font-bold md:text-2xl text-xl"
             style={{ textShadow: "1px 1px 2.5px white" }}
           >
             {props.title}
           </h1>
         </div>
         <p
-          className="px-8 pb-20 text-black font-semibold"
+          className="px-8 pb-20 text-black dark:text-white font-semibold"
           style={{ textShadow: "1px 1px 2.5px white" }}
         >
           {props.description}

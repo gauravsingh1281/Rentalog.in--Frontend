@@ -36,12 +36,44 @@ body.dark {
 }
 
 body.dark .header-text {
-    color: rgb(68, 66, 66);
-    /* Change 'grey' to your desired shade, e.g., '#808080' */
+    color: #e0e0e0;
 }
 
-body.dark nav {
-    background-color: grey;
+body.dark nav:not(.bg-\\[\\#1ABC9C\\]) {
+    background-color: #1e1e1e;
+}
+
+body.dark .header-desc {
+    color: #cccccc;
+}
+
+body.dark .contributors-container {
+    background-color: #121212;
+}
+
+body.dark .contributors-container .repo-stats-section {
+    background-color: #1e1e1e;
+}
+
+body.dark .contributors-container .repo-stats-section h3 {
+    color: #aaaaaa;
+}
+
+body.dark .contributors-container .repo-stats-section p {
+    color: #ffffff;
+}
+
+body.dark .contributor-card {
+    background-color: #2a2a3e;
+    border-color: #4a4a8e;
+}
+
+body.dark .contributor-name {
+    color: #ffffff;
+}
+
+body.dark .contributor-contributions {
+    color: #90caf9;
 }
 
 
